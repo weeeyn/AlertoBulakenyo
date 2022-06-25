@@ -1,0 +1,103 @@
+package com.activity.alertobulakenyo;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
+public class login extends AppCompatActivity {
+
+    EditText etLoginEmail, etLoginPass;
+    Button btnLogin;
+    TextView tvForgotPass, tvSignup;
+    ImageButton btnGoogle, btnFB, btnTwt;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
+        getSupportActionBar().hide(); // hide the title bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS); //enable full screen
+
+        setContentView(R.layout.activity_login);
+
+        etLoginEmail = (EditText) findViewById (R.id.etLoginEmail);
+        etLoginPass = (EditText) findViewById (R.id.etLoginPass);
+
+        btnLogin = (Button) findViewById (R.id.btnLogin);
+
+        tvForgotPass = (TextView) findViewById (R.id.tvForgotPass);
+        tvSignup = (TextView) findViewById (R.id.tvSignup);
+
+        btnGoogle = (ImageButton) findViewById (R.id.btnGoogle);
+        btnFB = (ImageButton) findViewById (R.id.btnFB);
+        btnTwt = (ImageButton) findViewById (R.id.btnTwt);
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (TextUtils.isEmpty(etLoginEmail.getText().toString()))
+                {
+                    etLoginEmail.setError("This cannot be empty!");
+                    return;
+                }
+                if (TextUtils.isEmpty(etLoginPass.getText().toString()))
+                {
+                    etLoginPass.setError("This cannot be empty!");
+                    return;
+                }
+
+                Intent intent = new Intent(login.this, completeInfo.class);
+                startActivity(intent);
+            }
+        });
+
+        tvForgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btnGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btnFB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btnTwt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        tvSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(login.this, register.class);
+                startActivity(intent);
+            }
+        });
+    }
+}

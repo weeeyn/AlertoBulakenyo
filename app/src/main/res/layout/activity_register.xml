@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".register">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="301dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-14dp"
+        android:layout_marginEnd="-15dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/reg_top" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="360dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-21dp"
+        android:layout_marginEnd="-4dp"
+        android:layout_marginBottom="-125dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/reg_bot" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitStart"
+            android:paddingStart="15dp"
+            android:src="@drawable/logo2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/archivo_black"
+            android:paddingStart="5dp"
+            android:text="Register"
+            android:textColor="#003366"
+            android:textSize="50dp" />
+
+        <EditText
+            android:id="@+id/etRegFname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text"
+            android:hint="First Name"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:textColorHint="#8091A3"
+            android:textColor="#003366"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/etRegLname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text"
+            android:hint="Last Name"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:textColorHint="#8091A3"
+            android:textColor="#003366"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/etRegUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text"
+            android:hint="Preferred Username"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:textColorHint="#8091A3"
+            android:textColor="#003366"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/etRegEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text"
+            android:hint="Email Address"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:textColorHint="#8091A3"
+            android:textColor="#003366"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/etRegPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text"
+            android:hint="Password"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:textColorHint="#8091A3"
+            android:textColor="#003366"
+            android:textSize="25dp"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/etRegConPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text"
+            android:hint="Confirm Password"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:textColorHint="#8091A3"
+            android:textColor="#003366"
+            android:textSize="25dp"
+            android:inputType="textPassword"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <CheckBox
+                android:id="@+id/cbAgree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#ff5003"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" I agree to "
+                android:textSize="18sp"
+                android:textColor="#003366" />
+
+            <TextView
+                android:id="@+id/tvTerms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Terms of Service"
+                android:textSize="18sp"
+                android:textColor="#003366"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" and "
+                android:textSize="18sp"
+                android:textColor="#003366" />
+
+            <TextView
+                android:id="@+id/tvPrivacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Privacy Policy."
+                android:textSize="18sp"
+                android:textColor="#003366"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="50dp"
+            android:background="@drawable/rounded_button"
+            android:padding="10dp"
+            android:stateListAnimator="@null"
+            android:text="Sign up"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:text="Already have an account?"
+            android:textColor="#4D657F"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:text="Log in"
+            android:textColor="#003366"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
