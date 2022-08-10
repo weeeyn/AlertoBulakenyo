@@ -31,7 +31,7 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             app:autoSizeMaxTextSize="80dp"
-            app:autoSizeMinTextSize="30dp"
+            app:autoSizeMinTextSize="10dp"
             app:autoSizeStepGranularity="1dp"
             app:autoSizeTextType="uniform" />
 
@@ -46,7 +46,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             app:autoSizeMaxTextSize="80dp"
-            app:autoSizeMinTextSize="20dp"
+            app:autoSizeMinTextSize="10dp"
             app:autoSizeStepGranularity="1dp"
             app:autoSizeTextType="uniform" />
 

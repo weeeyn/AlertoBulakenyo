@@ -31,7 +31,7 @@
             android:textColor="@color/white"
             android:maxLines="1"
             app:autoSizeMaxTextSize="80dp"
-            app:autoSizeMinTextSize="30dp"
+            app:autoSizeMinTextSize="10dp"
             app:autoSizeStepGranularity="1dp"
             app:autoSizeTextType="uniform"/>
 
@@ -46,7 +46,7 @@
             android:textColor="@color/black"
             android:maxLines="6"
             app:autoSizeMaxTextSize="80dp"
-            app:autoSizeMinTextSize="20dp"
+            app:autoSizeMinTextSize="10dp"
             app:autoSizeStepGranularity="1dp"
             app:autoSizeTextType="uniform" />
 
