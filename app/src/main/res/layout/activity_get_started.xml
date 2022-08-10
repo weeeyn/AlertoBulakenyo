@@ -48,7 +48,7 @@
             android:minLines="5"
             android:maxLines="10"
             app:autoSizeMaxTextSize="80dp"
-            app:autoSizeMinTextSize="20dp"
+            app:autoSizeMinTextSize="10dp"
             app:autoSizeStepGranularity="1dp"
             app:autoSizeTextType="uniform" />
 
