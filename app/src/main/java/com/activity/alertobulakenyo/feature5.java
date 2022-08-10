@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 public class feature5 extends AppCompatActivity {
 
-    TextView tvFeature5;
-    Button btnSkip, btnLogin;
+    TextView tvFeature5, tvSkip;
+    ImageButton btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,30 +23,42 @@ public class feature5 extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
         getSupportActionBar().hide(); // hide the title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS); //enable full screen
+                WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_feature5);
 
         tvFeature5 = (TextView) findViewById (R.id.tvFeature5);
-        btnSkip = (Button) findViewById (R.id.btnSkip);
-        btnLogin = (Button) findViewById (R.id.btnLogin);
+        tvSkip = (TextView) findViewById (R.id.tvSkip);
+        btnNext = (ImageButton) findViewById (R.id.btnNext);
 
         tvFeature5.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit");
 
-        btnSkip.setOnClickListener(new View.OnClickListener() {
+        tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(feature5.this, login.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
             }
         });
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(feature5.this, login.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left,
+                R.anim.slide_out_right);
     }
 }

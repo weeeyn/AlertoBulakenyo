@@ -13,8 +13,8 @@
         android:layout_height="301dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="-14dp"
-        android:layout_marginEnd="-15dp"
+        android:layout_marginTop="-30dp"
+        android:layout_marginEnd="-95dp"
         android:adjustViewBounds="true"
         android:src="@drawable/reg_top" />
 
@@ -23,61 +23,66 @@
         android:layout_height="360dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="-21dp"
+        android:layout_marginStart="-50dp"
         android:layout_marginEnd="-4dp"
-        android:layout_marginBottom="-125dp"
+        android:layout_marginBottom="-160dp"
         android:adjustViewBounds="true"
         android:src="@drawable/reg_bot" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_centerInParent="true"
         android:orientation="vertical"
         android:paddingHorizontal="30dp">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="70dp"
-            android:layout_marginBottom="20dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="30dp"
             android:fontFamily="@font/archivo_black"
             android:text="Complete your Information"
+            android:gravity="center"
             android:textAlignment="center"
             android:textColor="#003366"
-            android:textSize="50dp" />
+            android:maxLines="3"
+            app:autoSizeMaxTextSize="80dp"
+            app:autoSizeMinTextSize="35dp"
+            app:autoSizeStepGranularity="1dp"
+            app:autoSizeTextType="uniform" />
 
         <EditText
             android:id="@+id/etContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/edit_text"
             android:hint="Contact Number"
             android:paddingHorizontal="15dp"
             android:paddingVertical="10dp"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
-            android:textSize="25dp" />
+            android:textSize="18dp" />
 
         <EditText
             android:id="@+id/etHouseStreet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/edit_text"
             android:hint="House No. and Street Name"
             android:paddingHorizontal="15dp"
             android:paddingVertical="10dp"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
-            android:textSize="25dp" />
+            android:textSize="18dp" />
 
         <EditText
             android:id="@+id/etCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/edit_text"
             android:hint="City / Municipality"
             android:paddingHorizontal="15dp"
@@ -85,33 +90,33 @@
             android:spinnerMode="dropdown"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
-            android:textSize="25dp" />
+            android:textSize="18dp" />
 
         <EditText
             android:id="@+id/etBrgy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/edit_text"
             android:hint="Barangay"
             android:paddingHorizontal="15dp"
             android:paddingVertical="10dp"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
-            android:textSize="25dp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/etProvince"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/edit_text"
             android:paddingHorizontal="15dp"
             android:paddingVertical="10dp"
             android:text="Province: BULACAN"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
-            android:textSize="25dp" />
+            android:textSize="18dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -119,26 +124,26 @@
             android:paddingStart="10dp"
             android:text="Pin Your Location:"
             android:textColor="#8091A3"
-            android:textSize="20dp" />
+            android:textSize="16dp" />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="220dp"
             android:layout_marginVertical="10dp"
-            android:background="@drawable/edit_text"/>
+            android:background="@drawable/edit_text" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnDone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="80dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/rounded_button"
             android:padding="10dp"
             android:stateListAnimator="@null"
             android:text="Done"
             android:textColor="@color/white"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
     </LinearLayout>

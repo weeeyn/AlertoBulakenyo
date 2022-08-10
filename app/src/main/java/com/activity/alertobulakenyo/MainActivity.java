@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
                 // Start your app main activity
                 Intent i = new Intent(MainActivity.this, GetStarted.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
                 // close this activity
                 finish();
             }
