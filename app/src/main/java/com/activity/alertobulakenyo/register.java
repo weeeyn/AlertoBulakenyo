@@ -19,11 +19,11 @@ import org.w3c.dom.Text;
 public class register extends AppCompatActivity {
 
     EditText etRegFname, etRegLname, etRegUsername, etRegEmail, etRegPass, etRegConPass;
-    CheckBox cbAgree;
+    CheckBox cbAgree1, cbAgree2;
     Button btnSignup;
     TextView tvTerms, tvPrivacy, tvLogin;
 
-    int cb = 0;
+    int cb1 = 0, cb2 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,8 @@ public class register extends AppCompatActivity {
         etRegPass = (EditText) findViewById (R.id.etRegPass);
         etRegConPass = (EditText) findViewById (R.id.etRegConPass);
 
-        cbAgree = (CheckBox) findViewById (R.id.cbAgree);
+        cbAgree1 = (CheckBox) findViewById (R.id.cbAgree1);
+        cbAgree2 = (CheckBox) findViewById (R.id.cbAgree2);
         btnSignup = (Button) findViewById (R.id.btnSignup);
 
         tvTerms = (TextView) findViewById (R.id.tvTerms);
@@ -64,14 +65,26 @@ public class register extends AppCompatActivity {
             }
         });
 
-        cbAgree.setOnClickListener(new View.OnClickListener() {
+        cbAgree1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (cbAgree.isChecked()) {
-                    cb = 1;
+                if (cbAgree1.isChecked()) {
+                    cb1 = 1;
                 }
                 else {
-                    cb = 0;
+                    cb1 = 0;
+                }
+            }
+        });
+
+        cbAgree2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cbAgree2.isChecked()) {
+                    cb2 = 1;
+                }
+                else {
+                    cb2 = 0;
                 }
             }
         });
@@ -111,7 +124,7 @@ public class register extends AppCompatActivity {
                     return;
                 }
 
-                if (cb == 1)
+                if ((cb1 == 1) && (cb2 == 1) )
                 {
                     Intent intent = new Intent(register.this, login.class);
                     startActivity(intent);
@@ -119,7 +132,7 @@ public class register extends AppCompatActivity {
                     Toast.makeText(register.this, "You have successfully registered to Alerto Bulakenyo. You can now Log in.", Toast.LENGTH_LONG).show();
                 }
                 else {
-                    Toast.makeText(register.this, "Please agree to the Terms of Service and Privacy Policy.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(register.this, "Please read and agree to the Terms of Service and Privacy Policy.", Toast.LENGTH_LONG).show();
                 }
 
             }
