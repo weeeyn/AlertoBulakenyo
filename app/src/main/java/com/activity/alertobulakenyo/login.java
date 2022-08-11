@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,6 +22,7 @@ public class login extends AppCompatActivity {
     Button btnLogin;
     TextView tvForgotPass, tvSignup;
     ImageButton btnGoogle, btnFB, btnTwt;
+    boolean passwordVisible;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,36 @@ public class login extends AppCompatActivity {
         btnGoogle = (ImageButton) findViewById (R.id.btnGoogle);
         btnFB = (ImageButton) findViewById (R.id.btnFB);
         btnTwt = (ImageButton) findViewById (R.id.btnTwt);
+
+        //password visibility
+        etLoginPass.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int Right=2;
+                if(event.getAction()==MotionEvent.ACTION_UP){
+                    if(event.getRawX()>=etLoginPass.getRight()-etLoginPass.getCompoundDrawables()[Right].getBounds().width()){
+                        int selection=etLoginPass.getSelectionEnd();
+                        if(passwordVisible){
+                            //set drawable image here
+                            etLoginPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_baseline_visibility_off_24,0);
+                            //for hide password
+                            etLoginPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisible=false;
+                        } else {
+                            //set drawable image here
+                            etLoginPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_baseline_visibility_24,0);
+                            //for show password
+                            etLoginPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisible=true;
+                        }
+                        etLoginPass.setSelection(selection);
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,6 +140,8 @@ public class login extends AppCompatActivity {
                         R.anim.slide_out_left);
             }
         });
+
+
     }
 
     @Override
