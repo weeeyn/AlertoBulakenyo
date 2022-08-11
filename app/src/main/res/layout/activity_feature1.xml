@@ -107,9 +107,9 @@
                 android:id="@+id/tvSkip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="start"
                 android:paddingVertical="15dp"
                 android:paddingHorizontal="20dp"
-                android:layout_gravity="center"
                 android:text="Skip"
                 android:textSize="25dp"
                 android:textStyle="bold"
@@ -117,7 +117,7 @@
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btnNext"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:scaleType="fitEnd"
                 android:padding="10dp"

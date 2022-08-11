@@ -8,5 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="tab_indicator_gray"
+    <color name="tab_indicator">#FCC59F</color>
+    <color name="title">#FFFFFFFF</color>
+    <color name="description">#FF000000</color>
+
 </resources>
