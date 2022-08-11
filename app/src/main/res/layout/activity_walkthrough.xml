@@ -13,7 +13,7 @@
         android:id="@+id/screenViewPager"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_marginBottom="150dp">
+        android:layout_marginBottom="130dp">
 
     </androidx.viewpager.widget.ViewPager>
 
@@ -49,11 +49,13 @@
         android:id="@+id/tabIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="80dp"
+        app:tabIndicatorHeight="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:tabBackground="@drawable/indicator_selector">
+        app:tabBackground="@drawable/indicator_selector"
+        app:tabRippleColor="@null">
 
     </com.google.android.material.tabs.TabLayout>
 

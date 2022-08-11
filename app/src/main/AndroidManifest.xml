@@ -66,22 +66,7 @@
             android:name=".register"
             android:exported="false" />
         <activity
-            android:name=".feature5"
-            android:exported="false" />
-        <activity
-            android:name=".feature4"
-            android:exported="false" />
-        <activity
-            android:name=".feature3"
-            android:exported="false" />
-        <activity
-            android:name=".feature2"
-            android:exported="false" />
-        <activity
             android:name=".login"
-            android:exported="false" />
-        <activity
-            android:name=".feature1"
             android:exported="false" />
         <activity
             android:name=".GetStarted"

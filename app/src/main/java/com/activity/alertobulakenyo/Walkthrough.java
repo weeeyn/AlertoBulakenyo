@@ -3,9 +3,14 @@ package com.activity.alertobulakenyo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -17,6 +22,9 @@ public class Walkthrough extends AppCompatActivity {
     private ViewPager screenPager;
     WalkthroughViewPagerAdapter WalkthroughViewPagerAdapter;
     TabLayout tabIndicator;
+    TextView tvSkip;
+    ImageButton btnNext;
+    int position = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +37,8 @@ public class Walkthrough extends AppCompatActivity {
 
         setContentView(R.layout.activity_walkthrough);
 
+        tvSkip = (TextView) findViewById (R.id.tvSkip);
+        btnNext = (ImageButton) findViewById (R.id.btnNext);
         tabIndicator = findViewById(R.id.tabIndicator);
 
         List<ScreenItem> list = new ArrayList<>();
@@ -53,5 +63,45 @@ public class Walkthrough extends AppCompatActivity {
         screenPager.setAdapter(WalkthroughViewPagerAdapter);
 
         tabIndicator.setupWithViewPager(screenPager);
+
+        tvSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Walkthrough.this, login.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                position = screenPager.getCurrentItem();
+
+                if (position < list.size())
+                {
+                    position++;
+                    screenPager.setCurrentItem(position);
+                }
+
+                if (position == list.size())
+                {
+                    Intent intent = new Intent(Walkthrough.this, login.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right,
+                            R.anim.slide_out_left);
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left,
+                R.anim.slide_out_right);
     }
 }
