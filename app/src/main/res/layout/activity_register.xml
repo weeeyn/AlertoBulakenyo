@@ -67,7 +67,7 @@
             android:paddingVertical="10dp"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
-            android:textSize="15dp" />
+            android:textSize="18dp" />
 
         <EditText
             android:id="@+id/etRegLname"
@@ -80,7 +80,7 @@
             android:paddingVertical="10dp"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
-            android:textSize="15dp" />
+            android:textSize="18dp" />
 
         <EditText
             android:id="@+id/etRegUsername"
@@ -93,7 +93,7 @@
             android:paddingVertical="10dp"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
-            android:textSize="15dp" />
+            android:textSize="18dp" />
 
         <EditText
             android:id="@+id/etRegEmail"
@@ -106,7 +106,7 @@
             android:paddingVertical="10dp"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
-            android:textSize="15dp" />
+            android:textSize="18dp" />
 
         <EditText
             android:id="@+id/etRegPass"
@@ -120,7 +120,7 @@
             android:paddingVertical="10dp"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
-            android:textSize="15dp"
+            android:textSize="18dp"
             android:drawableRight="@drawable/ic_baseline_visibility_off_24"
             android:longClickable="false" />
 
@@ -136,7 +136,7 @@
             android:paddingVertical="10dp"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
-            android:textSize="15dp"
+            android:textSize="18dp"
             android:drawableRight="@drawable/ic_baseline_visibility_off_24"
             android:longClickable="false" />
 

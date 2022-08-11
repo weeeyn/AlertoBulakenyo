@@ -4,9 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -24,8 +28,20 @@ public class WalkthroughViewPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService()
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layoutScreen = inflater.inflate(R.layout.layout_screen, null);
 
+        ImageView imgSlide = layoutScreen.findViewById(R.id.imgWT);
+        TextView title = layoutScreen.findViewById(R.id.tvWTtitle);
+        TextView description = layoutScreen.findViewById(R.id.tvWTdescription);
+
+        imgSlide.setImageResource(listScreen.get(position).getScreenImg());
+        title.setText(listScreen.get(position).getTitle());
+        description.setText(listScreen.get(position).getDescription());
+
+        container.addView(layoutScreen);
+
+        return layoutScreen;
     }
 
     @Override
