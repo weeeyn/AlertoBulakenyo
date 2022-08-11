@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -22,7 +25,7 @@ public class register extends AppCompatActivity {
     CheckBox cbAgree1, cbAgree2;
     Button btnSignup;
     TextView tvTerms, tvPrivacy, tvLogin;
-
+    boolean passwordVisible;
     int cb1 = 0, cb2 = 0;
 
     @Override
@@ -50,6 +53,67 @@ public class register extends AppCompatActivity {
         tvTerms = (TextView) findViewById (R.id.tvTerms);
         tvPrivacy = (TextView) findViewById (R.id.tvPrivacy);
         tvLogin = (TextView) findViewById (R.id.tvLogin);
+
+        //password visibility
+        etRegPass.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int Right=2;
+                if(event.getAction()==MotionEvent.ACTION_UP){
+                    if(event.getRawX()>=etRegPass.getRight()-etRegPass.getCompoundDrawables()[Right].getBounds().width()){
+                        int selection=etRegPass.getSelectionEnd();
+                        if(passwordVisible){
+                            //set drawable image here
+                            etRegPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_baseline_visibility_off_24,0);
+                            //for hide password
+                            etRegPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisible=false;
+                        } else {
+                            //set drawable image here
+                            etRegPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_baseline_visibility_24,0);
+                            //for show password
+                            etRegPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisible=true;
+                        }
+                        etRegPass.setSelection(selection);
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+        });
+
+        //confirm password visibility
+        etRegConPass.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int Right=2;
+                if(event.getAction()==MotionEvent.ACTION_UP){
+                    if(event.getRawX()>=etRegConPass.getRight()-etRegConPass.getCompoundDrawables()[Right].getBounds().width()){
+                        int selection=etRegConPass.getSelectionEnd();
+                        if(passwordVisible){
+                            //set drawable image here
+                            etRegConPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_baseline_visibility_off_24,0);
+                            //for hide password
+                            etRegConPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisible=false;
+                        } else {
+                            //set drawable image here
+                            etRegConPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_baseline_visibility_24,0);
+                            //for show password
+                            etRegConPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisible=true;
+                        }
+                        etRegConPass.setSelection(selection);
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+        });
+
 
         tvTerms.setOnClickListener(new View.OnClickListener() {
             @Override

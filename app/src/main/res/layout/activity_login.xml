@@ -80,8 +80,9 @@
             android:textColor="#003366"
             android:textColorHint="#8091A3"
             android:textSize="20dp"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="#003366" />
+            android:drawableRight="@drawable/ic_baseline_visibility_off_24"
+            android:longClickable="false"
+            />
 
         <TextView
             android:id="@+id/tvForgotPass"
