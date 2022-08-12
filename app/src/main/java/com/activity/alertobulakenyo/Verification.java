@@ -31,74 +31,12 @@ public class Verification extends AppCompatActivity {
 
         setContentView(R.layout.activity_verification);
 
-        etCode1 = (EditText) findViewById (R.id.etCode1);
-        etCode2 = (EditText) findViewById (R.id.etCode1);
-        etCode3 = (EditText) findViewById (R.id.etCode1);
-        etCode4 = (EditText) findViewById (R.id.etCode1);
-
         btnVerify = (Button) findViewById (R.id.btnVerify);
         btnBack = (Button) findViewById (R.id.btnBack);
         tvNote = (TextView) findViewById (R.id.tvNote);
 
-        etCode1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (etCode1.getText().toString().length() == 1)
-                {
-                    etCode2.requestFocus();
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        etCode2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (etCode2.getText().toString().length() == 1)
-                {
-                    etCode3.requestFocus();
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        etCode3.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (etCode3.getText().toString().length() == 1)
-                {
-                    etCode4.requestFocus();
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
 
 
         btnVerify.setOnClickListener(new View.OnClickListener() {
