@@ -81,7 +81,7 @@
             android:textColorHint="#8091A3"
             android:textSize="20dp"
             android:drawableRight="@drawable/ic_baseline_visibility_off_24"
-            android:longClickable="false"
+            android:clickable="true"
             />
 
         <TextView

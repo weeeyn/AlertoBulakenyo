@@ -122,7 +122,7 @@
             android:textColorHint="#8091A3"
             android:textSize="18dp"
             android:drawableRight="@drawable/ic_baseline_visibility_off_24"
-            android:longClickable="false" />
+            android:clickable="true" />
 
         <EditText
             android:id="@+id/etRegConPass"
@@ -138,7 +138,7 @@
             android:textColorHint="#8091A3"
             android:textSize="18dp"
             android:drawableRight="@drawable/ic_baseline_visibility_off_24"
-            android:longClickable="false" />
+            android:clickable="true" />
 
         <LinearLayout
             android:layout_width="match_parent"

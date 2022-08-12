@@ -21,9 +21,6 @@
             android:name=".Walkthrough"
             android:exported="false" />
         <activity
-            android:name=".FPusephone"
-            android:exported="false" />
-        <activity
             android:name=".ResetPass"
             android:exported="false" />
         <activity

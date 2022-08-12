@@ -18,7 +18,7 @@ public class ForgotPass extends AppCompatActivity {
 
     EditText etFPemail;
     Button btnSend, btnProceed, btnBack;
-    TextView tvResend, tvUsePhoneNum;
+    TextView tvResend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,6 @@ public class ForgotPass extends AppCompatActivity {
         btnBack = (Button) findViewById (R.id.btnBack);
 
         tvResend = (TextView) findViewById (R.id.tvResend);
-        tvUsePhoneNum = (TextView) findViewById (R.id.tvUsePhoneNum);
 
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,11 +51,12 @@ public class ForgotPass extends AppCompatActivity {
                 new CountDownTimer(59000, 1000) {
 
                     public void onTick(long millisUntilFinished) {
-                        tvResend.setText("Resend code in " + millisUntilFinished / 1000 + " seconds");
+                        tvResend.setText("Code sent. Resend code in " + millisUntilFinished / 1000 + " seconds.");
                     }
 
                     public void onFinish() {
-                        tvResend.setText("Resend code");
+                        tvResend.setText("Resend a new code");
+                        btnSend.setText("RESEND");
                     }
                 }.start();
             }
@@ -73,16 +73,6 @@ public class ForgotPass extends AppCompatActivity {
                 }
 
                 Intent intent = new Intent(ForgotPass.this, Verification.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        tvUsePhoneNum.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ForgotPass.this, FPusephone.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
