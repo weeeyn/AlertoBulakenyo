@@ -58,7 +58,8 @@
             android:paddingVertical="10dp"
             android:textColor="@color/black"
             android:textColorHint="#8091A3"
-            android:textSize="22dp" />
+            android:textSize="20dp"
+            android:maxLines="1"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSend"
