@@ -51,22 +51,22 @@ public class login extends AppCompatActivity {
         etLoginPass.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                final int Right=2;
-                if(event.getAction()==MotionEvent.ACTION_UP){
-                    if(event.getRawX()>=etLoginPass.getRight()-etLoginPass.getCompoundDrawables()[Right].getBounds().width()){
-                        int selection=etLoginPass.getSelectionEnd();
-                        if(passwordVisible){
+                final int Right = 2;
+                if (event.getAction() == MotionEvent.ACTION_UP){
+                    if (event.getRawX() >= etLoginPass.getRight()-etLoginPass.getCompoundDrawables()[Right].getBounds().width()){
+                        int selection = etLoginPass.getSelectionEnd();
+                        if (passwordVisible){
                             //set drawable image here
                             etLoginPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_baseline_visibility_off_24,0);
                             //for hide password
                             etLoginPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisible=false;
+                            passwordVisible = false;
                         } else {
                             //set drawable image here
                             etLoginPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_baseline_visibility_24,0);
                             //for show password
                             etLoginPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisible=true;
+                            passwordVisible = true;
                         }
                         etLoginPass.setSelection(selection);
                         return true;

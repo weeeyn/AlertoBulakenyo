@@ -17,7 +17,7 @@ import android.widget.TextView;
 public class ForgotPass extends AppCompatActivity {
 
     EditText etFPemail;
-    Button btnSend, btnProceed, btnBack;
+    Button btnSend, btnProceed, btnBackLogin;
     TextView tvResend;
 
     @Override
@@ -35,7 +35,7 @@ public class ForgotPass extends AppCompatActivity {
 
         btnSend = (Button) findViewById (R.id.btnSend);
         btnProceed = (Button) findViewById (R.id.btnProceed);
-        btnBack = (Button) findViewById (R.id.btnBack);
+        btnBackLogin = (Button) findViewById (R.id.btnBackLogin);
 
         tvResend = (TextView) findViewById (R.id.tvResend);
 
@@ -79,7 +79,7 @@ public class ForgotPass extends AppCompatActivity {
             }
         });
 
-        btnBack.setOnClickListener(new View.OnClickListener() {
+        btnBackLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ForgotPass.this, login.class);

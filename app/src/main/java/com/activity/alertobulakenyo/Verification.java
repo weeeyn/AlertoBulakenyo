@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 public class Verification extends AppCompatActivity {
 
-    EditText etCode1, etCode2, etCode3, etCode4;
-    Button btnVerify, btnBack;
+    EditText etCode;
+    Button btnVerify, btnBackFP;
     TextView tvNote;
 
     @Override
@@ -32,32 +32,14 @@ public class Verification extends AppCompatActivity {
         setContentView(R.layout.activity_verification);
 
         btnVerify = (Button) findViewById (R.id.btnVerify);
-        btnBack = (Button) findViewById (R.id.btnBack);
+        btnBackFP = (Button) findViewById (R.id.btnBackFP);
+        etCode = (EditText) findViewById (R.id.etCode);
         tvNote = (TextView) findViewById (R.id.tvNote);
-
-
-
-
 
         btnVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(etCode1.getText().toString()))
-                {
-                    tvNote.setText("There is an error in the verification code.");
-                    return;
-                }
-                if (TextUtils.isEmpty(etCode2.getText().toString()))
-                {
-                    tvNote.setText("There is an error in the verification code.");
-                    return;
-                }
-                if (TextUtils.isEmpty(etCode3.getText().toString()))
-                {
-                    tvNote.setText("There is an error in the verification code.");
-                    return;
-                }
-                if (TextUtils.isEmpty(etCode3.getText().toString()))
+                if (TextUtils.isEmpty(etCode.getText().toString()))
                 {
                     tvNote.setText("There is an error in the verification code.");
                     return;
@@ -70,10 +52,10 @@ public class Verification extends AppCompatActivity {
             }
         });
 
-        btnBack.setOnClickListener(new View.OnClickListener() {
+        btnBackFP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Verification.this, login.class);
+                Intent intent = new Intent(Verification.this, ForgotPass.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,
                         R.anim.slide_out_right);
@@ -86,6 +68,8 @@ public class Verification extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
+        Intent intent = new Intent(Verification.this, ForgotPass.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }
