@@ -15,8 +15,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class ResetPass extends AppCompatActivity {
 
+    TextInputLayout tilResetNewPass, tilResetConPass;
     EditText etResetNewPass, etResetConPass;
     Button btnResetPass, btnBackVer;
     boolean passwordVisible;
@@ -38,75 +41,17 @@ public class ResetPass extends AppCompatActivity {
         btnResetPass = (Button) findViewById (R.id.btnResetPass);
         btnBackVer = (Button) findViewById (R.id.btnBackVer);
 
-        etResetNewPass.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                final int Right = 2;
-                if (event.getAction() == MotionEvent.ACTION_UP){
-                    if (event.getRawX() >= etResetNewPass.getRight() - etResetNewPass.getCompoundDrawables()[Right].getBounds().width()){
-                        int selection = etResetNewPass.getSelectionEnd();
-                        if (passwordVisible){
-                            //set drawable image here
-                            etResetNewPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.reset_baseline_visibility_off_24,0);
-                            //for hide password
-                            etResetNewPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisible = false;
-                        } else {
-                            //set drawable image here
-                            etResetNewPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.reset_baseline_visibility_24,0);
-                            //for show password
-                            etResetNewPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisible = true;
-                        }
-                        etResetNewPass.setSelection(selection);
-                        return true;
-                    }
-                }
-
-                return false;
-            }
-        });
-
-        etResetConPass.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                final int Right = 2;
-                if (event.getAction() == MotionEvent.ACTION_UP){
-                    if (event.getRawX() >= etResetConPass.getRight() - etResetConPass.getCompoundDrawables()[Right].getBounds().width()){
-                        int selection = etResetConPass.getSelectionEnd();
-                        if (passwordVisible){
-                            //set drawable image here
-                            etResetConPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.reset_baseline_visibility_off_24,0);
-                            //for hide password
-                            etResetConPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisible = false;
-                        } else {
-                            //set drawable image here
-                            etResetConPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.reset_baseline_visibility_24,0);
-                            //for show password
-                            etResetConPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisible = true;
-                        }
-                        etResetConPass.setSelection(selection);
-                        return true;
-                    }
-                }
-
-                return false;
-            }
-        });
-
         btnResetPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (TextUtils.isEmpty(etResetNewPass.getText().toString()))
                 {
-                    etResetNewPass.setError("This cannot be empty!");
+                    etResetNewPass.setError("Required!");
                     return;
                 }
                 if (TextUtils.isEmpty(etResetConPass.getText().toString()))
                 {
-                    etResetConPass.setError("This cannot be empty!");
+                    etResetConPass.setError("Required!");
                     return;
                 }
 

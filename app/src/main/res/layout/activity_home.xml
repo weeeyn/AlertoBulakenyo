@@ -38,10 +38,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="false"
         android:layout_marginHorizontal="30dp"
-        android:gravity="center"
+        android:layout_marginTop="210dp"
+        android:layout_marginBottom="140dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -52,8 +53,7 @@
             <Button
                 android:id="@+id/btnAncmt"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_height="65dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button1"
@@ -61,7 +61,10 @@
                 android:paddingVertical="15dp"
                 android:stateListAnimator="@null"
                 android:text="Announcements"
-                android:textSize="28dp" />
+                app:autoSizeMaxTextSize="80dp"
+                app:autoSizeMinTextSize="10dp"
+                app:autoSizeStepGranularity="1dp"
+                app:autoSizeTextType="uniform" />
 
         </LinearLayout>
 
@@ -87,10 +90,10 @@
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:adjustViewBounds="true"
+                    android:background="#00000000"
                     android:contentDescription="DISASTER"
                     android:paddingBottom="20dp"
                     android:scaleType="fitCenter"
-                    android:background="#00000000"
                     android:src="@drawable/disaster" />
 
                 <TextView
@@ -121,10 +124,10 @@
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:adjustViewBounds="true"
+                    android:background="#00000000"
                     android:contentDescription="DISASTER"
                     android:paddingBottom="20dp"
                     android:scaleType="fitCenter"
-                    android:background="#00000000"
                     android:src="@drawable/map" />
 
                 <TextView
@@ -163,10 +166,10 @@
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:adjustViewBounds="true"
+                    android:background="#00000000"
                     android:contentDescription="PREPARE"
                     android:paddingBottom="20dp"
                     android:scaleType="fitCenter"
-                    android:background="#00000000"
                     android:src="@drawable/prepare" />
 
                 <TextView
@@ -198,10 +201,10 @@
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:adjustViewBounds="true"
+                    android:background="#00000000"
                     android:contentDescription="HOTLINES"
                     android:paddingBottom="20dp"
                     android:scaleType="fitCenter"
-                    android:background="#00000000"
                     android:src="@drawable/hotlines" />
 
                 <TextView

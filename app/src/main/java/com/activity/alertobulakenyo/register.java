@@ -17,10 +17,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import org.w3c.dom.Text;
 
 public class register extends AppCompatActivity {
 
+    TextInputLayout tilRegFname, tilRegLname, tilRegUsername, tilRegEmail, tilRegPass, tilRegConPass;
     EditText etRegFname, etRegLname, etRegUsername, etRegEmail, etRegPass, etRegConPass;
     CheckBox cbAgree1, cbAgree2;
     Button btnSignup;
@@ -39,6 +42,13 @@ public class register extends AppCompatActivity {
 
         setContentView(R.layout.activity_register);
 
+        tilRegFname = (TextInputLayout) findViewById (R.id.tilRegFname);
+        tilRegLname = (TextInputLayout) findViewById (R.id.tilRegLname);
+        tilRegUsername = (TextInputLayout) findViewById (R.id.tilRegUsername);
+        tilRegEmail = (TextInputLayout) findViewById (R.id.tilRegEmail);
+        tilRegPass = (TextInputLayout) findViewById (R.id.tilRegPass);
+        tilRegConPass = (TextInputLayout) findViewById (R.id.tilRegConPass);
+
         etRegFname = (EditText) findViewById (R.id.etRegFname);
         etRegLname = (EditText) findViewById (R.id.etRegLname);
         etRegUsername = (EditText) findViewById (R.id.etRegUsername);
@@ -53,67 +63,6 @@ public class register extends AppCompatActivity {
         tvTerms = (TextView) findViewById (R.id.tvTerms);
         tvPrivacy = (TextView) findViewById (R.id.tvPrivacy);
         tvLogin = (TextView) findViewById (R.id.tvLogin);
-
-        //password visibility
-        etRegPass.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                final int Right = 2;
-                if (event.getAction() == MotionEvent.ACTION_UP){
-                    if (event.getRawX() >= etRegPass.getRight() - etRegPass.getCompoundDrawables()[Right].getBounds().width()){
-                        int selection=etRegPass.getSelectionEnd();
-                        if (passwordVisible){
-                            //set drawable image here
-                            etRegPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.reg_baseline_visibility_off_24,0);
-                            //for hide password
-                            etRegPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisible = false;
-                        } else {
-                            //set drawable image here
-                            etRegPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.reg_baseline_visibility_24,0);
-                            //for show password
-                            etRegPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisible = true;
-                        }
-                        etRegPass.setSelection(selection);
-                        return true;
-                    }
-                }
-
-                return false;
-            }
-        });
-
-        //confirm password visibility
-        etRegConPass.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                final int Right = 2;
-                if (event.getAction() == MotionEvent.ACTION_UP){
-                    if (event.getRawX() >= etRegConPass.getRight() - etRegConPass.getCompoundDrawables()[Right].getBounds().width()){
-                        int selection = etRegConPass.getSelectionEnd();
-                        if (passwordVisible){
-                            //set drawable image here
-                            etRegConPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.reg_baseline_visibility_off_24,0);
-                            //for hide password
-                            etRegConPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisible = false;
-                        } else {
-                            //set drawable image here
-                            etRegConPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.reg_baseline_visibility_24,0);
-                            //for show password
-                            etRegConPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisible = true;
-                        }
-                        etRegConPass.setSelection(selection);
-                        return true;
-                    }
-                }
-
-                return false;
-            }
-        });
-
 
         tvTerms.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,32 +108,32 @@ public class register extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(etRegFname.getText().toString()))
                 {
-                    etRegFname.setError("This cannot be empty!");
+                    etRegFname.setError("Required!");
                     return;
                 }
                 if (TextUtils.isEmpty(etRegLname.getText().toString()))
                 {
-                    etRegLname.setError("This cannot be empty!");
+                    etRegLname.setError("Required!");
                     return;
                 }
                 if (TextUtils.isEmpty(etRegUsername.getText().toString()))
                 {
-                    etRegUsername.setError("This cannot be empty!");
+                    etRegUsername.setError("Required!");
                     return;
                 }
                 if (TextUtils.isEmpty(etRegEmail.getText().toString()))
                 {
-                    etRegEmail.setError("This cannot be empty!");
+                    etRegEmail.setError("Required!");
                     return;
                 }
                 if (TextUtils.isEmpty(etRegPass.getText().toString()))
                 {
-                    etRegPass.setError("This cannot be empty!");
+                    etRegPass.setError("Required!");
                     return;
                 }
                 if (TextUtils.isEmpty(etRegConPass.getText().toString()))
                 {
-                    etRegConPass.setError("This cannot be empty!");
+                    etRegConPass.setError("Required!");
                     return;
                 }
 

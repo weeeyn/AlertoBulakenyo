@@ -16,13 +16,18 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
+import org.w3c.dom.Text;
+
 public class login extends AppCompatActivity {
 
+    TextInputLayout tilLoginEmail, tilLoginPass;
     EditText etLoginEmail, etLoginPass;
     Button btnLogin;
     TextView tvForgotPass, tvSignup;
     ImageButton btnGoogle, btnFB, btnTwt;
-    boolean passwordVisible;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,48 +52,18 @@ public class login extends AppCompatActivity {
         btnFB = (ImageButton) findViewById (R.id.btnFB);
         btnTwt = (ImageButton) findViewById (R.id.btnTwt);
 
-        //password visibility
-        etLoginPass.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                final int Right = 2;
-                if (event.getAction() == MotionEvent.ACTION_UP){
-                    if (event.getRawX() >= etLoginPass.getRight()-etLoginPass.getCompoundDrawables()[Right].getBounds().width()){
-                        int selection = etLoginPass.getSelectionEnd();
-                        if (passwordVisible){
-                            //set drawable image here
-                            etLoginPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_baseline_visibility_off_24,0);
-                            //for hide password
-                            etLoginPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisible = false;
-                        } else {
-                            //set drawable image here
-                            etLoginPass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.ic_baseline_visibility_24,0);
-                            //for show password
-                            etLoginPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisible = true;
-                        }
-                        etLoginPass.setSelection(selection);
-                        return true;
-                    }
-                }
-
-                return false;
-            }
-        });
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (TextUtils.isEmpty(etLoginEmail.getText().toString()))
                 {
-                    etLoginEmail.setError("This cannot be empty!");
+                    etLoginEmail.setError("Required!");
                     return;
                 }
                 if (TextUtils.isEmpty(etLoginPass.getText().toString()))
                 {
-                    etLoginPass.setError("This cannot be empty!");
+                    etLoginPass.setError("Required!");
                     return;
                 }
 

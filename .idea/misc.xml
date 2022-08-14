@@ -3,14 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/code.xml" value="0.1865" />
+        <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/cursor_blue.xml" value="0.1865" />
+        <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/cursor_orange.xml" value="0.1865" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/dot_active.xml" value="0.1775" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/dots.xml" value="0.1775" />
+        <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/edit_text.xml" value="0.1355" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/edit_text2.xml" value="0.1775" />
+        <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/edit_text3.xml" value="0.1865" />
+        <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/error.xml" value="0.1865" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/ic_baseline_visibility_24.xml" value="0.1" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.1" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/indicator_default.xml" value="0.1775" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/indicator_selected.xml" value="0.1775" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/indicator_selector.xml" value="0.1775" />
+        <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/person.xml" value="0.1355" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/reg_baseline_visibility_24.xml" value="0.1775" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/reg_baseline_visibility_off_24.xml" value="0.1775" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/reset_baseline_visibility_24.xml" value="0.1775" />

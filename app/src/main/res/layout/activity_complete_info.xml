@@ -57,71 +57,130 @@
                 app:autoSizeStepGranularity="1dp"
                 app:autoSizeTextType="uniform" />
 
-            <EditText
-                android:id="@+id/etContact"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilContact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/edit_text"
                 android:hint="Contact Number"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="10dp"
-                android:textColor="#003366"
-                android:textColorHint="#8091A3"
-                android:textSize="18dp" />
+                android:textColorHint="#003366"
+                app:endIconMode="clear_text"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366"
+                app:startIconDrawable="@drawable/phone"
+                app:startIconTint="#003366">
 
-            <EditText
-                android:id="@+id/etHouseStreet"
+                <EditText
+                    android:id="@+id/etContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    android:inputType="number"
+                    android:textColor="#003366"
+                    android:textColorLink="#003366"
+                    android:textCursorDrawable="@drawable/cursor_blue"
+                    android:theme="@style/EditTextBlue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilHouse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/edit_text"
-                android:hint="House No. and Street Name"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="10dp"
-                android:textColor="#003366"
-                android:textColorHint="#8091A3"
-                android:textSize="18dp" />
+                android:hint="House Number and Street Name"
+                android:textColorHint="#003366"
+                app:endIconMode="clear_text"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366"
+                app:startIconDrawable="@drawable/house"
+                app:startIconTint="#003366">
 
-            <EditText
-                android:id="@+id/etCity"
+                <EditText
+                    android:id="@+id/etHouse"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    android:inputType="number"
+                    android:textColor="#003366"
+                    android:textColorLink="#003366"
+                    android:textCursorDrawable="@drawable/cursor_blue"
+                    android:theme="@style/EditTextBlue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/edit_text"
-                android:hint="City / Municipality"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="10dp"
-                android:spinnerMode="dropdown"
-                android:textColor="#003366"
-                android:textColorHint="#8091A3"
-                android:textSize="18dp" />
+                android:hint="City"
+                android:textColorHint="#003366"
+                app:endIconMode="clear_text"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366"
+                app:startIconDrawable="@drawable/place"
+                app:startIconTint="#003366">
 
-            <EditText
-                android:id="@+id/etBrgy"
+                <EditText
+                    android:id="@+id/etCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    android:inputType="number"
+                    android:textColor="#003366"
+                    android:textColorLink="#003366"
+                    android:textCursorDrawable="@drawable/cursor_blue"
+                    android:theme="@style/EditTextBlue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilBrgy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/edit_text"
                 android:hint="Barangay"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="10dp"
-                android:textColor="#003366"
-                android:textColorHint="#8091A3"
-                android:textSize="18dp" />
+                android:textColorHint="#003366"
+                app:endIconMode="clear_text"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366"
+                app:startIconDrawable="@drawable/place"
+                app:startIconTint="#003366">
 
-            <TextView
-                android:id="@+id/etProvince"
+                <EditText
+                    android:id="@+id/etBrgy"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    android:inputType="number"
+                    android:textColor="#003366"
+                    android:textColorLink="#003366"
+                    android:textCursorDrawable="@drawable/cursor_blue"
+                    android:theme="@style/EditTextBlue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilProvince"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/edit_text"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="10dp"
-                android:text="Province: BULACAN"
-                android:textColor="#003366"
-                android:textColorHint="#8091A3"
-                android:textSize="18dp" />
+                android:hint="Province"
+                android:textColorHint="#003366"
+                app:endIconMode="clear_text"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366"
+                app:startIconDrawable="@drawable/place"
+                app:startIconTint="#003366">
+
+                <EditText
+                    android:id="@+id/etProvince"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    android:inputType="number"
+                    android:textColor="#003366"
+                    android:textColorLink="#003366"
+                    android:textCursorDrawable="@drawable/cursor_blue"
+                    android:theme="@style/EditTextBlue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:layout_width="match_parent"

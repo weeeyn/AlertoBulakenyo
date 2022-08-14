@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:backgroundTint="#FFFFFF"
     tools:context=".login">
 
     <ImageView
@@ -54,35 +54,56 @@
             app:autoSizeStepGranularity="1dp"
             app:autoSizeTextType="uniform" />
 
-        <EditText
-            android:id="@+id/etLoginEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:background="@drawable/edit_text"
-            android:hint="Username or Email"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="10dp"
-            android:textColor="#003366"
-            android:textColorHint="#8091A3"
-            android:textSize="20dp" />
 
-        <EditText
-            android:id="@+id/etLoginPass"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilLoginEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/edit_text"
+            android:hint="Username or Email Address"
+            android:textColorHint="#003366"
+            app:endIconMode="clear_text"
+            app:endIconTint="#003366"
+            app:hintTextColor="#003366"
+            app:startIconDrawable="@drawable/person"
+            app:startIconTint="#003366">
+
+            <EditText
+                android:id="@+id/etLoginEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:inputType="textMultiLine"
+                android:textColor="#003366"
+                android:textColorLink="#003366"
+                android:textCursorDrawable="@drawable/cursor_blue"
+                android:theme="@style/EditTextBlue" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilLoginPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Password"
-            android:inputType="textPassword"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="10dp"
-            android:textColor="#003366"
-            android:textColorHint="#8091A3"
-            android:textSize="20dp"
-            android:drawableRight="@drawable/ic_baseline_visibility_off_24"
-            android:clickable="true"
-            />
+            android:textColorHint="#003366"
+            app:hintTextColor="#003366"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#003366"
+            app:startIconDrawable="@drawable/lock"
+            app:startIconTint="#003366">
+
+            <EditText
+                android:id="@+id/etLoginPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:autoSizeTextType="uniform"
+                android:textColor="#003366"
+                android:textColorLink="#003366"
+                android:textCursorDrawable="@drawable/cursor_blue"
+                android:theme="@style/EditTextBlue" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/tvForgotPass"
@@ -90,11 +111,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginBottom="30dp"
-            android:paddingStart="10dp"
             android:text="Forgot Password?"
-            android:textStyle="bold"
-            android:textColor="#8091A3"
-            android:textSize="15dp" />
+            android:textColor="#003366"
+            android:textSize="15dp"
+            android:textStyle="italic" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"

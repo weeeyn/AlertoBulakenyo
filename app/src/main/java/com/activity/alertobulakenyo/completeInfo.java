@@ -8,9 +8,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 public class completeInfo extends AppCompatActivity {
 
+    TextInputLayout tilContact, tilHouse, tilCity, tilBrgy, tilProvince;
+    EditText etContact, etHouse, etCity, etBrgy, etProvince;
     Button btnDone;
 
     @Override
@@ -23,6 +28,18 @@ public class completeInfo extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_complete_info);
+
+        tilContact = (TextInputLayout) findViewById (R.id.tilContact);
+        tilHouse = (TextInputLayout) findViewById (R.id.tilHouse);
+        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
+        tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
+        tilProvince = (TextInputLayout) findViewById (R.id.tilProvince);
+
+        etContact = (EditText) findViewById (R.id.etContact);
+        etHouse = (EditText) findViewById (R.id.etHouse);
+        etCity = (EditText) findViewById (R.id.etCity);
+        etBrgy = (EditText) findViewById (R.id.etBrgy);
+        etProvince = (EditText) findViewById (R.id.etProvince);
 
         btnDone = (Button) findViewById (R.id.btnDone);
 

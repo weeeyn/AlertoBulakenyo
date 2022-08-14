@@ -14,8 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class ForgotPass extends AppCompatActivity {
 
+    TextInputLayout tilFPemail;
     EditText etFPemail;
     Button btnSend, btnProceed, btnBackLogin;
     TextView tvResend;
@@ -31,6 +34,7 @@ public class ForgotPass extends AppCompatActivity {
 
         setContentView(R.layout.activity_forgot_pass);
 
+        tilFPemail = (TextInputLayout) findViewById (R.id.tilFPemail);
         etFPemail = (EditText) findViewById (R.id.etFPemail);
 
         btnSend = (Button) findViewById (R.id.btnSend);
@@ -44,7 +48,7 @@ public class ForgotPass extends AppCompatActivity {
             public void onClick(View v) {
                 if (TextUtils.isEmpty(etFPemail.getText().toString()))
                 {
-                    etFPemail.setError("This cannot be empty!");
+                    etFPemail.setError("Required!");
                     return;
                 }
 

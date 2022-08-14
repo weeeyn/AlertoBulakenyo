@@ -53,6 +53,33 @@
             android:layout_marginVertical="30dp"
             android:orientation="horizontal">
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Code"
+                android:textColorHint="#ff5003"
+                app:endIconMode="clear_text"
+                app:endIconTint="#ff5003"
+                app:hintTextColor="#ff5003"
+                app:startIconDrawable="@drawable/code"
+                app:startIconTint="#ff5003">
+
+                <EditText
+                    android:id="@+id/etCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autoSizeTextType="uniform"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:textSize="50dp"
+                    android:textColor="@color/black"
+                    android:textColorLink="#ff5003"
+                    android:textCursorDrawable="@drawable/cursor_orange"
+                    android:theme="@style/EditTextOrange" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
             <EditText
                 android:id="@+id/etCode"
                 android:layout_width="0dp"

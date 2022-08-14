@@ -14,8 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class Verification extends AppCompatActivity {
 
+    TextInputLayout tilCode;
     EditText etCode;
     Button btnVerify, btnBackFP;
     TextView tvNote;
@@ -33,6 +36,7 @@ public class Verification extends AppCompatActivity {
 
         btnVerify = (Button) findViewById (R.id.btnVerify);
         btnBackFP = (Button) findViewById (R.id.btnBackFP);
+        tilCode = (TextInputLayout) findViewById (R.id.tilCode);
         etCode = (EditText) findViewById (R.id.etCode);
         tvNote = (TextView) findViewById (R.id.tvNote);
 
