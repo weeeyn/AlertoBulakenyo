@@ -18,6 +18,8 @@
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/indicator_selected.xml" value="0.1775" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/indicator_selector.xml" value="0.1775" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/person.xml" value="0.1355" />
+        <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/phone.xml" value="0.1865" />
+        <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/phone2.xml" value="0.1865" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/reg_baseline_visibility_24.xml" value="0.1775" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/reg_baseline_visibility_off_24.xml" value="0.1775" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/reset_baseline_visibility_24.xml" value="0.1775" />
@@ -25,7 +27,7 @@
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/drawable/rounded_button2.xml" value="0.1775" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/layout/activity_ancmnt_body.xml" value="0.1277027027027027" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/layout/activity_announcement.xml" value="0.1277027027027027" />
-        <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/layout/activity_complete_info.xml" value="0.1277027027027027" />
+        <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/layout/activity_complete_info.xml" value="0.22" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/layout/activity_disaster.xml" value="0.1277027027027027" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/layout/activity_feature1.xml" value="0.1277027027027027" />
         <entry key="..\:/REYN/AlertoBulakenyo/app/src/main/res/layout/activity_feature2.xml" value="0.1277027027027027" />
