@@ -288,7 +288,7 @@
                 android:textColor="#4D657F"
                 android:textStyle="bold"
                 app:autoSizeMaxTextSize="25dp"
-                app:autoSizeMinTextSize="12dp"
+                app:autoSizeMinTextSize="10dp"
                 app:autoSizeStepGranularity="1dp"
                 app:autoSizeTextType="uniform" />
 
