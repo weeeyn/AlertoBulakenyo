@@ -72,7 +72,7 @@ public class ForgotPass extends AppCompatActivity {
             public void onClick(View v) {
                 if (TextUtils.isEmpty(etFPemail.getText().toString()))
                 {
-                    etFPemail.setError("This cannot be empty!");
+                    etFPemail.setError("Required!");
                     return;
                 }
 
