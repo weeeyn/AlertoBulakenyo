@@ -19,8 +19,8 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class ResetPass extends AppCompatActivity {
 
-    TextInputLayout tilResetNewPass, tilResetConPass;
     EditText etResetNewPass, etResetConPass;
+    TextView tvPassNote;
     Button btnResetPass, btnBackVer;
     boolean passwordVisible;
 
@@ -38,6 +38,8 @@ public class ResetPass extends AppCompatActivity {
         etResetNewPass = (EditText) findViewById (R.id.etResetNewPass);
         etResetConPass = (EditText) findViewById (R.id.etResetConPass);
 
+        tvPassNote = (TextView) findViewById (R.id.tvPassNote);
+
         btnResetPass = (Button) findViewById (R.id.btnResetPass);
         btnBackVer = (Button) findViewById (R.id.btnBackVer);
 
@@ -46,12 +48,12 @@ public class ResetPass extends AppCompatActivity {
             public void onClick(View v) {
                 if (TextUtils.isEmpty(etResetNewPass.getText().toString()))
                 {
-                    etResetNewPass.setError("Required!");
+                    tvPassNote.setText("Please enter new password!");
                     return;
                 }
                 if (TextUtils.isEmpty(etResetConPass.getText().toString()))
                 {
-                    etResetConPass.setError("Required!");
+                    tvPassNote.setText("Please enter new password!");
                     return;
                 }
 
