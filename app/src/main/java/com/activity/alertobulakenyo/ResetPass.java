@@ -46,6 +46,9 @@ public class ResetPass extends AppCompatActivity {
         btnResetPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+            /*
+
                 if (TextUtils.isEmpty(etResetNewPass.getText().toString()))
                 {
                     tvPassNote.setText("Please enter new password!");
@@ -56,6 +59,8 @@ public class ResetPass extends AppCompatActivity {
                     tvPassNote.setText("Please enter new password!");
                     return;
                 }
+
+             */
 
                 Intent intent = new Intent(ResetPass.this, login.class);
                 startActivity(intent);

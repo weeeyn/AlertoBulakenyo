@@ -43,11 +43,17 @@ public class Verification extends AppCompatActivity {
         btnVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                /*
+
                 if (TextUtils.isEmpty(etCode.getText().toString()))
                 {
                     tvNote.setText("There is an error in the verification code.");
                     return;
                 }
+
+                 */
+
 
                 Intent intent = new Intent(Verification.this, ResetPass.class);
                 startActivity(intent);

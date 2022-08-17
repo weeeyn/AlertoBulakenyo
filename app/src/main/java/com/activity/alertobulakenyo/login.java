@@ -56,6 +56,8 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                /*
+
                 if (TextUtils.isEmpty(etLoginEmail.getText().toString()))
                 {
                     etLoginEmail.setError("Required!");
@@ -63,9 +65,11 @@ public class login extends AppCompatActivity {
                 }
                 if (TextUtils.isEmpty(etLoginPass.getText().toString()))
                 {
-                    etLoginPass.setError("Required!");
+
                     return;
                 }
+
+                 */
 
                 Intent intent = new Intent(login.this, completeInfo.class);
                 startActivity(intent);

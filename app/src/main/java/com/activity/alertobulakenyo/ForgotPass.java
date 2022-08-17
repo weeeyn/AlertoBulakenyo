@@ -70,11 +70,16 @@ public class ForgotPass extends AppCompatActivity {
         btnProceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                /*
+
                 if (TextUtils.isEmpty(etFPemail.getText().toString()))
                 {
                     etFPemail.setError("Required!");
                     return;
                 }
+
+                 */
 
                 Intent intent = new Intent(ForgotPass.this, Verification.class);
                 startActivity(intent);

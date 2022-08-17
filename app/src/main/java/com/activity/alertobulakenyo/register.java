@@ -106,6 +106,8 @@ public class register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                /*
+
                 if (TextUtils.isEmpty(etRegFname.getText().toString()))
                 {
                     etRegFname.setError("Required!");
@@ -136,6 +138,8 @@ public class register extends AppCompatActivity {
                     etRegConPass.setError("Required!");
                     return;
                 }
+
+                 */
 
                 if ((cb1 == 1) && (cb2 == 1) )
                 {
