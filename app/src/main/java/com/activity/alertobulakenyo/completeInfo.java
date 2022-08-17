@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -15,7 +16,8 @@ import com.google.android.material.textfield.TextInputLayout;
 public class completeInfo extends AppCompatActivity {
 
     TextInputLayout tilContact, tilHouse, tilCity, tilBrgy, tilProvince;
-    EditText etContact, etHouse, etCity, etBrgy, etProvince;
+    EditText etContact, etHouse;
+    AutoCompleteTextView actCity, actBrgy, actProvince;
     Button btnDone;
 
     @Override
@@ -37,9 +39,10 @@ public class completeInfo extends AppCompatActivity {
 
         etContact = (EditText) findViewById (R.id.etContact);
         etHouse = (EditText) findViewById (R.id.etHouse);
-        etCity = (EditText) findViewById (R.id.etCity);
-        etBrgy = (EditText) findViewById (R.id.etBrgy);
-        etProvince = (EditText) findViewById (R.id.etProvince);
+
+        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
+        actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
+        actProvince = (AutoCompleteTextView) findViewById (R.id.actProvince);
 
         btnDone = (Button) findViewById (R.id.btnDone);
 

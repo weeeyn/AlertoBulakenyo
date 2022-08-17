@@ -62,10 +62,20 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilRegFname"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="First Name"
                 android:textColorHint="#003366"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="clear_text"
                 app:endIconTint="#003366"
                 app:hintTextColor="#003366"
@@ -79,17 +89,26 @@
                     android:autoSizeTextType="uniform"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
-                    android:textCursorDrawable="@drawable/cursor_blue"
-                    android:theme="@style/EditTextBlue" />
+                    android:textCursorDrawable="@drawable/cursor_blue" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilRegLname"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Last Name"
                 android:textColorHint="#003366"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="clear_text"
                 app:endIconTint="#003366"
                 app:hintTextColor="#003366"
@@ -103,17 +122,26 @@
                     android:autoSizeTextType="uniform"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
-                    android:textCursorDrawable="@drawable/cursor_blue"
-                    android:theme="@style/EditTextBlue" />
+                    android:textCursorDrawable="@drawable/cursor_blue" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilRegUsername"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Preferred Username"
                 android:textColorHint="#003366"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="clear_text"
                 app:endIconTint="#003366"
                 app:hintTextColor="#003366"
@@ -127,17 +155,26 @@
                     android:autoSizeTextType="uniform"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
-                    android:textCursorDrawable="@drawable/cursor_blue"
-                    android:theme="@style/EditTextBlue" />
+                    android:textCursorDrawable="@drawable/cursor_blue" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilRegEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email Address"
                 android:textColorHint="#003366"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="clear_text"
                 app:endIconTint="#003366"
                 app:hintTextColor="#003366"
@@ -151,18 +188,27 @@
                     android:autoSizeTextType="uniform"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
-                    android:textCursorDrawable="@drawable/cursor_blue"
-                    android:theme="@style/EditTextBlue" />
+                    android:textCursorDrawable="@drawable/cursor_blue" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilRegPass"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:textColorHint="#003366"
                 app:hintTextColor="#003366"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#003366"
                 app:startIconDrawable="@drawable/lock"
@@ -176,17 +222,27 @@
                     android:inputType="textPassword"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
-                    android:textCursorDrawable="@drawable/cursor_blue"
-                    android:theme="@style/EditTextBlue" />
+                    android:textCursorDrawable="@drawable/cursor_blue" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilRegConPass"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:hint="Confirm Password"
                 android:textColorHint="#003366"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
                 app:hintTextColor="#003366"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#003366"
@@ -201,8 +257,7 @@
                     android:inputType="textPassword"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
-                    android:textCursorDrawable="@drawable/cursor_blue"
-                    android:theme="@style/EditTextBlue" />
+                    android:textCursorDrawable="@drawable/cursor_blue" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -214,7 +269,7 @@
                 <CheckBox
                     android:id="@+id/cbAgree1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:buttonTint="#ff5003" />
 
                 <TextView
@@ -243,7 +298,7 @@
                 <CheckBox
                     android:id="@+id/cbAgree2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:buttonTint="#ff5003" />
 
                 <TextView

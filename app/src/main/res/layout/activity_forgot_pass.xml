@@ -48,11 +48,21 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilFPemail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:hint="Email Address"
             android:textColorHint="#ff5003"
+            app:boxBackgroundColor="#FFFFFF"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="4dp"
+            app:boxCornerRadiusBottomStart="4dp"
+            app:boxCornerRadiusTopEnd="4dp"
+            app:boxCornerRadiusTopStart="4dp"
+            app:boxStrokeColor="#ff5003"
+            app:boxStrokeWidth="1dp"
+            app:boxStrokeWidthFocused="2dp"
             app:endIconMode="clear_text"
             app:endIconTint="#ff5003"
             app:hintTextColor="#ff5003"
@@ -67,8 +77,7 @@
                 android:inputType="textMultiLine"
                 android:textColor="@color/black"
                 android:textColorLink="#ff5003"
-                android:textCursorDrawable="@drawable/cursor_orange"
-                android:theme="@style/EditTextOrange" />
+                android:textCursorDrawable="@drawable/cursor_orange" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

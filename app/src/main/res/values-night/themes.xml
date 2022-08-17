@@ -1,17 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.AlertoBulakenyo" parent="Theme.AppCompat">
+    <style name="Theme.AlertoBulakenyo" parent="Theme.MaterialComponents.DayNight">
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowTranslucentStatus">true</item>
     </style>
 
-    <style name="EditTextBlue" parent="Theme.AppCompat" >
+    <style name="EditTextBlue" parent="Theme.MaterialComponents.DayNight" >
         <item name="colorControlNormal">#003366</item>
         <item name="colorControlActivated">#003366</item>
         <item name="colorControlHighlight">#003366</item>
     </style>
 
-    <style name="EditTextOrange" parent="Theme.AppCompat" >
+    <style name="EditTextOrange" parent="Theme.MaterialComponents.DayNight" >
         <item name="colorControlNormal">#ff5003</item>
         <item name="colorControlActivated">#ff5003</item>
         <item name="colorControlHighlight">#ff5003</item>
