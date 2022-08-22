@@ -14,9 +14,6 @@ import android.widget.ImageView;
 
 public class Home extends AppCompatActivity {
 
-    Button btnAncmt;
-    ImageButton imgDisaster, imgMap, imgPrepare, imgHotlines;
-    CardView cardProfile, cardSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,82 +25,6 @@ public class Home extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_home);
-
-        btnAncmt = (Button) findViewById (R.id.btnAncmt);
-
-        imgDisaster = (ImageButton) findViewById (R.id.imgDisaster);
-        imgMap = (ImageButton) findViewById (R.id.imgMap);
-        imgPrepare = (ImageButton) findViewById (R.id.imgPrepare);
-        imgHotlines = (ImageButton) findViewById (R.id.imgHotlines);
-
-        cardProfile = (CardView) findViewById (R.id.cardProfile);
-        cardSettings = (CardView) findViewById (R.id.cardSettings);
-
-        btnAncmt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, Announcement.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        imgDisaster.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, Disaster.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        imgMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, Map.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        imgPrepare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, Prepare.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        imgHotlines.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, Hotlines.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        cardProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, Profile.class);
-                startActivity(intent);
-            }
-        });
-
-        cardSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this, Settings.class);
-                startActivity(intent);
-            }
-        });
 
     }
 

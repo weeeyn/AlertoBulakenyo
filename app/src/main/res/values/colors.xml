@@ -12,5 +12,7 @@
     <color name="title">#FFFFFFFF</color>
     <color name="description">#FF000000</color>
 
+    <color name="tab_bg">#002347</color>
+    <color name="tab_selected">#236ca7</color>
 
 </resources>

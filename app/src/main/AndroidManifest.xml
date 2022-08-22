@@ -30,9 +30,6 @@
             android:name=".ForgotPass"
             android:exported="false" />
         <activity
-            android:name=".Settings"
-            android:exported="false" />
-        <activity
             android:name=".Hotlines"
             android:exported="false" />
         <activity
@@ -40,9 +37,6 @@
             android:exported="false" />
         <activity
             android:name=".Disaster"
-            android:exported="false" />
-        <activity
-            android:name=".Profile"
             android:exported="false" />
         <activity
             android:name=".sample"
