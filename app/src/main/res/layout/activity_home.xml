@@ -8,67 +8,9 @@
     android:background="@color/white"
     tools:context=".Home">
 
-    <ImageView
-        android:id="@+id/bgOrange"
+    <include
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:background="#ff5003" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_marginTop="30dp"
-        android:foregroundGravity="center"
-        android:src="@drawable/homelogo" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="83dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        android:background="#BDD3E5"
-        android:paddingTop="30dp" />
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        app:tabIndicatorHeight="0dp"
-        app:tabBackground="@color/tab_bg"
-        app:tabTextColor="@color/white"
-        app:tabSelectedTextColor="@drawable/tab_selector"
-        app:tabIconTint="@drawable/tab_selector">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:icon="@drawable/home"
-            android:text="Home" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:icon="@drawable/profile"
-            android:text="PROFILE" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabSettings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:icon="@drawable/settings"
-            android:text="SETTINGS" />
-
-    </com.google.android.material.tabs.TabLayout>
-
-
-
-
-
-
-
-
+        layout="@layout/content_home_tab" />
 
 </RelativeLayout>

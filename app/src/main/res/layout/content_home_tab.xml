@@ -6,9 +6,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="85dp"/>
+        android:layout_marginBottom="85dp"
+        android:background="@color/white"/>
+
+    <ImageView
+    android:id="@+id/bgOrange"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="#ff5003" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:src="@drawable/homelogo"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="30dp" />
+
 
     <ImageView
         android:layout_width="match_parent"
