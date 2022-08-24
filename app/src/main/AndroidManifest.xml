@@ -63,7 +63,7 @@
             android:name=".GetStarted"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".HomeNav"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

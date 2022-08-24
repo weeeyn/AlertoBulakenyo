@@ -29,7 +29,7 @@ public class Prepare extends AppCompatActivity {
         btnBackHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Prepare.this, Home.class);
+                Intent intent = new Intent(Prepare.this, HomeNav.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,
                         R.anim.slide_out_right);
@@ -41,7 +41,7 @@ public class Prepare extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
-        Intent intent = new Intent(Prepare.this, Home.class);
+        Intent intent = new Intent(Prepare.this, HomeNav.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
