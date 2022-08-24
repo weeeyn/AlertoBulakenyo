@@ -7,27 +7,18 @@
     android:background="@color/white"
     tools:context=".Home_Frag">
 
-        <ImageView
-            android:id="@+id/bgOrange"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:background="#ff5003" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:src="@drawable/homelogo"
-            android:layout_marginTop="30dp"/>
-
-
-
-
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ImageView
+        android:id="@+id/bgOrange"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:text="Home Frag" />
+        android:layout_height="180dp"
+        android:background="#ff5003" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:src="@drawable/homelogo"
+        android:layout_marginTop="30dp"/>
 
 </RelativeLayout>
