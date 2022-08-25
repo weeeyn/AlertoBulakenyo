@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Map_Frag">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#ff5003" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        android:paddingTop="40dp">
+
+        <ImageButton
+            android:id="@+id/btnBackHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#ff5003"
+            android:src="@drawable/back" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="8"
+            android:background="@drawable/edit_text1"
+            android:backgroundTint="#FFFFFF"
+            android:gravity="center"
+            android:hint="Search location here..."
+            android:maxLines="1"
+            android:paddingHorizontal="15dp"
+            android:textAlignment="textStart"
+            android:textColor="#003366"
+            android:textColorHint="#8091A3"
+            android:autoSizeMaxTextSize="50dp"
+            android:autoSizeMinTextSize="10dp"
+            android:autoSizeStepGranularity="1dp"
+            android:autoSizeTextType="uniform" />
+
+        <ImageButton
+            android:id="@+id/btnSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#ff5003"
+            android:scaleType="fitCenter"
+            android:src="@drawable/loc_search" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="Map Frag" />
+
+</RelativeLayout>

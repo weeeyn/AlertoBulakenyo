@@ -8,72 +8,23 @@
     android:background="@color/white"
     tools:context=".Map">
 
-    <ImageView
+    <FrameLayout
+        android:id="@+id/fragMapContainer"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#ff5003" />
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav" />
 
-    <ImageView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/mapNav"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="65dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        android:background="#BDD3E5"
-        android:paddingTop="30dp" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="135dp"
-        android:layout_alignParentBottom="true"
-        android:background="#002347"
-        android:paddingTop="30dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="10dp"
-        android:orientation="horizontal"
-        android:paddingTop="40dp">
-
-        <ImageButton
-            android:id="@+id/btnBackHome"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#ff5003"
-            android:src="@drawable/back" />
-
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="5dp"
-            android:layout_weight="8"
-            android:background="@color/white"
-            android:backgroundTint="#FFFFFF"
-            android:gravity="center"
-            android:hint="Search location here..."
-            android:maxLines="1"
-            android:paddingHorizontal="15dp"
-            android:textAlignment="textStart"
-            android:textColor="#003366"
-            android:textColorHint="#8091A3"
-            app:autoSizeMaxTextSize="50dp"
-            app:autoSizeMinTextSize="10dp"
-            app:autoSizeStepGranularity="1dp"
-            app:autoSizeTextType="uniform" />
-
-        <ImageButton
-            android:id="@+id/btnBackHome"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:background="#ff5003"
-            android:scaleType="fitCenter"
-            android:src="@drawable/loc_search" />
-
-    </LinearLayout>
+        android:background="@color/tab_bg"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/tab_selector"
+        app:itemRippleColor="@null"
+        app:itemTextColor="@drawable/tab_selector"
+        app:labelVisibilityMode="labeled"
+        app:menu="@layout/map_menu" />
 
 </RelativeLayout>
