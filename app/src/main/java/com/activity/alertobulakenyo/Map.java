@@ -27,14 +27,14 @@ public class Map extends AppCompatActivity {
 
         setContentView(R.layout.activity_map);
 
-        mapNav = (BottomNavigationView) findViewById (R.id.bottomNav);
+        mapNav = (BottomNavigationView) findViewById (R.id.mapNav);
 
         mapNav.setOnNavigationItemSelectedListener(navListener);
 
         // as soon as the application opens the first
         // fragment should be shown to the user
         // in this case it is algorithm fragment
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragContainer, new Map_Frag()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragMapContainer, new Map_Frag()).commit();
 
     }
 
@@ -57,7 +57,7 @@ public class Map extends AppCompatActivity {
         // It will help to replace the
         // one fragment to other.
         if (selectedFragment != null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragContainer, selectedFragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragMapContainer, selectedFragment).commit();
         }
         return true;
     };
