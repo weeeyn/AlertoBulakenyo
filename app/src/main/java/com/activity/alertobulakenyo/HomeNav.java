@@ -6,8 +6,10 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabItem;
@@ -16,6 +18,7 @@ import com.google.android.material.tabs.TabLayout;
 public class HomeNav extends AppCompatActivity {
 
     BottomNavigationView bottomNav;
+    int k = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +71,17 @@ public class HomeNav extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        finishAffinity();
-        finish();
+        Log.e("My Tags", "onBackPressed");
+        k++;
+        if (k == 1)
+        {
+            Toast.makeText(HomeNav.this, "Please press again to exit.", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            finishAffinity();
+            finish();
+        }
+
     }
 }
