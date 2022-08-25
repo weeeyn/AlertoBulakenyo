@@ -4,6 +4,6 @@
 
     <item android:drawable="@color/white" android:color="@color/tab_selected" android:state_selected="true" />
 
-    <item android:drawable="@color/black" android:color="@color/white"  />
+    <item android:drawable="@color/white" android:color="@color/white"  />
 
 </selector>

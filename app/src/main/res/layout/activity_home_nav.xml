@@ -12,19 +12,19 @@
         android:id="@+id/fragContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNav"/>
+        android:layout_above="@id/bottomNav" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         android:layout_alignParentBottom="true"
         android:background="@color/tab_bg"
-        app:itemIconTint="@drawable/tab_selector"
-        app:itemTextColor="@drawable/tab_selector"
-        app:menu="@layout/bottom_menu"
-        app:itemRippleColor="@null"
         app:itemIconSize="30dp"
-        />
+        app:itemIconTint="@drawable/tab_selector"
+        app:itemRippleColor="@null"
+        app:itemTextColor="@drawable/tab_selector"
+        app:labelVisibilityMode="labeled"
+        app:menu="@layout/bottom_menu" />
 
 </RelativeLayout>

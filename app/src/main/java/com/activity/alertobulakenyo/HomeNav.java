@@ -48,6 +48,9 @@ public class HomeNav extends AppCompatActivity {
         if (itemId == R.id.home) {
             selectedFragment = new Home_Frag();
         }
+        else if (itemId == R.id.announcement) {
+            selectedFragment = new Announcement_Frag();
+        }
         else if (itemId == R.id.profile) {
             selectedFragment = new Profile_Frag();
         }
