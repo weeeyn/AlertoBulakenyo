@@ -1,6 +1,7 @@
 package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +10,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class Map extends AppCompatActivity {
 
-    ImageButton btnBackHome;
+    BottomNavigationView mapNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,18 +27,40 @@ public class Map extends AppCompatActivity {
 
         setContentView(R.layout.activity_map);
 
-        btnBackHome = (ImageButton) findViewById (R.id.btnBackHome);
+        mapNav = (BottomNavigationView) findViewById (R.id.bottomNav);
 
-        btnBackHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Map.this, HomeNav.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
+        mapNav.setOnNavigationItemSelectedListener(navListener);
+
+        // as soon as the application opens the first
+        // fragment should be shown to the user
+        // in this case it is algorithm fragment
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragContainer, new Map_Frag()).commit();
+
     }
+
+    private final BottomNavigationView.OnNavigationItemSelectedListener navListener = item -> {
+        // By using switch we can easily get
+        // the selected fragment
+        // by using there id.
+        Fragment selectedFragment = null;
+        int itemId = item.getItemId();
+
+        if (itemId == R.id.map) {
+            selectedFragment = new Map_Frag();
+        }
+        else if (itemId == R.id.evac) {
+            selectedFragment = new Evacuation_Frag();
+        }
+        else if (itemId == R.id.saved) {
+            selectedFragment = new Saved_Frag();
+        }
+        // It will help to replace the
+        // one fragment to other.
+        if (selectedFragment != null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragContainer, selectedFragment).commit();
+        }
+        return true;
+    };
 
     @Override
     public void onBackPressed()
