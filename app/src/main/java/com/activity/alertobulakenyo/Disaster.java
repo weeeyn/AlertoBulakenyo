@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 public class Disaster extends AppCompatActivity {
 
     ImageButton btnBackHome;
+    ImageButton imgEarthquake, imgFire, imgFlood, imgLandslide, imgTsunami, imgTyphoon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,13 @@ public class Disaster extends AppCompatActivity {
         setContentView(R.layout.activity_disaster);
 
         btnBackHome = (ImageButton) findViewById (R.id.btnBackHome);
+
+        imgEarthquake = (ImageButton) findViewById (R.id.imgEarthquake);
+        imgFire = (ImageButton) findViewById (R.id.imgFire);
+        imgFlood = (ImageButton) findViewById (R.id.imgFlood);
+        imgLandslide = (ImageButton) findViewById (R.id.imgLandslide);
+        imgTsunami = (ImageButton) findViewById (R.id.imgTsunami);
+        imgTyphoon = (ImageButton) findViewById (R.id.imgTyphoon);
 
         btnBackHome.setOnClickListener(new View.OnClickListener() {
             @Override

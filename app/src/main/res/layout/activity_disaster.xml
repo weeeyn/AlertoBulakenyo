@@ -51,8 +51,95 @@
         android:layout_height="match_parent"
         android:layout_marginTop="100dp">
 
-
-
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/imgEarthquake"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginEnd="10dp"
+                android:background="#FFFFFFFF"
+                android:scaleType="fitCenter"
+                android:src="@drawable/earthquake" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/imgFire"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginStart="10dp"
+                android:background="#FFFFFFFF"
+                android:scaleType="fitCenter"
+                android:src="@drawable/fire" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/imgFlood"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginEnd="10dp"
+                android:background="#FFFFFFFF"
+                android:scaleType="fitCenter"
+                android:src="@drawable/flood" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/imgLandslide"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginStart="10dp"
+                android:background="#FFFFFFFF"
+                android:scaleType="fitCenter"
+                android:src="@drawable/landslide" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/imgTsunami"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginEnd="10dp"
+                android:background="#FFFFFFFF"
+                android:scaleType="fitCenter"
+                android:src="@drawable/tsunami" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/imgTyphoon"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_marginStart="10dp"
+                android:background="#FFFFFFFF"
+                android:scaleType="fitCenter"
+                android:src="@drawable/typhoon" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
