@@ -70,7 +70,7 @@
                 android:id="@+id/imgEarthquake"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="5dp"
                 android:background="#FFFFFFFF"
                 android:scaleType="fitCenter"
                 android:src="@drawable/earthquake" />
@@ -79,7 +79,7 @@
                 android:id="@+id/imgFire"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="5dp"
                 android:background="#FFFFFFFF"
                 android:scaleType="fitCenter"
                 android:src="@drawable/fire" />
@@ -97,7 +97,7 @@
                 android:id="@+id/imgFlood"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="5dp"
                 android:background="#FFFFFFFF"
                 android:scaleType="fitCenter"
                 android:src="@drawable/flood" />
@@ -106,7 +106,7 @@
                 android:id="@+id/imgLandslide"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="5dp"
                 android:background="#FFFFFFFF"
                 android:scaleType="fitCenter"
                 android:src="@drawable/landslide" />
@@ -124,7 +124,7 @@
                 android:id="@+id/imgTsunami"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="5dp"
                 android:background="#FFFFFFFF"
                 android:scaleType="fitCenter"
                 android:src="@drawable/tsunami" />
@@ -133,7 +133,7 @@
                 android:id="@+id/imgTyphoon"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="5dp"
                 android:background="#FFFFFFFF"
                 android:scaleType="fitCenter"
                 android:src="@drawable/typhoon" />
