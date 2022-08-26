@@ -18,6 +18,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".Typhoon"
+            android:exported="false" />
+        <activity
+            android:name=".Tsunami"
+            android:exported="false" />
+        <activity
+            android:name=".Landslide"
+            android:exported="false" />
+        <activity
+            android:name=".Flood"
+            android:exported="false" />
+        <activity
+            android:name=".Fire"
+            android:exported="false" />
+        <activity
+            android:name=".Earthquake"
+            android:exported="false" />
+        <activity
             android:name=".Walkthrough"
             android:exported="false" />
         <activity
