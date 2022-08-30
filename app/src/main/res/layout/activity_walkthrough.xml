@@ -6,18 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f98c40"
+    android:paddingTop="40dp"
     tools:context=".Walkthrough">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="40dp" >
+        android:layout_gravity="center"  >
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/screenViewPager"
             android:layout_width="match_parent"
-            android:layout_height="600dp">
-        </androidx.viewpager.widget.ViewPager>
+            android:layout_height="590dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"></androidx.viewpager.widget.ViewPager>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabIndicator"
