@@ -22,6 +22,7 @@
             android:src="@drawable/top" />
 
         <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/imgTop"
@@ -206,7 +207,7 @@
                 android:id="@+id/tvSignup"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/archivo_black"
                 android:gravity="center"
                 android:maxLines="1"
@@ -217,13 +218,12 @@
                 app:autoSizeStepGranularity="1dp"
                 app:autoSizeTextType="uniform" />
 
-
         </LinearLayout>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@id/linear"
             android:adjustViewBounds="true"
             android:src="@drawable/bot" />
 

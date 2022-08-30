@@ -1,42 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#ff8e00"
     tools:context=".register">
 
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="301dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="-30dp"
-        android:layout_marginEnd="-55dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/reg_top" />
-
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="360dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-50dp"
-        android:layout_marginEnd="-4dp"
-        android:layout_marginBottom="-150dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/reg_bot" />
-
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="10dp">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/imgTop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:src="@drawable/top" />
+
+        <LinearLayout
+            android:id="@+id/linearReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgTop"
             android:orientation="vertical"
             android:paddingHorizontal="30dp">
 
@@ -199,7 +188,6 @@
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:textColorHint="#003366"
-                app:hintTextColor="#003366"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomEnd="4dp"
@@ -209,6 +197,7 @@
                 app:boxStrokeColor="#003366"
                 app:boxStrokeWidth="1dp"
                 app:boxStrokeWidthFocused="2dp"
+                app:hintTextColor="#003366"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="#003366"
                 app:startIconDrawable="@drawable/lock"
@@ -352,6 +341,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:layout_marginHorizontal="50dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/archivo_black"
                 android:gravity="center"
                 android:maxLines="1"
@@ -364,7 +354,13 @@
 
         </LinearLayout>
 
-    </ScrollView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearReg"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bot" />
 
+    </RelativeLayout>
 
-</RelativeLayout>
+</ScrollView>

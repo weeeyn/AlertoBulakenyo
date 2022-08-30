@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="40dp"
-        android:paddingBottom="40dp">
+        android:paddingBottom="50dp">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/screenViewPager"
@@ -42,7 +42,6 @@
             app:layout_constraintTop_toBottomOf="@+id/tabIndicator"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="20dp"
-            android:layout_marginBottom="20dp"
             android:paddingHorizontal="20dp"
             android:paddingVertical="24dp"
             android:text="Skip"
@@ -57,7 +56,6 @@
             app:layout_constraintTop_toBottomOf="@+id/tabIndicator"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="30dp"
             android:background="#00000000"
             android:padding="10dp"
             android:scaleType="fitStart"
