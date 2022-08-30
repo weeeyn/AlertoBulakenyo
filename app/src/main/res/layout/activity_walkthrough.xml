@@ -11,14 +11,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:paddingTop="40dp" >
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/screenViewPager"
             android:layout_width="match_parent"
-            android:layout_height="650dp">
+            android:layout_height="600dp">
         </androidx.viewpager.widget.ViewPager>
-
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabIndicator"
