@@ -8,7 +8,6 @@
     android:background="#ff8e00"
     tools:context=".login">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
