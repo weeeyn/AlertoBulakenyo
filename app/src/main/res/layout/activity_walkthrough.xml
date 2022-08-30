@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f98c40"
-    android:paddingTop="40dp"
     android:paddingBottom="20dp"
     tools:context=".Walkthrough">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/screenViewPager"
