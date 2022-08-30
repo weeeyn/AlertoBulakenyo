@@ -6,12 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f98c40"
+    android:paddingTop="40dp"
+    android:paddingBottom="20dp"
     tools:context=".Walkthrough">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="40dp" >
+        android:layout_height="match_parent">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/screenViewPager"
@@ -56,7 +57,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tabIndicator"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="30dp"
             android:background="#00000000"
             android:padding="10dp"
             android:scaleType="fitStart"
