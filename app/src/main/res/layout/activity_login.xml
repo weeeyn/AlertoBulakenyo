@@ -11,15 +11,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/white"
-        android:layout_gravity="center">
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:id="@+id/imgTop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:adjustViewBounds="true"
             android:src="@drawable/top" />
 
@@ -230,7 +229,6 @@
             android:src="@drawable/bot" />
 
     </RelativeLayout>
-
 
 
 </ScrollView>
