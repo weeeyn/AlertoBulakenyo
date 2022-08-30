@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.activity.alertobulakenyo">
+    package="com.activity.alertobulakenyo" >
 
     <supports-screens
         android:anyDensity="true"
@@ -16,24 +16,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AlertoBulakenyo">
+        android:theme="@style/Theme.AlertoBulakenyo" >
         <activity
-            android:name=".Typhoon"
-            android:exported="false" />
-        <activity
-            android:name=".Tsunami"
-            android:exported="false" />
-        <activity
-            android:name=".Landslide"
-            android:exported="false" />
-        <activity
-            android:name=".Flood"
-            android:exported="false" />
-        <activity
-            android:name=".Fire"
-            android:exported="false" />
-        <activity
-            android:name=".Earthquake"
+            android:name=".DisasterType"
             android:exported="false" />
         <activity
             android:name=".Walkthrough"
@@ -85,7 +70,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
