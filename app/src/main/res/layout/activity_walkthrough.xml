@@ -16,9 +16,7 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/screenViewPager"
             android:layout_width="match_parent"
-            android:layout_height="590dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp">
+            android:layout_height="590dp">
 
         </androidx.viewpager.widget.ViewPager>
 

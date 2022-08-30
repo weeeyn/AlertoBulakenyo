@@ -47,7 +47,7 @@
             android:autoSizeTextType="uniform"
             android:maxLines="6"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
