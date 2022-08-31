@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff8e00"
+    android:background="@color/white"
+    android:paddingTop="35dp"
     tools:context=".login">
 
     <RelativeLayout
@@ -14,18 +15,10 @@
         android:background="@color/white"
         android:layout_marginTop="10dp">
 
-        <ImageView
-            android:id="@+id/imgTop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:src="@drawable/top" />
-
         <LinearLayout
             android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imgTop"
             android:orientation="vertical"
             android:paddingHorizontal="30dp">
 
@@ -33,7 +26,7 @@
                 android:layout_width="224dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:src="@drawable/logo2" />
 
             <TextView
@@ -207,7 +200,7 @@
                 android:id="@+id/tvSignup"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="40dp"
                 android:fontFamily="@font/archivo_black"
                 android:gravity="center"
                 android:maxLines="1"
@@ -219,13 +212,6 @@
                 app:autoSizeTextType="uniform" />
 
         </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/linear"
-            android:adjustViewBounds="true"
-            android:src="@drawable/bot" />
 
     </RelativeLayout>
 

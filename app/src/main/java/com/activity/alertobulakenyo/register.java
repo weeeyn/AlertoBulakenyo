@@ -141,7 +141,7 @@ public class register extends AppCompatActivity {
 
                  */
 
-                if ((cb1 == 1) && (cb2 == 1) )
+                if ( (cb1 == 1) && (cb2 == 1) )
                 {
                     Intent intent = new Intent(register.this, login.class);
                     startActivity(intent);
@@ -170,6 +170,8 @@ public class register extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
+        Intent intent = new Intent(register.this, login.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }
