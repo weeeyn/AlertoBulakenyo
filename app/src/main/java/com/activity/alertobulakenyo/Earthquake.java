@@ -10,10 +10,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
-public class DisasterType extends AppCompatActivity {
+public class Earthquake extends AppCompatActivity {
 
     ImageButton btnBackDisaster;
-    RecyclerView rvDisType;
+    RecyclerView rvDisEQ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,16 +24,16 @@ public class DisasterType extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_disaster_type);
+        setContentView(R.layout.activity_earthquake);
 
         btnBackDisaster = (ImageButton) findViewById (R.id.btnBackDisaster);
 
-        rvDisType = (RecyclerView) findViewById (R.id.rvDisType);
+        rvDisEQ = (RecyclerView) findViewById (R.id.rvDisEQ);
 
         btnBackDisaster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DisasterType.this, Disaster.class);
+                Intent intent = new Intent(Earthquake.this, Disaster.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,
                         R.anim.slide_out_right);
@@ -46,7 +46,7 @@ public class DisasterType extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
-        Intent intent = new Intent(DisasterType.this, Disaster.class);
+        Intent intent = new Intent(Earthquake.this, Disaster.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);

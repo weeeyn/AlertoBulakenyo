@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".DisasterType">
+    tools:context=".Landslide">
 
     <ImageView
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
             android:fontFamily="@font/archivo_black"
             android:gravity="center"
             android:maxLines="1"
-            android:text="disaster type"
+            android:text="LANDSLIDE"
             android:textAlignment="center"
             android:textColor="@color/white"
             app:autoSizeMaxTextSize="100dp"
@@ -52,7 +52,7 @@
         android:layout_marginTop="100dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvDisType"
+            android:id="@+id/rvDisLS"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="20dp"

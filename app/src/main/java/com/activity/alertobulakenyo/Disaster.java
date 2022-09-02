@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class Disaster extends AppCompatActivity {
 
@@ -47,7 +48,7 @@ public class Disaster extends AppCompatActivity {
         imgEarthquake.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Disaster.this, DisasterType.class);
+                Intent intent = new Intent(Disaster.this, Earthquake.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -57,7 +58,7 @@ public class Disaster extends AppCompatActivity {
         imgFire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Disaster.this, DisasterType.class);
+                Intent intent = new Intent(Disaster.this, Fire.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -67,7 +68,7 @@ public class Disaster extends AppCompatActivity {
         imgFlood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Disaster.this, DisasterType.class);
+                Intent intent = new Intent(Disaster.this, Flood.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -77,7 +78,7 @@ public class Disaster extends AppCompatActivity {
         imgLandslide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Disaster.this, DisasterType.class);
+                Intent intent = new Intent(Disaster.this, Landslide.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -87,7 +88,7 @@ public class Disaster extends AppCompatActivity {
         imgTsunami.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Disaster.this, DisasterType.class);
+                Intent intent = new Intent(Disaster.this, Tsunami.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -97,7 +98,7 @@ public class Disaster extends AppCompatActivity {
         imgTyphoon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Disaster.this, DisasterType.class);
+                Intent intent = new Intent(Disaster.this, Typhoon.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
