@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".EQ_info">
+    tools:context=".Ty_info">
 
     <ImageView
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
         android:paddingTop="40dp">
 
         <ImageButton
-            android:id="@+id/btnBackEQ"
+            android:id="@+id/btnBackTy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -36,7 +36,7 @@
             android:fontFamily="@font/archivo_black"
             android:gravity="center"
             android:maxLines="1"
-            android:text="EARTHQUAKE"
+            android:text="TYPHOON"
             android:textAlignment="center"
             android:textColor="@color/white"
             app:autoSizeMaxTextSize="100dp"
@@ -88,17 +88,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:text="Magnitude:"
+                android:text="Typhoon Name:"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/tvMag"
+                android:id="@+id/tvTyName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:text="X.X"
+                android:text="XXX"
+                android:textColor="@color/dark_blue"
+                android:textSize="50dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Signal Number:"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tvSignal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="XXX"
                 android:textColor="@color/dark_blue"
                 android:textSize="50dp"
                 android:textStyle="bold" />
@@ -118,7 +137,7 @@
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="City, Province"
+                android:text="Brgy. City, Province"
                 android:textColor="@color/dark_blue"
                 android:textStyle="bold"
                 app:autoSizeMaxTextSize="40dp"

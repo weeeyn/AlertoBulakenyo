@@ -18,6 +18,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".Ty_info"
+            android:exported="false" />
+        <activity
+            android:name=".Tsu_info"
+            android:exported="false" />
+        <activity
+            android:name=".LS_info"
+            android:exported="false" />
+        <activity
+            android:name=".Flood_info"
+            android:exported="false" />
+        <activity
+            android:name=".Fire_info"
+            android:exported="false" />
+        <activity
             android:name=".EQ_info"
             android:exported="false" />
         <activity
