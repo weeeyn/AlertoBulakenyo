@@ -73,10 +73,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".sample"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ancmntBody"
             android:exported="false"
             android:screenOrientation="portrait" />
