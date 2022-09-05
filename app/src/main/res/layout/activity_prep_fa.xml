@@ -101,27 +101,164 @@
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp">
 
-                <TableRow>
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA01"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa01" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:padding="5dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
                         android:gravity="center"
+                        android:text="Adhesive bandages"
                         android:textColor="@color/black"
-                        android:text="UserId" />
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA02"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa02" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:padding="5dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
                         android:gravity="center"
+                        android:text="Antihistamine / Allergy medications"
                         android:textColor="@color/black"
-                        android:text="User Name" />
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA03"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa03" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Antibacterial wipes"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA04"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa04" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Antiseptic wipes"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA05"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa05" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Aspirin and/or Ibuprofen"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
                 </TableRow>
 
             </TableLayout>
