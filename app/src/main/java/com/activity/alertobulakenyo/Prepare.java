@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 public class Prepare extends AppCompatActivity {
 
     ImageButton btnBackHome, imgFirstAid, imgSurvival;
-    Button btnEQ, btnFire, btnFlood, btnLS, btnTsu, btnTy;
+    Button btnEQ, btnFire, btnFlood, btnLS, btnTy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,6 @@ public class Prepare extends AppCompatActivity {
         btnFire = (Button) findViewById (R.id.btnFire);
         btnFlood = (Button) findViewById (R.id.btnFlood);
         btnLS = (Button) findViewById (R.id.btnLS);
-        btnTsu = (Button) findViewById (R.id.btnTsu);
         btnTy = (Button) findViewById (R.id.btnTy);
 
         btnBackHome.setOnClickListener(new View.OnClickListener() {

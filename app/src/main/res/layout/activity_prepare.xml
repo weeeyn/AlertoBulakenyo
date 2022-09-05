@@ -158,20 +158,6 @@
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnTsu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/button1"
-                android:padding="10dp"
-                android:stateListAnimator="@null"
-                android:text="TSUNAMI"
-                android:textColor="@color/white"
-                android:textSize="23dp"
-                android:textStyle="bold" />
-
-            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnTy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

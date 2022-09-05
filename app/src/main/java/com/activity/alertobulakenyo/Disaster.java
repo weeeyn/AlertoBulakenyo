@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class Disaster extends AppCompatActivity {
 
     ImageButton btnBackHome;
-    ImageButton imgEarthquake, imgFire, imgFlood, imgLandslide, imgTsunami, imgTyphoon;
+    ImageButton imgEarthquake, imgFire, imgFlood, imgLandslide, imgTyphoon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,6 @@ public class Disaster extends AppCompatActivity {
         imgFire = (ImageButton) findViewById (R.id.imgFire);
         imgFlood = (ImageButton) findViewById (R.id.imgFlood);
         imgLandslide = (ImageButton) findViewById (R.id.imgLandslide);
-        imgTsunami = (ImageButton) findViewById (R.id.imgTsunami);
         imgTyphoon = (ImageButton) findViewById (R.id.imgTyphoon);
 
         btnBackHome.setOnClickListener(new View.OnClickListener() {
@@ -79,16 +78,6 @@ public class Disaster extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Disaster.this, Landslide.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        imgTsunami.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Disaster.this, Tsunami.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

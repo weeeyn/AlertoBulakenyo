@@ -27,7 +27,6 @@ public class login extends AppCompatActivity {
     EditText etLoginEmail, etLoginPass;
     Button btnLogin;
     TextView tvForgotPass, tvSignup;
-    ImageButton btnGoogle, btnFB, btnTwt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +46,6 @@ public class login extends AppCompatActivity {
 
         tvForgotPass = (TextView) findViewById (R.id.tvForgotPass);
         tvSignup = (TextView) findViewById (R.id.tvSignup);
-
-        btnGoogle = (ImageButton) findViewById (R.id.btnGoogle);
-        btnFB = (ImageButton) findViewById (R.id.btnFB);
-        btnTwt = (ImageButton) findViewById (R.id.btnTwt);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,27 +80,6 @@ public class login extends AppCompatActivity {
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
-            }
-        });
-
-        btnGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        btnFB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        btnTwt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
             }
         });
 
