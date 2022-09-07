@@ -36,7 +36,7 @@
             android:fontFamily="@font/archivo_black"
             android:gravity="center"
             android:maxLines="1"
-            android:text="FIRST AID"
+            android:text="FIRST AID KIT"
             android:textAlignment="center"
             android:textColor="@color/white"
             app:autoSizeMaxTextSize="100dp"

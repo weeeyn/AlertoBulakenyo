@@ -1,9 +1,641 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Prep_SK">
+    android:background="@color/white"
+    tools:context=".Prep_FA">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#003366" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="5dp"
+        android:orientation="horizontal"
+        android:paddingTop="40dp">
+
+        <ImageButton
+            android:id="@+id/btnBackPrep"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#003366"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="9"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="SURVIVAL KIT"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:autoSizeMaxTextSize="100dp"
+            app:autoSizeMinTextSize="30dp"
+            app:autoSizeStepGranularity="1dp"
+            app:autoSizeTextType="uniform" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/fa" />
+
+            <TextView
+                android:id="@+id/tvIntro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:justificationMode="inter_word"
+                android:text="Intro"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tvCont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:justificationMode="inter_word"
+                android:text="Contents"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/archivo_black"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="CONTENTS"
+                android:textColor="#ff5003"
+                app:autoSizeMaxTextSize="40dp"
+                app:autoSizeMinTextSize="20dp"
+                app:autoSizeStepGranularity="1dp"
+                app:autoSizeTextType="uniform" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp">
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK01"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk01" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Batteries"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK02"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk02" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Blanket"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK03"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk03" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Extra Cash"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK04"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk04" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Extra clothes"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK05"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk05" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Face masks"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK06"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk06" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="First aid kit"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK07"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk07" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Flashlight"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK08"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk08" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Food and water"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK09"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk09" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Important Documents"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK10"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk10" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Map of the area"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK11"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk11" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Matches / lighter"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK12"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk12" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Multi-purpose tools"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK13"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk13" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Personal hygiene kit"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK14"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk14" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Power bank"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK15"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk15" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Radio"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK16"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk16" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Towels"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgSK17"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/sk17" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Whistles"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
