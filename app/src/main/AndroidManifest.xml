@@ -18,6 +18,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".Prep_Ty"
+            android:exported="false" />
+        <activity
+            android:name=".Prep_LS"
+            android:exported="false" />
+        <activity
+            android:name=".Prep_Flood"
+            android:exported="false" />
+        <activity
+            android:name=".Prep_Fire"
+            android:exported="false" />
+        <activity
+            android:name=".Prep_EQ"
+            android:exported="false" />
+        <activity
             android:name=".Prep_SK"
             android:exported="false" />
         <activity

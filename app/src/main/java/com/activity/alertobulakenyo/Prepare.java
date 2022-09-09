@@ -65,6 +65,56 @@ public class Prepare extends AppCompatActivity {
                         R.anim.slide_out_left);
             }
         });
+
+        btnEQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Prepare.this, Prep_EQ.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnFire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Prepare.this, Prep_Fire.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnFlood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Prepare.this, Prep_Flood.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnLS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Prepare.this, Prep_LS.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnTy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Prepare.this, Prep_Ty.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
     }
 
     @Override

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Prep_LS">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#003366" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="5dp"
+        android:orientation="horizontal"
+        android:paddingTop="40dp">
+
+        <ImageButton
+            android:id="@+id/btnBackPrep"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#003366"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="9"
+            android:paddingHorizontal="15dp"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="PREPAREDNESS"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:autoSizeMaxTextSize="100dp"
+            app:autoSizeMinTextSize="30dp"
+            app:autoSizeStepGranularity="1dp"
+            app:autoSizeTextType="uniform" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/flood_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/archivo_black"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="FLOOD"
+                android:textColor="#ff5003"
+                app:autoSizeMaxTextSize="40dp"
+                app:autoSizeMinTextSize="20dp"
+                app:autoSizeStepGranularity="1dp"
+                app:autoSizeTextType="uniform" />
+
+
+            <TextView
+                android:id="@+id/tvIntro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:justificationMode="inter_word"
+                android:text="Intro"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginVertical="15dp"
+                android:fontFamily="@font/archivo_black"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="HOW TO PREPARE FOR A FLOOD?"
+                android:textColor="#ff5003"
+                app:autoSizeMaxTextSize="40dp"
+                app:autoSizeMinTextSize="20dp"
+                app:autoSizeStepGranularity="1dp"
+                app:autoSizeTextType="uniform" />
+
+            <TextView
+                android:id="@+id/tvCont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:justificationMode="inter_word"
+                android:text="Contents"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:justificationMode="inter_word"
+                android:text="BEFORE A FLOOD"
+                android:textStyle="bold"
+                android:textColor="@color/dark_blue"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvBull01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:paddingStart="30dp"
+                android:justificationMode="inter_word"
+                android:text="bullets"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:justificationMode="inter_word"
+                android:text="DURING A FLOOD"
+                android:textStyle="bold"
+                android:textColor="@color/dark_blue"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvBull02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:paddingStart="30dp"
+                android:justificationMode="inter_word"
+                android:text="bullets"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:justificationMode="inter_word"
+                android:text="AFTER A FLOOD"
+                android:textStyle="bold"
+                android:textColor="@color/dark_blue"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvBull03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:paddingStart="30dp"
+                android:justificationMode="inter_word"
+                android:text="bullets"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="45dp"
+                android:justificationMode="inter_word"
+                android:text="Be prepared, and stay safe."
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
