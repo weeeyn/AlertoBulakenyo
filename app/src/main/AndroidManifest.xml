@@ -43,10 +43,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tsu_info"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".LS_info"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -68,10 +64,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Typhoon"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Tsunami"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

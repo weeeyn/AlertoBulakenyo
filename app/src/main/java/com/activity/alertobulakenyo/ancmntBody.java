@@ -11,8 +11,6 @@ import android.widget.ImageButton;
 
 public class ancmntBody extends AppCompatActivity {
 
-    ImageButton btnBackAncmnt;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,15 +21,12 @@ public class ancmntBody extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_ancmnt_body);
-
-        btnBackAncmnt = (ImageButton) findViewById (R.id.btnBackHome);
-
-        btnBackAncmnt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ancmntBody.this, Announcement.class);
-                startActivity(intent);
-            }
-        });
+    }
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left,
+                R.anim.slide_out_right);
     }
 }

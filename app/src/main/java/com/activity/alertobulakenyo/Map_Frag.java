@@ -17,8 +17,6 @@ import android.widget.ImageButton;
  */
 public class Map_Frag extends Fragment {
 
-    ImageButton btnBackHome;
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -65,17 +63,6 @@ public class Map_Frag extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_map, container, false);
 
-        btnBackHome = view.findViewById (R.id.btnBackHome);
-
-        btnBackHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), HomeNav.class);
-                startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
         return view;
     }

@@ -56,7 +56,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="45dp" />
 
     </ScrollView>
 
