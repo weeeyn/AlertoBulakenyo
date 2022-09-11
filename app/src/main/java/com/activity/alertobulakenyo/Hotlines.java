@@ -11,8 +11,6 @@ import android.widget.ImageButton;
 
 public class Hotlines extends AppCompatActivity {
 
-    ImageButton btnBackHome;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,18 +21,6 @@ public class Hotlines extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_hotlines);
-
-        btnBackHome = (ImageButton) findViewById (R.id.btnBackHome);
-
-        btnBackHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Hotlines.this, HomeNav.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
     }
 
     @Override

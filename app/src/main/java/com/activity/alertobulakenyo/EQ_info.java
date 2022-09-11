@@ -11,8 +11,6 @@ import android.widget.ImageButton;
 
 public class EQ_info extends AppCompatActivity {
 
-    ImageButton btnBackEQ;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,18 +21,6 @@ public class EQ_info extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_eq_info);
-
-        btnBackEQ = (ImageButton) findViewById (R.id.btnBackEQ);
-
-        btnBackEQ.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(EQ_info.this, Earthquake.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
     }
 
     @Override

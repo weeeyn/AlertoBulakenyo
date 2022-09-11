@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class Prep_Fire extends AppCompatActivity {
 
-    ImageButton btnBackPrep;
     TextView tvIntro, tvCont, tvBullet;
 
     @Override
@@ -26,21 +25,9 @@ public class Prep_Fire extends AppCompatActivity {
 
         setContentView(R.layout.activity_prep_fire);
 
-        btnBackPrep = (ImageButton) findViewById (R.id.btnBackPrep);
-
         tvIntro = (TextView) findViewById (R.id.tvIntro);
         tvCont = (TextView) findViewById (R.id.tvCont);
         tvBullet = (TextView) findViewById (R.id.tvBullet);
-
-        btnBackPrep.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Prep_Fire.this, Prepare.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
         tvIntro.setText("       Fires can start in many different ways. A fire can start by accident, by acts of nature, or even by arson. You can help keep your family and co-workers safe during a fire by making sure smoke alarms work and by practicing a fire escape plan.");
 

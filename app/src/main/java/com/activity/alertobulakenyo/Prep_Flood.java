@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class Prep_Flood extends AppCompatActivity {
 
-    ImageButton btnBackPrep;
     TextView tvIntro, tvCont, tvBull01, tvBull02, tvBull03;
 
     @Override
@@ -26,23 +25,11 @@ public class Prep_Flood extends AppCompatActivity {
 
         setContentView(R.layout.activity_prep_flood);
 
-        btnBackPrep = (ImageButton) findViewById (R.id.btnBackPrep);
-
         tvIntro = (TextView) findViewById (R.id.tvIntro);
         tvCont = (TextView) findViewById (R.id.tvCont);
         tvBull01 = (TextView) findViewById (R.id.tvBull01);
         tvBull02 = (TextView) findViewById (R.id.tvBull02);
         tvBull03 = (TextView) findViewById (R.id.tvBull03);
-
-        btnBackPrep.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Prep_Flood.this, Prepare.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
         tvIntro.setText("       A flood is an overflow of water (or rarely other fluids) that submerges land that is usually dry. In the sense of \"flowing water\", the word may also be applied to the inflow of the tide. Floods are an area of study of the discipline hydrology and are of significant concern in agriculture, civil engineering and public health. Human changes to the environment often increase the intensity and frequency of flooding, for example land use changes such as deforestation and removal of wetlands, changes in waterway course or flood controls such as with levees, and larger environmental issues such as climate change and sea level rise. In particular climate change's increased rainfall and extreme weather events increases the severity of other causes for flooding, resulting in more intense floods and increased flood risk.");
 

@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class Prep_LS extends AppCompatActivity {
 
-    ImageButton btnBackPrep;
     TextView tvIntro, tvCont, tvBull01, tvBull02, tvBull03;
 
     @Override
@@ -26,23 +25,11 @@ public class Prep_LS extends AppCompatActivity {
 
         setContentView(R.layout.activity_prep_ls);
 
-        btnBackPrep = (ImageButton) findViewById (R.id.btnBackPrep);
-
         tvIntro = (TextView) findViewById (R.id.tvIntro);
         tvCont = (TextView) findViewById (R.id.tvCont);
         tvBull01 = (TextView) findViewById (R.id.tvBull01);
         tvBull02 = (TextView) findViewById (R.id.tvBull02);
         tvBull03 = (TextView) findViewById (R.id.tvBull03);
-
-        btnBackPrep.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Prep_LS.this, Prepare.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
         tvIntro.setText("       ");
 

@@ -11,8 +11,6 @@ import android.widget.ImageButton;
 
 public class Ty_info extends AppCompatActivity {
 
-    ImageButton btnBackTy;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,18 +21,6 @@ public class Ty_info extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_ty_info);
-
-        btnBackTy = (ImageButton) findViewById (R.id.btnBackTy);
-
-        btnBackTy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Ty_info.this, Typhoon.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
     }
 
     @Override

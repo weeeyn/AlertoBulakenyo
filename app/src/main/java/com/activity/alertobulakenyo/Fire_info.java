@@ -11,8 +11,6 @@ import android.widget.ImageButton;
 
 public class Fire_info extends AppCompatActivity {
 
-    ImageButton btnBackFire;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,18 +21,6 @@ public class Fire_info extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_fire_info);
-
-        btnBackFire = (ImageButton) findViewById (R.id.btnBackFire);
-
-        btnBackFire.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Fire_info.this, Fire.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
     }
 
     @Override

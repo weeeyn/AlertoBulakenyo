@@ -12,7 +12,6 @@ import android.widget.ImageButton;
 
 public class Landslide extends AppCompatActivity {
 
-    ImageButton btnBackDisaster;
     RecyclerView rvDisLS;
 
     @Override
@@ -26,19 +25,7 @@ public class Landslide extends AppCompatActivity {
 
         setContentView(R.layout.activity_landslide);
 
-        btnBackDisaster = (ImageButton) findViewById (R.id.btnBackDisaster);
-
         rvDisLS = (RecyclerView) findViewById (R.id.rvDisLS);
-
-        btnBackDisaster.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Landslide.this, Disaster.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
     }
 

@@ -12,7 +12,6 @@ import android.widget.ImageButton;
 
 public class Flood extends AppCompatActivity {
 
-    ImageButton btnBackDisaster;
     RecyclerView rvDisFlood;
 
     @Override
@@ -26,19 +25,7 @@ public class Flood extends AppCompatActivity {
 
         setContentView(R.layout.activity_flood);
 
-        btnBackDisaster = (ImageButton) findViewById (R.id.btnBackDisaster);
-
         rvDisFlood = (RecyclerView) findViewById (R.id.rvDisFlood);
-
-        btnBackDisaster.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Flood.this, Disaster.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
     }
 

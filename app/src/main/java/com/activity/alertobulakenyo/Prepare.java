@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 
 public class Prepare extends AppCompatActivity {
 
-    ImageButton btnBackHome, imgFirstAid, imgSurvival;
+    ImageButton imgFirstAid, imgSurvival;
     Button btnEQ, btnFire, btnFlood, btnLS, btnTy;
 
     @Override
@@ -26,7 +26,6 @@ public class Prepare extends AppCompatActivity {
 
         setContentView(R.layout.activity_prepare);
 
-        btnBackHome = (ImageButton) findViewById (R.id.btnBackHome);
         imgFirstAid = (ImageButton) findViewById (R.id.imgFirstAid);
         imgSurvival = (ImageButton) findViewById (R.id.imgSurvival);
 
@@ -35,16 +34,6 @@ public class Prepare extends AppCompatActivity {
         btnFlood = (Button) findViewById (R.id.btnFlood);
         btnLS = (Button) findViewById (R.id.btnLS);
         btnTy = (Button) findViewById (R.id.btnTy);
-
-        btnBackHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Prepare.this, HomeNav.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
         imgFirstAid.setOnClickListener(new View.OnClickListener() {
             @Override

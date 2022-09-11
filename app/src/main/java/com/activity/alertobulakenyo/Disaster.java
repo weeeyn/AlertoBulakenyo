@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class Disaster extends AppCompatActivity {
 
-    ImageButton btnBackHome;
     ImageButton imgEarthquake, imgFire, imgFlood, imgLandslide, imgTyphoon;
 
     @Override
@@ -26,23 +25,11 @@ public class Disaster extends AppCompatActivity {
 
         setContentView(R.layout.activity_disaster);
 
-        btnBackHome = (ImageButton) findViewById (R.id.btnBackHome);
-
         imgEarthquake = (ImageButton) findViewById (R.id.imgEarthquake);
         imgFire = (ImageButton) findViewById (R.id.imgFire);
         imgFlood = (ImageButton) findViewById (R.id.imgFlood);
         imgLandslide = (ImageButton) findViewById (R.id.imgLandslide);
         imgTyphoon = (ImageButton) findViewById (R.id.imgTyphoon);
-
-        btnBackHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Disaster.this, HomeNav.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
         imgEarthquake.setOnClickListener(new View.OnClickListener() {
             @Override

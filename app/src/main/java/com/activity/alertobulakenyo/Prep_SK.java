@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class Prep_SK extends AppCompatActivity {
 
-    ImageButton btnBackPrep;
     TextView tvIntro, tvCont;
 
     @Override
@@ -25,21 +24,8 @@ public class Prep_SK extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_prep_sk);
-
-        btnBackPrep = (ImageButton) findViewById (R.id.btnBackPrep);
-
         tvIntro = (TextView) findViewById (R.id.tvIntro);
         tvCont = (TextView) findViewById (R.id.tvCont);
-
-        btnBackPrep.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Prep_SK.this, Prepare.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
         tvIntro.setText("     Survival Kit is a compact package of emergency equipment including food and other items that vary with climatic factors in the operational area for use by aircrew members who have descended in isolated or primitive territory.");
 

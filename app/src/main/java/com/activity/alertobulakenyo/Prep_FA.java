@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class Prep_FA extends AppCompatActivity {
 
-    ImageButton btnBackPrep;
     TextView tvIntro, tvCont;
 
     @Override
@@ -26,20 +25,8 @@ public class Prep_FA extends AppCompatActivity {
 
         setContentView(R.layout.activity_prep_fa);
 
-        btnBackPrep = (ImageButton) findViewById (R.id.btnBackPrep);
-
         tvIntro = (TextView) findViewById (R.id.tvIntro);
         tvCont = (TextView) findViewById (R.id.tvCont);
-
-        btnBackPrep.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Prep_FA.this, Prepare.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
         tvIntro.setText("     First aid supplies or first aid kits are collections of life saving equipment that are used by paramedic staff in cases of emergency to increase the life of a victim until a time when the injured can be transferred to a permanent hospital facility.\n");
 

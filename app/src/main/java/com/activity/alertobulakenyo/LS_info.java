@@ -11,8 +11,6 @@ import android.widget.ImageButton;
 
 public class LS_info extends AppCompatActivity {
 
-    ImageButton btnBackLS;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,18 +21,6 @@ public class LS_info extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_ls_info);
-
-        btnBackLS = (ImageButton) findViewById (R.id.btnBackLS);
-
-        btnBackLS.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LS_info.this, Landslide.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
     }
 
     @Override

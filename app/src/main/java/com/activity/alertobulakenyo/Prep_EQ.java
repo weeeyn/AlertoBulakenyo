@@ -11,8 +11,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class Prep_EQ extends AppCompatActivity {
-
-    ImageButton btnBackPrep;
     TextView tvIntro, tvCont, tvBull01, tvBull02, tvBull03, tvBull04, tvBull05, tvBull06;
 
     @Override
@@ -26,8 +24,6 @@ public class Prep_EQ extends AppCompatActivity {
 
         setContentView(R.layout.activity_prep_eq);
 
-        btnBackPrep = (ImageButton) findViewById (R.id.btnBackPrep);
-
         tvIntro = (TextView) findViewById (R.id.tvIntro);
         tvCont = (TextView) findViewById (R.id.tvCont);
         tvBull01 = (TextView) findViewById (R.id.tvBull01);
@@ -36,16 +32,6 @@ public class Prep_EQ extends AppCompatActivity {
         tvBull04 = (TextView) findViewById (R.id.tvBull04);
         tvBull05 = (TextView) findViewById (R.id.tvBull05);
         tvBull06 = (TextView) findViewById (R.id.tvBull06);
-
-        btnBackPrep.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Prep_EQ.this, Prepare.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
         tvIntro.setText("       Earthquake is any sudden shaking of the ground caused by the passage of seismic waves through Earth’s rocks. Seismic waves are produced when some form of energy stored in Earth’s crust is suddenly released, usually when masses of rock straining against one another suddenly fracture and “slip.” Earthquakes occur most often along geologic faults, narrow zones where rock masses move in relation to one another. The major fault lines of the world are located at the fringes of the huge tectonic plates that make up Earth’s crust.");
 

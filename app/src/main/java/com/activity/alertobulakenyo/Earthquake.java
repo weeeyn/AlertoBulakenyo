@@ -14,7 +14,6 @@ import android.widget.ImageButton;
 public class Earthquake extends AppCompatActivity {
 
     Button btnSamp;
-    ImageButton btnBackDisaster;
     RecyclerView rvDisEQ;
 
     @Override
@@ -28,20 +27,9 @@ public class Earthquake extends AppCompatActivity {
 
         setContentView(R.layout.activity_earthquake);
 
-        btnBackDisaster = (ImageButton) findViewById (R.id.btnBackDisaster);
         btnSamp = (Button) findViewById (R.id.btnSamp);
 
         rvDisEQ = (RecyclerView) findViewById (R.id.rvDisEQ);
-
-        btnBackDisaster.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Earthquake.this, Disaster.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
         btnSamp.setOnClickListener(new View.OnClickListener() {
             @Override

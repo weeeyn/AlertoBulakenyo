@@ -12,7 +12,6 @@ import android.widget.ImageButton;
 
 public class Typhoon extends AppCompatActivity {
 
-    ImageButton btnBackDisaster;
     RecyclerView rvDisTy;
 
     @Override
@@ -26,19 +25,7 @@ public class Typhoon extends AppCompatActivity {
 
         setContentView(R.layout.activity_typhoon);
 
-        btnBackDisaster = (ImageButton) findViewById (R.id.btnBackDisaster);
-
         rvDisTy = (RecyclerView) findViewById (R.id.rvDisTy);
-
-        btnBackDisaster.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Typhoon.this, Disaster.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
-            }
-        });
 
     }
 

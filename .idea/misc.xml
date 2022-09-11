@@ -56,15 +56,27 @@
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_announcement.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_disaster.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_earthquake.xml" value="0.1277027027027027" />
+        <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_eq_info.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_fire.xml" value="0.1277027027027027" />
+        <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_fire_info.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_flood.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_flood_info.xml" value="0.1277027027027027" />
+        <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_hotlines.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_landslide.xml" value="0.1277027027027027" />
+        <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_ls_info.xml" value="0.1277027027027027" />
+        <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_map.xml" value="0.1277027027027027" />
+        <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_prep_eq.xml" value="0.1277027027027027" />
+        <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_prep_fa.xml" value="0.1277027027027027" />
+        <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_prep_fire.xml" value="0.1277027027027027" />
+        <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_prep_flood.xml" value="0.1277027027027027" />
+        <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_prep_ls.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_prep_sk.xml" value="0.196875" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_prep_ty.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_prepare.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_privacy.xml" value="0.1277027027027027" />
+        <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_reset_pass.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_terms.xml" value="0.1277027027027027" />
+        <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_ty_info.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_typhoon.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/bottom_menu.xml" value="0.1277027027027027" />
         <entry key="..\:/Users/Rabaya_PC/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/card_ancmt.xml" value="0.196875" />
