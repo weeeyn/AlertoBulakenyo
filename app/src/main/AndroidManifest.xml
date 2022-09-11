@@ -18,26 +18,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
-            android:name=".Prep_Ty"
+            android:name=".Privacy"
             android:exported="false" />
+        <activity
+            android:name=".Terms"
+            android:exported="false" />
+        <activity
+            android:name=".AccountInfo"
+            android:exported="false" />
+        <activity
+            android:name=".Prep_Ty"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Prep_LS"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Prep_Flood"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Prep_Fire"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Prep_EQ"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Prep_SK"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Prep_FA"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Ty_info"
             android:exported="false"
@@ -112,10 +128,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Map"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Announcement"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
