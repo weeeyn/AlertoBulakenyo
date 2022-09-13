@@ -1,5 +1,6 @@
 package com.activity.alertobulakenyo;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -66,6 +67,26 @@ public class Profile_Frag extends Fragment {
 
         card_account = view.findViewById (R.id.card_account);
         card_contacts = view.findViewById (R.id.card_contacts);
+
+        card_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), AccountInfo.class);
+                startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        card_contacts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), TrustedContacts.class);
+                startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
 
         return view;
     }
