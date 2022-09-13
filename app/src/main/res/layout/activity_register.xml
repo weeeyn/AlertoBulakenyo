@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white">
 
-
         <LinearLayout
             android:id="@+id/linearReg"
             android:layout_width="match_parent"

@@ -12,15 +12,17 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.google.android.material.textfield.TextInputLayout;
 
-public class completeInfo extends AppCompatActivity {
+public class EditInfo extends AppCompatActivity {
 
-    TextInputLayout tilContact, tilHouse, tilCity, tilBrgy, tilProvince;
-    EditText etContact, etHouse;
-    AutoCompleteTextView actCity, actBrgy, actProvince;
-    Button btnDone;
+    ImageView imgAvatar;
+    Button btnUpload, btnRemove, btnSave;
+    TextInputLayout tilFname, tilLname, tilUsername, tilEmail, tilCon, tilHouse, tilCity, tilBrgy, tilProvince;
+    EditText etFname, etLname, etUsername, etEmail, etCon, etHouse;
+    AutoCompleteTextView actBrgy, actCity, actProvince;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,22 +33,34 @@ public class completeInfo extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_complete_info);
+        setContentView(R.layout.activity_edit_info);
 
-        tilContact = (TextInputLayout) findViewById (R.id.tilContact);
+        imgAvatar = (ImageView) findViewById (R.id.imgAvatar);
+
+        btnUpload = (Button) findViewById (R.id.btnUpload);
+        btnRemove = (Button) findViewById (R.id.btnRemove);
+        btnSave = (Button) findViewById (R.id.btnSave);
+
+        tilFname = (TextInputLayout) findViewById (R.id.tilFname);
+        tilLname = (TextInputLayout) findViewById (R.id.tilLname);
+        tilUsername = (TextInputLayout) findViewById (R.id.tilUsername);
+        tilEmail = (TextInputLayout) findViewById (R.id.tilEmail);
+        tilCon = (TextInputLayout) findViewById (R.id.tilCon);
         tilHouse = (TextInputLayout) findViewById (R.id.tilHouse);
         tilCity = (TextInputLayout) findViewById (R.id.tilCity);
         tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
         tilProvince = (TextInputLayout) findViewById (R.id.tilProvince);
 
-        etContact = (EditText) findViewById (R.id.etContact);
+        etFname = (EditText) findViewById (R.id.etFname);
+        etLname = (EditText) findViewById (R.id.etLname);
+        etUsername = (EditText) findViewById (R.id.etUsername);
+        etEmail= (EditText) findViewById (R.id.etEmail);
+        etCon = (EditText) findViewById (R.id.etCon);
         etHouse = (EditText) findViewById (R.id.etHouse);
 
         actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
         actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
         actProvince = (AutoCompleteTextView) findViewById (R.id.actProvince);
-
-        btnDone = (Button) findViewById (R.id.btnDone);
 
         String [] brgySJDM = {"Assumption", "Bagong Buhay I", "Bagong Buhay II", "Bagong Buhay III",
                 "Citrus", "Ciudad Real", "Dulong Bayan", "Fatima I", "Fatima II", "Fatima III",
@@ -65,7 +79,7 @@ public class completeInfo extends AppCompatActivity {
 
         String [] province = {"Bulacan"};
 
-        ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(completeInfo.this, R.layout.dropdown_items, brgySJDM);
+        ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(EditInfo.this, R.layout.dropdown_items, brgySJDM);
         actBrgy.setDropDownBackgroundResource(R.color.white);
         actBrgy.setAdapter(brgyAdapter);
 
@@ -76,23 +90,14 @@ public class completeInfo extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(completeInfo.this, R.layout.dropdown_items, city);
+        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(EditInfo.this, R.layout.dropdown_items, city);
         actCity.setDropDownBackgroundResource(R.color.white);
         actCity.setAdapter(cityAdapter);
 
-        ArrayAdapter<String> provAdapter = new ArrayAdapter<>(completeInfo.this, R.layout.dropdown_items, province);
+        ArrayAdapter<String> provAdapter = new ArrayAdapter<>(EditInfo.this, R.layout.dropdown_items, province);
         actProvince.setDropDownBackgroundResource(R.color.white);
         actProvince.setAdapter(provAdapter);
 
-        btnDone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(completeInfo.this, HomeNav.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
     }
 
     @Override

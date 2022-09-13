@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 public class AccountInfo extends AppCompatActivity {
+
+    Button btnEditInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +23,18 @@ public class AccountInfo extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_account_info);
+
+        btnEditInfo = (Button) findViewById (R.id.btnEditInfo);
+
+        btnEditInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountInfo.this, EditInfo.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
     }
 
     @Override

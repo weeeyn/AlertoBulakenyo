@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".EditInfo"
+            android:exported="false" />
+        <activity
             android:name=".TrustedContacts"
             android:exported="false" />
         <activity
