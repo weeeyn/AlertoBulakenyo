@@ -141,7 +141,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Avoid building in a floodplain — an area especially prone to flooding during heavy rains."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -164,7 +164,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="If you do live in a floodplain, consider buying flood insurance to help with losses if, and when, a flood occurs."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -187,7 +187,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Construct barriers (levees, beams, floodwalls) to stop flood water from entering your home. Sandbags can provide a temporary levee in an emergency."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -210,7 +210,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Seal walls in basements with waterproofing compounds to avoid seepage."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -233,7 +233,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Pay attention to weather forecasts. When heavy rain or storms are forecasted, listen to the radio or television for information on flooding risk."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -256,7 +256,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="What’s worse — a flood watch or warning? A watch means flooding is possible. A warning means flooding is occurring or will occur soon."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -279,7 +279,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="When a flood is imminent, have an emergency plan and practice survival skills, like first aid and how to disinfect water."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -302,7 +302,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Be prepared! Assemble an emergency kit in case you need to evacuate. Don't forget to include necessary prescription medications and a small first aid kit."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -325,7 +325,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Charge cell phone batteries and any reusable batteries for flashlights. Buy extra batteries in case power isn’t restored immediately."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -348,7 +348,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Heed evacuation warnings. If there is any possibility of a flash flood, move immediately to higher ground. Follow appropriate evacuation signs."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -371,7 +371,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="If possible, bring in outdoor furniture and move important items to an upper floor, above possible flood levels."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -395,7 +395,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Turn off utilities at the main switches or valves if instructed. Disconnect electrical appliances."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -428,7 +428,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Avoid low spots, like ditches, basements, or underpasses. These become extremely dangerous during a flash flood."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -451,7 +451,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Do not walk through flooded areas. It can be difficult to tell how deep the water is and what lies underneath the water that could hurt you. Even shallow, moving water can make you fall."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -474,7 +474,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="If you have to walk in water, wherever possible, walk where the water is not moving. Use a stick to check the firmness of the ground in front of you."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -497,7 +497,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Do not drive into flooded areas. Remember: “Turn around, don’t drown.” If floodwaters rise around your car, abandon the car and move to higher ground — only if you can do so safely."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -521,7 +521,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Do not touch electrical equipment if you are wet or standing in water."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -554,7 +554,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Return home only when authorities say it is safe."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -577,7 +577,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Listen for news reports to learn whether the water supply is safe to drink and where emergency shelters are located."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -600,7 +600,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Avoid floodwaters; water may be contaminated by oil, gas, or raw sewage. Water may also be electrically charged from underground or downed power lines."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -623,7 +623,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Still avoid moving water — the danger decreases only when water levels drop."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -646,7 +646,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Be aware of areas where flood waters have receded. Roads may have weakened and could collapse under the weight of a car."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -669,7 +669,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Stay away from downed power lines and report them to the power company."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -692,7 +692,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Stay out of any building if it is surrounded by floodwaters."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -715,7 +715,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Service damaged septic tanks, cesspools, pits, and leaching systems as soon as possible. Damaged sewage systems are serious health hazards."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -738,7 +738,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Only pump water out of a flooded building when water has receded outside."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -761,7 +761,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Clean and disinfect everything that was stuck in flooded waters. Mud left from flood water can contain sewage and chemicals."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -785,7 +785,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Be wary of lingering water inside buildings after a flood. A dehumidifier will help remove excess water and minimize mold damage."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 

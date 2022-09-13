@@ -132,7 +132,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Plant more trees, grasses, and other vegetation to prevent erosion and for compaction of soil."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -155,7 +155,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Build channels for diversion of mudflow or debris flow to direct the flow away from your property. Make sure though that the diversion does not affect any neighbor or property and/or cause more significant damage as a result."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -179,7 +179,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Do not build your house on or near steep slopes, mountain edges, drainages, or natural erosion valleys."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -212,7 +212,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Be familiar with your surroundings. Watch for any changes in appearance or positions of these objects. When there is a sudden debris flow, this could be a good indicator of an incoming landslide."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -235,7 +235,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Avoid open storm-water drainage and runoff as these areas are likely to receive debris and soil from higher elevations, especially when there is a storm or heavy rainfall."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -258,7 +258,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Be updated on news regarding the condition of your area. Be aware of the disaster plans for your local government."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -282,7 +282,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Learn and participate in emergency response and evacuation plans for your community."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -315,7 +315,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Be attentive to unusual sounds such as cracking objects, moving debris, and rolling boulders."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -338,7 +338,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Stay away from the path of debris. This is more dangerous if mudflow occurs because it increases in strength as it meets more water from ponds or streams and it could be aggravated by heavy rain."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -361,7 +361,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Stay on an elevated and sturdy area. Avoid low-lying areas and steep slopes."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -385,7 +385,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="If escape is not possible, curl into a tight ball and protect your head. Find a structure that can serve to protect you from the flow of debris."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -418,7 +418,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Avoid the slide area. There is still danger of more landslides."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -441,7 +441,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Listen for the latest emergency information. Follow warnings and instructions by the local government."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -464,7 +464,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="If the landslide is caused by rainfall, watch out for flooding as it will follow the same path taken by the debris flow."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -488,7 +488,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:text=""
+                    android:text="Check for injured or trapped people near the slide, and for damaged structures and other potential hazards. Report these immediately to the rescuers or authorities."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
