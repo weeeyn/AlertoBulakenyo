@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 public class Prep_LS extends AppCompatActivity {
 
-    TextView tvIntro, tvCont, tvBull01, tvBull02, tvBull03;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,39 +23,6 @@ public class Prep_LS extends AppCompatActivity {
 
         setContentView(R.layout.activity_prep_ls);
 
-        tvIntro = (TextView) findViewById (R.id.tvIntro);
-        tvCont = (TextView) findViewById (R.id.tvCont);
-        tvBull01 = (TextView) findViewById (R.id.tvBull01);
-        tvBull02 = (TextView) findViewById (R.id.tvBull02);
-        tvBull03 = (TextView) findViewById (R.id.tvBull03);
-
-        tvIntro.setText("       ");
-
-        tvCont.setText("       ");
-
-        tvBull01.setText("\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  ");
-
-        tvBull02.setText("\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  ");
-
-        tvBull03.setText("\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  " +
-                "\n\u25CF  ");
     }
 
     @Override
