@@ -21,44 +21,53 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/imgContact"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="2"
+                android:src="@drawable/prof"
+                android:scaleType="fitCenter"/>
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="8"
-                android:orientation="vertical">
+                android:layout_marginStart="10dp"
+                android:orientation="vertical"
+                android:layout_gravity="center">
 
                 <TextView
-                    android:id="@+id/tvTitle"
+                    android:id="@+id/tvName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingStart="5dp"
                     android:paddingBottom="2dp"
-                    android:text="Announcement Title"
+                    android:text="Full Name"
                     android:textColor="@color/dark_blue"
                     android:textStyle="bold"
                     android:textSize="20dp" />
 
                 <TextView
-                    android:id="@+id/tvOffice"
+                    android:id="@+id/tvRelationship"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:paddingStart="5dp"
+                    android:text="Relationship"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tvRecentLoc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingStart="5dp"
-                    android:text="CDRRMO"
+                    android:text="Recent Location"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/tvDate"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_gravity="center"
-                android:text="Date"
-                android:textAlignment="textEnd"
-                android:textColor="@color/black"
-                android:textSize="15dp" />
 
         </LinearLayout>
 
