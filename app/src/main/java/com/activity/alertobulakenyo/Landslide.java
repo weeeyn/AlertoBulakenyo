@@ -1,6 +1,7 @@
 package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.widget.ImageButton;
 
 public class Landslide extends AppCompatActivity {
 
+    CardView cardLS;
     RecyclerView rvDisLS;
 
     @Override
@@ -25,7 +27,19 @@ public class Landslide extends AppCompatActivity {
 
         setContentView(R.layout.activity_landslide);
 
+        cardLS = (CardView) findViewById (R.id.cardLS);
+
         rvDisLS = (RecyclerView) findViewById (R.id.rvDisLS);
+
+        cardLS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Landslide.this, LS_info.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
 
     }
 

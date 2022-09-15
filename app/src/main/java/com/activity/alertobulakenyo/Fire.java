@@ -1,6 +1,7 @@
 package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.widget.ImageButton;
 
 public class Fire extends AppCompatActivity {
 
+    CardView cardFire;
     RecyclerView rvDisFire;
 
     @Override
@@ -25,7 +27,19 @@ public class Fire extends AppCompatActivity {
 
         setContentView(R.layout.activity_fire);
 
+        cardFire = (CardView) findViewById (R.id.cardFire);
+
         rvDisFire = (RecyclerView) findViewById (R.id.rvDisFire);
+
+        cardFire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Fire.this, Fire_info.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
     }
 
     @Override

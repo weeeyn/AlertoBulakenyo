@@ -1,6 +1,7 @@
 package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.widget.ImageButton;
 
 public class Typhoon extends AppCompatActivity {
 
+    CardView cardTy;
     RecyclerView rvDisTy;
 
     @Override
@@ -25,8 +27,19 @@ public class Typhoon extends AppCompatActivity {
 
         setContentView(R.layout.activity_typhoon);
 
+        cardTy = (CardView) findViewById (R.id.cardTy);
+
         rvDisTy = (RecyclerView) findViewById (R.id.rvDisTy);
 
+        cardTy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Typhoon.this, Ty_info.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
     }
 
     @Override

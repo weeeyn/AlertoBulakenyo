@@ -2,7 +2,9 @@ package com.activity.alertobulakenyo;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Saved_Frag extends Fragment {
+
+    CardView cardSaved;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +63,21 @@ public class Saved_Frag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_saved, container, false);
+        View view = inflater.inflate(R.layout.fragment_saved, container, false);
+
+        /**
+        cardSaved = view.findViewById (R.id.cardSaved);
+
+        cardSaved.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragMapContainer, new Map_Frag());
+                fr.commit();
+            }
+        });
+        **/
+
+        return view;
     }
 }

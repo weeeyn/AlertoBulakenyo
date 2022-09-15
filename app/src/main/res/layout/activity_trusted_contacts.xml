@@ -65,7 +65,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/button2"
                     android:stateListAnimator="@null"
-                    android:text="Upload image"
+                    android:text="REQUESTS"
                     android:textColor="@color/white"
                     android:textSize="15dp"
                     android:textStyle="bold" />
@@ -79,7 +79,7 @@
                     android:background="@drawable/button2"
                     android:padding="5dp"
                     android:stateListAnimator="@null"
-                    android:text="Remove image"
+                    android:text="ADD CONTACT"
                     android:textColor="@color/white"
                     android:textSize="15dp"
                     android:textStyle="bold" />
@@ -87,7 +87,7 @@
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardEQ"
+                android:id="@+id/cardContacts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -144,11 +144,11 @@
                                 android:textSize="15dp" />
 
                             <TextView
-                                android:id="@+id/tvRecentLoc"
+                                android:id="@+id/tvAddress"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingStart="5dp"
-                                android:text="Recent Location"
+                                android:text="Home Address"
                                 android:textColor="@color/black"
                                 android:textSize="15dp" />
 

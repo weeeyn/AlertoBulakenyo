@@ -1,6 +1,7 @@
 package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -13,7 +14,7 @@ import android.widget.ImageButton;
 
 public class Earthquake extends AppCompatActivity {
 
-    Button btnSamp;
+    CardView cardEQ;
     RecyclerView rvDisEQ;
 
     @Override
@@ -27,11 +28,11 @@ public class Earthquake extends AppCompatActivity {
 
         setContentView(R.layout.activity_earthquake);
 
-        btnSamp = (Button) findViewById (R.id.btnSamp);
+        cardEQ = (CardView) findViewById (R.id.cardEQ);
 
         rvDisEQ = (RecyclerView) findViewById (R.id.rvDisEQ);
 
-        btnSamp.setOnClickListener(new View.OnClickListener() {
+        cardEQ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Earthquake.this, EQ_info.class);

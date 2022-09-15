@@ -1,6 +1,7 @@
 package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.widget.ImageButton;
 
 public class Flood extends AppCompatActivity {
 
+    CardView cardFlood;
     RecyclerView rvDisFlood;
 
     @Override
@@ -25,7 +27,19 @@ public class Flood extends AppCompatActivity {
 
         setContentView(R.layout.activity_flood);
 
+        cardFlood = (CardView) findViewById (R.id.cardFlood);
+
         rvDisFlood = (RecyclerView) findViewById (R.id.rvDisFlood);
+
+        cardFlood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Flood.this, Flood_info.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
 
     }
 

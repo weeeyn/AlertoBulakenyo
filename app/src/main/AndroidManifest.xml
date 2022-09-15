@@ -18,6 +18,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".ViewToAdd"
+            android:exported="false" />
+        <activity
+            android:name=".ViewTrusted"
+            android:exported="false" />
+        <activity
+            android:name=".AddContact"
+            android:exported="false" />
+        <activity
+            android:name=".Request"
+            android:exported="false" />
+        <activity
             android:name=".EditInfo"
             android:exported="false"
             android:screenOrientation="portrait" />

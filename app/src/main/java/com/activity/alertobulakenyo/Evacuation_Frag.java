@@ -1,8 +1,11 @@
 package com.activity.alertobulakenyo;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +25,7 @@ public class Evacuation_Frag extends Fragment {
 
     TextInputLayout tilBrgy;
     AutoCompleteTextView actBrgy;
+    CardView cardEvac;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -71,6 +75,7 @@ public class Evacuation_Frag extends Fragment {
 
         tilBrgy = view.findViewById (R.id.tilBrgy);
         actBrgy = view.findViewById (R.id.actBrgy);
+        // cardEvac = view.findViewById (R.id.cardEvac);
 
         String [] brgySJDM = {"Assumption", "Bagong Buhay I", "Bagong Buhay II", "Bagong Buhay III",
                 "Citrus", "Ciudad Real", "Dulong Bayan", "Fatima I", "Fatima II", "Fatima III",
@@ -95,6 +100,17 @@ public class Evacuation_Frag extends Fragment {
                 String selectedBrgy = brgyAdapter.getItem(position);
             }
         });
+
+        /**
+        cardEvac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.fragMapContainer, new Map_Frag());
+                fr.commit();
+            }
+        });
+        **/
 
         return view;
     }

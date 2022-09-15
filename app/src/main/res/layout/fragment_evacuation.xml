@@ -70,21 +70,52 @@
 
             </LinearLayout>
 
-
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnSamp"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardEvac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="35dp"
-                android:background="@drawable/rounded_button"
-                android:padding="10dp"
-                android:stateListAnimator="@null"
-                android:text="Evac center samp"
-                android:textColor="@color/white"
-                android:textSize="23dp"
-                android:textStyle="bold" />
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                android:orientation="vertical"
+                android:backgroundTint="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvBrgyCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:text="Brgy. City / Municipality"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tvEvacName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:text="Evac Center Name"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvLoc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Location"
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvMapEvac"
