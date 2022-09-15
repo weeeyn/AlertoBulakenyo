@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 public class GetStarted extends AppCompatActivity {
 
-    TextView tvGetStarted;
     Button btnGetStarted;
 
     @Override
@@ -27,10 +26,7 @@ public class GetStarted extends AppCompatActivity {
 
         setContentView(R.layout.activity_get_started);
 
-        tvGetStarted = (TextView) findViewById (R.id.tvGetStarted);
         btnGetStarted = (Button) findViewById (R.id.btnGetStarted);
-
-        tvGetStarted.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
 
         btnGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override

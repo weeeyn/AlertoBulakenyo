@@ -47,8 +47,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="15dp"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
@@ -239,11 +239,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="45dp"
                 android:background="@drawable/rounded_button4"
-                android:padding="10dp"
                 android:stateListAnimator="@null"
                 android:text="EDIT INFORMATION"
                 android:textColor="@color/white"
-                android:textSize="23dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
         </LinearLayout>

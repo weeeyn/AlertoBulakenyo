@@ -54,14 +54,12 @@
                 android:id="@+id/btnSamp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="35dp"
                 android:background="@drawable/rounded_button"
-                android:padding="10dp"
                 android:stateListAnimator="@null"
                 android:text="Disaster info samp"
                 android:textColor="@color/white"
-                android:textSize="23dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView

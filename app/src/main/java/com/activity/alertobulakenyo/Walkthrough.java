@@ -42,21 +42,11 @@ public class Walkthrough extends AppCompatActivity {
         tabIndicator = findViewById(R.id.tabIndicator);
 
         List<ScreenItem> list = new ArrayList<>();
-        list.add(new ScreenItem("DISASTER WARNING", "Lorem ipsum dolor sit amet, " +
-                "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore " +
-                "magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit", R.drawable.feature1));
-        list.add(new ScreenItem("EVACUATION CENTER", "Lorem ipsum dolor sit amet, " +
-                "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore " +
-                "magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit", R.drawable.feature2));
-        list.add(new ScreenItem("PREPAREDNESS TIPS", "Lorem ipsum dolor sit amet, " +
-                "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore " +
-                "magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit", R.drawable.feature3));
-        list.add(new ScreenItem("EMERGENCY HOTLINES", "Lorem ipsum dolor sit amet, " +
-                "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore " +
-                "magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit", R.drawable.feature4));
-        list.add(new ScreenItem("TRUSTED CONTACTS", "Lorem ipsum dolor sit amet, " +
-                "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore " +
-                "magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit", R.drawable.feature5));
+        list.add(new ScreenItem("DISASTER WARNING", "The app sends out official warnings when a disaster occurs close to the user's current location via an in-app and SMS alert message. Notifications can be received by users with or without an internet connection.", R.drawable.feature1));
+        list.add(new ScreenItem("EVACUATION CENTER", "By setting up their pin location, this tool will assist users in finding the closest evacuation facility. After users create accounts, this page will provide a list of evacuation centers they can search for.", R.drawable.feature2));
+        list.add(new ScreenItem("PREPAREDNESS TIPS", "This application also allows users to prepare their homes and families for disasters. Increase public understanding of the importance of disaster preparedness before, during, and after a disaster.", R.drawable.feature3));
+        list.add(new ScreenItem("EMERGENCY HOTLINES", "One of this app's best features is the one-tap access to hotlines or emergency personnel. Users can communicate directly with the local emergency and rescue services.", R.drawable.feature4));
+        list.add(new ScreenItem("TRUSTED CONTACTS", "Users can add people they care about as trusted contacts to ensure the safety of their relatives. In the event of a disaster, added trusted contacts will be able to track the user's location.", R.drawable.feature5));
 
         screenPager = findViewById(R.id.screenViewPager);
         WalkthroughViewPagerAdapter = new WalkthroughViewPagerAdapter(this, list);

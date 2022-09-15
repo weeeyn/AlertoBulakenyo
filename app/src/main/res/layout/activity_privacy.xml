@@ -58,7 +58,7 @@
                 android:justificationMode="inter_word"
                 android:text="     Alerto Bulakenyo believes that the user should supply their personal information for better response of the APP. We collect some information when users: "
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="15dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -79,7 +79,7 @@
                     android:layout_weight="10"
                     android:text="Make Public contributions"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -94,7 +94,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -102,7 +102,7 @@
                     android:layout_weight="10"
                     android:text="Register an account"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -118,7 +118,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -127,7 +127,7 @@
                     android:justificationMode="inter_word"
                     android:text="Send us emails or participate in a survey or give feedback "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -138,7 +138,7 @@
                 android:justificationMode="inter_word"
                 android:text="We are committed to: "
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="15dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -151,7 +151,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -160,7 +160,7 @@
                     android:justificationMode="inter_word"
                     android:text="Describing how a user’s information may be used or shared in this Privacy Policy "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -175,7 +175,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -184,7 +184,7 @@
                     android:justificationMode="inter_word"
                     android:text="Using reasonable measures to keep user’s information secure. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -199,7 +199,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -208,7 +208,7 @@
                     android:justificationMode="inter_word"
                     android:text="Never sell user’s information or share it with third parties for marketing purposes "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -223,7 +223,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -232,7 +232,7 @@
                     android:justificationMode="inter_word"
                     android:text="Only sharing users' information in limited circ, such as to improve “Alerto Bulakenyo App”, to follow the law, or to protect users and others. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -248,7 +248,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -257,7 +257,7 @@
                     android:justificationMode="inter_word"
                     android:text="Retaining users' data for the shortest possible time is consistent with supporting, understanding, and improving this App, and our obligations under law."
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -268,7 +268,7 @@
                 android:justificationMode="inter_word"
                 android:text="Be Aware: "
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -282,7 +282,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -291,7 +291,7 @@
                     android:justificationMode="inter_word"
                     android:text="Any content a user adds or changes that s/he makes to “Alerto Bulakenyo App” will be publicly and permanently available. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -307,7 +307,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -316,7 +316,7 @@
                     android:justificationMode="inter_word"
                     android:text="Administrators of the App, who are appointed by the resource agencies, use tools that grant them limited access to non-public information recent contributions so they may protect the “Alerto Bulakenyo App” and enforce policies. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -327,7 +327,7 @@
                 android:justificationMode="inter_word"
                 android:text="Use of Information"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -337,7 +337,7 @@
                 android:justificationMode="inter_word"
                 android:text="Types of Information we receive from users, how we get it, and how we use it."
                 android:textColor="@color/black"
-                android:textSize="18dp" />
+                android:textSize="15dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -350,7 +350,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -359,7 +359,7 @@
                     android:justificationMode="inter_word"
                     android:text="Your Data contributions can only be seen by yourself unless the user posted it in public. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -374,7 +374,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -383,7 +383,7 @@
                     android:justificationMode="inter_word"
                     android:text="Account Information and Registration: if the user creates his/her account they must use their original information."
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -398,7 +398,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -407,7 +407,7 @@
                     android:justificationMode="inter_word"
                     android:text="Information Related to your use of the “Alerto Bulakenyo App” may use common technologies to collect information about how user use this App. We use this information to enhance user experience and to develop new features. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -422,7 +422,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -431,7 +431,7 @@
                     android:justificationMode="inter_word"
                     android:text="Information we received automatically: Like other Apps, “Alerto Bulakenyo” receives some information about a user automatically when ss/he downloads the “Alerto Bulakenyo” This information helps us administer the App and enhance user experience. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -446,7 +446,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -455,7 +455,7 @@
                     android:justificationMode="inter_word"
                     android:text="Information we Collect: we use a variety of commonly used technologies to understand how users use the App, make our services safer and easier to use, and to help create a better and more personalized experience for our users. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -470,7 +470,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -479,7 +479,7 @@
                     android:justificationMode="inter_word"
                     android:text="Emails: Email address of user are confidential except as provided in this Policy. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -495,7 +495,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -504,7 +504,7 @@
                     android:justificationMode="inter_word"
                     android:text="Location Information: When the user allows to use the location of the “Alerto Bulakenyo App”, we automatically receive the IP address of the device s/he is using to access the internet, which can be used to infer his/her geographical location. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -515,7 +515,7 @@
                 android:justificationMode="inter_word"
                 android:text="Sharing"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -529,7 +529,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -538,7 +538,7 @@
                     android:justificationMode="inter_word"
                     android:text="We may share a user’s information when s/he gives us specific permission to do so. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -553,7 +553,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -562,7 +562,7 @@
                     android:justificationMode="inter_word"
                     android:text="We will show a user’s information in response to an official legal process only if we believe it to be legally valid. We will notify a user pf such requests when possible. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -577,7 +577,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -586,7 +586,7 @@
                     android:justificationMode="inter_word"
                     android:text="We or users with certain administrative rights may show information that is reasonably necessary to:"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -601,7 +601,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -610,7 +610,7 @@
                     android:justificationMode="inter_word"
                     android:text="Enforce or investigate potential violations of community-based policies; "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -625,7 +625,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -634,7 +634,7 @@
                     android:justificationMode="inter_word"
                     android:text="Protect our organizations, infrastructure, employees, contracts, or the public; or "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -649,7 +649,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -658,7 +658,7 @@
                     android:justificationMode="inter_word"
                     android:text="Prevent imminent or serious bodily harm or death to person "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -673,7 +673,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -682,7 +682,7 @@
                     android:justificationMode="inter_word"
                     android:text="We may show personal information to our third-party service providers or contractors to help run or improve the app and supply services in support of our mission. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -697,7 +697,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -706,7 +706,7 @@
                     android:justificationMode="inter_word"
                     android:text="We may also share non-personal or aggregated information with third parties interested in the studying “Alerto Bulakenyo App”. "
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -721,7 +721,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -730,7 +730,7 @@
                     android:justificationMode="inter_word"
                     android:text="When we share information with third parties for these purposes, we put reasonable technical and contractual protections in place to protect users’ information consistent with this policy."
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 
@@ -746,7 +746,7 @@
                     android:layout_weight="1"
                     android:text="●"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -755,7 +755,7 @@
                     android:justificationMode="inter_word"
                     android:text="We may give volunteer developers and researcher's access to systems that have a user's information to allow them to protect, develop and contribute to the “Alerto Bulakenyo App”."
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
 

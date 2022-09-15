@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
-            android:layout_marginVertical="20dp"
+            android:layout_marginVertical="15dp"
             android:orientation="vertical">
 
             <TextView
@@ -98,21 +98,20 @@
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnUpload"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="30dp"
                                 android:layout_marginEnd="5dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/button2"
-                                android:padding="5dp"
                                 android:stateListAnimator="@null"
                                 android:text="Upload image"
                                 android:textColor="@color/white"
-                                android:textSize="18dp"
+                                android:textSize="15dp"
                                 android:textStyle="bold" />
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnRemove"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="30dp"
                                 android:layout_marginStart="5dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/button2"
@@ -120,7 +119,7 @@
                                 android:stateListAnimator="@null"
                                 android:text="Remove image"
                                 android:textColor="@color/white"
-                                android:textSize="18dp"
+                                android:textSize="15dp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -459,11 +458,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="45dp"
                 android:background="@drawable/rounded_button"
-                android:padding="10dp"
                 android:stateListAnimator="@null"
                 android:text="SAVE CHANGES"
                 android:textColor="@color/white"
-                android:textSize="23dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
         </LinearLayout>
