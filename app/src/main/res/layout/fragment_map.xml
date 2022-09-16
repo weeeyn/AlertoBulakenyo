@@ -19,6 +19,7 @@
         android:layout_marginHorizontal="10dp"
         android:orientation="horizontal"
         android:paddingTop="40dp">
+
         <EditText
             android:layout_width="0dp"
             android:layout_height="40dp"
@@ -34,7 +35,7 @@
             android:textAlignment="textStart"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
-            android:autoSizeMaxTextSize="50dp"
+            android:autoSizeMaxTextSize="20dp"
             android:autoSizeMinTextSize="10dp"
             android:autoSizeStepGranularity="1dp"
             android:autoSizeTextType="uniform" />

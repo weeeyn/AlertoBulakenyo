@@ -31,10 +31,7 @@
             android:text="FIRE"
             android:textAlignment="center"
             android:textColor="@color/white"
-            app:autoSizeMaxTextSize="100dp"
-            app:autoSizeMinTextSize="30dp"
-            app:autoSizeStepGranularity="1dp"
-            app:autoSizeTextType="uniform" />
+            android:textSize="35dp" />
 
     </LinearLayout>
 

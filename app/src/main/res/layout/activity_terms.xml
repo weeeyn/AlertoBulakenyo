@@ -16,14 +16,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginHorizontal="5dp"
         android:orientation="horizontal"
         android:paddingTop="40dp">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginHorizontal="10dp"
             android:layout_gravity="center"
             android:layout_weight="9"
             android:fontFamily="@font/archivo_black"
@@ -32,10 +30,7 @@
             android:text="Terms and Conditions"
             android:textAlignment="center"
             android:textColor="@color/white"
-            app:autoSizeMaxTextSize="100dp"
-            app:autoSizeMinTextSize="20dp"
-            app:autoSizeStepGranularity="1dp"
-            app:autoSizeTextType="uniform" />
+            android:textSize="30dp" />
 
     </LinearLayout>
 

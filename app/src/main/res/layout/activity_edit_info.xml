@@ -32,10 +32,7 @@
             android:text="EDIT INFORMATION"
             android:textAlignment="center"
             android:textColor="@color/white"
-            app:autoSizeMaxTextSize="100dp"
-            app:autoSizeMinTextSize="20dp"
-            app:autoSizeStepGranularity="1dp"
-            app:autoSizeTextType="uniform" />
+            android:textSize="27dp" />
 
     </LinearLayout>
 

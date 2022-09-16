@@ -3,6 +3,7 @@ package com.activity.alertobulakenyo;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -17,7 +18,7 @@ import android.widget.Button;
  */
 public class Announcement_Frag extends Fragment {
 
-    Button btnSamp;
+    CardView cardAncmt;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,9 +66,9 @@ public class Announcement_Frag extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_announcement, container, false);
 
-        btnSamp = view.findViewById (R.id.btnSamp);
+        cardAncmt = view.findViewById (R.id.cardAncmt);
 
-        btnSamp.setOnClickListener(new View.OnClickListener() {
+        cardAncmt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), ancmntBody.class);
