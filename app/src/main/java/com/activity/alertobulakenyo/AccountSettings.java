@@ -1,12 +1,17 @@
 package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 public class AccountSettings extends AppCompatActivity {
+
+    CardView card_changePass, card_delACc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +23,29 @@ public class AccountSettings extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_account_settings);
+
+        card_changePass = (CardView) findViewById (R.id.card_changePass);
+        card_delACc = (CardView) findViewById (R.id.card_delAcc);
+
+        card_changePass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountSettings.this, ChangePass.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        card_delACc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountSettings.this, DeleteAcc.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
     }
 
     @Override

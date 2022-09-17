@@ -18,6 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".DeleteAcc"
+            android:exported="false" />
+        <activity
+            android:name=".ChangePass"
+            android:exported="false" />
+        <activity
             android:name=".About"
             android:exported="false" />
         <activity

@@ -29,10 +29,10 @@
             android:fontFamily="@font/archivo_black"
             android:gravity="center"
             android:maxLines="1"
-            android:text="About Us"
+            android:text="ABOUT US"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="35dp" />
+            android:textSize="33dp" />
 
     </LinearLayout>
 
@@ -61,7 +61,7 @@
                 android:layout_marginBottom="15dp"
                 android:justificationMode="inter_word"
                 android:text="\t\t\t\t\tAn interactive mobile application that offers the Province of Bulacan a safe evacuation real time map scale. It provides the residence of Bulacan with prompt and correct information on hazards and vulnerabilities."
-                android:textColor="@color/dark_blue"
+                android:textColor="@color/black"
                 android:textSize="17dp" />
 
             <TextView
@@ -70,7 +70,7 @@
                 android:layout_marginBottom="15dp"
                 android:justificationMode="inter_word"
                 android:text="\t\t\t\t\tThe residents can access it to know where the safe evacuation near them that supplies real time access of map. The app is a reliable source of information like disaster warnings, emergency alerts, situation reports, other important advisory and relevant tips on safety disaster preparedness. "
-                android:textColor="@color/dark_blue"
+                android:textColor="@color/black"
                 android:textSize="17dp" />
 
             <TextView
@@ -79,7 +79,7 @@
                 android:layout_marginBottom="45dp"
                 android:justificationMode="inter_word"
                 android:text="\t\t\t\t\tThe user can report situational occurrences of all types of calamities. "
-                android:textColor="@color/dark_blue"
+                android:textColor="@color/black"
                 android:textSize="17dp" />
 
         </LinearLayout>
