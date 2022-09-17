@@ -17,4 +17,8 @@
         <item name="colorControlHighlight">#ff5003</item>
     </style>
 
+    <style name="SwitchSettings" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:colorControlActivated">#ff5003</item>
+    </style>
+
 </resources>
