@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:layout_gravity="center"
-                android:text="Enable access so that we can locate your address and find the nearest evacuation centers. "
+                android:text="Enable access so that we can locate your address and find the nearest evacuation centers "
                 android:textColor="@color/dark_blue"
                 android:textSize="12dp" />
 
@@ -112,51 +112,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="9"
                         android:paddingStart="10dp"
-                        android:text="Allow App to access your trusted contacts list"
-                        android:textColor="@color/black"
-                        android:textSize="15dp" />
-
-                    <Switch
-                        android:id="@+id/switchCon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingEnd="5dp"
-                        android:theme="@style/SwitchSettings" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_gravity="center"
-                android:text="Enable access so we can directly inform your trusted contacts."
-                android:textColor="@color/dark_blue"
-                android:textSize="12dp" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="@color/white"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="10dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="9"
-                        android:paddingStart="10dp"
-                        android:text="Allow App to access gallery "
+                        android:text="Allow the app to access gallery "
                         android:textColor="@color/black"
                         android:textSize="15dp" />
 
@@ -176,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:layout_gravity="center"
-                android:text="Enable access so you can upload photos from your gallery."
+                android:text="Enable access so you can upload photos from your gallery"
                 android:textColor="@color/dark_blue"
                 android:textSize="12dp" />
 
@@ -200,7 +156,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="9"
                         android:paddingStart="10dp"
-                        android:text="Allow App to access camera "
+                        android:text="Allow the app to access camera "
                         android:textColor="@color/black"
                         android:textSize="15dp" />
 
@@ -220,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:layout_gravity="center"
-                android:text="Enable access so you can start taking photos."
+                android:text="Enable access so you can start taking photos"
                 android:textColor="@color/dark_blue"
                 android:textSize="12dp" />
 
