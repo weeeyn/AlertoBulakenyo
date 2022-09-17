@@ -18,6 +18,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".About"
+            android:exported="false" />
+        <activity
+            android:name=".Developers"
+            android:exported="false" />
+        <activity
+            android:name=".AccountSettings"
+            android:exported="false" />
+        <activity
+            android:name=".NotifSettings"
+            android:exported="false" />
+        <activity
+            android:name=".SystemSettings"
+            android:exported="false" />
+        <activity
             android:name=".ViewToAdd"
             android:exported="false" />
         <activity

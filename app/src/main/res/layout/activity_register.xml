@@ -265,7 +265,7 @@
                     android:id="@+id/tvTerms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Terms of Service"
+                    android:text="Terms of Service."
                     android:textColor="#003366"
                     android:textSize="12sp"
                     android:textStyle="bold" />
