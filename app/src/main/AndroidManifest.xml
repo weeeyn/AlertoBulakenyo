@@ -19,7 +19,8 @@
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
             android:name=".ViewToAccept"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DeleteAcc"
             android:exported="false"
