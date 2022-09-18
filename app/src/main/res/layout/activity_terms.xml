@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:justificationMode="inter_word"
-                android:text="     By using the Alerto Bulakenyo mobile application, you as User (hence called “User” or “You”) agree to the following terms and conditions (hence the “License Agreement”). This shall govern and regulate the legal relationship between the Provincial Disaster Risk Reduction and Management Office (hence called the “Developer”) and the User.  "
+                android:text="     By using the Alerto Bulakenyo mobile application, you as User (hence called “User” or “You”) agree to the following terms and conditions (hence the “License Agreement”). This shall govern and regulate the legal relationship between the City Disaster Risk Reduction and Management Office (hence called the “Developer”) and the User.  "
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -225,7 +225,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:justificationMode="inter_word"
-                    android:text="User shall be entirely responsible for the User Contribution and all consequences arising from or in connection worth the User Contribution. In particular, the User warrants and stands for that s/he is the owner of all rights of the User contribution, and it will not infringe intellectual property and the other party's rights.  "
+                    android:text="User shall be entirely responsible for the User Contribution and all consequences arising from or in connection worth the User Contribution. In particular, the User warrants and stands for that s/he is the owner of all rights of the User contribution, and it will not infringe intellectual property and the other party's rights."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -350,7 +350,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:justificationMode="inter_word"
-                    android:text="All content that the User shall give to the App can be suspended or removed anytime if they violate or are believed to violate their terms and conditions. However, the Developer’s servers will keep backup copies of the data for a certain period. This cannot be accessed by the public and will primarily be used by the Developer for improving the APP’s functionality and assessing post- calamity situations. "
+                    android:text="All content that the User shall give to the App can be suspended or removed anytime if they violate or are believed to violate their terms and conditions. However, the Developer’s servers will keep backup copies of the data for a certain period. This cannot be accessed by the public and will primarily be used by the Developer for improving the APP’s functionality and assessing post-calamity situations. "
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 

@@ -14,11 +14,11 @@ import android.widget.Button;
 
 import com.google.android.material.textfield.TextInputLayout;
 
-public class ViewToAdd extends AppCompatActivity {
+public class ViewToAccept extends AppCompatActivity {
 
     TextInputLayout tilRelationship;
     AutoCompleteTextView actRelationship;
-    Button btnSendReq;
+    Button btnAcceptReq;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,18 +29,18 @@ public class ViewToAdd extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_view_to_add);
+        setContentView(R.layout.activity_view_to_accept);
 
         tilRelationship = (TextInputLayout) findViewById (R.id.tilRelationship);
         actRelationship = (AutoCompleteTextView) findViewById (R.id.actRelationship);
 
-        btnSendReq = (Button) findViewById (R.id.btnSendReq);
+        btnAcceptReq = (Button) findViewById (R.id.btnAcceptReq);
 
         String [] relationship = {"Wife", "Husband", "Mother", "Father", "Daughter", "Son", "Brother", "Sister",
                 "Aunt", "Uncle", "Cousin", "Grandmother", "Grandfather", "Granddaugther",
                 "Grandson", "Bestfriend", "Friend", "Classmate", "Co-worker"};
 
-        ArrayAdapter<String> relationshipAdapter = new ArrayAdapter<>(ViewToAdd.this, R.layout.dropdown_items, relationship);
+        ArrayAdapter<String> relationshipAdapter = new ArrayAdapter<>(ViewToAccept.this, R.layout.dropdown_items, relationship);
         actRelationship.setDropDownBackgroundResource(R.color.white);
         actRelationship.setAdapter(relationshipAdapter);
 
@@ -51,13 +51,12 @@ public class ViewToAdd extends AppCompatActivity {
             }
         });
 
-        btnSendReq.setOnClickListener(new View.OnClickListener() {
+        btnAcceptReq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnSendReq.setText("REQUEST SENT");
+                setContentView(R.layout.activity_view_trusted);
             }
         });
-
     }
 
     @Override

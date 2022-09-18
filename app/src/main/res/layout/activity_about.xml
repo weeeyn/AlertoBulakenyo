@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tAn interactive mobile application that offers the Province of Bulacan a safe evacuation real time map scale. It provides the residence of Bulacan with prompt and correct information on hazards and vulnerabilities."
+                android:text="\t\t\t\t\tAn interactive mobile application that offers the City of San Jose del Monte, Bulacan a safe evacuation real time map scale. It provides the residence of the city with prompt and correct information on hazards and vulnerabilities."
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 

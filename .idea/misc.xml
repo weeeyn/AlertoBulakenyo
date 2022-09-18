@@ -137,6 +137,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_ty_info.xml" value="0.32592592592592595" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_typhoon.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_verification.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_view_to_accept.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_view_to_add.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_view_trusted.xml" value="0.2287162162162162" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_walkthrough.xml" value="0.18" />
@@ -154,6 +155,8 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/card_tsu.xml" value="0.32592592592592595" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/card_ty.xml" value="0.32592592592592595" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/content_home_tab.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/dialog_accept_request.xml" value="0.23783783783783785" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/dialog_delete_account.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/dropdown_items.xml" value="0.15006412997007268" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/fragment_admin_announcement.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/fragment_admin_evac.xml" value="0.23783783783783785" />
