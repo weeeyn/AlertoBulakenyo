@@ -59,7 +59,7 @@
                     android:id="@+id/imgFirstAid"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="5dp"
                     android:background="#FFFFFFFF"
                     android:scaleType="fitCenter"
                     android:src="@drawable/firstaid" />
@@ -68,7 +68,7 @@
                     android:id="@+id/imgSurvival"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="5dp"
                     android:background="#FFFFFFFF"
                     android:scaleType="fitCenter"
                     android:src="@drawable/survival" />
