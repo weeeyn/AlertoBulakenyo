@@ -113,6 +113,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -127,6 +128,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Prepare a survival kit."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -136,6 +138,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -150,6 +153,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Avoid placing breakables on high shelves or cabinets. These items can easily fall even by a slight shake."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -159,6 +163,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -173,6 +178,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Check regularly the stability of hanging objects such as ceiling fans and chandeliers. Make sure that these objects are securely fastened. Change the screws or tighten them if you notice any slight movements in these hanging objects."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -182,6 +188,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -196,6 +203,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Fasten heavy furniture to the walls or floor. Tall cabinets can be secured by hooking them up against the wall."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -239,6 +247,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:justificationMode="inter_word"
                 android:text="If you are indoors:"
                 android:textColor="@color/black"
@@ -248,6 +257,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -262,6 +272,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Stay calm. Duck under a sturdy table and protect your head. Remember the DCH (Drop, Cover, and Hold on) method."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -271,6 +282,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal"
                 android:paddingStart="34dp">
 
@@ -286,6 +298,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="DROP - Whatever you are doing or whatever position you are in, immediately drop down to the floor."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -295,6 +308,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal"
                 android:paddingStart="34dp">
 
@@ -310,6 +324,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="COVER - Find a sturdy piece of furniture, such as a table or a chair, and take COVER under it. It is important to protect your head and neck with your arms. Be watchful of objects that can harm you such as hanging objects or debris, breakable mirrors or glass, or tall things."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -319,6 +334,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal"
                 android:paddingStart="34dp">
 
@@ -334,6 +350,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="HOLD - Hold on to the sturdy piece of furniture and prepare to move with it until the earthquake stops or when all other objects have stopped moving."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -343,6 +360,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal"
                 android:paddingStart="34dp">
 
@@ -357,6 +375,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -371,6 +390,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Stay away from glass windows and doors, and heavy furniture."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -380,6 +400,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -394,6 +415,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Watch out for falling debris or objects."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -418,6 +440,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Never use an elevator to get out of the building. If you are inside the elevator, press the button for the nearest floor and get off immediately."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -427,6 +450,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:justificationMode="inter_word"
                 android:text="If you are outdoors:"
                 android:textColor="@color/black"
@@ -436,6 +460,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -450,6 +475,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Stay clear of buildings, trees, light posts, power lines, and other structures that could fall or collapse on you."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -474,6 +500,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="If you are in a mountainous area, be alert for falling rocks and other debris. If you are in a coastal area, move to a higher ground in case a tsunami follows after the earthquake."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -483,6 +510,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:justificationMode="inter_word"
                 android:text="If you are driving or inside a car:"
                 android:textColor="@color/black"
@@ -492,6 +520,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -506,6 +535,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Slow down and turn on the hazard lights to alert other drivers. Stay inside the car until the shaking stops."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -530,6 +560,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Avoid pulling up near or under bridges, overpasses, and power lines that may fall or collapse."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -539,6 +570,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:justificationMode="inter_word"
                 android:text="If you are on a bus or a train:"
                 android:textColor="@color/black"
@@ -548,6 +580,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -562,6 +595,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Hold tightly to the strap or handrail."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -586,6 +620,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Stay inside and listen to the instructions of the train staff. Wait until it is safe to go out of the vehicle."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -605,6 +640,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -619,6 +655,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Expect aftershocks, so remain calm."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -628,6 +665,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -642,6 +680,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Check yourself and others for injuries. Do not attempt to move any person who is seriously injured to avoid further injury unless he or she is in danger. Call for medical assistance."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -651,6 +690,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -665,6 +705,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Stay away from downed or damaged power lines. Do not touch wires lying on the ground or objects that may be touching them. Downed wires may still be carrying current, and touching them can cause electrocution."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -674,6 +715,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -688,6 +730,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Check for damaged electrical wiring. Shut off the main electrical switch if you suspect any damage. If power is off, check first the switches and sockets. If they are damaged, have them immediately repaired by a licensed electrician."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -697,6 +740,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -711,6 +755,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Inspect gas tanks (by smell only) for leaks. Report to the authorities immediately if you suspect a gas leak."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -720,6 +765,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -734,6 +780,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Tune in to local radio stations and listen for any news and danger reports."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -743,6 +790,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -757,6 +805,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Stay out of damaged buildings and areas with broken glass and debris."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -781,6 +830,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Follow the emergency plan or the instructions of building personnel if you are inside a building."
                     android:textColor="@color/black"
                     android:textSize="15dp" />

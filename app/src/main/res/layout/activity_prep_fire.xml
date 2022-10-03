@@ -112,6 +112,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -126,6 +127,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Find an area where smoke has not yet reached. If there is a lot of smoke, stay low and crawl on your hands and knees. Smoke naturally rises or tends to fill the topmost portion of an enclosed area."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -135,6 +137,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -149,6 +152,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Do not panic as this will keep you disoriented and make you lose your focus."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -158,6 +162,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -172,6 +177,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Evacuate the area or room by going to the nearest exit. If you are not familiar with the building’s layout, follow the arrows or directions that lead to the exit."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -181,6 +187,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -195,6 +202,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="While evacuating the room, leave it closed to prevent the entry of smoke. Do not lock the door to allow others to escape in the same route or passage."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -204,6 +212,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -218,6 +227,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="If you can, assist people with special needs, but do not carry them downstairs. Going down with a load may impede an immediate escape. Notify emergency personnel if you know or suspect someone is still inside the building."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -227,6 +237,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -241,6 +252,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Do not use elevators. Use the stairs to get out of the building."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -265,6 +277,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Do not attempt to go back inside the building until it has been declared safe by the fire department."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -274,6 +287,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:justificationMode="inter_word"
                 android:text="If your clothes catch fire:"
                 android:textColor="@color/black"
@@ -283,6 +297,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -297,6 +312,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Do not panic or run."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -306,6 +322,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -320,6 +337,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Do the stop, drop and roll method. Stop immediately or stay where you are. Running will make the fire worse or the fire will grow with added oxygen. Drop to the ground and cover your face with your hands. Then roll over back and forth until the fire has been put out."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -344,6 +362,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:justificationMode="inter_word"
                 android:text="In assisting people who are burnt:"
                 android:textColor="@color/black"
@@ -353,6 +372,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -367,6 +387,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Do not attempt to remove the clothing. In second- to third-degree burns, clothes may stick to the skin, and removing the clothes may aggravate the injury and expose the skin more to infection. If clean cotton cloth or gauze is available, use it to carefully cover the burned area."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -376,6 +397,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -390,6 +412,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Do not attempt to treat a third-degree burn on your own. Bring the burn victim to the hospital or call for medical assistance immediately. While help is on its way, elevate the burned part above the level of the victim’s heart. Do not undress the victim, and do not move clothing that was stuck to the burn."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -399,6 +422,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -413,6 +437,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Do not soak or immerse burns in cold water, apply ice or ice water, or apply any ointment. Do not put butter or oil directly on the burned area. Do not break blisters that form over the burn. Burns are open wounds that require aeration for faster healing. Cold water may temporarily stop bleeding and reduce some pain, but it can extend the damage of the burnt area. These things may cause more damage to the burned parts."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -437,6 +462,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Check vital signs such as breathing and blood circulation. Cardiopulmonary resuscitation (CPR) might be necessary."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -474,6 +500,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -488,6 +515,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="The contact number of government agencies such as the local fire departments should be made known."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -497,6 +525,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -511,6 +540,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="The occupants of the building should know how and where to report an emergency. The proper authority will know how to assess the situation and address it."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -520,6 +550,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -534,6 +565,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Occupants of the building should be made aware of emergency routes and exits."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -543,6 +575,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -557,6 +590,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="All operators should be reminded of safe shutdown procedures for equipment and facilities to prevent any damage or additional hazard."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -566,6 +600,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -580,6 +615,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="All written emergency plans should always be updated, maintained, and tried on a regular basis."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -604,6 +640,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="A building’s emergency evacuation layout plan should be posted conspicuously to constantly remind the members of the building of the proper procedure for emergencies."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
