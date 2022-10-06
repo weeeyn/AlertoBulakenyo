@@ -71,7 +71,7 @@
                         android:paddingStart="20dp"
                         android:text="Change Password"
                         android:textColor="@color/dark_blue"
-                        android:textSize="22dp"
+                        android:textSize="20dp"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -106,7 +106,7 @@
                         android:paddingStart="20dp"
                         android:text="Delete Account"
                         android:textColor="@color/dark_blue"
-                        android:textSize="22dp"
+                        android:textSize="20dp"
                         android:textStyle="bold" />
 
                     <ImageView
