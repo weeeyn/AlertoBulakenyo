@@ -10,7 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 
-public class NotifSettings extends AppCompatActivity {
+public class SettingsNotif extends AppCompatActivity {
 
     View line1, line2;
     LinearLayout layDisAlrt, layAncmt, layReq, layCon, laySMS, layEmail;
@@ -25,7 +25,7 @@ public class NotifSettings extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_notif_settings);
+        setContentView(R.layout.activity_setting_notif);
 
         line1 = (View) findViewById (R.id.line1);
         line2 = (View) findViewById (R.id.line2);

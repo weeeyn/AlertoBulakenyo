@@ -18,6 +18,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".HotStaMaria"
+            android:exported="false" />
+        <activity
+            android:name=".HotSJDM"
+            android:exported="false" />
+        <activity
+            android:name=".HotMeycauayan"
+            android:exported="false" />
+        <activity
+            android:name=".HotMarilao"
+            android:exported="false" />
+        <activity
+            android:name=".HotBocaue"
+            android:exported="false" />
+        <activity
+            android:name=".HotBulacanProv"
+            android:exported="false" />
+        <activity
             android:name=".ViewToAccept"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -38,15 +56,15 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AccountSettings"
+            android:name=".SettingsAccount"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".NotifSettings"
+            android:name=".SettingsNotif"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SystemSettings"
+            android:name=".SettingsSystem"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

@@ -2,11 +2,12 @@ package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class SystemSettings extends AppCompatActivity {
+public class HotSJDM extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +18,15 @@ public class SystemSettings extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_system_settings);
+        setContentView(R.layout.activity_hot_sjdm);
     }
 
     @Override
     public void onBackPressed()
     {
         super.onBackPressed();
+        Intent intent = new Intent(HotSJDM.this, Hotlines.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

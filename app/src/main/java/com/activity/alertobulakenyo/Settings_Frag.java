@@ -80,7 +80,7 @@ public class Settings_Frag extends Fragment {
         card_sysSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), SystemSettings.class);
+                Intent intent = new Intent(getContext(), SettingsSystem.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -90,7 +90,7 @@ public class Settings_Frag extends Fragment {
         card_notifSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), NotifSettings.class);
+                Intent intent = new Intent(getContext(), SettingsNotif.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -100,7 +100,7 @@ public class Settings_Frag extends Fragment {
         card_accSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), AccountSettings.class);
+                Intent intent = new Intent(getContext(), SettingsAccount.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
