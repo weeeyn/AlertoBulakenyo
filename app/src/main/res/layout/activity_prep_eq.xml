@@ -84,7 +84,7 @@
                 android:fontFamily="@font/archivo_black"
                 android:gravity="center"
                 android:maxLines="2"
-                android:text="HOW TO PREPARE FOR AN EATHQUAKE?"
+                android:text="HOW TO PREPARE FOR AN EARTHQUAKE?"
                 android:textColor="#ff5003"
                 app:autoSizeMaxTextSize="40dp"
                 app:autoSizeMinTextSize="20dp"

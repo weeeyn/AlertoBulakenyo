@@ -119,6 +119,7 @@
                 android:id="@+id/tvForgotPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingEnd="5dp"
                 android:layout_gravity="end"
                 android:layout_marginBottom="50dp"
                 android:text="Forgot Password?"
