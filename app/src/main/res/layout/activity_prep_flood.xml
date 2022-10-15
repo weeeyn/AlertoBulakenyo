@@ -139,7 +139,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:justificationMode=""
+                    android:justificationMode="inter_word"
                     android:text="Avoid building in a floodplain — an area especially prone to flooding during heavy rains."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
