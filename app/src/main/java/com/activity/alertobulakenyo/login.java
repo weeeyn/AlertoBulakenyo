@@ -25,7 +25,7 @@ public class login extends AppCompatActivity {
 
     TextInputLayout tilLoginEmail, tilLoginPass;
     EditText etLoginEmail, etLoginPass;
-    Button btnLogin;
+    Button btnLogin, btnAdmin;
     TextView tvForgotPass, tvSignup;
 
     @Override
@@ -43,6 +43,7 @@ public class login extends AppCompatActivity {
         etLoginPass = (EditText) findViewById (R.id.etLoginPass);
 
         btnLogin = (Button) findViewById (R.id.btnLogin);
+        btnAdmin = (Button) findViewById (R.id.btnAdmin);
 
         tvForgotPass = (TextView) findViewById (R.id.tvForgotPass);
         tvSignup = (TextView) findViewById (R.id.tvSignup);
@@ -67,6 +68,17 @@ public class login extends AppCompatActivity {
                  */
 
                 Intent intent = new Intent(login.this, completeInfo.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(login.this, Admin_Homenav.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

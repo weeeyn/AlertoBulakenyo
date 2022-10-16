@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeNav extends AppCompatActivity {
+public class Admin_Homenav extends AppCompatActivity {
 
     BottomNavigationView bottomNav;
     int k = 0;
@@ -24,7 +24,7 @@ public class HomeNav extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_home_nav);
+        setContentView(R.layout.activity_admin_homenav);
 
         bottomNav = (BottomNavigationView) findViewById (R.id.bottomNav);
 
@@ -33,7 +33,7 @@ public class HomeNav extends AppCompatActivity {
         // as soon as the application opens the first
         // fragment should be shown to the user
         // in this case it is algorithm fragment
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragContainer, new Home_Frag()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragContainer, new Admin_HomeFrag()).commit();
 
     }
 
@@ -44,16 +44,16 @@ public class HomeNav extends AppCompatActivity {
         Fragment selectedFragment = null;
         int itemId = item.getItemId();
         if (itemId == R.id.home) {
-            selectedFragment = new Home_Frag();
+            selectedFragment = new Admin_HomeFrag();
         }
         else if (itemId == R.id.announcement) {
-            selectedFragment = new Announcement_Frag();
+            selectedFragment = new Admin_AnnouncementFrag();
         }
         else if (itemId == R.id.profile) {
-            selectedFragment = new Profile_Frag();
+            selectedFragment = new Admin_ProfileFrag();
         }
         else if (itemId == R.id.settings) {
-            selectedFragment = new Settings_Frag();
+            selectedFragment = new Admin_SettingsFrag();
         }
         // It will help to replace the
         // one fragment to other.
@@ -70,7 +70,7 @@ public class HomeNav extends AppCompatActivity {
         k++;
         if (k == 1)
         {
-            Toast.makeText(HomeNav.this, "Please press again to exit.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Admin_Homenav.this, "Please press again to exit.", Toast.LENGTH_SHORT).show();
         }
         else
         {

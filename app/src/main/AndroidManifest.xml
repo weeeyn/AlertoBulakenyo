@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".Admin_Homenav"
+            android:exported="false" />
+        <activity
             android:name=".HotStaMaria"
             android:exported="false" />
         <activity
