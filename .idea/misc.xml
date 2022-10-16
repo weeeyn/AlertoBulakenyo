@@ -191,7 +191,9 @@
         <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_add_contact.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_admin_homenav.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_complete_info.xml" value="0.16486486486486487" />
+        <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_disaster.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_edit_info.xml" value="0.16486486486486487" />
+        <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_forgot_pass.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_get_started.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_home_nav.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_login.xml" value="0.176" />
@@ -209,7 +211,9 @@
         <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/fragment_admin_announcement.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/fragment_admin_home.xml" value="0.1" />
         <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/fragment_announcement.xml" value="0.16486486486486487" />
+        <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/fragment_evacuation.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/fragment_home.xml" value="0.16486486486486487" />
+        <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/fragment_map.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/raymond/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/layout_screen.xml" value="0.16486486486486487" />
       </map>
     </option>

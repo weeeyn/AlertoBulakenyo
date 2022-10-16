@@ -35,6 +35,7 @@
             android:textAlignment="textStart"
             android:textColor="#003366"
             android:textColorHint="#8091A3"
+            android:textCursorDrawable="@drawable/cursor_blue"
             android:autoSizeMaxTextSize="20dp"
             android:autoSizeMinTextSize="10dp"
             android:autoSizeStepGranularity="1dp"

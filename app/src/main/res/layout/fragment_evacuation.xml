@@ -18,14 +18,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="5dp"
             android:layout_marginVertical="10dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp">
+                android:layout_marginBottom="15dp"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/tvDate"
@@ -34,7 +35,7 @@
                     android:layout_weight="2"
                     android:text="Barangay:"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilBrgy"
@@ -58,7 +59,7 @@
                     <AutoCompleteTextView
                         android:id="@+id/actBrgy"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:autoSizeTextType="uniform"
                         android:background="#FFFFFF"
                         android:inputType="none"
@@ -74,10 +75,10 @@
                 android:id="@+id/cardEvac"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
+                android:backgroundTint="@color/white"
                 android:orientation="vertical"
-                android:backgroundTint="@color/white">
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -91,27 +92,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
-                        android:text="Brgy. City / Municipality"
+                        android:text="Brgy. Fatima I, City of San Jose del Monte"
                         android:textColor="@color/black"
-                        android:textSize="18dp" />
+                        android:textSize="15dp" />
 
                     <TextView
                         android:id="@+id/tvEvacName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
-                        android:text="Evac Center Name"
+                        android:text="CSJDM CENTRAL EVACUATION CENTER"
                         android:textColor="@color/dark_blue"
-                        android:textSize="30dp"
+                        android:textSize="18dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvLoc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Location"
+                        android:text="CDRRMO Bldg. Productivity Center, Sapang Palay Proper"
                         android:textColor="@color/black"
-                        android:textSize="20dp" />
+                        android:textSize="13dp" />
 
                 </LinearLayout>
 
