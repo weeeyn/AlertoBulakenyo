@@ -31,7 +31,7 @@
             android:text="ACCOUNT INFORMATION"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="27dp"/>
+            android:textSize="25dp"/>
 
     </LinearLayout>
 
@@ -81,7 +81,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:hint="First Name"
+                            android:text="First Name"
                             android:textSize="15dp" />
 
                     </LinearLayout>
@@ -106,7 +106,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:hint="Last Name"
+                            android:text="Last Name"
                             android:textSize="15dp" />
 
                     </LinearLayout>
@@ -131,7 +131,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:hint="Username"
+                            android:text="Username"
                             android:textSize="15dp" />
 
                     </LinearLayout>
@@ -156,7 +156,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:hint="Email Address"
+                            android:text="Email Address"
                             android:textSize="15dp" />
 
                     </LinearLayout>
@@ -181,7 +181,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:hint="Contact Number"
+                            android:text="Contact Number"
                             android:textSize="15dp" />
 
                     </LinearLayout>
@@ -205,7 +205,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:hint="Complete Address"
+                            android:text="Complete Address"
                             android:textSize="15dp" />
 
                     </LinearLayout>

@@ -32,7 +32,7 @@
             android:text="EDIT INFORMATION"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="27dp" />
+            android:textSize="25dp" />
 
     </LinearLayout>
 
