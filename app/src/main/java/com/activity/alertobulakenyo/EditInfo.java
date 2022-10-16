@@ -62,6 +62,21 @@ public class EditInfo extends AppCompatActivity {
         actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
         actProvince = (AutoCompleteTextView) findViewById (R.id.actProvince);
 
+        String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
+
+        String [] brgyBoc = {"Antipona", "Bagumbayan", "Bambang", "Batia", "Biñang 1st", "Biñang 2nd",
+                "Bolacan", "Bundukan", "Bunlo", "Caingin", "Duhat", "Igulot", "Lolomboy", "Poblacion",
+                "Sulucan", "Taal", "Tambobong", "Turo", "Wakas"};
+
+        String [] brgyMar = {"Abangan Norte", "Abangan Sur", "Ibayo", "Lambakin", "Lias", "Loma de Gato",
+                "Nagbalon", "Patubig", "Poblacion I", "Poblacion II", "Prenza I", "Prenza II",
+                "Santa Rosa I", "Santa Rosa II", "Saog", "Tabing Ilog"};
+
+        String [] brgyMey = {"Bagbaguin", "Bahay Pare", "Bancal", "Banga", "Bayugo", "Caingin",
+                "Calvario", "Camalig", "Hulo", "Iba", "Langka", "Lawa", "Libtong", "Liputan", "Longos",
+                "Malhacan", "Pajo", "Pandayan", "Pantoc", "Perez", "Poblacion", "Saluysoy",
+                "Saint Francis (Gasak)", "Tugatog", "Ubihan", "Zamora"};
+
         String [] brgySJDM = {"Assumption", "Bagong Buhay I", "Bagong Buhay II", "Bagong Buhay III",
                 "Citrus", "Ciudad Real", "Dulong Bayan", "Fatima I", "Fatima II", "Fatima III",
                 "Fatima IV", "Fatima V", "Francisco Homes - Guijo", "Francisco Homes - Mulawin",
@@ -75,28 +90,104 @@ public class EditInfo extends AppCompatActivity {
                 "Santa Cruz III", "Santa Cruz IV", "Santa Cruz V", "Santo Cristo", "Santo Niño I",
                 "Santo Niño II", "Sapang Palay Proper", "St. Martin de Porres", "Tungkong Mangga"};
 
-        String [] city = {"San Jose del Monte"};
+        String [] brgySanMa = {"Bagbaguin", "Balasing", "Buenavista", "Bulac", "Camangyanan", "Catmon",
+                "Cay Pombo", "Caysio", "Guyong", "Lalakhan", "Mag-asawang Sapa", "Mahabang Parang",
+                "Manggahan", "Parada", "Poblacion", "Pulong Buhangin", "San Gabriel", "San Jose Patag",
+                "San Vicente", "Santa Clara", "Santa Cruz", "Silangan", "Tabing Bakod", "Tumana"};
 
         String [] province = {"Bulacan"};
-
-        ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(EditInfo.this, R.layout.dropdown_items, brgySJDM);
-        actBrgy.setDropDownBackgroundResource(R.color.white);
-        actBrgy.setAdapter(brgyAdapter);
-
-        ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedBrgy = brgyAdapter.getItem(position);
-            }
-        });
 
         ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(EditInfo.this, R.layout.dropdown_items, city);
         actCity.setDropDownBackgroundResource(R.color.white);
         actCity.setAdapter(cityAdapter);
 
+        ((AutoCompleteTextView)tilCity.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedCity = cityAdapter.getItem(position);
+
+                if (selectedCity == "Bocaue")
+                {
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(EditInfo.this, R.layout.dropdown_items, brgyBoc);
+                    actBrgy.setDropDownBackgroundResource(R.color.white);
+                    actBrgy.setAdapter(brgyAdapter);
+
+                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            String selectedBrgy = brgyAdapter.getItem(position);
+                        }
+                    });
+                }
+                else if (selectedCity == "Marilao")
+                {
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(EditInfo.this, R.layout.dropdown_items, brgyMar);
+                    actBrgy.setDropDownBackgroundResource(R.color.white);
+                    actBrgy.setAdapter(brgyAdapter);
+
+                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            String selectedBrgy = brgyAdapter.getItem(position);
+                        }
+                    });
+                }
+                else if (selectedCity == "Meycauayan")
+                {
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(EditInfo.this, R.layout.dropdown_items, brgyMey);
+                    actBrgy.setDropDownBackgroundResource(R.color.white);
+                    actBrgy.setAdapter(brgyAdapter);
+
+                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            String selectedBrgy = brgyAdapter.getItem(position);
+                        }
+                    });
+                }
+                else if (selectedCity == "San Jose del Monte")
+                {
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(EditInfo.this, R.layout.dropdown_items, brgySJDM);
+                    actBrgy.setDropDownBackgroundResource(R.color.white);
+                    actBrgy.setAdapter(brgyAdapter);
+
+                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            String selectedBrgy = brgyAdapter.getItem(position);
+                        }
+                    });
+                }
+                else if (selectedCity == "Santa Maria")
+                {
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(EditInfo.this, R.layout.dropdown_items, brgySanMa);
+                    actBrgy.setDropDownBackgroundResource(R.color.white);
+                    actBrgy.setAdapter(brgyAdapter);
+
+                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            String selectedBrgy = brgyAdapter.getItem(position);
+                        }
+                    });
+                }
+            }
+        });
+
         ArrayAdapter<String> provAdapter = new ArrayAdapter<>(EditInfo.this, R.layout.dropdown_items, province);
         actProvince.setDropDownBackgroundResource(R.color.white);
         actProvince.setAdapter(provAdapter);
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // maglagay ng toast for save changes
+                finish();
+                finishActivity(107);
+                overridePendingTransition(R.anim.slide_in_left,
+                        R.anim.slide_out_right);
+            }
+        });
 
     }
 

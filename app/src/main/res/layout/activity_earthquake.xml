@@ -105,7 +105,7 @@
                         android:gravity="center"
                         android:text="X.X"
                         android:textColor="@color/dark_blue"
-                        android:textSize="35dp"
+                        android:textSize="30dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -122,10 +122,10 @@
                         android:layout_height="55dp"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="City, Province"
+                        android:text="San Jose del Monte, Bulacan"
                         android:textColor="@color/dark_blue"
                         android:textStyle="bold"
-                        app:autoSizeMaxTextSize="30dp"
+                        app:autoSizeMaxTextSize="25dp"
                         app:autoSizeMinTextSize="15dp"
                         app:autoSizeStepGranularity="1dp"
                         app:autoSizeTextType="uniform" />

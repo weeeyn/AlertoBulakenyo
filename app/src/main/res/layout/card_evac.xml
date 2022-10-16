@@ -24,7 +24,7 @@
             android:layout_marginBottom="2dp"
             android:text="Brgy. City / Municipality"
             android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/tvEvacName"
@@ -33,7 +33,7 @@
             android:layout_marginBottom="2dp"
             android:text="Evac Center Name"
             android:textColor="@color/dark_blue"
-            android:textSize="30dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:text="Location"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="13dp" />
 
     </LinearLayout>
 

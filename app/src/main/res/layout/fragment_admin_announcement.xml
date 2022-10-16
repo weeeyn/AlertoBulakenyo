@@ -17,7 +17,17 @@
         android:layout_marginHorizontal="15dp"
         android:orientation="vertical">
 
-
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCreateAncmnt"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button2"
+            android:stateListAnimator="@null"
+            android:text="Create New Announcement"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardAncmt"
@@ -88,8 +98,7 @@
             android:id="@+id/rvAncmt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="10dp" />
+            android:layout_marginBottom="45dp" />
 
 
     </LinearLayout>

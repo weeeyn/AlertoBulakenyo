@@ -105,7 +105,7 @@
                         android:gravity="center"
                         android:text="XXX"
                         android:textColor="@color/dark_blue"
-                        android:textSize="35dp"
+                        android:textSize="30dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -124,7 +124,7 @@
                         android:gravity="center"
                         android:text="XXX"
                         android:textColor="@color/dark_blue"
-                        android:textSize="35dp"
+                        android:textSize="30dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -144,7 +144,7 @@
                         android:text="City, Province"
                         android:textColor="@color/dark_blue"
                         android:textStyle="bold"
-                        app:autoSizeMaxTextSize="35dp"
+                        app:autoSizeMaxTextSize="25dp"
                         app:autoSizeMinTextSize="15dp"
                         app:autoSizeStepGranularity="1dp"
                         app:autoSizeTextType="uniform" />
@@ -157,8 +157,6 @@
                 android:id="@+id/rvDisTy"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="45dp" />
 
         </LinearLayout>

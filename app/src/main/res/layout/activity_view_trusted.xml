@@ -69,7 +69,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="4"
                             android:text="Username:"
-                            android:textColor="@color/orange"
+                            android:textColor="@color/dark_blue"
                             android:textSize="15dp"
                             android:textStyle="bold" />
 
@@ -78,7 +78,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:hint="Username"
+                            android:text="Username"
+                            android:textColor="@color/black"
                             android:textSize="15dp" />
 
                     </LinearLayout>
@@ -94,7 +95,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="4"
                             android:text="Email Address:"
-                            android:textColor="@color/orange"
+                            android:textColor="@color/dark_blue"
                             android:textSize="15dp"
                             android:textStyle="bold" />
 
@@ -103,7 +104,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:hint="Email Address"
+                            android:text="Email Address"
+                            android:textColor="@color/black"
                             android:textSize="15dp" />
 
                     </LinearLayout>
@@ -119,7 +121,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="4"
                             android:text="Contact Number:"
-                            android:textColor="@color/orange"
+                            android:textColor="@color/dark_blue"
                             android:textSize="15dp"
                             android:textStyle="bold" />
 
@@ -128,7 +130,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:hint="Contact Number"
+                            android:text="Contact Number"
+                            android:textColor="@color/black"
                             android:textSize="15dp" />
 
                     </LinearLayout>
@@ -144,7 +147,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="4"
                             android:text="Complete Address:"
-                            android:textColor="@color/orange"
+                            android:textColor="@color/dark_blue"
                             android:textSize="15dp"
                             android:textStyle="bold" />
 
@@ -153,7 +156,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:hint="Complete Address"
+                            android:text="Complete Address"
+                            android:textColor="@color/black"
                             android:textSize="15dp" />
 
                     </LinearLayout>
@@ -168,7 +172,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="4"
                             android:text="Relationship:"
-                            android:textColor="@color/orange"
+                            android:textColor="@color/dark_blue"
                             android:textSize="15dp"
                             android:textStyle="bold" />
 
@@ -177,7 +181,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:hint="Relationship"
+                            android:text="Relationship"
+                            android:textColor="@color/black"
                             android:textSize="15dp" />
 
                     </LinearLayout>
