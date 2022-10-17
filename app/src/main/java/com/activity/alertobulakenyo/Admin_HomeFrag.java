@@ -83,7 +83,7 @@ public class Admin_HomeFrag extends Fragment {
         imgMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), Map.class);
+                Intent intent = new Intent(getContext(), Admin_Map.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

@@ -18,6 +18,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".Admin_ChangePass"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_SettingsAccount"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Map"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_AddEvac"
+            android:exported="false" />
+        <activity
             android:name=".Admin_Homenav"
             android:exported="false" />
         <activity

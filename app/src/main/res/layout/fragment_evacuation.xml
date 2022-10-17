@@ -18,9 +18,58 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
+            android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="10dp"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="City/ Municipality:"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilCity"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:textColorHint="#003366"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="4dp"
+                    app:boxCornerRadiusBottomStart="4dp"
+                    app:boxCornerRadiusTopEnd="4dp"
+                    app:boxCornerRadiusTopStart="4dp"
+                    app:boxStrokeColor="#003366"
+                    app:boxStrokeWidth="1dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconTint="#003366"
+                    app:hintTextColor="#003366">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/actCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoSizeTextType="uniform"
+                        android:background="#FFFFFF"
+                        android:inputType="none"
+                        android:textColor="@color/black"
+                        android:textColorLink="#003366"
+                        android:textCursorDrawable="@drawable/cursor_blue" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,6 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:text="Barangay:"
+                    android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -59,7 +109,7 @@
                     <AutoCompleteTextView
                         android:id="@+id/actBrgy"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_height="wrap_content"
                         android:autoSizeTextType="uniform"
                         android:background="#FFFFFF"
                         android:inputType="none"
@@ -103,7 +153,7 @@
                         android:layout_marginBottom="2dp"
                         android:text="CSJDM CENTRAL EVACUATION CENTER"
                         android:textColor="@color/dark_blue"
-                        android:textSize="18dp"
+                        android:textSize="20dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -123,13 +173,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="45dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="Evacuation Frag"
-                android:textColor="@color/black" />
 
         </LinearLayout>
 

@@ -317,7 +317,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="#003366"
                 app:hintTextColor="#003366"
-                app:startIconDrawable="@drawable/phone"
+                app:startIconDrawable="@drawable/house"
                 app:startIconTint="#003366">
 
                 <EditText

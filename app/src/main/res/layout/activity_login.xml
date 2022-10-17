@@ -137,7 +137,7 @@
                 android:stateListAnimator="@null"
                 android:text="ADMIN LOG IN"
                 android:textColor="@color/white"
-                android:textSize="23dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -150,7 +150,7 @@
                 android:stateListAnimator="@null"
                 android:text="LOG IN"
                 android:textColor="@color/white"
-                android:textSize="23dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView

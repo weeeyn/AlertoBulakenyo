@@ -1,95 +1,53 @@
 package com.activity.alertobulakenyo;
 
-import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputLayout;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Admin_EvacFrag#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Admin_EvacFrag extends Fragment {
+public class Admin_AddEvac extends AppCompatActivity {
 
-    Button btnAddNewEvac;
-    TextInputLayout tilCity, tilBrgy;
+    TextInputLayout tilEvacName, tilEvacLoc, tilLong, tilLat, tilCity, tilBrgy;
+    EditText etEvacName, etEvacLoc, etLong, etLat;
     AutoCompleteTextView actCity, actBrgy;
-    CardView cardEvac;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public Admin_EvacFrag() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Admin_EvacFrag.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Admin_EvacFrag newInstance(String param1, String param2) {
-        Admin_EvacFrag fragment = new Admin_EvacFrag();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    Button btnSaveEvac;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_admin_evac, container, false);
+        requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
+        getSupportActionBar().hide(); // hide the title bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        btnAddNewEvac = view.findViewById (R.id.btnAddNewEvac);
-        tilCity = view.findViewById (R.id.tilCity);
-        actCity = view.findViewById (R.id.actCity);
-        tilBrgy = view.findViewById (R.id.tilBrgy);
-        actBrgy = view.findViewById (R.id.actBrgy);
-        // cardEvac = view.findViewById (R.id.cardEvac);
+        setContentView(R.layout.activity_admin_add_evac);
 
-        btnAddNewEvac.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), Admin_AddEvac.class);
-                startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
+        tilEvacName = (TextInputLayout) findViewById (R.id.tilEvacName);
+        tilEvacLoc = (TextInputLayout) findViewById (R.id.tilEvacLoc);
+        tilLong = (TextInputLayout) findViewById (R.id.tilLong);
+        tilLat = (TextInputLayout) findViewById (R.id.tilLat);
+        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
+        tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
+
+        etEvacName = (EditText) findViewById (R.id.etEvacName);
+        etEvacLoc = (EditText) findViewById (R.id.etEvacLoc);
+        etLong = (EditText) findViewById (R.id.etLong);
+        etLat = (EditText) findViewById (R.id.etLat);
+
+        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
+        actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
+
+        btnSaveEvac = (Button) findViewById (R.id.btnSaveEvac);
 
         String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
 
@@ -124,18 +82,8 @@ public class Admin_EvacFrag extends Fragment {
                 "Manggahan", "Parada", "Poblacion", "Pulong Buhangin", "San Gabriel", "San Jose Patag",
                 "San Vicente", "Santa Clara", "Santa Cruz", "Silangan", "Tabing Bakod", "Tumana"};
 
-        ArrayAdapter<String> brgyAdapter = new ArrayAdapter<String>(getContext(), R.layout.dropdown_items, brgySJDM);
-        actBrgy.setDropDownBackgroundResource(R.color.white);
-        actBrgy.setAdapter(brgyAdapter);
 
-        ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedBrgy = brgyAdapter.getItem(position);
-            }
-        });
-
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(getContext(), R.layout.dropdown_items, city);
+        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, city);
         actCity.setDropDownBackgroundResource(R.color.white);
         actCity.setAdapter(cityAdapter);
 
@@ -146,7 +94,7 @@ public class Admin_EvacFrag extends Fragment {
 
                 if (selectedCity == "Bocaue")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(getContext(), R.layout.dropdown_items, brgyBoc);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgyBoc);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -159,7 +107,7 @@ public class Admin_EvacFrag extends Fragment {
                 }
                 else if (selectedCity == "Marilao")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(getContext(), R.layout.dropdown_items, brgyMar);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgyMar);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -172,7 +120,7 @@ public class Admin_EvacFrag extends Fragment {
                 }
                 else if (selectedCity == "Meycauayan")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(getContext(), R.layout.dropdown_items, brgyMey);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgyMey);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -185,7 +133,7 @@ public class Admin_EvacFrag extends Fragment {
                 }
                 else if (selectedCity == "San Jose del Monte")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(getContext(), R.layout.dropdown_items, brgySJDM);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgySJDM);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -198,7 +146,7 @@ public class Admin_EvacFrag extends Fragment {
                 }
                 else if (selectedCity == "Santa Maria")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(getContext(), R.layout.dropdown_items, brgySanMa);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgySanMa);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -212,17 +160,23 @@ public class Admin_EvacFrag extends Fragment {
             }
         });
 
-        /**
-         cardEvac.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-        FragmentTransaction fr = getFragmentManager().beginTransaction();
-        fr.replace(R.id.fragMapContainer, new Map_Frag());
-        fr.commit();
-        }
+        btnSaveEvac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // maglagay ng toast for save changes
+                finish();
+                finishActivity(107);
+                overridePendingTransition(R.anim.slide_in_left,
+                        R.anim.slide_out_right);
+            }
         });
-         **/
+    }
 
-        return view;
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left,
+                R.anim.slide_out_right);
     }
 }
