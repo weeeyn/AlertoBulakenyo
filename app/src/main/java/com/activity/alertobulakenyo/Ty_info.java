@@ -27,8 +27,6 @@ public class Ty_info extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
-        Intent intent = new Intent(Ty_info.this, Typhoon.class);
-        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

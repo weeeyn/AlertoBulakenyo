@@ -64,8 +64,6 @@ public class Admin_Map extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
-        Intent intent = new Intent(Admin_Map.this, Admin_Homenav.class);
-        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

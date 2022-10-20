@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -16,8 +17,7 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
 
     TextInputLayout tilAncmntTitle, tilAncmnt;
     EditText etAncmntTitle, etAncmnt;
-    Button btnUpload, btnRemove, btnPost;
-    ImageView img;
+    Button btnPost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,30 +36,13 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
         etAncmntTitle = (EditText) findViewById (R.id.etAncmntTitle);
         etAncmnt = (EditText) findViewById (R.id.etAncmnt);
 
-        btnUpload = (Button) findViewById (R.id.btnUpload);
-        btnRemove = (Button) findViewById (R.id.btnRemove);
         btnPost = (Button) findViewById (R.id.btnPost);
-
-        img = (ImageView) findViewById (R.id.img);
-
-        btnUpload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        btnRemove.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                Toast.makeText(Admin_CreateAncmnt.this, "Announcement posted!", Toast.LENGTH_SHORT).show();
 
                 finish();
                 finishActivity(107);

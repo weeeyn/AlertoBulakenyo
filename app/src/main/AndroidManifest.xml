@@ -18,6 +18,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".Admin_Disaster"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Report"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_AccountInfo"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_EditAncmnt"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_AncmntBody"
+            android:exported="false" />
+        <activity
             android:name=".Admin_CreateAncmnt"
             android:exported="false"
             android:screenOrientation="portrait" />

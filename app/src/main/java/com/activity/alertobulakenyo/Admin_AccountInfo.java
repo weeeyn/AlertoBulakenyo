@@ -2,15 +2,14 @@ package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class Prep_SK extends AppCompatActivity {
+public class Admin_AccountInfo extends AppCompatActivity {
+
+    TextView tvDeptAbbre, tvDeptName, tvCity, tvEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +20,14 @@ public class Prep_SK extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_prep_sk);
+        setContentView(R.layout.activity_admin_account_info);
 
-   }
+        tvDeptAbbre = (TextView) findViewById (R.id.tvDeptAbbre);
+        tvDeptName = (TextView) findViewById (R.id.tvDeptAbbre);
+        tvCity = (TextView) findViewById (R.id.tvCity);
+        tvEmail = (TextView) findViewById (R.id.tvEmail);
+
+    }
 
     @Override
     public void onBackPressed()

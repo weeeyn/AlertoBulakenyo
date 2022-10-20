@@ -27,8 +27,6 @@ public class Prep_EQ extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
-        Intent intent = new Intent(Prep_EQ.this, Prepare.class);
-        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

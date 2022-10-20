@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Admin_ChangePass">
+    tools:context=".Admin_EditAncmnt">
 
     <ImageView
         android:layout_width="match_parent"
@@ -23,16 +23,16 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginHorizontal="5dp"
+            android:layout_marginHorizontal="10dp"
             android:layout_gravity="center"
             android:layout_weight="9"
             android:fontFamily="@font/archivo_black"
             android:gravity="center"
             android:maxLines="1"
-            android:text="CHANGE PASSWORD"
+            android:text="EDIT ANNOUNCEMENT"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="27dp" />
+            android:textSize="23dp" />
 
     </LinearLayout>
 
@@ -43,18 +43,18 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginHorizontal="15dp"
             android:layout_marginVertical="15dp"
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilOldPass"
+                android:id="@+id/tilAncmntTitle"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Old Password"
+                android:layout_marginBottom="5dp"
+                android:hint="Announcement Title"
                 android:textColorHint="#003366"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
@@ -65,16 +65,15 @@
                 app:boxStrokeColor="#003366"
                 app:boxStrokeWidth="1dp"
                 app:boxStrokeWidthFocused="2dp"
-                app:hintTextColor="#003366"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="#003366">
+                app:endIconMode="clear_text"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366">
 
                 <EditText
-                    android:id="@+id/etOldPass"
+                    android:id="@+id/etAncmntTitle"
                     android:layout_width="match_parent"
-                    android:layout_height="53dp"
+                    android:layout_height="wrap_content"
                     android:autoSizeTextType="uniform"
-                    android:inputType="textPassword"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
                     android:textCursorDrawable="@drawable/cursor_blue" />
@@ -82,12 +81,12 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilNewPass"
+                android:id="@+id/tilAncmnt"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="New Password"
+                android:layout_marginBottom="60dp"
+                android:hint="Announcement"
                 android:textColorHint="#003366"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
@@ -98,49 +97,15 @@
                 app:boxStrokeColor="#003366"
                 app:boxStrokeWidth="1dp"
                 app:boxStrokeWidthFocused="2dp"
-                app:hintTextColor="#003366"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="#003366">
+                app:endIconMode="clear_text"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366">
 
                 <EditText
-                    android:id="@+id/etNewPass"
+                    android:id="@+id/etAncmnt"
                     android:layout_width="match_parent"
-                    android:layout_height="53dp"
+                    android:layout_height="wrap_content"
                     android:autoSizeTextType="uniform"
-                    android:inputType="textPassword"
-                    android:textColor="#003366"
-                    android:textColorLink="#003366"
-                    android:textCursorDrawable="@drawable/cursor_blue" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilConNewPass"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="80dp"
-                android:hint="Confirm New Password"
-                android:textColorHint="#003366"
-                app:boxBackgroundColor="#FFFFFF"
-                app:boxBackgroundMode="outline"
-                app:boxCornerRadiusBottomEnd="4dp"
-                app:boxCornerRadiusBottomStart="4dp"
-                app:boxCornerRadiusTopEnd="4dp"
-                app:boxCornerRadiusTopStart="4dp"
-                app:boxStrokeColor="#003366"
-                app:boxStrokeWidth="1dp"
-                app:boxStrokeWidthFocused="2dp"
-                app:hintTextColor="#003366"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="#003366">
-
-                <EditText
-                    android:id="@+id/etConNewPass"
-                    android:layout_width="match_parent"
-                    android:layout_height="53dp"
-                    android:autoSizeTextType="uniform"
-                    android:inputType="textPassword"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
                     android:textCursorDrawable="@drawable/cursor_blue" />
@@ -148,17 +113,17 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnChangePass"
+                android:id="@+id/btnSave"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_marginBottom="45dp"
                 android:background="@drawable/rounded_button"
                 android:stateListAnimator="@null"
-                android:text="CHANGE PASSWORD"
+                android:text="SAVE CHANGES"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
     </ScrollView>

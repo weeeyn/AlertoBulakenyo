@@ -13,6 +13,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -182,6 +183,8 @@ public class EditInfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // maglagay ng toast for save changes
+                Toast.makeText(EditInfo.this, "Saved!", Toast.LENGTH_SHORT).show();
+
                 finish();
                 finishActivity(107);
                 overridePendingTransition(R.anim.slide_in_left,

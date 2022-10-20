@@ -3,6 +3,7 @@ package com.activity.alertobulakenyo;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -17,7 +18,8 @@ import android.widget.Button;
  */
 public class Admin_AnnouncementFrag extends Fragment {
 
-    Button btnCreatencmnt;
+    Button btnCreateAncmnt;
+    CardView cardAncmt;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,12 +67,23 @@ public class Admin_AnnouncementFrag extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_admin_announcement, container, false);
 
-        btnCreatencmnt = view.findViewById (R.id.btnCreateAncmnt);
+        btnCreateAncmnt = view.findViewById (R.id.btnCreateAncmnt);
+        cardAncmt = view.findViewById (R.id.cardAncmt);
 
-        btnCreatencmnt.setOnClickListener(new View.OnClickListener() {
+        btnCreateAncmnt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), Admin_CreateAncmnt.class);
+                startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        cardAncmt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), Admin_AncmntBody.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

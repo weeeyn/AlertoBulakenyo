@@ -100,7 +100,7 @@ public class Admin_SettingsFrag extends Fragment {
         card_accSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), SettingsAccount.class);
+                Intent intent = new Intent(getContext(), Admin_SettingsAccount.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

@@ -7,11 +7,16 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
-public class ChangePass extends AppCompatActivity {
+import com.google.android.material.textfield.TextInputLayout;
 
-    Button btnChangePass;
+public class Admin_EditAncmnt extends AppCompatActivity {
+
+    TextInputLayout tilAncmntTitle, tilAncmnt;
+    EditText etAncmntTitle, etAncmnt;
+    Button btnSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +27,21 @@ public class ChangePass extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_change_pass);
+        setContentView(R.layout.activity_admin_edit_ancmnt);
 
-        btnChangePass = (Button) findViewById (R.id.btnChangePass);
+        tilAncmntTitle = (TextInputLayout) findViewById (R.id.tilAncmntTitle);
+        tilAncmnt = (TextInputLayout) findViewById (R.id.tilAncmnt);
 
-        btnChangePass.setOnClickListener(new View.OnClickListener() {
+        etAncmntTitle = (EditText) findViewById (R.id.etAncmntTitle);
+        etAncmnt = (EditText) findViewById (R.id.etAncmnt);
+
+        btnSave = (Button) findViewById (R.id.btnSave);
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(ChangePass.this, "Password Updated!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Admin_EditAncmnt.this, "Saved!", Toast.LENGTH_SHORT).show();
 
                 finish();
                 finishActivity(107);
