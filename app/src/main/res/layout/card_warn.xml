@@ -22,7 +22,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imgWarn"
+                android:id="@+id/imgWarnType"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="2.5"
@@ -59,7 +59,7 @@
                     android:textSize="20dp" />
 
                 <TextView
-                    android:id="@+id/tvLevel"
+                    android:id="@+id/tvInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"

@@ -21,4 +21,9 @@
         <item name="android:colorControlActivated">#ff5003</item>
     </style>
 
+    <style name="DatePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/dark_blue</item>
+        <item name="colorOnPrimary">@color/dark_blue</item>
+    </style>
+
 </resources>

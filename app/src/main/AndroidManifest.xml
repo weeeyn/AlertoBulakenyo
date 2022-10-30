@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".Admin_CreateWarning"
+            android:exported="false" />
+        <activity
             android:name=".Admin_Disaster"
             android:exported="false" />
         <activity

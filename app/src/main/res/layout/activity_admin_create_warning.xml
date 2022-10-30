@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Admin_CreateAncmnt">
+    tools:context=".Admin_CreateWarning">
 
     <ImageView
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:fontFamily="@font/archivo_black"
             android:gravity="center"
             android:maxLines="1"
-            android:text="NEW ANNOUNCEMENT"
+            android:text="NEW WARNING"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="25dp" />
@@ -48,12 +48,12 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilAncmntTitle"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:id="@+id/tilTYpe"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:hint="Announcement Title"
+                android:hint="Type of Disaster"
                 android:textColorHint="#003366"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
@@ -64,15 +64,49 @@
                 app:boxStrokeColor="#003366"
                 app:boxStrokeWidth="1dp"
                 app:boxStrokeWidthFocused="2dp"
-                app:endIconMode="clear_text"
                 app:endIconTint="#003366"
                 app:hintTextColor="#003366">
 
-                <EditText
-                    android:id="@+id/etAncmntTitle"
+                <AutoCompleteTextView
+                    android:id="@+id/actType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autoSizeTextType="uniform"
+                    android:background="@color/white"
+                    android:inputType="none"
+                    android:textColor="#003366"
+                    android:textColorLink="#003366"
+                    android:textCursorDrawable="@drawable/cursor_blue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCity"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:hint="City / Municipality"
+                android:textColorHint="#003366"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/white"
+                    android:inputType="none"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
                     android:textCursorDrawable="@drawable/cursor_blue" />
