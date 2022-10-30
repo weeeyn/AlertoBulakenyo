@@ -9,14 +9,18 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.w3c.dom.Text;
+
 public class Admin_CreateWarning extends AppCompatActivity {
 
-    TextInputLayout tilType, tilCity, tilBrgy;
-    AutoCompleteTextView actType, actCity, actBrgy;
+    TextInputLayout tilType, tilCity, tilBrgy, tilMag, tilFire, tilRain, tilFlood, tilTy, tilSig;
+    AutoCompleteTextView actType, actCity, actBrgy, actFire, actRain, actFlood, actSig;
+    EditText etMag, etTy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,44 +36,25 @@ public class Admin_CreateWarning extends AppCompatActivity {
         tilType = (TextInputLayout) findViewById (R.id.tilType);
         tilCity = (TextInputLayout) findViewById (R.id.tilCity);
         tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
+        tilMag = (TextInputLayout) findViewById (R.id.tilMag);
+        tilFire = (TextInputLayout) findViewById (R.id.tilFire);
+        tilRain = (TextInputLayout) findViewById (R.id.tilRain);
+        tilFlood = (TextInputLayout) findViewById (R.id.tilFlood);
+        tilTy = (TextInputLayout) findViewById (R.id.tilTy);
+        tilSig = (TextInputLayout) findViewById (R.id.tilSig);
 
         actType = (AutoCompleteTextView) findViewById (R.id.actType);
         actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
         actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
+        actFire = (AutoCompleteTextView) findViewById (R.id.actFire);
+        actRain = (AutoCompleteTextView) findViewById (R.id.actRain);
+        actFlood = (AutoCompleteTextView) findViewById (R.id.actFlood);
+        actSig = (AutoCompleteTextView) findViewById (R.id.actSig);
+
+        etMag = (EditText) findViewById (R.id.etMag);
+        etTy = (EditText) findViewById (R.id.etTy);
 
         String [] type = {"EARTHQUAKE", "FIRE", "FLOOD", "LANDSLIDE", "TYPHOON"};
-
-        ArrayAdapter<String> typeAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, type);
-        actType.setDropDownBackgroundResource(R.color.white);
-        actType.setAdapter(typeAdapter);
-
-        ((AutoCompleteTextView)tilType.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selType = typeAdapter.getItem(position);
-
-                if (selType == "EARTHQUAKE")
-                {
-                    Toast.makeText(Admin_CreateWarning.this, "Earthquake", Toast.LENGTH_SHORT).show();
-                }
-                else if (selType == "FIRE")
-                {
-                    Toast.makeText(Admin_CreateWarning.this, "Fire", Toast.LENGTH_SHORT).show();
-                }
-                else if (selType == "FLOOD")
-                {
-                    Toast.makeText(Admin_CreateWarning.this, "Flood", Toast.LENGTH_SHORT).show();
-                }
-                else if (selType == "LANDSLIDE")
-                {
-                    Toast.makeText(Admin_CreateWarning.this, "Landslide", Toast.LENGTH_SHORT).show();
-                }
-                else if (selType == "TYPHOON")
-                {
-                    Toast.makeText(Admin_CreateWarning.this, "Typhoon", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
         String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
 
@@ -104,6 +89,217 @@ public class Admin_CreateWarning extends AppCompatActivity {
                 "Mahabang Parang", "Manggahan", "Parada", "Poblacion", "Pulong Buhangin", "San Gabriel",
                 "San Jose Patag", "San Vicente", "Santa Clara", "Santa Cruz", "Silangan",
                 "Tabing Bakod", "Tumana"};
+
+        String [] fire = {"First Alarm", "Second Alarm", "Third Alarm", "Fourth Alarm", "Fifth Alarm",
+                "Task Force Alpha", "Task Force Bravo", "Task Force Charlie", "Task Force Delta",
+                "General Alarm", "Under Control", "Fireout"};
+
+        String [] rain = {"Yellow Warning", "Orange Warning", "Red Warning"};
+
+        String [] flood = {"Sample Level 1", "Sample Level 2", "Sample Level 3"};
+
+        String [] signal = {"Signal No. 1", "Signal No. 2", "Signal No. 3", "Signal No. 4", "Signal No. 5"};
+
+        ArrayAdapter<String> typeAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, type);
+        actType.setDropDownBackgroundResource(R.color.white);
+        actType.setAdapter(typeAdapter);
+
+        ((AutoCompleteTextView)tilType.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selType = typeAdapter.getItem(position);
+
+                if (selType == "EARTHQUAKE")
+                {
+                    tilMag.setVisibility(View.VISIBLE);
+                    tilFire.setVisibility(View.GONE);
+                    tilRain.setVisibility(View.GONE);
+                    tilFlood.setVisibility(View.GONE);
+                    tilTy.setVisibility(View.GONE);
+                    tilSig.setVisibility(View.GONE);
+
+
+                }
+                else if (selType == "FIRE")
+                {
+                    tilMag.setVisibility(View.GONE);
+                    tilFire.setVisibility(View.VISIBLE);
+                    tilRain.setVisibility(View.GONE);
+                    tilFlood.setVisibility(View.GONE);
+                    tilTy.setVisibility(View.GONE);
+                    tilSig.setVisibility(View.GONE);
+
+                    ArrayAdapter<String> fireAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, fire);
+                    actFire.setDropDownBackgroundResource(R.color.white);
+                    actFire.setAdapter(fireAdapter);
+
+                    ((AutoCompleteTextView)tilFire.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            String selFire = fireAdapter.getItem(position);
+
+                            if (selFire == "First Alarm")
+                            {
+
+                            }
+                            else if (selFire == "Second Alarm")
+                            {
+
+                            }
+                            else if (selFire == "Third Alarm")
+                            {
+
+                            }
+                            else if (selFire == "Fourth Alarm")
+                            {
+
+                            }
+                            else if (selFire == "Fifth Alarm")
+                            {
+
+                            }
+                            else if (selFire == "Task Force Alpha")
+                            {
+
+                            }
+                            else if (selFire == "Task Force Bravo")
+                            {
+
+                            }
+                            else if (selFire == "Task Force Charlie")
+                            {
+
+                            }
+                            else if (selFire == "Task Force Delta")
+                            {
+
+                            }
+                            else if (selFire == "General Alarm")
+                            {
+
+                            }
+                            else if (selFire == "Under Control")
+                            {
+
+                            }
+                            else if (selFire == "Fireout")
+                            {
+
+                            }
+                        }
+                    });
+                }
+                else if (selType == "FLOOD")
+                {
+                    tilMag.setVisibility(View.GONE);
+                    tilFire.setVisibility(View.GONE);
+                    tilRain.setVisibility(View.VISIBLE);
+                    tilFlood.setVisibility(View.VISIBLE);
+                    tilTy.setVisibility(View.GONE);
+                    tilSig.setVisibility(View.GONE);
+
+                    ArrayAdapter<String> rainAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, rain);
+                    actRain.setDropDownBackgroundResource(R.color.white);
+                    actRain.setAdapter(rainAdapter);
+
+                    ((AutoCompleteTextView)tilRain.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            String selRain = rainAdapter.getItem(position);
+
+                            if (selRain == "Yellow Warning")
+                            {
+
+                            }
+                            else if (selRain == "Orange Warning")
+                            {
+
+                            }
+                            else if (selRain == "Red Warning")
+                            {
+
+                            }
+                        }
+                    });
+
+                    ArrayAdapter<String> floodAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, flood);
+                    actFlood.setDropDownBackgroundResource(R.color.white);
+                    actFlood.setAdapter(floodAdapter);
+
+                    ((AutoCompleteTextView)tilFlood.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            String selFlood = floodAdapter.getItem(position);
+
+                            if (selFlood == "Sample Level 1")
+                            {
+
+                            }
+                            else if (selFlood == "Sample Level 2")
+                            {
+
+                            }
+                            else if (selFlood == "Sample Level 3")
+                            {
+
+                            }
+                        }
+                    });
+                }
+                else if (selType == "LANDSLIDE")
+                {
+                    tilMag.setVisibility(View.GONE);
+                    tilFire.setVisibility(View.GONE);
+                    tilRain.setVisibility(View.GONE);
+                    tilFlood.setVisibility(View.GONE);
+                    tilTy.setVisibility(View.GONE);
+                    tilSig.setVisibility(View.GONE);
+
+
+                }
+                else if (selType == "TYPHOON")
+                {
+                    tilMag.setVisibility(View.GONE);
+                    tilFire.setVisibility(View.GONE);
+                    tilRain.setVisibility(View.GONE);
+                    tilFlood.setVisibility(View.GONE);
+                    tilTy.setVisibility(View.VISIBLE);
+                    tilSig.setVisibility(View.VISIBLE);
+
+                    ArrayAdapter<String> sigAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, signal);
+                    actSig.setDropDownBackgroundResource(R.color.white);
+                    actSig.setAdapter(sigAdapter);
+
+                    ((AutoCompleteTextView)tilSig.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            String selSig = sigAdapter.getItem(position);
+
+                            if (selSig == "Signal No. 1")
+                            {
+
+                            }
+                            else if (selSig == "Signal No. 2")
+                            {
+
+                            }
+                            else if (selSig == "Signal No. 3")
+                            {
+
+                            }
+                            else if (selSig == "Signal No. 4")
+                            {
+
+                            }
+                            else if (selSig == "Signal No. 5")
+                            {
+
+                            }
+                        }
+                    });
+                }
+            }
+        });
 
         ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, city);
         actCity.setDropDownBackgroundResource(R.color.white);

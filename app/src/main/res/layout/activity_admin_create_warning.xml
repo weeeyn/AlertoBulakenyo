@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:hint="Type of Warning"
+                android:hint="Select a Type of Disaster"
                 android:textColorHint="#003366"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
@@ -146,12 +146,215 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilMag"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:hint="Magnitude"
+                android:textColorHint="#003366"
+                android:visibility="gone"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconMode="clear_text"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366">
+
+                <EditText
+                    android:id="@+id/etMag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoSizeTextType="uniform"
+                    android:inputType="number"
+                    android:textColor="#003366"
+                    android:textColorLink="#003366"
+                    android:textCursorDrawable="@drawable/cursor_blue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilFire"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:hint="Fire Alarm Level"
+                android:textColorHint="#003366"
+                android:visibility="gone"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actFire"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/white"
+                    android:inputType="none"
+                    android:textColor="#003366"
+                    android:textColorLink="#003366"
+                    android:textCursorDrawable="@drawable/cursor_blue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilRain"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:hint="Rainfall Warning"
+                android:textColorHint="#003366"
+                android:visibility="gone"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actRain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/white"
+                    android:inputType="none"
+                    android:textColor="#003366"
+                    android:textColorLink="#003366"
+                    android:textCursorDrawable="@drawable/cursor_blue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilFlood"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:hint="Flood Level"
+                android:textColorHint="#003366"
+                android:visibility="gone"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actFlood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/white"
+                    android:inputType="none"
+                    android:textColor="#003366"
+                    android:textColorLink="#003366"
+                    android:textCursorDrawable="@drawable/cursor_blue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTy"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:hint="Typhoon Name"
+                android:textColorHint="#003366"
+                android:visibility="gone"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconMode="clear_text"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366">
+
+                <EditText
+                    android:id="@+id/etTy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="#003366"
+                    android:textColorLink="#003366"
+                    android:textCursorDrawable="@drawable/cursor_blue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilSig"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:hint="Signal Number"
+                android:textColorHint="#003366"
+                android:visibility="gone"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="4dp"
+                app:boxCornerRadiusBottomStart="4dp"
+                app:boxCornerRadiusTopEnd="4dp"
+                app:boxCornerRadiusTopStart="4dp"
+                app:boxStrokeColor="#003366"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconTint="#003366"
+                app:hintTextColor="#003366">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actSig"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoSizeTextType="uniform"
+                    android:background="@color/white"
+                    android:inputType="none"
+                    android:textColor="#003366"
+                    android:textColorLink="#003366"
+                    android:textCursorDrawable="@drawable/cursor_blue" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnPost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
                 android:layout_alignParentBottom="true"
+                android:layout_marginTop="60dp"
                 android:layout_marginBottom="45dp"
                 android:background="@drawable/rounded_button"
                 android:stateListAnimator="@null"
