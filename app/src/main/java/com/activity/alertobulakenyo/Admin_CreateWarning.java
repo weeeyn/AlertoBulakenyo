@@ -70,7 +70,7 @@ public class Admin_CreateWarning extends AppCompatActivity {
                 }
             }
         });
-/***
+
         String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
 
         String [] brgyBoc = {"ALL", "Antipona", "Bagumbayan", "Bambang", "Batia", "Biñang 1st",
@@ -181,7 +181,6 @@ public class Admin_CreateWarning extends AppCompatActivity {
                 }
             }
         });
- ***/
     }
 
     @Override
