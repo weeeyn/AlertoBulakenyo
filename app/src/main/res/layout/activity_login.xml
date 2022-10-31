@@ -118,8 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginBottom="30dp"
-                android:paddingEnd="10dp"
-                android:text="Forgot Password?"
+                android:text="Forgot Password?  "
                 android:textColor="#003366"
                 android:textSize="15dp"
                 android:textStyle="italic" />
