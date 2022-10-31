@@ -1,7 +1,10 @@
 package com.activity.alertobulakenyo;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -9,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,9 +22,11 @@ import org.w3c.dom.Text;
 
 public class Admin_CreateWarning extends AppCompatActivity {
 
-    TextInputLayout tilType, tilCity, tilBrgy, tilMag, tilFire, tilRain, tilFlood, tilTy, tilSig;
+    TextInputLayout tilType, tilCity, tilBrgy, tilMag, tilFire, tilRain, tilFlood, tilTy, tilSig, tilIns;
     AutoCompleteTextView actType, actCity, actBrgy, actFire, actRain, actFlood, actSig;
-    EditText etMag, etTy;
+    EditText etMag, etTy, etIns;
+    Dialog dialog;
+    Button btnPreview, btnPost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,7 @@ public class Admin_CreateWarning extends AppCompatActivity {
         tilFlood = (TextInputLayout) findViewById (R.id.tilFlood);
         tilTy = (TextInputLayout) findViewById (R.id.tilTy);
         tilSig = (TextInputLayout) findViewById (R.id.tilSig);
+        tilIns = (TextInputLayout) findViewById (R.id.tilIns);
 
         actType = (AutoCompleteTextView) findViewById (R.id.actType);
         actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
@@ -53,6 +60,13 @@ public class Admin_CreateWarning extends AppCompatActivity {
 
         etMag = (EditText) findViewById (R.id.etMag);
         etTy = (EditText) findViewById (R.id.etTy);
+        etIns = (EditText) findViewById (R.id.etIns);
+
+        btnPreview = (Button) findViewById (R.id.btnPreview);
+        btnPost = (Button) findViewById (R.id.btnPost);
+
+        AlertDialog.Builder build = new AlertDialog.Builder(Admin_CreateWarning.this);
+        dialog = build.create();
 
         String [] type = {"EARTHQUAKE", "FIRE", "FLOOD", "LANDSLIDE", "TYPHOON"};
 
@@ -231,15 +245,15 @@ public class Admin_CreateWarning extends AppCompatActivity {
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             String selFlood = floodAdapter.getItem(position);
 
-                            if (selFlood == "Sample Level 1")
+                            if (selFlood == "Yellow Warning")
                             {
 
                             }
-                            else if (selFlood == "Sample Level 2")
+                            else if (selFlood == "Orange Warning")
                             {
 
                             }
-                            else if (selFlood == "Sample Level 3")
+                            else if (selFlood == "Red Warning")
                             {
 
                             }
@@ -375,6 +389,50 @@ public class Admin_CreateWarning extends AppCompatActivity {
                         }
                     });
                 }
+            }
+        });
+
+        btnPreview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(Admin_CreateWarning.this);
+                dialog.setContentView(R.layout.dialog_sample_disaster_alert);
+
+                Button btnEvac = (Button) dialog.findViewById (R.id.btnEvac);
+                Button btnClose = (Button) dialog.findViewById (R.id.btnClose);
+
+                btnEvac.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Admin_CreateWarning.this, Admin_Map.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.slide_in_right,
+                                R.anim.slide_out_left);
+                    }
+                });
+
+                btnClose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
+            }
+        });
+
+        btnPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(Admin_CreateWarning.this, "Warning Posted!", Toast.LENGTH_SHORT).show();
+
+                finish();
+                finishActivity(107);
+                overridePendingTransition(R.anim.slide_in_left,
+                        R.anim.slide_out_right);
+
             }
         });
     }
