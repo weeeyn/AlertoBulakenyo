@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -48,34 +49,26 @@ public class Admin_AncmntBody extends AppCompatActivity {
         btnDeleteAncmnt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Dialog dialog = new Dialog(Admin_AncmntBody.this);
-                dialog.setContentView(R.layout.dialog_delete_account);
+                AlertDialog.Builder builder = new AlertDialog.Builder(Admin_AncmntBody.this);
 
-                TextView tvNo = (TextView) dialog.findViewById(R.id.tvNo);
-                TextView tvYes = (TextView) dialog.findViewById(R.id.tvYes);
+                builder.setMessage("Are you sure you want to delete this announcement?");
 
-                tvNo.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
+                builder.setCancelable(true);
+
+                builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+                    // When the user click yes button then app will close
+                    finish();
+                    overridePendingTransition(R.anim.slide_in_left,
+                            R.anim.slide_out_right);
                 });
 
-                tvYes.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        Toast.makeText(Admin_AncmntBody.this, "Announcement Deleted!", Toast.LENGTH_SHORT).show();
-
-
-                        finish();
-                        finishActivity(107);
-                        overridePendingTransition(R.anim.slide_in_left,
-                                R.anim.slide_out_right);
-                    }
+                builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
+                    // If user click no then dialog box is canceled.
+                    dialog.cancel();
                 });
 
-                dialog.show();
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
             }
         });
 

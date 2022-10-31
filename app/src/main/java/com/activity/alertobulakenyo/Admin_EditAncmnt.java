@@ -41,7 +41,7 @@ public class Admin_EditAncmnt extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(Admin_EditAncmnt.this, "Saved!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Admin_EditAncmnt.this, "Announcement Updated!", Toast.LENGTH_SHORT).show();
 
                 finish();
                 finishActivity(107);

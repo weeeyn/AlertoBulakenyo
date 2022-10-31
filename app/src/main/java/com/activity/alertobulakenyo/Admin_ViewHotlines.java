@@ -3,7 +3,6 @@ package com.activity.alertobulakenyo;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,18 +10,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputLayout;
+public class Admin_ViewHotlines extends AppCompatActivity {
 
-public class DeleteAcc extends AppCompatActivity {
-
-    TextInputLayout tilPass;
-    EditText etPass;
-    Button btnDelAcc;
-    Dialog dialog;
+    Button btnEditHot, btnDelHot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,34 +24,40 @@ public class DeleteAcc extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_delete_acc);
+        setContentView(R.layout.activity_admin_view_hotlines);
 
-        tilPass = (TextInputLayout) findViewById (R.id.tilPass);
-        etPass = (EditText) findViewById (R.id.etPass);
-        btnDelAcc = (Button) findViewById (R.id.btnDelAcc);
+        btnEditHot = (Button) findViewById (R.id.btnEditHot);
+        btnDelHot = (Button) findViewById (R.id.btnDelHot);
 
-        AlertDialog.Builder build = new AlertDialog.Builder(DeleteAcc.this);
-        dialog = build.create();
-
-        btnDelAcc.setOnClickListener(new View.OnClickListener() {
+        btnEditHot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(DeleteAcc.this);
 
-                builder.setMessage("Are you sure you want to delete your account?");
+                Intent intent = new Intent(Admin_ViewHotlines.this, Admin_EditHotline.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnDelHot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Admin_ViewHotlines.this);
+
+                builder.setMessage("Are you sure you want to delete this hotline?");
 
                 builder.setCancelable(true);
 
                 builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
                     // When the user click yes button then app will close
-                    Intent intent = new Intent(DeleteAcc.this, login.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.slide_in_right,
-                            R.anim.slide_out_left);
+                    finish();
+                    overridePendingTransition(R.anim.slide_in_left,
+                            R.anim.slide_out_right);
                 });
 
                 builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
-                    // If user click no then dialog box is canceled.
                     dialog.cancel();
                 });
 

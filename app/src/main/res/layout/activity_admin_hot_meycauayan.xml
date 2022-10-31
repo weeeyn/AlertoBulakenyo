@@ -30,7 +30,7 @@
             android:text="MEYCAUAYAN"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="28dp" />
+            android:textSize="23dp" />
 
     </LinearLayout>
 
@@ -51,18 +51,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginBottom="25dp"
-                android:background="@drawable/button2"
+                android:background="@drawable/rounded_button4"
                 android:stateListAnimator="@null"
                 android:text="Add New Hotline"
                 android:textColor="@color/white"
-                android:textSize="18dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnHotlines"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/button1"
                 android:stateListAnimator="@null"
                 android:text="Sample Button"

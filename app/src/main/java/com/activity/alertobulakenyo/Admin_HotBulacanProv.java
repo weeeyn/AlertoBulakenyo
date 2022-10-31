@@ -3,7 +3,9 @@ package com.activity.alertobulakenyo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -28,6 +30,28 @@ public class Admin_HotBulacanProv extends AppCompatActivity {
         btnHotlines = (Button) findViewById (R.id.btnHotlines);
 
         rvHotBulac = (RecyclerView) findViewById (R.id.rvHotBulac);
+
+        btnAddHotline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Admin_HotBulacanProv.this, Admin_AddHotline.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnHotlines.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Admin_HotBulacanProv.this, Admin_ViewHotlines.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
     }
 
     @Override

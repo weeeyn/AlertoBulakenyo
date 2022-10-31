@@ -1,12 +1,19 @@
 package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 public class Admin_HotMarilao extends AppCompatActivity {
+
+    Button btnAddHotline, btnHotlines;
+    RecyclerView rvHotMar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +25,33 @@ public class Admin_HotMarilao extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_admin_hot_marilao);
+
+        btnAddHotline = (Button) findViewById (R.id.btnAddHotline);
+        btnHotlines = (Button) findViewById (R.id.btnHotlines);
+
+        rvHotMar = (RecyclerView) findViewById (R.id.rvHotMar);
+
+        btnAddHotline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Admin_HotMarilao.this, Admin_AddHotline.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnHotlines.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Admin_HotMarilao.this, Admin_ViewHotlines.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
     }
 
     @Override
