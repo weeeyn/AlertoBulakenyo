@@ -100,7 +100,7 @@
                 android:stateListAnimator="@null"
                 android:text="EARTHQUAKE"
                 android:textColor="@color/white"
-                android:textSize="25dp"
+                android:textSize="23dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -114,7 +114,7 @@
                 android:stateListAnimator="@null"
                 android:text="FIRE"
                 android:textColor="@color/white"
-                android:textSize="25dp"
+                android:textSize="23dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -127,7 +127,7 @@
                 android:stateListAnimator="@null"
                 android:text="FLOOD"
                 android:textColor="@color/white"
-                android:textSize="25dp"
+                android:textSize="23dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -140,7 +140,7 @@
                 android:stateListAnimator="@null"
                 android:text="LANDSLIDE"
                 android:textColor="@color/white"
-                android:textSize="25dp"
+                android:textSize="23dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -153,7 +153,7 @@
                 android:stateListAnimator="@null"
                 android:text="TYPHOON"
                 android:textColor="@color/white"
-                android:textSize="25dp"
+                android:textSize="23dp"
                 android:textStyle="bold" />
 
         </LinearLayout>

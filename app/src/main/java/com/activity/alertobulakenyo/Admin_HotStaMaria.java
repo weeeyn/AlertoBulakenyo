@@ -2,16 +2,11 @@ package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 
-public class HotBulacanProv extends AppCompatActivity {
-
-    Button btnHotlines;
+public class Admin_HotStaMaria extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,20 +17,7 @@ public class HotBulacanProv extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_hot_bulacan_prov);
-
-        btnHotlines = (Button) findViewById (R.id.btnHotlines);
-
-        btnHotlines.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(HotBulacanProv.this, ViewHotlines.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
+        setContentView(R.layout.activity_admin_hot_sta_maria);
     }
 
     @Override

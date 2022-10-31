@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 public class HotSJDM extends AppCompatActivity {
+
+    Button btnHotlines;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +23,25 @@ public class HotSJDM extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_hot_sjdm);
+
+        btnHotlines = (Button) findViewById (R.id.btnHotlines);
+
+        btnHotlines.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(HotSJDM.this, ViewHotlines.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
     }
 
     @Override
     public void onBackPressed()
     {
         super.onBackPressed();
-        Intent intent = new Intent(HotSJDM.this, Hotlines.class);
-        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

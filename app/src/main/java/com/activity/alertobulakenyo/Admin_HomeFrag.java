@@ -103,7 +103,7 @@ public class Admin_HomeFrag extends Fragment {
         imgHotlines.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), Hotlines.class);
+                Intent intent = new Intent(getContext(), Admin_Hotlines.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
