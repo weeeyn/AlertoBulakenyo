@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +19,8 @@ import android.view.ViewGroup;
  */
 public class Profile_Frag extends Fragment {
 
+    ImageView imgProfile;
+    TextView tvFullname, tvAddress;
     CardView card_account, card_contacts;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -64,6 +68,11 @@ public class Profile_Frag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        imgProfile = view.findViewById (R.id.imgProfile);
+
+        tvFullname = view.findViewById (R.id.tvFullName);
+        tvAddress = view.findViewById (R.id.tvAddress);
 
         card_account = view.findViewById (R.id.card_account);
         card_contacts = view.findViewById (R.id.card_contacts);
