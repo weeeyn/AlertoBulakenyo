@@ -8,10 +8,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class AccountInfo extends AppCompatActivity {
 
     Button btnEditInfo;
+    TextView tvAccFname, tvAccLname, tvAccUser, tvAccEmail, tvAccConNum, tvAccAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,13 @@ public class AccountInfo extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_account_info);
+
+        tvAccFname = (TextView) findViewById (R.id.tvAccFname);
+        tvAccLname = (TextView) findViewById (R.id.tvAccLname);
+        tvAccUser = (TextView) findViewById (R.id.tvAccUser);
+        tvAccEmail = (TextView) findViewById (R.id.tvAccEmail);
+        tvAccConNum = (TextView) findViewById (R.id.tvAccConNum);
+        tvAccAdd = (TextView) findViewById (R.id.tvAccAdd);
 
         btnEditInfo = (Button) findViewById (R.id.btnEditInfo);
 

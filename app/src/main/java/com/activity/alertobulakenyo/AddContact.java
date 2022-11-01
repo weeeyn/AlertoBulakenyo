@@ -2,16 +2,20 @@ package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 public class AddContact extends AppCompatActivity {
 
+    EditText etSearch;
     CardView cardAddContact;
+    RecyclerView rvContacts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +28,9 @@ public class AddContact extends AppCompatActivity {
 
         setContentView(R.layout.activity_add_contact);
 
+        etSearch = (EditText) findViewById (R.id.etSearch);
         cardAddContact = (CardView) findViewById (R.id.cardAddContact);
+        rvContacts = (RecyclerView) findViewById (R.id.rvContacts);
 
         cardAddContact.setOnClickListener(new View.OnClickListener() {
             @Override
