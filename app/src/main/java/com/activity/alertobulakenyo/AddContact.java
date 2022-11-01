@@ -32,6 +32,8 @@ public class AddContact extends AppCompatActivity {
         cardAddContact = (CardView) findViewById (R.id.cardAddContact);
         rvContacts = (RecyclerView) findViewById (R.id.rvContacts);
 
+        // yung laman ng card di ko pa nadeclare kasi sample pa lang this, yung actual is yung kukunin na card sa layout na ilalaman natin sa recycler view
+
         cardAddContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

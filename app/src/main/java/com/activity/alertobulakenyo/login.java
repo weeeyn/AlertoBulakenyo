@@ -67,7 +67,7 @@ public class login extends AppCompatActivity {
 
                  */
 
-                Intent intent = new Intent(login.this, completeInfo.class);
+                Intent intent = new Intent(login.this, HomeNav.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

@@ -2,6 +2,7 @@ package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ public class TrustedContacts extends AppCompatActivity {
 
     Button btnRequest, btnAddContact;
     CardView cardContacts;
+    RecyclerView rvContacts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class TrustedContacts extends AppCompatActivity {
         btnAddContact = (Button) findViewById (R.id.btnAddContact);
 
         cardContacts = (CardView) findViewById (R.id.cardContacts);
+
+        rvContacts = (RecyclerView) findViewById (R.id.rvContacts);
 
         btnRequest.setOnClickListener(new View.OnClickListener() {
             @Override

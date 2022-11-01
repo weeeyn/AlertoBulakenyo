@@ -11,11 +11,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 
 public class ViewToAccept extends AppCompatActivity {
 
+    ImageView imgProfile;
+    TextView tvFullName, tvAccUser, tvAccEmail, tvAccConNum, tvAccAdd;
     TextInputLayout tilRelationship;
     AutoCompleteTextView actRelationship;
     Button btnAcceptReq;
@@ -30,6 +34,14 @@ public class ViewToAccept extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_view_to_accept);
+
+        imgProfile = (ImageView) findViewById (R.id.imgProfile);
+
+        tvFullName = (TextView) findViewById (R.id.tvFullName);
+        tvAccUser = (TextView) findViewById (R.id.tvAccUser);
+        tvAccEmail = (TextView) findViewById (R.id.tvAccEmail);
+        tvAccConNum = (TextView) findViewById (R.id.tvAccConNum);
+        tvAccAdd = (TextView) findViewById (R.id.tvAccAdd);
 
         tilRelationship = (TextInputLayout) findViewById (R.id.tilRelationship);
         actRelationship = (AutoCompleteTextView) findViewById (R.id.actRelationship);

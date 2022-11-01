@@ -18,6 +18,7 @@ public class Admin_AncmntBody extends AppCompatActivity {
 
     Button btnEditAncmnt, btnDeleteAncmnt;
     Dialog dialog;
+    TextView tvOffice, tvDateTime, tvTitle, tvBody;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,11 @@ public class Admin_AncmntBody extends AppCompatActivity {
 
         btnEditAncmnt = (Button) findViewById (R.id.btnEditAncmnt);
         btnDeleteAncmnt = (Button) findViewById (R.id.btnDeleteAncmnt);
+
+        tvOffice = (TextView) findViewById (R.id.tvOffice);
+        tvDateTime = (TextView) findViewById (R.id.tvDateTime);
+        tvTitle = (TextView) findViewById (R.id.tvTitle);
+        tvBody = (TextView) findViewById (R.id.tvBody);
 
         AlertDialog.Builder build = new AlertDialog.Builder(Admin_AncmntBody.this);
         dialog = build.create();

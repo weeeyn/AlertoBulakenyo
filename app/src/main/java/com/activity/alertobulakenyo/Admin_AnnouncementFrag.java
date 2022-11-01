@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ public class Admin_AnnouncementFrag extends Fragment {
 
     Button btnCreateAncmnt;
     CardView cardAncmt;
+    RecyclerView rcAncmt;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -69,6 +71,9 @@ public class Admin_AnnouncementFrag extends Fragment {
 
         btnCreateAncmnt = view.findViewById (R.id.btnCreateAncmnt);
         cardAncmt = view.findViewById (R.id.cardAncmt);
+        rcAncmt = view.findViewById (R.id.rvAncmt);
+
+        // di ko pa nadeclare yung laman ng cardAncmt kasi di ko s
 
         btnCreateAncmnt.setOnClickListener(new View.OnClickListener() {
             @Override

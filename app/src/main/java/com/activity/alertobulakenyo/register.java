@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -23,12 +24,12 @@ import org.w3c.dom.Text;
 
 public class register extends AppCompatActivity {
 
-    TextInputLayout tilRegFname, tilRegLname, tilRegUsername, tilRegEmail, tilRegPass, tilRegConPass;
-    EditText etRegFname, etRegLname, etRegUsername, etRegEmail, etRegPass, etRegConPass;
+    TextInputLayout tilRegFname, tilRegLname, tilRegUsername, tilContact, tilHouse, tilCity, tilBrgy, tilProvince, tilRegEmail, tilRegPass, tilRegConPass;
+    EditText etRegFname, etRegLname, etRegUsername, etContact, etHouse, etRegEmail, etRegPass, etRegConPass;
+    AutoCompleteTextView actCity, actBrgy, actProvince;
     CheckBox cbAgree1, cbAgree2;
     Button btnSignup;
     TextView tvTerms, tvPrivacy, tvLogin;
-    boolean passwordVisible;
     int cb1 = 0, cb2 = 0;
 
     @Override
@@ -45,6 +46,11 @@ public class register extends AppCompatActivity {
         tilRegFname = (TextInputLayout) findViewById (R.id.tilRegFname);
         tilRegLname = (TextInputLayout) findViewById (R.id.tilRegLname);
         tilRegUsername = (TextInputLayout) findViewById (R.id.tilRegUsername);
+        tilContact = (TextInputLayout) findViewById (R.id.tilContact);
+        tilHouse = (TextInputLayout) findViewById (R.id.tilHouse);
+        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
+        tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
+        tilProvince = (TextInputLayout) findViewById (R.id.tilProvince);
         tilRegEmail = (TextInputLayout) findViewById (R.id.tilRegEmail);
         tilRegPass = (TextInputLayout) findViewById (R.id.tilRegPass);
         tilRegConPass = (TextInputLayout) findViewById (R.id.tilRegConPass);
@@ -52,9 +58,15 @@ public class register extends AppCompatActivity {
         etRegFname = (EditText) findViewById (R.id.etRegFname);
         etRegLname = (EditText) findViewById (R.id.etRegLname);
         etRegUsername = (EditText) findViewById (R.id.etRegUsername);
+        etContact = (EditText) findViewById (R.id.etContact);
+        etHouse = (EditText) findViewById (R.id.etHouse);
         etRegEmail = (EditText) findViewById (R.id.etRegEmail);
         etRegPass = (EditText) findViewById (R.id.etRegPass);
         etRegConPass = (EditText) findViewById (R.id.etRegConPass);
+
+        actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
+        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
+        actProvince = (AutoCompleteTextView) findViewById (R.id.actProvince);
 
         cbAgree1 = (CheckBox) findViewById (R.id.cbAgree1);
         cbAgree2 = (CheckBox) findViewById (R.id.cbAgree2);

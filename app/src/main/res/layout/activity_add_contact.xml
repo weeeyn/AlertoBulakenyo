@@ -72,10 +72,10 @@
                 android:id="@+id/cardAddContact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
+                android:backgroundTint="@color/white"
                 android:orientation="vertical"
-                android:backgroundTint="@color/white">
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -93,16 +93,16 @@
                             android:layout_width="0dp"
                             android:layout_height="80dp"
                             android:layout_weight="2"
-                            android:src="@drawable/prof"
-                            android:scaleType="fitCenter"/>
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/prof" />
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="8"
+                            android:layout_gravity="center"
                             android:layout_marginStart="10dp"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
+                            android:layout_weight="8"
+                            android:orientation="vertical">
 
                             <TextView
                                 android:id="@+id/tvName"
@@ -112,8 +112,8 @@
                                 android:paddingBottom="2dp"
                                 android:text="Full Name"
                                 android:textColor="@color/dark_blue"
-                                android:textStyle="bold"
-                                android:textSize="20dp" />
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/tvUsername"

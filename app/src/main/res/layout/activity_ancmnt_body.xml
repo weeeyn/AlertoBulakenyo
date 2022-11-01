@@ -57,7 +57,7 @@
                 android:fontFamily="@font/archivo_black"
                 android:text="ANNOUNCEMENT TITLE"
                 android:textColor="@color/dark_blue"
-                android:textSize="25dp" />
+                android:textSize="23dp" />
 
             <TextView
                 android:id="@+id/tvBody"

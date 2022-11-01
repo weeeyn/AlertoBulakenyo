@@ -76,6 +76,8 @@ public class Admin_Disaster extends AppCompatActivity {
         tvInfo = (TextView) findViewById (R.id.tvInfo);
         tvCityProv = (TextView) findViewById (R.id.tvCityProv);
 
+        rvWarn = (RecyclerView) findViewById (R.id.rvWarn);
+
         btnCreateWarning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

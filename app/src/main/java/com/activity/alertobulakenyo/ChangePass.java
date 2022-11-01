@@ -7,10 +7,15 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 public class ChangePass extends AppCompatActivity {
 
+    TextInputLayout tilOldPass, tilNewPass, tilConNewPass;
+    EditText etOldPass, etNewPass, etConNewPass;
     Button btnChangePass;
 
     @Override
@@ -23,6 +28,14 @@ public class ChangePass extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_change_pass);
+
+        tilOldPass = (TextInputLayout) findViewById (R.id.tilOldPass);
+        tilNewPass = (TextInputLayout) findViewById (R.id.tilNewPass);
+        tilConNewPass = (TextInputLayout) findViewById (R.id.tilConNewPass);
+
+        etOldPass = (EditText) findViewById (R.id.etOldPass);
+        etNewPass = (EditText) findViewById (R.id.etNewPass);
+        etConNewPass = (EditText) findViewById (R.id.etConNewPass);
 
         btnChangePass = (Button) findViewById (R.id.btnChangePass);
 

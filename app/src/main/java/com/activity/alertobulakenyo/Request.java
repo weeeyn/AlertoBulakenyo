@@ -2,6 +2,7 @@ package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -28,6 +29,7 @@ public class Request extends AppCompatActivity {
     ImageView imgContact;
     TextView tvFullName, tvBrgyCity;
     Button btnAccept, btnRemoveReq;
+    RecyclerView rvContacts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,8 @@ public class Request extends AppCompatActivity {
 
         btnAccept = (Button) findViewById (R.id.btnAccept);
         btnRemoveReq = (Button) findViewById (R.id.btnRemoveReq);
+
+        rvContacts = (RecyclerView) findViewById (R.id.rvContacts);
 
         cardRequest.setOnClickListener(new View.OnClickListener() {
             @Override

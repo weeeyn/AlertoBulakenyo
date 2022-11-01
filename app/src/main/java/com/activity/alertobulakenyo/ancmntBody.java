@@ -8,8 +8,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class ancmntBody extends AppCompatActivity {
+
+    TextView tvOffice, tvDateTime, tvTitle, tvBody;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,11 @@ public class ancmntBody extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_ancmnt_body);
+
+        tvOffice = (TextView) findViewById (R.id.tvOffice);
+        tvDateTime = (TextView) findViewById (R.id.tvDateTime);
+        tvTitle = (TextView) findViewById (R.id.tvTitle);
+        tvBody = (TextView) findViewById (R.id.tvBody);
     }
 
     @Override

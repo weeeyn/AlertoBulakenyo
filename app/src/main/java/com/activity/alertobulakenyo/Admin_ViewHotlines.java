@@ -10,10 +10,16 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class Admin_ViewHotlines extends AppCompatActivity {
 
     Button btnEditHot, btnDelHot;
+    TextView tvAbAc, tvHotName, tvHot01, tvHot02, tvHot03, tvHot04, tvHot05, tvHot06, tvHot07, tvHot08, tvHot09, tvHot10;
+    LinearLayout layHot01, layHot02, layHot03, layHot04, layHot05, layHot06, layHot07, layHot08, layHot09, layHot10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +34,30 @@ public class Admin_ViewHotlines extends AppCompatActivity {
 
         btnEditHot = (Button) findViewById (R.id.btnEditHot);
         btnDelHot = (Button) findViewById (R.id.btnDelHot);
+
+        tvAbAc = (TextView) findViewById (R.id.tvAbAc);
+        tvHotName = (TextView) findViewById (R.id.tvHotName);
+        tvHot01 = (TextView) findViewById (R.id.tvHot01);
+        tvHot02 = (TextView) findViewById (R.id.tvHot02);
+        tvHot03 = (TextView) findViewById (R.id.tvHot03);
+        tvHot04 = (TextView) findViewById (R.id.tvHot04);
+        tvHot05 = (TextView) findViewById (R.id.tvHot05);
+        tvHot06 = (TextView) findViewById (R.id.tvHot06);
+        tvHot07 = (TextView) findViewById (R.id.tvHot07);
+        tvHot08 = (TextView) findViewById (R.id.tvHot08);
+        tvHot09 = (TextView) findViewById (R.id.tvHot09);
+        tvHot10 = (TextView) findViewById (R.id.tvHot10);
+
+        layHot01 = (LinearLayout) findViewById (R.id.layHot01);
+        layHot02 = (LinearLayout) findViewById (R.id.layHot02);
+        layHot03 = (LinearLayout) findViewById (R.id.layHot03);
+        layHot04 = (LinearLayout) findViewById (R.id.layHot04);
+        layHot05 = (LinearLayout) findViewById (R.id.layHot05);
+        layHot06 = (LinearLayout) findViewById (R.id.layHot06);
+        layHot07 = (LinearLayout) findViewById (R.id.layHot07);
+        layHot08 = (LinearLayout) findViewById (R.id.layHot08);
+        layHot09 = (LinearLayout) findViewById (R.id.layHot09);
+        layHot10 = (LinearLayout) findViewById (R.id.layHot10);
 
         btnEditHot.setOnClickListener(new View.OnClickListener() {
             @Override

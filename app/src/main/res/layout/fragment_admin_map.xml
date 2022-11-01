@@ -21,6 +21,7 @@
         android:paddingTop="40dp">
 
         <EditText
+            android:id="@+id/etSearchLoc"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_gravity="center"

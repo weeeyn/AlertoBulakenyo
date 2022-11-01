@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import android.widget.Button;
 public class Announcement_Frag extends Fragment {
 
     CardView cardAncmt;
+    RecyclerView rvAncmt;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -67,6 +69,7 @@ public class Announcement_Frag extends Fragment {
         View view = inflater.inflate(R.layout.fragment_announcement, container, false);
 
         cardAncmt = view.findViewById (R.id.cardAncmt);
+        rvAncmt = view.findViewById (R.id.rvAncmt);
 
         cardAncmt.setOnClickListener(new View.OnClickListener() {
             @Override

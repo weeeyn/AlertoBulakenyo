@@ -22,7 +22,6 @@ public class ResetPass extends AppCompatActivity {
     EditText etResetNewPass, etResetConPass;
     TextView tvPassNote;
     Button btnResetPass, btnBackVer;
-    boolean passwordVisible;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

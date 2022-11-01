@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Switch;
 
 public class SettingsSystem extends AppCompatActivity {
+
+    Switch switchLoc, switchGallery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +21,9 @@ public class SettingsSystem extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_setting_system);
+
+        switchLoc = (Switch) findViewById (R.id.switchLoc);
+        switchGallery = (Switch) findViewById (R.id.switchGallery);
     }
 
     @Override
