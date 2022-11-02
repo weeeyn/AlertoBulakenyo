@@ -18,6 +18,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".Announcement"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
+            android:name=".Saved"
+            android:exported="false" />
+        <activity
+            android:name=".Evac"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Saved"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Evac"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Settings"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Profile"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Announcement"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Home"
+            android:exported="false" />
+        <activity
             android:name=".Admin_ViewHotlines"
             android:exported="false" />
         <activity
@@ -102,10 +138,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Admin_AddEvac"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admin_Homenav"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -318,10 +350,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".GetStarted"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".HomeNav"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

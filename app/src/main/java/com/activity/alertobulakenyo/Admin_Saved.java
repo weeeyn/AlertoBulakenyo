@@ -2,24 +2,20 @@ package com.activity.alertobulakenyo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.EditText;
-import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Map extends AppCompatActivity {
+public class Admin_Saved extends AppCompatActivity {
 
     BottomNavigationView mapNav;
-    EditText etSearchLoc;
-    ImageButton btnSearch;
+    RecyclerView rvMapSaved;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +26,14 @@ public class Map extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_map);
+        setContentView(R.layout.activity_admin_saved);
 
         mapNav = (BottomNavigationView) findViewById (R.id.mapNav);
 
-        etSearchLoc = (EditText) findViewById (R.id.etSearchLoc);
-        btnSearch = (ImageButton) findViewById (R.id.btnSearch);
+        rvMapSaved = (RecyclerView) findViewById (R.id.rvMapSaved);
 
         // Set Home selected
-        mapNav.setSelectedItemId(R.id.map);
+        mapNav.setSelectedItemId(R.id.saved);
 
         // Perform item selected listener
         mapNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -48,16 +43,16 @@ public class Map extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.map:
+                        startActivity(new Intent (getApplicationContext(), Admin_Map.class));
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.evac:
-                        startActivity(new Intent (getApplicationContext(), Evac.class));
+                        startActivity(new Intent(getApplicationContext(), Admin_Evac.class));
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.saved:
-                        startActivity(new Intent (getApplicationContext(), Saved.class));
-                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
@@ -69,8 +64,7 @@ public class Map extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        startActivity(new Intent(getApplicationContext(), Home.class));
-        overridePendingTransition(R.anim.slide_in_left,
-                R.anim.slide_out_right);
+        startActivity(new Intent(getApplicationContext(), Admin_Map.class));
+        overridePendingTransition(0,0);
     }
 }
