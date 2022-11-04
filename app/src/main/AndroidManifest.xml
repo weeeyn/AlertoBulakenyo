@@ -18,6 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".Admin_ReportAnnouncements"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_ReportWarnings"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_ReportUsers"
+            android:exported="false" />
+        <activity
             android:name=".Settings"
             android:exported="false"
             android:screenOrientation="portrait" />
