@@ -85,7 +85,7 @@
                 android:orientation="horizontal"
                 android:weightSum="8">
 
-                <TextView
++                <TextView
                     android:id="@+id/tvDept"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
