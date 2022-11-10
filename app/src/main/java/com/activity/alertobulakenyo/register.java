@@ -1,13 +1,7 @@
 package com.activity.alertobulakenyo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -18,9 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputLayout;
+import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class register extends AppCompatActivity {
 
@@ -28,7 +22,7 @@ public class register extends AppCompatActivity {
     EditText etRegFname, etRegLname, etRegUsername, etContact, etHouse, etRegEmail, etRegPass, etRegConPass;
     AutoCompleteTextView actCity, actBrgy, actProvince;
     CheckBox cbAgree1, cbAgree2;
-    Button btnSignup;
+    Button btnOpenMap, btnSignup;
     TextView tvTerms, tvPrivacy, tvLogin;
     int cb1 = 0, cb2 = 0;
 
@@ -70,11 +64,22 @@ public class register extends AppCompatActivity {
 
         cbAgree1 = (CheckBox) findViewById (R.id.cbAgree1);
         cbAgree2 = (CheckBox) findViewById (R.id.cbAgree2);
+        btnOpenMap = (Button) findViewById (R.id.btnOpenMap);
         btnSignup = (Button) findViewById (R.id.btnSignup);
 
         tvTerms = (TextView) findViewById (R.id.tvTerms);
         tvPrivacy = (TextView) findViewById (R.id.tvPrivacy);
         tvLogin = (TextView) findViewById (R.id.tvLogin);
+
+        btnOpenMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(register.this, OpenMap.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
 
         tvTerms.setOnClickListener(new View.OnClickListener() {
             @Override
