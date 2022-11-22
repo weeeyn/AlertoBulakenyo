@@ -20,9 +20,11 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
-
         <activity
-            android:name=".OpenMap"
+            android:name=".Evacuation"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_Evacuation"
             android:exported="false" />
         <activity
             android:name=".Admin_ReportAnnouncements"
@@ -47,22 +49,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Home"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Saved"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Evac"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admin_Saved"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admin_Evac"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -159,10 +145,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Admin_SettingsAccount"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admin_Map"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -362,10 +344,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Map"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".register"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -387,11 +365,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -404,7 +404,7 @@ public class Admin_CreateWarning extends AppCompatActivity {
                 btnEvac.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(Admin_CreateWarning.this, Admin_Map.class);
+                        Intent intent = new Intent(Admin_CreateWarning.this, Admin_Evacuation.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_right,
                                 R.anim.slide_out_left);

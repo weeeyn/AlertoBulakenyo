@@ -21,7 +21,7 @@ public class Admin_Home extends AppCompatActivity {
     BottomNavigationView bottomNav;
     int k = 0;
     Button btnAncmt;
-    ImageButton imgDisaster, imgMap, imgPrepare, imgHotlines;
+    ImageButton imgDisaster, imgEvac, imgPrepare, imgHotlines;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class Admin_Home extends AppCompatActivity {
         btnAncmt = (Button) findViewById (R.id.btnAncmt);
 
         imgDisaster = (ImageButton) findViewById (R.id.imgDisaster);
-        imgMap = (ImageButton) findViewById (R.id.imgMap);
+        imgEvac= (ImageButton) findViewById (R.id.imgEvac);
         imgPrepare = (ImageButton) findViewById (R.id.imgPrepare);
         imgHotlines = (ImageButton) findViewById (R.id.imgHotlines);
 
@@ -90,10 +90,10 @@ public class Admin_Home extends AppCompatActivity {
             }
         });
 
-        imgMap.setOnClickListener(new View.OnClickListener() {
+        imgEvac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin_Home.this, Admin_Map.class);
+                Intent intent = new Intent(Admin_Home.this, Admin_Evacuation.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

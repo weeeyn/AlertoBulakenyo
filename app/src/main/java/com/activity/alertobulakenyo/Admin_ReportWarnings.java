@@ -11,7 +11,6 @@ import android.widget.Button;
 
 public class Admin_ReportWarnings extends AppCompatActivity {
 
-    Button btnExcel, btnPDF;
     RecyclerView rvRepWarn;
 
     @Override
@@ -25,24 +24,7 @@ public class Admin_ReportWarnings extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_report_warnings);
 
-        btnExcel = (Button) findViewById (R.id.btnExcel);
-        btnPDF = (Button) findViewById (R.id.btnPDF);
-
         rvRepWarn = (RecyclerView) findViewById (R.id.rvRepWarn);
-
-        btnExcel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        btnPDF.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
 
     @Override

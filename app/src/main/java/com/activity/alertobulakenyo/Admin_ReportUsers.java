@@ -12,7 +12,6 @@ import android.widget.Button;
 
 public class Admin_ReportUsers extends AppCompatActivity {
 
-    Button btnExcel, btnPDF;
     RecyclerView rvRepUsers;
 
     @Override
@@ -26,24 +25,7 @@ public class Admin_ReportUsers extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_report_users);
 
-        btnExcel = (Button) findViewById (R.id.btnExcel);
-        btnPDF = (Button) findViewById (R.id.btnPDF);
-
         rvRepUsers = (RecyclerView) findViewById (R.id.rvRepUsers);
-
-        btnExcel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        btnPDF.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
 
     @Override

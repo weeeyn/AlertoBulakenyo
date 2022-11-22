@@ -18,20 +18,11 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvBrgyCity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:text="Brgy. City / Municipality"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-
-        <TextView
             android:id="@+id/tvEvacName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
-            android:text="Evac Center Name"
+            android:text="Evac Name"
             android:textColor="@color/dark_blue"
             android:textSize="18dp"
             android:textStyle="bold" />

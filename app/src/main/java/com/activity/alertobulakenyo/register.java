@@ -22,7 +22,7 @@ public class register extends AppCompatActivity {
     EditText etRegFname, etRegLname, etRegUsername, etContact, etHouse, etRegEmail, etRegPass, etRegConPass;
     AutoCompleteTextView actCity, actBrgy, actProvince;
     CheckBox cbAgree1, cbAgree2;
-    Button btnOpenMap, btnSignup;
+    Button btnSignup;
     TextView tvTerms, tvPrivacy, tvLogin;
     int cb1 = 0, cb2 = 0;
 
@@ -64,22 +64,11 @@ public class register extends AppCompatActivity {
 
         cbAgree1 = (CheckBox) findViewById (R.id.cbAgree1);
         cbAgree2 = (CheckBox) findViewById (R.id.cbAgree2);
-        btnOpenMap = (Button) findViewById (R.id.btnOpenMap);
         btnSignup = (Button) findViewById (R.id.btnSignup);
 
         tvTerms = (TextView) findViewById (R.id.tvTerms);
         tvPrivacy = (TextView) findViewById (R.id.tvPrivacy);
         tvLogin = (TextView) findViewById (R.id.tvLogin);
-
-        btnOpenMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(register.this, OpenMap.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
 
         tvTerms.setOnClickListener(new View.OnClickListener() {
             @Override

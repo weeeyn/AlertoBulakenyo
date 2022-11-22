@@ -19,14 +19,13 @@ import android.widget.Button;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class Admin_Evac extends AppCompatActivity {
+public class Admin_Evacuation extends AppCompatActivity {
 
-    BottomNavigationView mapNav;
     Button btnAddNewEvac;
     TextInputLayout tilCity, tilBrgy;
     AutoCompleteTextView actCity, actBrgy;
     CardView cardEvac;
-    RecyclerView rvMapEvac;
+    RecyclerView rvEvac;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +36,7 @@ public class Admin_Evac extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_admin_evac);
-
-        mapNav = (BottomNavigationView) findViewById (R.id.mapNav);
+        setContentView(R.layout.activity_admin_evacuation);
 
         btnAddNewEvac = (Button) findViewById (R.id.btnAddNewEvac);
 
@@ -50,41 +47,12 @@ public class Admin_Evac extends AppCompatActivity {
 
         // cardEvac = view.findViewById (R.id.cardEvac);
 
-        rvMapEvac = (RecyclerView) findViewById (R.id.rvMapEvac);
-
-        // di ko pa sure sa pagview ng mga evac center
-
-        // Set Home selected
-        mapNav.setSelectedItemId(R.id.evac);
-
-        // Perform item selected listener
-        mapNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch(item.getItemId())
-                {
-                    case R.id.map:
-                        startActivity(new Intent(getApplicationContext(), Admin_Map.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.evac:
-                        return true;
-
-                    case R.id.saved:
-                        startActivity(new Intent (getApplicationContext(), Admin_Saved.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
-            }
-        });
+        rvEvac = (RecyclerView) findViewById (R.id.rvEvac);
 
         btnAddNewEvac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin_Evac.this, Admin_AddEvac.class);
+                Intent intent = new Intent(Admin_Evacuation.this, Admin_AddEvac.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -124,7 +92,7 @@ public class Admin_Evac extends AppCompatActivity {
                 "Manggahan", "Parada", "Poblacion", "Pulong Buhangin", "San Gabriel", "San Jose Patag",
                 "San Vicente", "Santa Clara", "Santa Cruz", "Silangan", "Tabing Bakod", "Tumana"};
 
-        ArrayAdapter<String> brgyAdapter = new ArrayAdapter<String>(Admin_Evac.this, R.layout.dropdown_items, brgySJDM);
+        ArrayAdapter<String> brgyAdapter = new ArrayAdapter<String>(Admin_Evacuation.this, R.layout.dropdown_items, brgySJDM);
         actBrgy.setDropDownBackgroundResource(R.color.white);
         actBrgy.setAdapter(brgyAdapter);
 
@@ -135,7 +103,7 @@ public class Admin_Evac extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_Evac.this, R.layout.dropdown_items, city);
+        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, city);
         actCity.setDropDownBackgroundResource(R.color.white);
         actCity.setAdapter(cityAdapter);
 
@@ -146,7 +114,7 @@ public class Admin_Evac extends AppCompatActivity {
 
                 if (selectedCity == "Bocaue")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evac.this, R.layout.dropdown_items, brgyBoc);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgyBoc);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -159,7 +127,7 @@ public class Admin_Evac extends AppCompatActivity {
                 }
                 else if (selectedCity == "Marilao")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evac.this, R.layout.dropdown_items, brgyMar);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgyMar);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -172,7 +140,7 @@ public class Admin_Evac extends AppCompatActivity {
                 }
                 else if (selectedCity == "Meycauayan")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evac.this, R.layout.dropdown_items, brgyMey);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgyMey);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -185,7 +153,7 @@ public class Admin_Evac extends AppCompatActivity {
                 }
                 else if (selectedCity == "San Jose del Monte")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evac.this, R.layout.dropdown_items, brgySJDM);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgySJDM);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -198,7 +166,7 @@ public class Admin_Evac extends AppCompatActivity {
                 }
                 else if (selectedCity == "Santa Maria")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evac.this, R.layout.dropdown_items, brgySanMa);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgySanMa);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -222,13 +190,13 @@ public class Admin_Evac extends AppCompatActivity {
         }
         });
          **/
-
     }
 
     @Override
     public void onBackPressed()
     {
-        startActivity(new Intent(getApplicationContext(), Admin_Map.class));
-        overridePendingTransition(0,0);
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left,
+                R.anim.slide_out_right);
     }
 }

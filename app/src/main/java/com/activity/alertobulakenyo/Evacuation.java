@@ -1,13 +1,11 @@
 package com.activity.alertobulakenyo;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,16 +14,14 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class Evac extends AppCompatActivity {
+public class Evacuation extends AppCompatActivity {
 
-    BottomNavigationView mapNav;
     TextInputLayout tilCity, tilBrgy;
     AutoCompleteTextView actCity, actBrgy;
     CardView cardEvac;
-    RecyclerView rvMapEvac;
+    RecyclerView rvEvac;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +32,7 @@ public class Evac extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_evac);
-
-        mapNav = (BottomNavigationView) findViewById (R.id.mapNav);
+        setContentView(R.layout.activity_evacuation);
 
         tilCity = (TextInputLayout) findViewById (R.id.tilCity);
         actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
@@ -47,36 +41,7 @@ public class Evac extends AppCompatActivity {
 
         // cardEvac = view.findViewById (R.id.cardEvac);
 
-        rvMapEvac = (RecyclerView) findViewById (R.id.rvMapEvac);
-
-        // di ko pa sure sa pagview ng mga evac center
-
-        // Set Home selected
-        mapNav.setSelectedItemId(R.id.evac);
-
-        // Perform item selected listener
-        mapNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch(item.getItemId())
-                {
-                    case R.id.map:
-                        startActivity(new Intent(getApplicationContext(), Map.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.evac:
-                        return true;
-
-                    case R.id.saved:
-                        startActivity(new Intent (getApplicationContext(), Saved.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
-            }
-        });
+        rvEvac = (RecyclerView) findViewById (R.id.rvEvac);
 
         String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
 
@@ -111,7 +76,7 @@ public class Evac extends AppCompatActivity {
                 "Manggahan", "Parada", "Poblacion", "Pulong Buhangin", "San Gabriel", "San Jose Patag",
                 "San Vicente", "Santa Clara", "Santa Cruz", "Silangan", "Tabing Bakod", "Tumana"};
 
-        ArrayAdapter<String> brgyAdapter = new ArrayAdapter<String>(Evac.this, R.layout.dropdown_items, brgySJDM);
+        ArrayAdapter<String> brgyAdapter = new ArrayAdapter<String>(Evacuation.this, R.layout.dropdown_items, brgySJDM);
         actBrgy.setDropDownBackgroundResource(R.color.white);
         actBrgy.setAdapter(brgyAdapter);
 
@@ -122,7 +87,7 @@ public class Evac extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Evac.this, R.layout.dropdown_items, city);
+        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Evacuation.this, R.layout.dropdown_items, city);
         actCity.setDropDownBackgroundResource(R.color.white);
         actCity.setAdapter(cityAdapter);
 
@@ -133,7 +98,7 @@ public class Evac extends AppCompatActivity {
 
                 if (selectedCity == "Bocaue")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Evac.this, R.layout.dropdown_items, brgyBoc);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Evacuation.this, R.layout.dropdown_items, brgyBoc);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -146,7 +111,7 @@ public class Evac extends AppCompatActivity {
                 }
                 else if (selectedCity == "Marilao")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Evac.this, R.layout.dropdown_items, brgyMar);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Evacuation.this, R.layout.dropdown_items, brgyMar);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -159,7 +124,7 @@ public class Evac extends AppCompatActivity {
                 }
                 else if (selectedCity == "Meycauayan")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Evac.this, R.layout.dropdown_items, brgyMey);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Evacuation.this, R.layout.dropdown_items, brgyMey);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -172,7 +137,7 @@ public class Evac extends AppCompatActivity {
                 }
                 else if (selectedCity == "San Jose del Monte")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Evac.this, R.layout.dropdown_items, brgySJDM);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Evacuation.this, R.layout.dropdown_items, brgySJDM);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -185,7 +150,7 @@ public class Evac extends AppCompatActivity {
                 }
                 else if (selectedCity == "Santa Maria")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Evac.this, R.layout.dropdown_items, brgySanMa);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Evacuation.this, R.layout.dropdown_items, brgySanMa);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -209,13 +174,13 @@ public class Evac extends AppCompatActivity {
         }
         });
          **/
-
     }
 
     @Override
     public void onBackPressed()
     {
-        startActivity(new Intent(getApplicationContext(), Map.class));
-        overridePendingTransition(0,0);
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left,
+                R.anim.slide_out_right);
     }
 }

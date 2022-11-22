@@ -49,7 +49,7 @@ public class Flood_info extends AppCompatActivity {
         btnEvac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Flood_info.this, Map.class);
+                Intent intent = new Intent(Flood_info.this, Evacuation.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
