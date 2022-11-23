@@ -39,7 +39,7 @@ public class Evacuation extends AppCompatActivity {
         tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
         actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
 
-        // cardEvac = view.findViewById (R.id.cardEvac);
+        cardEvac = (CardView) findViewById (R.id.cardEvac);
 
         rvEvac = (RecyclerView) findViewById (R.id.rvEvac);
 
@@ -164,16 +164,16 @@ public class Evacuation extends AppCompatActivity {
             }
         });
 
-        /**
-         cardEvac.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-        FragmentTransaction fr = getFragmentManager().beginTransaction();
-        fr.replace(R.id.fragMapContainer, new Map_Frag());
-        fr.commit();
-        }
+        cardEvac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Evacuation.this, EvacInfo.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
         });
-         **/
+
     }
 
     @Override

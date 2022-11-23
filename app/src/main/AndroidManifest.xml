@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".EvacInfo"
+            android:exported="false" />
+        <activity
             android:name=".Evacuation"
             android:exported="false" />
         <activity
