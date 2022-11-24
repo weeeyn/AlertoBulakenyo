@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
-    android:id="@+id/cardWarn"
+    android:id="@+id/cardWarnTy"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="0dp"
+    android:backgroundTint="@color/white"
+    android:layout_marginBottom="5dp"
     android:orientation="vertical"
-    android:backgroundTint="@color/white">
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,16 +27,16 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_weight="2.5"
-                android:src="@drawable/eq_icon"
-                android:scaleType="fitCenter"/>
+                android:scaleType="fitCenter"
+                android:src="@drawable/typ_icon" />
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="7"
+                android:layout_gravity="center"
                 android:layout_marginStart="5dp"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+                android:layout_weight="7"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tvDateTime"
@@ -53,10 +54,10 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="5dp"
                     android:paddingBottom="3dp"
-                    android:text="TYPE OF WARNING"
+                    android:text="TYPHOON WARNING"
                     android:textColor="@color/dark_blue"
-                    android:textStyle="bold"
-                    android:textSize="20dp" />
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvInfo"
@@ -64,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
                     android:paddingStart="5dp"
-                    android:text="Alert Level"
+                    android:text="Typhoon Name"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 

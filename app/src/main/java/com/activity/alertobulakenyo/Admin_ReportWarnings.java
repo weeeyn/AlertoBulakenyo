@@ -8,10 +8,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Admin_ReportWarnings extends AppCompatActivity {
 
     RecyclerView rvRepWarn;
+    TextView tvDept, tvCity, tvWarnType, tvDateTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,11 @@ public class Admin_ReportWarnings extends AppCompatActivity {
         setContentView(R.layout.activity_admin_report_warnings);
 
         rvRepWarn = (RecyclerView) findViewById (R.id.rvRepWarn);
+
+        tvDept = (TextView) findViewById (R.id.tvDept);
+        tvCity = (TextView) findViewById (R.id.tvWarnType);
+        tvWarnType = (TextView) findViewById (R.id.tvWarnType);
+        tvDateTime = (TextView) findViewById (R.id.tvDateTime);
     }
 
     @Override

@@ -9,10 +9,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Admin_ReportUsers extends AppCompatActivity {
 
     RecyclerView rvRepUsers;
+    TextView tvCity, tvBrgy, tvNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,10 @@ public class Admin_ReportUsers extends AppCompatActivity {
         setContentView(R.layout.activity_admin_report_users);
 
         rvRepUsers = (RecyclerView) findViewById (R.id.rvRepUsers);
+
+        tvCity = (TextView) findViewById (R.id.tvCity);
+        tvBrgy = (TextView) findViewById (R.id.tvDept);
+        tvNum = (TextView) findViewById (R.id.tvNum);
     }
 
     @Override

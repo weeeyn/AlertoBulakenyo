@@ -11,7 +11,7 @@ import android.view.WindowManager;
 
 public class PinakaAdmin_Admins extends AppCompatActivity {
 
-    CardView card_createAdmin, card_adminAcc;
+    CardView card_createAdmin, card_adminAcc, card_adminDeact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class PinakaAdmin_Admins extends AppCompatActivity {
 
         card_createAdmin = (CardView) findViewById (R.id.card_createAdmin);
         card_adminAcc = (CardView) findViewById (R.id.card_adminAcc);
+        card_adminDeact = (CardView) findViewById (R.id.card_adminDeact);
 
         card_createAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +42,16 @@ public class PinakaAdmin_Admins extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PinakaAdmin_Admins.this, PinakaAdmin_ViewAcc.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        card_adminDeact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PinakaAdmin_Admins.this, PinakaAdmin_Deacts.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

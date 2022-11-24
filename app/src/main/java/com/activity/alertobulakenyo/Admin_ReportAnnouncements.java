@@ -8,10 +8,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Admin_ReportAnnouncements extends AppCompatActivity {
 
     RecyclerView rvRepAncmt;
+    TextView tvDept, tvCity, tvAncmtTitle, tvDateTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,11 @@ public class Admin_ReportAnnouncements extends AppCompatActivity {
         setContentView(R.layout.activity_admin_report_announcements);
 
         rvRepAncmt = (RecyclerView) findViewById (R.id.rvRepAncmt);
+
+        tvDept = (TextView) findViewById (R.id.tvDept);
+        tvCity = (TextView) findViewById (R.id.tvCity);
+        tvAncmtTitle = (TextView) findViewById (R.id.tvAncmtTitle);
+        tvDateTime = (TextView) findViewById (R.id.tvDateTime);
     }
 
     @Override

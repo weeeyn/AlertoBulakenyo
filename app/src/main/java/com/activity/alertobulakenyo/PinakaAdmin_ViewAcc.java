@@ -9,10 +9,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 public class PinakaAdmin_ViewAcc extends AppCompatActivity {
 
     CardView cardAdminAcc;
+    TextView tvDeptAbbv, tvDeptName, tvAdminName;
     RecyclerView rvAdminAcc;
 
     @Override
@@ -27,6 +29,11 @@ public class PinakaAdmin_ViewAcc extends AppCompatActivity {
         setContentView(R.layout.activity_pinaka_admin_view_acc);
 
         cardAdminAcc = (CardView) findViewById (R.id.cardAdminAcc);
+
+        tvDeptAbbv = (TextView) findViewById (R.id.tvDeptAbbv);
+        tvDeptName = (TextView) findViewById (R.id.tvDeptName);
+        tvAdminName = (TextView) findViewById (R.id.tvAdminName);
+
         rvAdminAcc = (RecyclerView) findViewById (R.id.rvAdminAcc);
 
         cardAdminAcc.setOnClickListener(new View.OnClickListener() {

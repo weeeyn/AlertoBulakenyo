@@ -110,7 +110,7 @@ public class Admin_CreateWarning extends AppCompatActivity {
 
         String [] rain = {"Yellow Warning", "Orange Warning", "Red Warning"};
 
-        String [] flood = {"Sample Level 1", "Sample Level 2", "Sample Level 3"};
+        String [] flood = {"Yellow Warning", "Orange Warning", "Red Warning"};
 
         String [] signal = {"Signal No. 1", "Signal No. 2", "Signal No. 3", "Signal No. 4", "Signal No. 5"};
 

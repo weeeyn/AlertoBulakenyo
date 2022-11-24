@@ -228,6 +228,15 @@ public class Admin_Disaster extends AppCompatActivity {
             }
         });
 
+        cardWarn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Admin_Disaster.this, Admin_DisasterEQInfo.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
 
     }
 
