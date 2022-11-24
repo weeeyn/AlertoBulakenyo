@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class MainAdmin_Home extends AppCompatActivity {
+public class PinakaAdmin_Report extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,14 @@ public class MainAdmin_Home extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_main_admin_home);
+        setContentView(R.layout.activity_pinaka_admin_report);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left,
+                R.anim.slide_out_right);
     }
 }

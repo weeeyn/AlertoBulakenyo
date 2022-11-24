@@ -57,6 +57,8 @@ public class DeleteAcc extends AppCompatActivity {
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_right,
                             R.anim.slide_out_left);
+
+                    Toast.makeText(DeleteAcc.this, "Account Deleted!", Toast.LENGTH_SHORT).show();
                 });
 
                 builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {

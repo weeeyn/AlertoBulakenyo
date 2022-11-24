@@ -25,7 +25,7 @@ public class login extends AppCompatActivity {
 
     TextInputLayout tilLoginEmail, tilLoginPass;
     EditText etLoginEmail, etLoginPass;
-    Button btnLogin, btnAdmin;
+    Button btnLogin, btnAdmin, btnMainAdmin;
     TextView tvForgotPass, tvSignup;
 
     @Override
@@ -44,6 +44,7 @@ public class login extends AppCompatActivity {
 
         btnLogin = (Button) findViewById (R.id.btnLogin);
         btnAdmin = (Button) findViewById (R.id.btnAdmin);
+        btnMainAdmin = (Button) findViewById (R.id.btnMainAdmin);
 
         tvForgotPass = (TextView) findViewById (R.id.tvForgotPass);
         tvSignup = (TextView) findViewById (R.id.tvSignup);
@@ -68,6 +69,17 @@ public class login extends AppCompatActivity {
                  */
 
                 Intent intent = new Intent(login.this, Home.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnMainAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(login.this, PinakaAdmin_Home.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

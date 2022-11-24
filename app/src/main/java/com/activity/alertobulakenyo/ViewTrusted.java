@@ -16,7 +16,7 @@ public class ViewTrusted extends AppCompatActivity {
 
     ImageView imgProfile;
     TextView tvFullName, tvAccUser, tvAccEmail, tvAccConNum, tvAccAdd, tvRelationship;
-    Button btnText, btnEmail, btnSendRecLoc;
+    Button btnShowLoc, btnSendRecLoc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,24 +38,14 @@ public class ViewTrusted extends AppCompatActivity {
         tvAccAdd = (TextView) findViewById (R.id.tvAccAdd);
         tvRelationship = (TextView) findViewById (R.id.tvRelationship);
 
-        btnText = (Button) findViewById (R.id.btnText);
-        btnEmail = (Button) findViewById (R.id.btnEmail);
+        btnShowLoc = (Button) findViewById (R.id.btnShowLoc);
         btnSendRecLoc = (Button) findViewById (R.id.btnSendRecLoc);
 
-        btnText.setOnClickListener(new View.OnClickListener() {
+        btnShowLoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(ViewTrusted.this, "Text!", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        btnEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Toast.makeText(ViewTrusted.this, "Email!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ViewTrusted.this, "Google Maps!", Toast.LENGTH_SHORT).show();
 
             }
         });

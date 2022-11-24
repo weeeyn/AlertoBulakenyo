@@ -124,6 +124,19 @@
                 android:textStyle="italic" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMainAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/rounded_button2"
+                android:padding="10dp"
+                android:stateListAnimator="@null"
+                android:text="HOME ADMIN LOG IN"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnAdmin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

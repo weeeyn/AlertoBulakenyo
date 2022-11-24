@@ -1,13 +1,8 @@
 package com.activity.alertobulakenyo;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -15,17 +10,17 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class Admin_Evacuation extends AppCompatActivity {
+public class Admin_EditEvac extends AppCompatActivity {
 
-    Button btnAddNewEvac;
-    TextInputLayout tilCity, tilBrgy;
+    TextInputLayout tilEvacName, tilEvacLoc, tilLong, tilLat, tilCity, tilBrgy;
+    EditText etEvacName, etEvacLoc, etLong, etLat;
     AutoCompleteTextView actCity, actBrgy;
-    CardView cardEvac;
-    RecyclerView rvEvac;
+    Button btnSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,28 +31,24 @@ public class Admin_Evacuation extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_admin_evacuation);
+        setContentView(R.layout.activity_admin_edit_evac);
 
-        btnAddNewEvac = (Button) findViewById (R.id.btnAddNewEvac);
-
+        tilEvacName = (TextInputLayout) findViewById (R.id.tilEvacName);
+        tilEvacLoc = (TextInputLayout) findViewById (R.id.tilEvacLoc);
+        tilLong = (TextInputLayout) findViewById (R.id.tilLong);
+        tilLat = (TextInputLayout) findViewById (R.id.tilLat);
         tilCity = (TextInputLayout) findViewById (R.id.tilCity);
-        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
         tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
+
+        etEvacName = (EditText) findViewById (R.id.etEvacName);
+        etEvacLoc = (EditText) findViewById (R.id.etEvacLoc);
+        etLong = (EditText) findViewById (R.id.etLong);
+        etLat = (EditText) findViewById (R.id.etLat);
+
+        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
         actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
 
-        cardEvac = (CardView) findViewById (R.id.cardEvac);
-
-        rvEvac = (RecyclerView) findViewById (R.id.rvEvac);
-
-        btnAddNewEvac.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Admin_Evacuation.this, Admin_AddEvac.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
+        btnSave = (Button) findViewById (R.id.btnSave);
 
         String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
 
@@ -92,18 +83,8 @@ public class Admin_Evacuation extends AppCompatActivity {
                 "Manggahan", "Parada", "Poblacion", "Pulong Buhangin", "San Gabriel", "San Jose Patag",
                 "San Vicente", "Santa Clara", "Santa Cruz", "Silangan", "Tabing Bakod", "Tumana"};
 
-        ArrayAdapter<String> brgyAdapter = new ArrayAdapter<String>(Admin_Evacuation.this, R.layout.dropdown_items, brgySJDM);
-        actBrgy.setDropDownBackgroundResource(R.color.white);
-        actBrgy.setAdapter(brgyAdapter);
 
-        ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedBrgy = brgyAdapter.getItem(position);
-            }
-        });
-
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, city);
+        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, city);
         actCity.setDropDownBackgroundResource(R.color.white);
         actCity.setAdapter(cityAdapter);
 
@@ -114,7 +95,7 @@ public class Admin_Evacuation extends AppCompatActivity {
 
                 if (selectedCity == "Bocaue")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgyBoc);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgyBoc);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -127,7 +108,7 @@ public class Admin_Evacuation extends AppCompatActivity {
                 }
                 else if (selectedCity == "Marilao")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgyMar);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgyMar);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -140,7 +121,7 @@ public class Admin_Evacuation extends AppCompatActivity {
                 }
                 else if (selectedCity == "Meycauayan")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgyMey);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgyMey);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -153,7 +134,7 @@ public class Admin_Evacuation extends AppCompatActivity {
                 }
                 else if (selectedCity == "San Jose del Monte")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgySJDM);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgySJDM);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -166,7 +147,7 @@ public class Admin_Evacuation extends AppCompatActivity {
                 }
                 else if (selectedCity == "Santa Maria")
                 {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgySanMa);
+                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgySanMa);
                     actBrgy.setDropDownBackgroundResource(R.color.white);
                     actBrgy.setAdapter(brgyAdapter);
 
@@ -180,13 +161,16 @@ public class Admin_Evacuation extends AppCompatActivity {
             }
         });
 
-        cardEvac.setOnClickListener(new View.OnClickListener() {
+        btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin_Evacuation.this, Admin_EvacInfo.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
+                // maglagay ng toast for save changes
+                Toast.makeText(Admin_EditEvac.this, "Saved!", Toast.LENGTH_SHORT).show();
+
+                finish();
+                finishActivity(107);
+                overridePendingTransition(R.anim.slide_in_left,
+                        R.anim.slide_out_right);
             }
         });
     }

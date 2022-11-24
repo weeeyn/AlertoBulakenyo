@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#d9d9d9"
-    tools:context=".Admin_AccountInfo">
+    tools:context=".PinakaAdmin_AccountInfo">
 
     <ImageView
         android:layout_width="match_parent"
@@ -46,6 +46,42 @@
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="10dp"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnEdit"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button2"
+                    android:stateListAnimator="@null"
+                    android:text="Edit"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDeact"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button2"
+                    android:padding="5dp"
+                    android:stateListAnimator="@null"
+                    android:text="DEACTIVATE"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -148,6 +184,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="20dp"
+                        android:layout_marginBottom="10dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -164,12 +201,37 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:text="Fullname"
+                            android:text="Full Name"
                             android:textColor="@color/black"
                             android:textSize="15dp" />
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:text="Account Status:"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvStatus"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="6"
+                            android:text="Active"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 

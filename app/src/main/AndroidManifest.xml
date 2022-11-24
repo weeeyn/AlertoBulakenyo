@@ -21,23 +21,61 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
-            android:name=".EvacInfo"
+            android:name=".PinakaAdmin_EditInfo"
             android:exported="false" />
+        <activity
+            android:name=".PinakaAdmin_AccountInfo"
+            android:exported="false" />
+        <activity
+            android:name=".PinakaAdmin_ViewAcc"
+            android:exported="false" />
+        <activity
+            android:name=".PinakaAdmin_CreateAcc"
+            android:exported="false" />
+        <activity
+            android:name=".PinakaAdmin_Report"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PinakaAdmin_Admins"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PinakaAdmin_Home"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Admin_EditEvac"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Admin_EvacInfo"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EvacInfo"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Evacuation"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admin_Evacuation"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admin_ReportAnnouncements"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admin_ReportWarnings"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admin_ReportUsers"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Settings"
             android:exported="false"

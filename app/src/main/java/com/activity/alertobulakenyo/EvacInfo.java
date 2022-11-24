@@ -9,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EvacInfo extends AppCompatActivity {
 
@@ -38,6 +39,12 @@ public class EvacInfo extends AppCompatActivity {
         btnNavi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Toast.makeText(EvacInfo.this, "Direct to Google Maps!", Toast.LENGTH_SHORT).show();
+
+                // direct to gmaps
+
+
                 //Intent intent = new Intent(Evacuation.this, EvacInfo.class);
                 //startActivity(intent);
                 //overridePendingTransition(R.anim.slide_in_right,

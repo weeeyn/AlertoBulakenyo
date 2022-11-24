@@ -14,11 +14,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Admin_AncmntBody extends AppCompatActivity {
+public class PinakaAdmin_AccountInfo extends AppCompatActivity {
 
-    Button btnEditAncmnt, btnDeleteAncmnt;
+    Button btnEdit, btnDeact;
+    TextView tvDeptAbbre, tvDeptName, tvCity, tvEmail, tvAdminName, tvStatus;
     Dialog dialog;
-    TextView tvOffice, tvDateTime, tvTitle, tvBody;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,45 +29,49 @@ public class Admin_AncmntBody extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_admin_ancmnt_body);
+        setContentView(R.layout.activity_pinaka_admin_account_info);
 
-        btnEditAncmnt = (Button) findViewById (R.id.btnEditAncmnt);
-        btnDeleteAncmnt = (Button) findViewById (R.id.btnDeleteAncmnt);
+        btnEdit = (Button) findViewById (R.id.btnEdit);
+        btnDeact = (Button) findViewById (R.id.btnDeact);
 
-        tvOffice = (TextView) findViewById (R.id.tvOffice);
-        tvDateTime = (TextView) findViewById (R.id.tvDateTime);
-        tvTitle = (TextView) findViewById (R.id.tvTitle);
-        tvBody = (TextView) findViewById (R.id.tvBody);
+        tvDeptAbbre = (TextView) findViewById (R.id.tvDeptAbbre);
+        tvDeptName = (TextView) findViewById (R.id.tvDeptName);
+        tvCity = (TextView) findViewById (R.id.tvCity);
+        tvEmail = (TextView) findViewById (R.id.tvEmail);
+        tvAdminName = (TextView) findViewById (R.id.tvAdminName);
+        tvStatus = (TextView) findViewById (R.id.tvStatus);
 
-        AlertDialog.Builder build = new AlertDialog.Builder(Admin_AncmntBody.this);
+        AlertDialog.Builder build = new AlertDialog.Builder(PinakaAdmin_AccountInfo.this);
         dialog = build.create();
 
-        btnEditAncmnt.setOnClickListener(new View.OnClickListener() {
+        btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin_AncmntBody.this, Admin_EditAncmnt.class);
+
+                Intent intent = new Intent(PinakaAdmin_AccountInfo.this, PinakaAdmin_EditInfo.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
             }
         });
 
-        btnDeleteAncmnt.setOnClickListener(new View.OnClickListener() {
+        btnDeact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(Admin_AncmntBody.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(PinakaAdmin_AccountInfo.this);
 
-                builder.setMessage("Are you sure you want to delete this announcement?");
+                builder.setMessage("Are you sure you want to deactivate the account?");
 
                 builder.setCancelable(true);
 
                 builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
                     // When the user click yes button then app will close
-                    finish();
+                    Intent intent = new Intent(PinakaAdmin_AccountInfo.this, PinakaAdmin_ViewAcc.class);
+                    startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_left,
                             R.anim.slide_out_right);
 
-                    Toast.makeText(Admin_AncmntBody.this, "Announcemennt Deleted!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PinakaAdmin_AccountInfo.this, "Account Deactivated!", Toast.LENGTH_SHORT).show();
                 });
 
                 builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
@@ -86,6 +90,8 @@ public class Admin_AncmntBody extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
+        Intent intent = new Intent(PinakaAdmin_AccountInfo.this, PinakaAdmin_ViewAcc.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

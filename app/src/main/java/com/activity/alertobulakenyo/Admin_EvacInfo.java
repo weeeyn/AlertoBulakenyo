@@ -14,11 +14,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Admin_AncmntBody extends AppCompatActivity {
+public class Admin_EvacInfo extends AppCompatActivity {
 
-    Button btnEditAncmnt, btnDeleteAncmnt;
+    TextView tvCity, tvBrgy, tvEvacName, tvEvacAdd, tvLong, tvLat;
+    Button btnEditEvac, btnDeleteEvac, btnNavi;
     Dialog dialog;
-    TextView tvOffice, tvDateTime, tvTitle, tvBody;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,35 +29,40 @@ public class Admin_AncmntBody extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_admin_ancmnt_body);
+        setContentView(R.layout.activity_admin_evac_info);
 
-        btnEditAncmnt = (Button) findViewById (R.id.btnEditAncmnt);
-        btnDeleteAncmnt = (Button) findViewById (R.id.btnDeleteAncmnt);
+        tvCity = (TextView) findViewById (R.id.tvCity);
+        tvBrgy = (TextView) findViewById (R.id.tvBrgy);
+        tvEvacName = (TextView) findViewById (R.id.tvEvacName);
+        tvEvacAdd = (TextView) findViewById (R.id.tvEvacAdd);
+        tvLong = (TextView) findViewById (R.id.tvLong);
+        tvLat = (TextView) findViewById (R.id.tvLat);
 
-        tvOffice = (TextView) findViewById (R.id.tvOffice);
-        tvDateTime = (TextView) findViewById (R.id.tvDateTime);
-        tvTitle = (TextView) findViewById (R.id.tvTitle);
-        tvBody = (TextView) findViewById (R.id.tvBody);
+        btnEditEvac = (Button) findViewById (R.id.btnEditEvac);
+        btnDeleteEvac = (Button) findViewById (R.id.btnDeleteEvac);
+        btnNavi = (Button) findViewById (R.id.btnNavi);
 
-        AlertDialog.Builder build = new AlertDialog.Builder(Admin_AncmntBody.this);
+        AlertDialog.Builder build = new AlertDialog.Builder(Admin_EvacInfo.this);
         dialog = build.create();
 
-        btnEditAncmnt.setOnClickListener(new View.OnClickListener() {
+        btnEditEvac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin_AncmntBody.this, Admin_EditAncmnt.class);
+
+                Intent intent = new Intent(Admin_EvacInfo.this, Admin_EditEvac.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
             }
         });
 
-        btnDeleteAncmnt.setOnClickListener(new View.OnClickListener() {
+        btnDeleteEvac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(Admin_AncmntBody.this);
 
-                builder.setMessage("Are you sure you want to delete this announcement?");
+                AlertDialog.Builder builder = new AlertDialog.Builder(Admin_EvacInfo.this);
+
+                builder.setMessage("Are you sure you want to delete this evacuation center?");
 
                 builder.setCancelable(true);
 
@@ -67,7 +72,7 @@ public class Admin_AncmntBody extends AppCompatActivity {
                     overridePendingTransition(R.anim.slide_in_left,
                             R.anim.slide_out_right);
 
-                    Toast.makeText(Admin_AncmntBody.this, "Announcemennt Deleted!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Admin_EvacInfo.this, "Evacuation Center Deleted!", Toast.LENGTH_SHORT).show();
                 });
 
                 builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
@@ -80,6 +85,21 @@ public class Admin_AncmntBody extends AppCompatActivity {
             }
         });
 
+        btnNavi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(Admin_EvacInfo.this, "Direct to Google Maps!", Toast.LENGTH_SHORT).show();
+
+                // direct to gmaps
+
+
+                //Intent intent = new Intent(Evacuation.this, EvacInfo.class);
+                //startActivity(intent);
+                //overridePendingTransition(R.anim.slide_in_right,
+                //        R.anim.slide_out_left);
+            }
+        });
     }
 
     @Override
