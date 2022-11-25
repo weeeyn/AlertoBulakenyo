@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class PinakaAdmin_AccountInfo extends AppCompatActivity {
 
-    Button btnEdit, btnDeact;
+    Button btnEdit, btnActivate, btnDeact;
     TextView tvDeptAbbre, tvDeptName, tvCity, tvEmail, tvAdminName, tvStatus;
     Dialog dialog;
 
@@ -32,6 +32,7 @@ public class PinakaAdmin_AccountInfo extends AppCompatActivity {
         setContentView(R.layout.activity_pinaka_admin_account_info);
 
         btnEdit = (Button) findViewById (R.id.btnEdit);
+        btnActivate = (Button) findViewById (R.id.btnActivate);
         btnDeact = (Button) findViewById (R.id.btnDeact);
 
         tvDeptAbbre = (TextView) findViewById (R.id.tvDeptAbbre);
@@ -44,14 +45,11 @@ public class PinakaAdmin_AccountInfo extends AppCompatActivity {
         AlertDialog.Builder build = new AlertDialog.Builder(PinakaAdmin_AccountInfo.this);
         dialog = build.create();
 
-        btnEdit.setOnClickListener(new View.OnClickListener() {
+        btnActivate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(PinakaAdmin_AccountInfo.this, PinakaAdmin_EditInfo.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
+
             }
         });
 
@@ -81,6 +79,17 @@ public class PinakaAdmin_AccountInfo extends AppCompatActivity {
 
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();
+            }
+        });
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(PinakaAdmin_AccountInfo.this, PinakaAdmin_EditInfo.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
             }
         });
 
