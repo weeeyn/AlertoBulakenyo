@@ -20,7 +20,7 @@ public class ForgotPass extends AppCompatActivity {
 
     TextInputLayout tilFPemail;
     EditText etFPemail;
-    Button btnSend, btnBackLogin;
+    Button btnSend, btnBack;
     TextView tvResend;
 
     @Override
@@ -38,7 +38,7 @@ public class ForgotPass extends AppCompatActivity {
         etFPemail = (EditText) findViewById (R.id.etFPemail);
 
         btnSend = (Button) findViewById (R.id.btnSend);
-        btnBackLogin = (Button) findViewById (R.id.btnBackLogin);
+        btnBack = (Button) findViewById (R.id.btnBack);
 
         tvResend = (TextView) findViewById (R.id.tvResend);
 
@@ -65,7 +65,7 @@ public class ForgotPass extends AppCompatActivity {
             }
         });
 
-        btnBackLogin.setOnClickListener(new View.OnClickListener() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ForgotPass.this, login.class);
@@ -80,6 +80,9 @@ public class ForgotPass extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
+
+        // balik login
+
         Intent intent = new Intent(ForgotPass.this, login.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,

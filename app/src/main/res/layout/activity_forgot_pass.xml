@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".AccountInfo">
+    tools:context=".ForgotPass">
 
     <ImageView
         android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
                 android:hint="Email Address"
-                android:textColorHint="#ff5003"
+                android:textColorHint="@color/dark_blue"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomEnd="4dp"
@@ -76,10 +76,10 @@
                 app:boxStrokeWidth="1dp"
                 app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="clear_text"
-                app:endIconTint="#ff5003"
-                app:hintTextColor="#ff5003"
+                app:endIconTint="@color/dark_blue"
+                app:hintTextColor="@color/dark_blue"
                 app:startIconDrawable="@drawable/email"
-                app:startIconTint="#ff5003">
+                app:startIconTint="@color/dark_blue">
 
                 <EditText
                     android:id="@+id/etFPemail"
@@ -88,8 +88,8 @@
                     android:autoSizeTextType="uniform"
                     android:inputType="textMultiLine"
                     android:textColor="@color/black"
-                    android:textColorLink="#ff5003"
-                    android:textCursorDrawable="@drawable/cursor_orange" />
+                    android:textColorLink="@color/dark_blue"
+                    android:textCursorDrawable="@drawable/cursor_blue" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,7 +131,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnBackLogin"
+        android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"

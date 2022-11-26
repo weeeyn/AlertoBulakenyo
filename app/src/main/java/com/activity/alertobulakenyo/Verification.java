@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -18,10 +19,10 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class Verification extends AppCompatActivity {
 
-    TextInputLayout tilCode;
-    EditText etCode;
-    Button btnVerify, btnBackFP;
-    TextView tvNote;
+    TextInputLayout tilOTP;
+    EditText etOTP;
+    Button btnSend, btnBack;
+    TextView tvResend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,38 +35,44 @@ public class Verification extends AppCompatActivity {
 
         setContentView(R.layout.activity_verification);
 
-        btnVerify = (Button) findViewById (R.id.btnVerify);
-        btnBackFP = (Button) findViewById (R.id.btnBackFP);
-        tilCode = (TextInputLayout) findViewById (R.id.tilCode);
-        etCode = (EditText) findViewById (R.id.etCode);
-        tvNote = (TextView) findViewById (R.id.tvNote);
+        tilOTP = (TextInputLayout) findViewById (R.id.tilOTP);
+        etOTP = (EditText) findViewById (R.id.etOTP);
 
-        btnVerify.setOnClickListener(new View.OnClickListener() {
+        btnSend = (Button) findViewById (R.id.btnSend);
+        btnBack = (Button) findViewById (R.id.btnBack);
+
+        tvResend = (TextView) findViewById (R.id.tvResend);
+
+        btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                /*
-
-                if (TextUtils.isEmpty(etCode.getText().toString()))
+                if (TextUtils.isEmpty(etOTP.getText().toString()))
                 {
-                    tvNote.setText("There is an error in the verification code.");
+                    etOTP.setError("Required!");
                     return;
                 }
 
-                 */
+                new CountDownTimer(59000, 1000) {
 
+                    public void onTick(long millisUntilFinished) {
+                        tvResend.setText("Code sent. Resend code in " + millisUntilFinished / 1000 + " seconds.");
+                    }
 
-                Intent intent = new Intent(Verification.this, ResetPass.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
+                    public void onFinish() {
+                        tvResend.setText("Resend a new code");
+                        btnSend.setText("RESEND");
+                    }
+                }.start();
             }
         });
 
-        btnBackFP.setOnClickListener(new View.OnClickListener() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Verification.this, ForgotPass.class);
+
+                // balik login
+
+                Intent intent = new Intent(Verification.this, login.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,
                         R.anim.slide_out_right);

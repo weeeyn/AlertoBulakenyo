@@ -404,10 +404,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ResetPass"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Verification"
             android:exported="false"
             android:screenOrientation="portrait" />
