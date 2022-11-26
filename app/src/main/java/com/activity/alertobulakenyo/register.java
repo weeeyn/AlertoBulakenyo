@@ -72,6 +72,8 @@ public class register extends AppCompatActivity {
         tvPrivacy = (TextView) findViewById (R.id.tvPrivacy);
         tvLogin = (TextView) findViewById (R.id.tvLogin);
 
+        String [] province = {"Bulacan"};
+
         String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
 
         String [] brgyBoc = {"ALL", "Antipona", "Bagumbayan", "Bambang", "Batia", "Biñang 1st",
@@ -182,6 +184,11 @@ public class register extends AppCompatActivity {
                 }
             }
         });
+
+
+        ArrayAdapter<String> provAdapter = new ArrayAdapter<>(register.this, R.layout.dropdown_items, province);
+        actProvince.setDropDownBackgroundResource(R.color.white);
+        actProvince.setAdapter(provAdapter);
 
         tvTerms.setOnClickListener(new View.OnClickListener() {
             @Override
