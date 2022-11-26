@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "662217605289",
+    "project_id": "alerto-bulakenyo-60ecf",
+    "storage_bucket": "alerto-bulakenyo-60ecf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662217605289:android:bd3d5fa4cfe35d19abe9b8",
+        "android_client_info": {
+          "package_name": "com.activity.alertobulakenyo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662217605289-o5v2ovffba3shq35627e6pitip85ugdq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe3CsU_sguucQX-qXI3P7bpszuAPd1RHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662217605289-o5v2ovffba3shq35627e6pitip85ugdq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

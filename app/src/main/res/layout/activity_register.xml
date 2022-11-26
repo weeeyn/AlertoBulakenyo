@@ -166,7 +166,7 @@
                 app:startIconTint="#003366">
 
                 <EditText
-                    android:id="@+id/etContact"
+                    android:id="@+id/etRegContact"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:autoSizeTextType="uniform"
@@ -200,7 +200,7 @@
                 app:startIconTint="#003366">
 
                 <EditText
-                    android:id="@+id/etHouse"
+                    android:id="@+id/etRegHouse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autoSizeTextType="uniform"
@@ -516,6 +516,16 @@
                 app:autoSizeTextType="uniform" />
 
         </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="100dp"
+            android:visibility="invisible"
+            />
 
     </RelativeLayout>
 
