@@ -35,8 +35,6 @@ public class ViewToAdd extends AppCompatActivity {
 
         setContentView(R.layout.activity_view_to_add);
 
-        imgProfile = (ImageView) findViewById (R.id.imgProfile);
-
         tvFullName = (TextView) findViewById (R.id.tvFullName);
         tvAccUser = (TextView) findViewById (R.id.tvAccUser);
         tvAccEmail = (TextView) findViewById (R.id.tvAccEmail);

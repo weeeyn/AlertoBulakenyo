@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 public class AccountInfo extends AppCompatActivity {
 
-    Button btnEditInfo;
-    TextView tvAccFname, tvAccLname, tvAccUser, tvAccEmail, tvAccConNum, tvAccAdd;
+    Button btnEditInfo, btnGetLoc;
+    TextView tvAccFname, tvAccLname, tvAccUser, tvAccEmail, tvAccConNum, tvAccAdd, tvLong, tvLat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
