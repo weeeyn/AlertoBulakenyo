@@ -188,7 +188,7 @@ public class register extends AppCompatActivity {
 
         ArrayAdapter<String> provAdapter = new ArrayAdapter<>(register.this, R.layout.dropdown_items, province);
         actProvince.setDropDownBackgroundResource(R.color.white);
-        actProvince.setAdapter(provAdapter;
+        actProvince.setAdapter(provAdapter);
 
         tvTerms.setOnClickListener(new View.OnClickListener() {
             @Override
