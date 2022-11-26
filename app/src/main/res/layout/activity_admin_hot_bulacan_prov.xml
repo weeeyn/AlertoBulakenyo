@@ -49,13 +49,13 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnAddHotline"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:layout_marginBottom="25dp"
-                android:background="@drawable/rounded_button4"
+                android:background="@drawable/button2"
                 android:stateListAnimator="@null"
                 android:text="Add New Hotline"
                 android:textColor="@color/white"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatButton

@@ -19,9 +19,8 @@ public class Profile extends AppCompatActivity {
 
     BottomNavigationView bottomNav;
     int k = 0;
-    ImageView imgProfile;
     TextView tvFullname, tvAddress;
-    CardView card_account, card_contacts;
+    CardView card_account;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +35,10 @@ public class Profile extends AppCompatActivity {
 
         bottomNav = (BottomNavigationView) findViewById (R.id.bottomNav);
 
-        imgProfile = (ImageView) findViewById (R.id.imgProfile);
-
         tvFullname = (TextView) findViewById (R.id.tvFullName);
         tvAddress = (TextView) findViewById (R.id.tvAddress);
 
         card_account = (CardView) findViewById (R.id.card_account);
-        card_contacts = (CardView) findViewById (R.id.card_contacts);
 
         // Set Home selected
         bottomNav.setSelectedItemId(R.id.profile);
@@ -75,16 +71,6 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Profile.this, AccountInfo.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        card_contacts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Profile.this, TrustedContacts.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

@@ -227,7 +227,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="6"
-                            android:text="Active"
+                            android:text="Waiting for Activation"
                             android:textColor="@color/black"
                             android:textSize="15dp" />
 

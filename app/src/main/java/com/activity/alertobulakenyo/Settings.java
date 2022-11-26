@@ -18,7 +18,7 @@ public class Settings extends AppCompatActivity {
 
     BottomNavigationView bottomNav;
     int k = 0;
-    CardView card_sysSettings, card_notifSettings, card_accSettings, card_Terms, card_Privacy, card_Developers, card_About;
+    CardView card_notifSettings, card_accSettings, card_Terms, card_Privacy, card_Developers, card_About;
     Button btnLogout;
 
     @Override
@@ -33,8 +33,6 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         bottomNav = (BottomNavigationView) findViewById (R.id.bottomNav);
-
-        card_sysSettings = (CardView) findViewById (R.id.card_sysSettings);
         card_notifSettings = (CardView) findViewById (R.id.card_notifSettings);
         card_accSettings = (CardView) findViewById (R.id.card_accSettings);
         card_Terms = (CardView) findViewById (R.id.card_Terms);
@@ -68,16 +66,6 @@ public class Settings extends AppCompatActivity {
                         return true;
                 }
                 return false;
-            }
-        });
-
-        card_sysSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Settings.this, SettingsSystem.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
             }
         });
 

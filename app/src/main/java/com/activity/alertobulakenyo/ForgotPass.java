@@ -20,7 +20,7 @@ public class ForgotPass extends AppCompatActivity {
 
     TextInputLayout tilFPemail;
     EditText etFPemail;
-    Button btnSend, btnProceed, btnBackLogin;
+    Button btnSend, btnBackLogin;
     TextView tvResend;
 
     @Override
@@ -38,7 +38,6 @@ public class ForgotPass extends AppCompatActivity {
         etFPemail = (EditText) findViewById (R.id.etFPemail);
 
         btnSend = (Button) findViewById (R.id.btnSend);
-        btnProceed = (Button) findViewById (R.id.btnProceed);
         btnBackLogin = (Button) findViewById (R.id.btnBackLogin);
 
         tvResend = (TextView) findViewById (R.id.tvResend);
@@ -63,28 +62,6 @@ public class ForgotPass extends AppCompatActivity {
                         btnSend.setText("RESEND");
                     }
                 }.start();
-            }
-        });
-
-
-        btnProceed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                /*
-
-                if (TextUtils.isEmpty(etFPemail.getText().toString()))
-                {
-                    etFPemail.setError("Required!");
-                    return;
-                }
-
-                 */
-
-                Intent intent = new Intent(ForgotPass.this, Verification.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
             }
         });
 

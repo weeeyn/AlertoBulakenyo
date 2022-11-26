@@ -75,7 +75,7 @@
                             android:layout_weight="1"
                             android:text="Date"
                             android:textColor="@color/black"
-                            android:textSize="15dp" />
+                            android:textSize="12dp" />
 
                         <TextView
                             android:id="@+id/tvTime"
@@ -85,7 +85,7 @@
                             android:text="Time"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="15dp" />
+                            android:textSize="12dp" />
 
                     </LinearLayout>
 
@@ -95,21 +95,18 @@
                         android:layout_marginBottom="5dp"
                         android:text="Location:"
                         android:textColor="@color/black"
-                        android:textSize="20dp" />
+                        android:textSize="15dp" />
 
                     <TextView
                         android:id="@+id/tvLoc"
                         android:layout_width="match_parent"
-                        android:layout_height="55dp"
+                        android:layout_height="wrap_content"
                         android:gravity="center"
                         android:maxLines="1"
                         android:text="Brgy. City, Province"
                         android:textColor="@color/dark_blue"
                         android:textStyle="bold"
-                        app:autoSizeMaxTextSize="25dp"
-                        app:autoSizeMinTextSize="15dp"
-                        app:autoSizeStepGranularity="1dp"
-                        app:autoSizeTextType="uniform" />
+                        android:textSize="20dp"/>
 
                 </LinearLayout>
 

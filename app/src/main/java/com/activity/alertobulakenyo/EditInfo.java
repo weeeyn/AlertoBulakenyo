@@ -19,7 +19,6 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class EditInfo extends AppCompatActivity {
 
-    ImageView imgAvatar;
     Button btnUpload, btnRemove, btnSave;
     TextInputLayout tilFname, tilLname, tilUsername, tilEmail, tilCon, tilHouse, tilCity, tilBrgy, tilProvince;
     EditText etFname, etLname, etUsername, etEmail, etCon, etHouse;
@@ -35,11 +34,6 @@ public class EditInfo extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_edit_info);
-
-        imgAvatar = (ImageView) findViewById (R.id.imgAvatar);
-
-        btnUpload = (Button) findViewById (R.id.btnUpload);
-        btnRemove = (Button) findViewById (R.id.btnRemove);
         btnSave = (Button) findViewById (R.id.btnSave);
 
         tilFname = (TextInputLayout) findViewById (R.id.tilFname);
