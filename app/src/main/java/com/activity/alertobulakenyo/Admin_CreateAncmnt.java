@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,8 +17,9 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class Admin_CreateAncmnt extends AppCompatActivity {
 
-    TextInputLayout tilAncmntTitle, tilAncmnt;
-    EditText etAncmntTitle, etAncmnt;
+    TextInputLayout tilCity, tilDeptName, tilAncmntTitle, tilAncmnt;
+    AutoCompleteTextView actCity;
+    EditText etDeptName, etAncmntTitle, etAncmnt;
     Button btnPost;
 
     @Override
@@ -30,13 +33,24 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_create_ancmnt);
 
+        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
+        tilDeptName = (TextInputLayout) findViewById (R.id.tilDeptName);
         tilAncmntTitle = (TextInputLayout) findViewById (R.id.tilAncmntTitle);
         tilAncmnt = (TextInputLayout) findViewById (R.id.tilAncmnt);
 
+        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
+
+        etDeptName = (EditText) findViewById (R.id.etDeptName);
         etAncmntTitle = (EditText) findViewById (R.id.etAncmntTitle);
         etAncmnt = (EditText) findViewById (R.id.etAncmnt);
 
         btnPost = (Button) findViewById (R.id.btnPost);
+
+        String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
+
+        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_CreateAncmnt.this, R.layout.dropdown_items, city);
+        actCity.setDropDownBackgroundResource(R.color.white);
+        actCity.setAdapter(cityAdapter);
 
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override
