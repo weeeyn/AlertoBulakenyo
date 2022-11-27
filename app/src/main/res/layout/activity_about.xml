@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tALERTO BULAKENYO is an interactive mobile application project by the 4th Year Bachelor of Science in Information Technology students from Bulacan State University – Sarmiento Campus. The application offers various features that prompt correct information all about Disaster Risk Management."
+                android:text="\t\t\t\t\tALERTO BULAKENYO is an interactive mobile application project by the 4th-year Bachelor of Science in Information Technology students from Bulacan State University's Sarmiento Campus. The application offers various features that prompt correct information about disaster risk management."
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tTimely announcements on what’s happening around you will be available and posted through the ANNOUNCEMENTS page. You will be informed up-to real-time basis when a disaster of different types occurs available in-app and through the DISASTER page. Evacuation areas are the safest place we go and a list of it will be available on the EVACUATION page. PREPARE not just when a calamity is about to happen but before and after it, necessary things to prepare will be available. A list of HOTLINES is also available in Alerto Bulakenyo for its user to get a hold of different local emergency departments when needed.  "
+                android:text="\t\t\t\t\tTimely announcements on what’s happening around you will be available and posted on the Announcements page. You will be notified in real time of various types of disasters, both in-app and via the Disaster page, when they occur. Evacuation areas are the safest places people can go, and a list of them will be available on the Evacuation page. PREPARE Not just when a calamity is about to happen but before and after it, the necessary things to prepare will be available. Alerto Bulakenyo also includes a list of hotlines that users can use to contact various local emergency departments when necessary."
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="45dp"
                 android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tAlerto Bulakenyo is not just an interactive mobile application but very is informative application that caters its users' needs when a disaster occurs."
+                android:text="\t\t\t\t\tAlerto Bulakenyo is a mobile app that is not only interactive but also very informative and fits the needs of the users in times of calamity."
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 

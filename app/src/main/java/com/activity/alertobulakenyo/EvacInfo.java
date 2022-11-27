@@ -52,6 +52,8 @@ public class EvacInfo extends AppCompatActivity {
                 intent.setData(Uri.parse("google.navigation:q=" + latitude + "," + longitude + "&mode=d"));
                 intent.setPackage("com.google.android.apps.maps");
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
 
             }
         });
