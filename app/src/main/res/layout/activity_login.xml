@@ -146,7 +146,7 @@
                 android:background="@drawable/rounded_button2"
                 android:padding="10dp"
                 android:stateListAnimator="@null"
-                android:text="HOME ADMIN LOG IN"
+                android:text="MAIN ADMIN LOG IN"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold" />

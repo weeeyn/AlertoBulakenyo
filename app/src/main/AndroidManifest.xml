@@ -67,10 +67,12 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".PinakaAdmin_ArchiveAncmt"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PinakaAdmin_RepArchiveAncmt"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PinakaAdmin_ReportWarning"
             android:exported="false"

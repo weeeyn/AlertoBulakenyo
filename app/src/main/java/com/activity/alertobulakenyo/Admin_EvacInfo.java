@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -19,6 +20,9 @@ public class Admin_EvacInfo extends AppCompatActivity {
     TextView tvCity, tvBrgy, tvEvacName, tvEvacAdd, tvLong, tvLat;
     Button btnEditEvac, btnDeleteEvac, btnNavi;
     Dialog dialog;
+
+    String latitude = "14.838252";
+    String longitude = "121.046097";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,15 +93,15 @@ public class Admin_EvacInfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(Admin_EvacInfo.this, "Direct to Google Maps!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Admin_EvacInfo.this, "Directing to Google Maps.", Toast.LENGTH_LONG).show();
 
                 // direct to gmaps
 
 
-                //Intent intent = new Intent(Evacuation.this, EvacInfo.class);
-                //startActivity(intent);
-                //overridePendingTransition(R.anim.slide_in_right,
-                //        R.anim.slide_out_left);
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("google.navigation:q=" + latitude + "," + longitude + "&mode=d"));
+                intent.setPackage("com.google.android.apps.maps");
+                startActivity(intent);
             }
         });
     }

@@ -45,7 +45,7 @@ import java.net.Inet4Address;
 public class login extends AppCompatActivity {
 
     EditText etLoginEmail, etLoginPass;
-    Button btnLogin, btnAdmin;
+    Button btnLogin, btnAdmin, btnMainAdmin;
     TextView tvForgotPass, tvSignup;
     ProgressBar progressBar;
 
@@ -71,6 +71,7 @@ public class login extends AppCompatActivity {
 
         btnLogin = (Button) findViewById (R.id.btnLogin);
         btnAdmin = (Button) findViewById (R.id.btnAdmin);
+        btnMainAdmin = (Button) findViewById (R.id.btnMainAdmin);
 
 /**
         btnAdmin.setOnClickListener(new View.OnClickListener() {
@@ -109,10 +110,39 @@ public class login extends AppCompatActivity {
             }
         });
 
+        btnAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(login.this, Admin_Home.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnMainAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(login.this, PinakaAdmin_Home.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(login.this, Home.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
 
     }
 
-
+/**
     public void userLogin(View view) {
 
         String email = etLoginEmail.getText().toString();
@@ -181,7 +211,7 @@ public class login extends AppCompatActivity {
             });
         }
     }
-
+*/
 
     @Override
     public void onBackPressed()
