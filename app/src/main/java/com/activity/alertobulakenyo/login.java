@@ -72,15 +72,18 @@ public class login extends AppCompatActivity {
         btnLogin = (Button) findViewById (R.id.btnLogin);
         btnAdmin = (Button) findViewById (R.id.btnAdmin);
 
-//        btnAdmin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(login.this, AdminLogin.class);
-//                startActivity(intent);
-//                overridePendingTransition(R.anim.slide_in_right,
-//                        R.anim.slide_out_left);
-//            }
-//        });
+/**
+        btnAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(login.this, AdminLogin.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+*/
+
 
         tvForgotPass = (TextView) findViewById (R.id.tvForgotPass);
         tvSignup = (TextView) findViewById (R.id.tvSignup);
@@ -178,6 +181,7 @@ public class login extends AppCompatActivity {
             });
         }
     }
+
 
     @Override
     public void onBackPressed()

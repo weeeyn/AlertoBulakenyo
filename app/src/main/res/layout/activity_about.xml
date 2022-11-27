@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tAn interactive mobile application that offers the City of San Jose del Monte, Bulacan a safe evacuation real time map scale. It provides the residence of the city with prompt and correct information on hazards and vulnerabilities."
+                android:text="\t\t\t\t\tALERTO BULAKENYO is an interactive mobile application project by the 4th Year Bachelor of Science in Information Technology students from Bulacan State University – Sarmiento Campus. The application offers various features that prompt correct information all about Disaster Risk Management."
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tThe residents can access it to know where the safe evacuation near them that supplies real time access of map. The app is a reliable source of information like disaster warnings, emergency alerts, situation reports, other important advisory and relevant tips on safety disaster preparedness. "
+                android:text="\t\t\t\t\tTimely announcements on what’s happening around you will be available and posted through the ANNOUNCEMENTS page. You will be informed up-to real-time basis when a disaster of different types occurs available in-app and through the DISASTER page. Evacuation areas are the safest place we go and a list of it will be available on the EVACUATION page. PREPARE not just when a calamity is about to happen but before and after it, necessary things to prepare will be available. A list of HOTLINES is also available in Alerto Bulakenyo for its user to get a hold of different local emergency departments when needed.  "
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="45dp"
                 android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tThe user can report situational occurrences of all types of calamities. "
+                android:text="\t\t\t\t\tAlerto Bulakenyo is not just an interactive mobile application but very is informative application that caters its users' needs when a disaster occurs."
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 

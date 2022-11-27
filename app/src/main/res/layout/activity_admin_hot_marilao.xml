@@ -65,7 +65,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button1"
                 android:stateListAnimator="@null"
-                android:text="Sample Button"
+                android:text="Sample Hotline"
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />

@@ -42,10 +42,10 @@ public class Walkthrough extends AppCompatActivity {
         tabIndicator = findViewById(R.id.tabIndicator);
 
         List<ScreenItem> list = new ArrayList<>();
-        list.add(new ScreenItem("DISASTER WARNING", "The app sends out official warnings when a disaster occurs close to the user's current location via an in-app and SMS alert message. Notifications can be received by users with or without an internet connection.", R.drawable.feature1));
-        list.add(new ScreenItem("EVACUATION CENTER", "By setting up their pin location, this tool will assist users in finding the closest evacuation facility. After users create accounts, this page will provide a list of evacuation centers they can search for.", R.drawable.feature2));
-        list.add(new ScreenItem("PREPAREDNESS TIPS", "This application also allows users to prepare their homes and families for disasters. Increase public understanding of the importance of disaster preparedness before, during, and after a disaster.", R.drawable.feature3));
-        list.add(new ScreenItem("EMERGENCY HOTLINES", "One of this app's best features is the one-tap access to hotlines or emergency personnel. Users can communicate directly with the local emergency and rescue services.", R.drawable.feature4));
+        list.add(new ScreenItem("DISASTER WARNING", "When a disaster occurs in the province of Bulacan, the app issues official warnings. These come with guidelines and hotline numbers.", R.drawable.feature1));
+        list.add(new ScreenItem("EVACUATION CENTER", "Users of the app have access to a list of evacuation facilities they can use in the event of a crisis.", R.drawable.feature2));
+        list.add(new ScreenItem("PREPAREDNESS TIPS", "The application assists users in becoming prepared for disasters by providing instructions and guidance for disaster preparedness.", R.drawable.feature3));
+        list.add(new ScreenItem("EMERGENCY HOTLINES", "Users of the app can contact the numbers listed in the emergency hotlines in the event of an emergency.", R.drawable.feature4));
 
         screenPager = findViewById(R.id.screenViewPager);
         WalkthroughViewPagerAdapter = new WalkthroughViewPagerAdapter(this, list);
