@@ -77,7 +77,7 @@ public class Walkthrough extends AppCompatActivity {
 
                 if (position == list.size())
                 {
-                    Intent intent = new Intent(Walkthrough.this, login.class);
+                    Intent intent = new Intent(Walkthrough.this, Login_Choose.class);
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_right,
                             R.anim.slide_out_left);

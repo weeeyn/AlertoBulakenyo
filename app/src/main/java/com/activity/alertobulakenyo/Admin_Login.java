@@ -1,21 +1,21 @@
 package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
-public class PinakaAdmin_Deacts extends AppCompatActivity {
+public class Admin_Login extends AppCompatActivity {
 
-    CardView cardAdminAcc;
-    TextView tvDeptAbbv, tvDeptName, tvAdminName;
-    RecyclerView rvDeacts;
+    EditText etLoginEmail, etLoginPass;
+    Button btnLogin;
+    TextView tvForgotPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,21 +25,29 @@ public class PinakaAdmin_Deacts extends AppCompatActivity {
         getSupportActionBar().hide(); // hide the title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
+        setContentView(R.layout.activity_admin_login);
 
-        setContentView(R.layout.activity_pinaka_admin_deacts);
+        etLoginEmail = (EditText) findViewById (R.id.etLoginEmail);
+        etLoginPass = (EditText) findViewById (R.id.etLoginPass);
 
-        cardAdminAcc = (CardView) findViewById (R.id.cardAdminAcc);
+        btnLogin = (Button) findViewById (R.id.btnLogin);
 
-        tvDeptAbbv = (TextView) findViewById (R.id.tvDeptAbbv);
-        tvDeptName = (TextView) findViewById (R.id.tvDeptName);
-        tvAdminName = (TextView) findViewById (R.id.tvAdminName);
+        tvForgotPass = (TextView) findViewById (R.id.tvForgotPass);
 
-        rvDeacts = (RecyclerView) findViewById (R.id.rvDeacts);
-
-        cardAdminAcc.setOnClickListener(new View.OnClickListener() {
+        tvForgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PinakaAdmin_Deacts.this, PinakaAdmin_DeactInfo.class);
+                Intent intent = new Intent(Admin_Login.this, ForgotPass.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Admin_Login.this, Admin_Home.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -51,8 +59,6 @@ public class PinakaAdmin_Deacts extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
-        Intent intent = new Intent(PinakaAdmin_Deacts.this, PinakaAdmin_Admins.class);
-        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

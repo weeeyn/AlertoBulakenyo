@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tTimely announcements on what’s happening around you will be available and posted on the Announcements page. You will be notified in real time of various types of disasters, both in-app and via the Disaster page, when they occur. Evacuation areas are the safest places people can go, and a list of them will be available on the Evacuation page. PREPARE Not just when a calamity is about to happen but before and after it, the necessary things to prepare will be available. Alerto Bulakenyo also includes a list of hotlines that users can use to contact various local emergency departments when necessary."
+                android:text="\t\t\t\t\tTimely announcements on what’s happening around you will be available and posted on the Announcements page. You will be notified in real time of various types of disasters, both in-app and via the Disaster page, when they occur. Evacuation areas are the safest places people can go, and a list of them will be available on the Evacuation page. Prepare not just when a calamity is about to happen but before and after it, the necessary things to prepare will be available. Alerto Bulakenyo also includes a list of hotlines that users can use to contact various local emergency departments when necessary."
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 

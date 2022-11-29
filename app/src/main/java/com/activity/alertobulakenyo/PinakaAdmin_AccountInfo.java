@@ -16,8 +16,8 @@ import android.widget.Toast;
 
 public class PinakaAdmin_AccountInfo extends AppCompatActivity {
 
-    Button btnEdit, btnActivate, btnDeact;
-    TextView tvDeptAbbre, tvDeptName, tvCity, tvEmail, tvAdminName, tvStatus;
+    Button btnEdit, btnDelete;
+    TextView tvDeptAbbre, tvDeptName, tvCity, tvEmail, tvAdminName;
     Dialog dialog;
 
     @Override
@@ -32,28 +32,18 @@ public class PinakaAdmin_AccountInfo extends AppCompatActivity {
         setContentView(R.layout.activity_pinaka_admin_account_info);
 
         btnEdit = (Button) findViewById (R.id.btnEdit);
-        btnActivate = (Button) findViewById (R.id.btnActivate);
-        btnDeact = (Button) findViewById (R.id.btnDeact);
+        btnDelete = (Button) findViewById (R.id.btnDelete);
 
         tvDeptAbbre = (TextView) findViewById (R.id.tvDeptAbbre);
         tvDeptName = (TextView) findViewById (R.id.tvDeptName);
         tvCity = (TextView) findViewById (R.id.tvCity);
         tvEmail = (TextView) findViewById (R.id.tvEmail);
         tvAdminName = (TextView) findViewById (R.id.tvAdminName);
-        tvStatus = (TextView) findViewById (R.id.tvStatus);
 
         AlertDialog.Builder build = new AlertDialog.Builder(PinakaAdmin_AccountInfo.this);
         dialog = build.create();
 
-        btnActivate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-
-        btnDeact.setOnClickListener(new View.OnClickListener() {
+        btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(PinakaAdmin_AccountInfo.this);

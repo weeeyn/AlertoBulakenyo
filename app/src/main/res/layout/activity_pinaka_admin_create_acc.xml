@@ -194,8 +194,8 @@
                 app:boxStrokeColor="#003366"
                 app:boxStrokeWidth="1dp"
                 app:boxStrokeWidthFocused="2dp"
-                app:endIconMode="clear_text"
-                app:endIconTint="#003366"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/dark_blue"
                 app:hintTextColor="#003366">
 
                 <EditText

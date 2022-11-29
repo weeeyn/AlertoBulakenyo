@@ -39,7 +39,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -150,7 +151,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="60dp"
+                android:layout_marginBottom="20dp"
                 android:hint="Announcement"
                 android:textColorHint="#003366"
                 app:boxBackgroundColor="#FFFFFF"
@@ -177,20 +178,22 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnSave"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="45dp"
-                android:background="@drawable/rounded_button"
-                android:stateListAnimator="@null"
-                android:text="SAVE CHANGES"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
         </LinearLayout>
 
     </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/rounded_button"
+        android:stateListAnimator="@null"
+        android:text="SAVE CHANGES"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

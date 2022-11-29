@@ -26,7 +26,7 @@ public class Admin_CreateWarning extends AppCompatActivity {
     AutoCompleteTextView actType, actCity, actBrgy, actFire, actRain, actFlood, actSig;
     EditText etMag, etTy, etIns;
     Dialog dialog;
-    Button btnPreview, btnPost;
+    Button btnPost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,6 @@ public class Admin_CreateWarning extends AppCompatActivity {
         etTy = (EditText) findViewById (R.id.etTy);
         etIns = (EditText) findViewById (R.id.etIns);
 
-        btnPreview = (Button) findViewById (R.id.btnPreview);
         btnPost = (Button) findViewById (R.id.btnPost);
 
         AlertDialog.Builder build = new AlertDialog.Builder(Admin_CreateWarning.this);
@@ -389,36 +388,6 @@ public class Admin_CreateWarning extends AppCompatActivity {
                         }
                     });
                 }
-            }
-        });
-
-        btnPreview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Dialog dialog = new Dialog(Admin_CreateWarning.this);
-                dialog.setContentView(R.layout.dialog_sample_disaster_alert);
-
-                Button btnEvac = (Button) dialog.findViewById (R.id.btnEvac);
-                Button btnClose = (Button) dialog.findViewById (R.id.btnClose);
-
-                btnEvac.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(Admin_CreateWarning.this, Admin_Evacuation.class);
-                        startActivity(intent);
-                        overridePendingTransition(R.anim.slide_in_right,
-                                R.anim.slide_out_left);
-                    }
-                });
-
-                btnClose.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-
-                dialog.show();
             }
         });
 

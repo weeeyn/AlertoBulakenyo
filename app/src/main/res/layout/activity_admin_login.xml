@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".login">
+    tools:context=".Admin_Login">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -31,11 +31,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="50dp"
                 android:fontFamily="@font/archivo_black"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="WELCOME!"
+                android:text="WELCOME ADMIN!"
                 android:textAlignment="center"
                 android:textColor="#003366"
                 android:textSize="30dp" />
@@ -129,7 +129,7 @@
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="15dp"
+                android:layout_marginVertical="50dp"
                 android:background="@drawable/rounded_button"
                 android:padding="10dp"
                 android:stateListAnimator="@null"
@@ -137,37 +137,6 @@
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="22dp"
-                android:layout_marginHorizontal="50dp"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:maxLines="1"
-                android:paddingBottom="2dp"
-                android:text="Don't have an account?"
-                android:textColor="#4D657F"
-                android:textStyle="bold"
-                app:autoSizeMaxTextSize="25dp"
-                app:autoSizeMinTextSize="12dp"
-                app:autoSizeStepGranularity="1dp"
-                app:autoSizeTextType="uniform" />
-
-            <TextView
-                android:id="@+id/tvSignup"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_marginBottom="40dp"
-                android:fontFamily="@font/archivo_black"
-                android:gravity="center"
-                android:maxLines="1"
-                android:text="Sign up"
-                android:textColor="#003366"
-                app:autoSizeMaxTextSize="40dp"
-                app:autoSizeMinTextSize="20dp"
-                app:autoSizeStepGranularity="1dp"
-                app:autoSizeTextType="uniform" />
 
         </LinearLayout>
 
