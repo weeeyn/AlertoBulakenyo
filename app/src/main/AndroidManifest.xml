@@ -22,6 +22,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".Admin_DisasterTy"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_DisasterLS"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_DisasterFlood"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_DisasterFire"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_DisasterEQ"
+            android:exported="false" />
+        <activity
             android:name=".Login_Choose"
             android:exported="false" />
         <activity
