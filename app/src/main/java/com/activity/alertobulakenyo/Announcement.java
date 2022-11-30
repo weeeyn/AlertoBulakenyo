@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class Announcement extends AppCompatActivity {
 
     CardView cardAncmt;
+    TextView tvCity;
     RecyclerView rvAncmt;
 
     @Override
@@ -32,6 +33,8 @@ public class Announcement extends AppCompatActivity {
         rvAncmt = (RecyclerView) findViewById (R.id.rvAncmt);
 
         // di ko pa nadeclare yung laman ng cardAncmt kasi di ko s
+
+        tvCity = (TextView) findViewById (R.id.tvCity);
 
         cardAncmt.setOnClickListener(new View.OnClickListener() {
             @Override

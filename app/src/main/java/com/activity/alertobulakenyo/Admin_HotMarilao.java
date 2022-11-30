@@ -1,6 +1,7 @@
 package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -12,7 +13,8 @@ import android.widget.Button;
 
 public class Admin_HotMarilao extends AppCompatActivity {
 
-    Button btnAddHotline, btnHotlines;
+    Button btnAddHotline;
+    CardView card_hotline;
     RecyclerView rvHotMar;
 
     @Override
@@ -27,7 +29,8 @@ public class Admin_HotMarilao extends AppCompatActivity {
         setContentView(R.layout.activity_admin_hot_marilao);
 
         btnAddHotline = (Button) findViewById (R.id.btnAddHotline);
-        btnHotlines = (Button) findViewById (R.id.btnHotlines);
+
+        card_hotline = (CardView) findViewById (R.id.card_hotline);
 
         rvHotMar = (RecyclerView) findViewById (R.id.rvHotMar);
 
@@ -42,7 +45,7 @@ public class Admin_HotMarilao extends AppCompatActivity {
             }
         });
 
-        btnHotlines.setOnClickListener(new View.OnClickListener() {
+        card_hotline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

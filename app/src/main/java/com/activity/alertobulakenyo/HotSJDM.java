@@ -1,6 +1,7 @@
 package com.activity.alertobulakenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,7 @@ import android.widget.Button;
 
 public class HotSJDM extends AppCompatActivity {
 
-    Button btnHotlines;
+    CardView card_hotline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +25,9 @@ public class HotSJDM extends AppCompatActivity {
 
         setContentView(R.layout.activity_hot_sjdm);
 
-        btnHotlines = (Button) findViewById (R.id.btnHotlines);
+        card_hotline = (CardView) findViewById (R.id.card_hotline);
 
-        btnHotlines.setOnClickListener(new View.OnClickListener() {
+        card_hotline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

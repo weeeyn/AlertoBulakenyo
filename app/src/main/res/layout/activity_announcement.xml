@@ -87,6 +87,15 @@
                                 android:textSize="20dp" />
 
                             <TextView
+                                android:id="@+id/tvCity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:text="San Jose del Monte"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <TextView
                                 android:id="@+id/tvOffice"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"

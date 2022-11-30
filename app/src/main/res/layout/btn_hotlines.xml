@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.AppCompatButton
-    android:id="@+id/btnHotlines"
+<androidx.cardview.widget.CardView
+    android:id="@+id/card_hotline"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="10dp"
-    android:background="@drawable/button1"
-    android:stateListAnimator="@null"
-    android:text="Sample button"
-    android:textColor="@color/white"
-    android:textSize="20dp"
-    android:textStyle="bold">
+    android:layout_marginBottom="20dp"
+    android:backgroundTint="@color/white"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.appcompat.widget.AppCompatButton>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="9"
+            android:paddingStart="20dp"
+            android:text="Hotline Name"
+            android:textColor="@color/dark_blue"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/go" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

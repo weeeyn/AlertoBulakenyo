@@ -16,6 +16,7 @@ public class Admin_Announcement extends AppCompatActivity {
 
     Button btnCreateAncmnt;
     CardView cardAncmt;
+    TextView tvCity;
     RecyclerView rvAncmt;
 
     @Override
@@ -32,6 +33,8 @@ public class Admin_Announcement extends AppCompatActivity {
         btnCreateAncmnt = (Button) findViewById (R.id.btnCreateAncmnt);
         cardAncmt = (CardView) findViewById (R.id.cardAncmt);
         rvAncmt = (RecyclerView) findViewById (R.id.rvAncmt);
+
+        tvCity = (TextView) findViewById (R.id.tvCity);
 
         // di ko pa nadeclare yung laman ng cardAncmt kasi di ko s
 

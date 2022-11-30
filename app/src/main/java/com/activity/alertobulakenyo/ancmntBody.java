@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class ancmntBody extends AppCompatActivity {
 
-    TextView tvOffice, tvDateTime, tvTitle, tvBody;
+    TextView tvCity, tvOffice, tvDateTime, tvTitle, tvBody;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class ancmntBody extends AppCompatActivity {
 
         setContentView(R.layout.activity_ancmnt_body);
 
+        tvCity = (TextView) findViewById (R.id.tvCity);
         tvOffice = (TextView) findViewById (R.id.tvOffice);
         tvDateTime = (TextView) findViewById (R.id.tvDateTime);
         tvTitle = (TextView) findViewById (R.id.tvTitle);
