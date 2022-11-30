@@ -171,6 +171,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autoSizeTextType="uniform"
+                    android:inputType="textMultiLine"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
                     android:textCursorDrawable="@drawable/cursor_blue" />

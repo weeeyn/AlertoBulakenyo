@@ -104,7 +104,7 @@
                 app:hintTextColor="#003366">
 
                 <EditText
-                    android:id="@+id/etAncmntTitle"
+                    android:id="@+id/etDeptName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autoSizeTextType="uniform"
@@ -171,6 +171,7 @@
                     android:id="@+id/etAncmnt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
                     android:autoSizeTextType="uniform"
                     android:textColor="#003366"
                     android:textColorLink="#003366"

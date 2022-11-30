@@ -17,7 +17,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class PinakaAdmin_EditInfo extends AppCompatActivity {
 
-    TextInputLayout tilCity, tilDeptName, tilDeptAbbv, tilEmail, tilPass, tilAdminName;
+    TextInputLayout tilCity, tilDeptName, tilDeptAbbv, tilEmail, tilAdminName;
     AutoCompleteTextView actCity;
     EditText etDeptName, etDeptAbbv, etEmail, etPass, etAdminName;
     Button btnSave;
@@ -37,7 +37,6 @@ public class PinakaAdmin_EditInfo extends AppCompatActivity {
         tilDeptName = (TextInputLayout) findViewById (R.id.tilDeptName);
         tilDeptAbbv = (TextInputLayout) findViewById (R.id.tilDeptAbbv);
         tilEmail = (TextInputLayout) findViewById (R.id.tilEmail);
-        tilPass = (TextInputLayout) findViewById (R.id.tilPass);
         tilAdminName = (TextInputLayout) findViewById (R.id.tilAdminName);
 
         actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
