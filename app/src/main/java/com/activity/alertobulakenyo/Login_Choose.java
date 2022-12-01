@@ -30,7 +30,7 @@ public class Login_Choose extends AppCompatActivity {
         imgAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login_Choose.this, Admin_Login.class);
+                Intent intent = new Intent(Login_Choose.this, AdminLogin.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

@@ -1,11 +1,13 @@
 package com.activity.alertobulakenyo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,9 +18,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.w3c.dom.Text;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 public class Admin_CreateWarning extends AppCompatActivity {
 
@@ -27,6 +39,8 @@ public class Admin_CreateWarning extends AppCompatActivity {
     EditText etMag, etTy, etIns;
     Dialog dialog;
     Button btnPost;
+
+    FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +52,8 @@ public class Admin_CreateWarning extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_admin_create_warning);
+
+        fStore = FirebaseFirestore.getInstance();
 
         tilType = (TextInputLayout) findViewById (R.id.tilType);
         tilCity = (TextInputLayout) findViewById (R.id.tilCity);
@@ -395,15 +411,57 @@ public class Admin_CreateWarning extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(Admin_CreateWarning.this, "Warning Posted!", Toast.LENGTH_SHORT).show();
-
-                finish();
-                finishActivity(107);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
+                createWarning();
 
             }
         });
+    }
+
+    private void createWarning() {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm aa - MMM dd, yyy", Locale.getDefault());
+        SimpleDateFormat sdf2 = new SimpleDateFormat("MM-dd-yy", Locale.getDefault());
+        SimpleDateFormat sdf3 = new SimpleDateFormat("HH:mm aa", Locale.getDefault());
+        String disasterDate = sdf2.format(new Date());
+        String disasterDateTime = sdf.format(new Date());
+        String disasterTime = sdf3.format(new Date());
+
+        DocumentReference df = fStore.collection("Warning").document();
+        Map<String, Object> warn = new HashMap<>();
+        warn.put("disasterType", actType.getText().toString());
+        warn.put("disasterCity", actCity.getText().toString());
+        warn.put("disasterBrgy", actBrgy.getText().toString());
+        warn.put("disasterInfo", etIns.getText().toString());
+        warn.put("eqMagnitude", etMag.getText().toString());
+        warn.put("fireLevel", actFire.getText().toString());
+        warn.put("floodLevel", actFlood.getText().toString());
+        warn.put("floodRain", actRain.getText().toString());
+        warn.put("typhoonName", etTy.getText().toString());
+        warn.put("typhoonSignal", actSig.getText().toString());
+        warn.put("disasterDate", disasterDate);
+        warn.put("disasterDateTime", disasterDateTime);
+        warn.put("disasterTime", disasterTime);
+
+        df.set(warn)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(Admin_CreateWarning.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), Admin_Disaster.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Admin_CreateWarning.this, "Warning Posted", Toast.LENGTH_SHORT).show();
+                        Log.e("TAG", "onFailure: WARNING POST FAIL" + e.getMessage() );
+                    }
+                });
+
+
+
     }
 
     @Override

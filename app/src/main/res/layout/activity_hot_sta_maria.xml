@@ -30,7 +30,8 @@
             android:text="SANTA MARIA"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="23dp" />
+            android:textSize="23dp"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

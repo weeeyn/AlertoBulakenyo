@@ -14,7 +14,6 @@ import android.widget.Button;
 public class Admin_HotBulacanProv extends AppCompatActivity {
 
     Button btnAddHotline;
-    CardView card_hotline;
     RecyclerView rvHotBulac;
 
     @Override
@@ -30,8 +29,6 @@ public class Admin_HotBulacanProv extends AppCompatActivity {
 
         btnAddHotline = (Button) findViewById (R.id.btnAddHotline);
 
-        card_hotline = (CardView) findViewById (R.id.card_hotline);
-
         rvHotBulac = (RecyclerView) findViewById (R.id.rvHotBulac);
 
         btnAddHotline.setOnClickListener(new View.OnClickListener() {
@@ -39,17 +36,6 @@ public class Admin_HotBulacanProv extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(Admin_HotBulacanProv.this, Admin_AddHotline.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        card_hotline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(Admin_HotBulacanProv.this, Admin_ViewHotlines.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

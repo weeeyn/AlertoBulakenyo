@@ -31,6 +31,8 @@ public class Admin_AncmntBody extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_ancmnt_body);
 
+        Announcements announcements = (Announcements) getIntent().getSerializableExtra("announcements");
+
         btnEditAncmnt = (Button) findViewById (R.id.btnEditAncmnt);
         btnDeleteAncmnt = (Button) findViewById (R.id.btnDeleteAncmnt);
 
@@ -39,6 +41,11 @@ public class Admin_AncmntBody extends AppCompatActivity {
         tvDateTime = (TextView) findViewById (R.id.tvDateTime);
         tvTitle = (TextView) findViewById (R.id.tvTitle);
         tvBody = (TextView) findViewById (R.id.tvBody);
+
+        tvOffice.setText(announcements.getAnncmntDept());
+        tvDateTime.setText(announcements.getAnncmntDateTime());
+        tvTitle.setText(announcements.getAnncmntTitle());
+        tvBody.setText(announcements.getAnncmntBody());
 
         AlertDialog.Builder build = new AlertDialog.Builder(Admin_AncmntBody.this);
         dialog = build.create();

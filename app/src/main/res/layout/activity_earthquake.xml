@@ -73,7 +73,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Date"
+                            android:text="11/28/22"
                             android:textColor="@color/black"
                             android:textSize="12dp" />
 
@@ -82,7 +82,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Time"
+                            android:text="2:00AM"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
                             android:textSize="12dp" />
@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:gravity="center"
-                        android:text="X.X"
+                        android:text="1.6"
                         android:textColor="@color/dark_blue"
                         android:textSize="25dp"
                         android:textStyle="bold" />

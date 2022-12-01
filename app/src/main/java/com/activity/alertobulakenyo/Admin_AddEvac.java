@@ -1,8 +1,11 @@
 package com.activity.alertobulakenyo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,14 +16,25 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Admin_AddEvac extends AppCompatActivity {
 
-    TextInputLayout tilEvacName, tilEvacLoc, tilLong, tilLat, tilCity, tilBrgy;
+    TextInputLayout tilCity, tilBrgy;
     EditText etEvacName, etEvacLoc, etLong, etLat;
     AutoCompleteTextView actCity, actBrgy;
     Button btnSaveEvac;
+
+    //firebase firestore
+    FirebaseFirestore fStore;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +47,8 @@ public class Admin_AddEvac extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_add_evac);
 
-        tilEvacName = (TextInputLayout) findViewById (R.id.tilEvacName);
-        tilEvacLoc = (TextInputLayout) findViewById (R.id.tilEvacLoc);
-        tilLong = (TextInputLayout) findViewById (R.id.tilLong);
-        tilLat = (TextInputLayout) findViewById (R.id.tilLat);
+        fStore = FirebaseFirestore.getInstance();
+
         tilCity = (TextInputLayout) findViewById (R.id.tilCity);
         tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
 
@@ -164,22 +176,49 @@ public class Admin_AddEvac extends AppCompatActivity {
         btnSaveEvac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // maglagay ng toast for save changes
-                Toast.makeText(Admin_AddEvac.this, "Saved!", Toast.LENGTH_SHORT).show();
-
-
-                finish();
-                finishActivity(107);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
+                addEvacuation();
             }
         });
+    }
+
+    private void addEvacuation() {
+
+        DocumentReference df = fStore.collection("Evacuation").document();
+        Map<String, Object> evac = new HashMap<>();
+        evac.put("evacuationName", etEvacName.getText().toString());
+        evac.put("evacuationAddress", etEvacLoc.getText().toString());
+        evac.put("evacuationLongitude", etLong.getText().toString());
+        evac.put("evacuationLatitude", etLat.getText().toString());
+        evac.put("evacuationCity", actCity.getText().toString());
+        evac.put("evacuationBrgy", actBrgy.getText().toString());
+
+        df.set(evac)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(Admin_AddEvac.this, "Evacuation Saved!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Admin_AddEvac.this, Admin_Evacuation.class);
+                        startActivity(intent);
+                        finish();
+                        overridePendingTransition(R.anim.slide_in_left,
+                                R.anim.slide_out_right);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Admin_AddEvac.this, "Evacuation not saved!", Toast.LENGTH_SHORT).show();
+                        Log.e("TAG", "onFailure: EVAC FAILED TO POST" + e.getMessage());
+                    }
+                });
     }
 
     @Override
     public void onBackPressed()
     {
         super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), Admin_Evacuation.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

@@ -21,8 +21,6 @@ public class Admin_EvacInfo extends AppCompatActivity {
     Button btnEditEvac, btnDeleteEvac, btnNavi;
     Dialog dialog;
 
-    String latitude = "14.838252";
-    String longitude = "121.046097";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +33,24 @@ public class Admin_EvacInfo extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_evac_info);
 
+        EvacuationHolder evacuationHolder = (EvacuationHolder) getIntent().getSerializableExtra("evac");
+
         tvCity = (TextView) findViewById (R.id.tvCity);
         tvBrgy = (TextView) findViewById (R.id.tvBrgy);
         tvEvacName = (TextView) findViewById (R.id.tvEvacName);
         tvEvacAdd = (TextView) findViewById (R.id.tvEvacAdd);
         tvLong = (TextView) findViewById (R.id.tvLong);
         tvLat = (TextView) findViewById (R.id.tvLat);
+
+        tvCity.setText(evacuationHolder.getEvacuationCity());
+        tvBrgy.setText(evacuationHolder.getEvacuationBrgy());
+        tvEvacName.setText(evacuationHolder.getEvacuationName());
+        tvEvacAdd.setText(evacuationHolder.getEvacuationAddress());
+        tvLong.setText(evacuationHolder.getEvacuationLongitude());
+        tvLat.setText(evacuationHolder.getEvacuationLatitude());
+
+        String longitude = tvLong.getText().toString();
+        String latitude = tvLat.getText().toString();
 
         btnEditEvac = (Button) findViewById (R.id.btnEditEvac);
         btnDeleteEvac = (Button) findViewById (R.id.btnDeleteEvac);

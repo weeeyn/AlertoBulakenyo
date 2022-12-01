@@ -3,10 +3,14 @@ package com.activity.alertobulakenyo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.MenuItemCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -15,17 +19,27 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.SearchView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class Admin_Evacuation extends AppCompatActivity {
 
     Button btnAddNewEvac;
-    TextInputLayout tilCity, tilBrgy;
-    AutoCompleteTextView actCity, actBrgy;
-    CardView cardEvac;
-    RecyclerView rvEvac;
+    CardView card_Boc, card_Mar, card_Mey, card_SJDM, card_SM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +54,6 @@ public class Admin_Evacuation extends AppCompatActivity {
 
         btnAddNewEvac = (Button) findViewById (R.id.btnAddNewEvac);
 
-        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
-        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
-        tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
-        actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
-
-        cardEvac = (CardView) findViewById (R.id.cardEvac);
-
-        rvEvac = (RecyclerView) findViewById (R.id.rvEvac);
-
         btnAddNewEvac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,136 +64,67 @@ public class Admin_Evacuation extends AppCompatActivity {
             }
         });
 
-        String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
+        card_Boc = (CardView) findViewById (R.id.card_Boc);
+        card_Mar = (CardView) findViewById (R.id.card_Mar);
+        card_Mey = (CardView) findViewById (R.id.card_Mey);
+        card_SJDM = (CardView) findViewById (R.id.card_SJDM);
+        card_SM = (CardView) findViewById (R.id.card_SM);
 
-        String [] brgyBoc = {"Antipona", "Bagumbayan", "Bambang", "Batia", "Biñang 1st", "Biñang 2nd",
-                "Bolacan", "Bundukan", "Bunlo", "Caingin", "Duhat", "Igulot", "Lolomboy", "Poblacion",
-                "Sulucan", "Taal", "Tambobong", "Turo", "Wakas"};
-
-        String [] brgyMar = {"Abangan Norte", "Abangan Sur", "Ibayo", "Lambakin", "Lias", "Loma de Gato",
-                "Nagbalon", "Patubig", "Poblacion I", "Poblacion II", "Prenza I", "Prenza II",
-                "Santa Rosa I", "Santa Rosa II", "Saog", "Tabing Ilog"};
-
-        String [] brgyMey = {"Bagbaguin", "Bahay Pare", "Bancal", "Banga", "Bayugo", "Caingin",
-                "Calvario", "Camalig", "Hulo", "Iba", "Langka", "Lawa", "Libtong", "Liputan", "Longos",
-                "Malhacan", "Pajo", "Pandayan", "Pantoc", "Perez", "Poblacion", "Saluysoy",
-                "Saint Francis (Gasak)", "Tugatog", "Ubihan", "Zamora"};
-
-        String [] brgySJDM = {"Assumption", "Bagong Buhay I", "Bagong Buhay II", "Bagong Buhay III",
-                "Citrus", "Ciudad Real", "Dulong Bayan", "Fatima I", "Fatima II", "Fatima III",
-                "Fatima IV", "Fatima V", "Francisco Homes - Guijo", "Francisco Homes - Mulawin",
-                "Francisco Homes - Narra", "Francisco Homes - Yakal", "Gaya-Gaya", "Graceville",
-                "Gumaoc - Central", "Gumaoc - East", "Gumaoc - West", "Kaybanban", "Kaypian",
-                "Lawang Pari", "Maharlika", "Minuyan I", "Minuyan II", "Minuyan III", "Minuyan IV",
-                "Minuyan Proper", "Minuyan V", "Muzon", "Paradise III", "Poblacion", "Poblacion I",
-                "San Isidro", "San Manuel", "San Martin I", "San Martin II", "San Martin III",
-                "San Martin IV", "San Pedro", "San Rafael I", "San Rafael II", "San Rafael III",
-                "San Rafael IV", "San Rafael V", "San Roque", "Santa Cruz I", "Santa Cruz II",
-                "Santa Cruz III", "Santa Cruz IV", "Santa Cruz V", "Santo Cristo", "Santo Niño I",
-                "Santo Niño II", "Sapang Palay Proper", "St. Martin de Porres", "Tungkong Mangga"};
-
-        String [] brgySanMa = {"Bagbaguin", "Balasing", "Buenavista", "Bulac", "Camangyanan", "Catmon",
-                "Cay Pombo", "Caysio", "Guyong", "Lalakhan", "Mag-asawang Sapa", "Mahabang Parang",
-                "Manggahan", "Parada", "Poblacion", "Pulong Buhangin", "San Gabriel", "San Jose Patag",
-                "San Vicente", "Santa Clara", "Santa Cruz", "Silangan", "Tabing Bakod", "Tumana"};
-
-        ArrayAdapter<String> brgyAdapter = new ArrayAdapter<String>(Admin_Evacuation.this, R.layout.dropdown_items, brgySJDM);
-        actBrgy.setDropDownBackgroundResource(R.color.white);
-        actBrgy.setAdapter(brgyAdapter);
-
-        ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedBrgy = brgyAdapter.getItem(position);
-            }
-        });
-
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, city);
-        actCity.setDropDownBackgroundResource(R.color.white);
-        actCity.setAdapter(cityAdapter);
-
-        ((AutoCompleteTextView)tilCity.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedCity = cityAdapter.getItem(position);
-
-                if (selectedCity == "Bocaue")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgyBoc);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
-
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
-                        }
-                    });
-                }
-                else if (selectedCity == "Marilao")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgyMar);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
-
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
-                        }
-                    });
-                }
-                else if (selectedCity == "Meycauayan")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgyMey);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
-
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
-                        }
-                    });
-                }
-                else if (selectedCity == "San Jose del Monte")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgySJDM);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
-
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
-                        }
-                    });
-                }
-                else if (selectedCity == "Santa Maria")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_Evacuation.this, R.layout.dropdown_items, brgySanMa);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
-
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
-                        }
-                    });
-                }
-            }
-        });
-
-        cardEvac.setOnClickListener(new View.OnClickListener() {
+        card_Boc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin_Evacuation.this, Admin_EvacInfo.class);
+
+                Intent intent = new Intent(Admin_Evacuation.this, Admin_EvacBocaue.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
             }
         });
+
+        card_Mar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Admin_Evacuation.this, Admin_EvacMarilao.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        card_Mey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Admin_Evacuation.this, Admin_EvacMeycauayan.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        card_SJDM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Admin_Evacuation.this, Admin_EvacSJDM.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
+        card_SM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Admin_Evacuation.this, Admin_EvacStaMaria.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
+            }
+        });
+
     }
 
     @Override

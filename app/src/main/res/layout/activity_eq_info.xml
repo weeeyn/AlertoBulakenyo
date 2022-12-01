@@ -57,7 +57,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Date"
+                    android:text="11/28/22"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -66,7 +66,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Time"
+                    android:text="2:00AM"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:text="X.X"
+                android:text="1.6"
                 android:textColor="@color/dark_blue"
                 android:textSize="30dp"
                 android:textStyle="bold" />
@@ -107,7 +107,7 @@
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="City, Province"
+                android:text="San Jose del Monte, Bulacan"
                 android:textColor="@color/dark_blue"
                 android:textStyle="bold"
                 app:autoSizeMaxTextSize="25dp"
@@ -126,16 +126,14 @@
             <TextView
                 android:id="@+id/tvIns"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:maxLines="8"
-                android:text="Instructions\nInstructions\nInstructions\nInstructions\nInstructions\nInstructions\nInstructions\nInstructions"
+                android:text="Drop, Cover and Hold\nStay calm.\nStay away from glass windows and doors, and heavy furniture.\nWatch out for falling debris."
                 android:textColor="@color/dark_blue"
-                app:autoSizeMaxTextSize="18dp"
-                app:autoSizeMinTextSize="12dp"
-                app:autoSizeStepGranularity="1dp"
-                app:autoSizeTextType="uniform" />
+                android:textSize="20dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -163,7 +161,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
                         android:gravity="center"
-                        android:text="XXXX"
+                        android:text="Alarm Rescue Hotline\n0932-600-0119"
                         android:textColor="@color/dark_blue"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -189,7 +187,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
                         android:gravity="center"
-                        android:text="XXXX"
+                        android:text="CSJDM CDRRMO\n0932-600-0119\n0955-206-7200"
                         android:textColor="@color/dark_blue"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -200,7 +198,8 @@
                     android:id="@+id/layHot03"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <View
                         android:layout_width="fill_parent"
@@ -226,7 +225,8 @@
                     android:id="@+id/layHot04"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <View
                         android:layout_width="fill_parent"
@@ -252,7 +252,8 @@
                     android:id="@+id/layHot05"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <View
                         android:layout_width="fill_parent"
@@ -278,7 +279,8 @@
                     android:id="@+id/layHot06"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <View
                         android:layout_width="fill_parent"
@@ -304,7 +306,8 @@
                     android:id="@+id/layHot07"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <View
                         android:layout_width="fill_parent"
@@ -330,7 +333,8 @@
                     android:id="@+id/layHot08"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <View
                         android:layout_width="fill_parent"
@@ -356,7 +360,8 @@
                     android:id="@+id/layHot09"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <View
                         android:layout_width="fill_parent"
@@ -382,7 +387,8 @@
                     android:id="@+id/layHot10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <View
                         android:layout_width="fill_parent"

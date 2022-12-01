@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class ancmntBody extends AppCompatActivity {
 
-    TextView tvCity, tvOffice, tvDateTime, tvTitle, tvBody;
+    TextView tvOffice, tvDateTime, tvTitle, tvBody;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +25,17 @@ public class ancmntBody extends AppCompatActivity {
 
         setContentView(R.layout.activity_ancmnt_body);
 
-        tvCity = (TextView) findViewById (R.id.tvCity);
+        Announcements announcements = (Announcements) getIntent().getSerializableExtra("announcements");
+
         tvOffice = (TextView) findViewById (R.id.tvOffice);
         tvDateTime = (TextView) findViewById (R.id.tvDateTime);
         tvTitle = (TextView) findViewById (R.id.tvTitle);
         tvBody = (TextView) findViewById (R.id.tvBody);
+
+        tvOffice.setText(announcements.getAnncmntDept());
+        tvDateTime.setText(announcements.getAnncmntDateTime());
+        tvTitle.setText(announcements.getAnncmntTitle());
+        tvBody.setText(announcements.getAnncmntBody());
     }
 
     @Override

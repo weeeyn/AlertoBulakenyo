@@ -22,6 +22,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".Admin_EvacStaMaria"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_EvacSJDM"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_EvacMeycauayan"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_EvacMarilao"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_EvacBocaue"
+            android:exported="false" />
+        <activity
             android:name=".Admin_DisasterTy"
             android:exported="false" />
         <activity
@@ -40,7 +55,7 @@
             android:name=".Login_Choose"
             android:exported="false" />
         <activity
-            android:name=".Admin_Login"
+            android:name=".AdminLogin"
             android:exported="false" />
         <activity
             android:name=".PinakaAdmin_ArchiveWarningTy"

@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -36,6 +37,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 import org.w3c.dom.Text;
@@ -44,14 +49,17 @@ import java.net.Inet4Address;
 
 public class login extends AppCompatActivity {
 
-    EditText etLoginEmail, etLoginPass;
-    Button btnLogin;
+    EditText email, password;
+    Button btnLogin, btnAdmin;
     TextView tvForgotPass, tvSignup;
-    ProgressBar progressBar;
+   // ProgressBar progressBar;
 
-    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
-    private FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private DatabaseReference reference;
+    boolean valid = true;
+
+    //firebase authentication
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,24 +72,45 @@ public class login extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+       // progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        etLoginEmail = (EditText) findViewById (R.id.etLoginEmail);
-        etLoginPass = (EditText) findViewById (R.id.etLoginPass);
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
-        btnLogin = (Button) findViewById (R.id.btnLogin)
+        email = (EditText) findViewById (R.id.etLoginEmail);
+        password = (EditText) findViewById (R.id.etLoginPass);
 
-/**
-        btnAdmin.setOnClickListener(new View.OnClickListener() {
+        btnLogin = (Button) findViewById (R.id.btnLogin);
+        btnAdmin = (Button) findViewById (R.id.btnAdmin);
+
+        tvForgotPass = (TextView) findViewById (R.id.tvForgotPass);
+        tvSignup = (TextView) findViewById (R.id.tvSignup);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(login.this, AdminLogin.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
+               // progressBar.setVisibility(View.VISIBLE);
+
+                checkField(email);
+                checkField(password);
+
+                if (valid) {
+
+                    fAuth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString())
+                            .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                                @Override
+                                public void onSuccess(AuthResult authResult) {
+                                    checkUserAccessLevel(authResult.getUser().getUid());
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                }
             }
         });
-*/
 
 
         tvForgotPass = (TextView) findViewById (R.id.tvForgotPass);
@@ -108,88 +137,46 @@ public class login extends AppCompatActivity {
             }
         });
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+
+    }
+
+
+    private void checkUserAccessLevel(String uid) {
+        DocumentReference df = fStore.collection("UserData").document(uid);
+        // extract the data from document
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(login.this, Home.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Log.d("TAG","onSuccess: " + documentSnapshot.getData());
+
+                if (documentSnapshot.getString("User") != null) {
+                   // progressBar.setVisibility(View.GONE);
+                    Log.d("TAG", "onSuccess: USER LOGGED IN");
+                    Toast.makeText(login.this, "USER LOGGED IN", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), Home.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else {
+                   // progressBar.setVisibility(View.GONE);
+                    Toast.makeText(login.this, "Not a User. Please register to Login.", Toast.LENGTH_SHORT).show();
+                    Log.d("TAG", "onSuccess: NO USER LOGGED IN");
+                }
             }
         });
-
     }
 
-/**
-    public void userLogin(View view) {
-
-        String email = etLoginEmail.getText().toString();
-        String password = etLoginPass.getText().toString();
-
-        if (email.isEmpty()) {
-            Toast.makeText(this, "Please enter your registered Email.", Toast.LENGTH_SHORT).show();
-            etLoginEmail.setError("Email is Incorrect!");
-            etLoginEmail.requestFocus();
-
-            return;
-        } else if (password.isEmpty()) {
-            Toast.makeText(this, "Please enter your password.", Toast.LENGTH_SHORT).show();
-            etLoginPass.setError("Password is Incorrect!");
-            etLoginPass.requestFocus();
-
-            return;
+    private boolean checkField(EditText textField) {
+        if(textField.getText().toString().isEmpty()) {
+            textField.setError("Field Cannot be Empty.");
+            Toast.makeText(this, "Fields cannot be Empty!", Toast.LENGTH_SHORT).show();
+         //   progressBar.setVisibility(View.GONE);
+            valid = false;
         } else {
-
-            fAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                reference = database.getReference("Users");
-                                reference.addValueEventListener(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                                        String userUID = fAuth.getCurrentUser().getUid();
-
-                                        if (snapshot.child(userUID).exists()) {
-                                            Log.d(TAG, "onDataChange: USER LOGGED IN.");
-
-
-                                            Toast.makeText(login.this, "User Logged In.", Toast.LENGTH_SHORT).show();
-                                            //Intent intent = new Intent(login.this, Home.class);
-
-                                            Intent intent = new Intent(getApplicationContext(), Home.class);
-                                            startActivity(intent);
-                                            finish();
-
-
-                                        } else {
-                                            Log.d(TAG, "onDataChange: USER DO NOT EXIST.");
-
-                                            Toast.makeText(login.this, "User is not Registered. Please register to login.", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError error) {
-                                        Log.e(TAG, error.getMessage() );
-                                    }
-                                });
-                            } else {
-
-                                Toast.makeText(login.this, "Please check your email or password and try again.", Toast.LENGTH_SHORT).show();
-                                Log.d(TAG, "onComplete: FAILED TO LOGIN. WRONG CREDENTIALS.");
-                            }
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.e(TAG, e.getMessage() );
-                }
-            });
+            valid = true;
         }
+        return valid;
     }
-*/
 
     @Override
     public void onBackPressed()

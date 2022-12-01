@@ -12,7 +12,7 @@ import android.widget.Button;
 
 public class Admin_Hotlines extends AppCompatActivity {
 
-    CardView card_Bul, card_Boc, card_Mar, card_Mey, card_SJDM, card_SM;
+    CardView card_Boc, card_Mar, card_Mey, card_SJDM, card_SM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,23 +25,11 @@ public class Admin_Hotlines extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_hotlines);
 
-        card_Bul = (CardView) findViewById (R.id.card_Bul);
         card_Boc = (CardView) findViewById (R.id.card_Boc);
         card_Mar = (CardView) findViewById (R.id.card_Mar);
         card_Mey = (CardView) findViewById (R.id.card_Mey);
         card_SJDM = (CardView) findViewById (R.id.card_SJDM);
         card_SM = (CardView) findViewById (R.id.card_SM);
-
-        card_Bul.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(Admin_Hotlines.this, Admin_HotBulacanProv.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
 
         card_Boc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +91,8 @@ public class Admin_Hotlines extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), Admin_Home.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

@@ -1,8 +1,13 @@
 package com.activity.alertobulakenyo;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,14 +18,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Admin_EditEvac extends AppCompatActivity {
 
-    TextInputLayout tilEvacName, tilEvacLoc, tilLong, tilLat, tilCity, tilBrgy;
+    TextInputLayout tilCity, tilBrgy;
     EditText etEvacName, etEvacLoc, etLong, etLat;
     AutoCompleteTextView actCity, actBrgy;
-    Button btnSave;
+    Button btnSave, btnDelete;
+
+    private String evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy;
+    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+    private DocumentReference df;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +48,8 @@ public class Admin_EditEvac extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_edit_evac);
 
-        tilEvacName = (TextInputLayout) findViewById (R.id.tilEvacName);
-        tilEvacLoc = (TextInputLayout) findViewById (R.id.tilEvacLoc);
-        tilLong = (TextInputLayout) findViewById (R.id.tilLong);
-        tilLat = (TextInputLayout) findViewById (R.id.tilLat);
+        EvacuationHolder evacuationHolder = (EvacuationHolder) getIntent().getSerializableExtra("evac");
+
         tilCity = (TextInputLayout) findViewById (R.id.tilCity);
         tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
 
@@ -48,7 +61,15 @@ public class Admin_EditEvac extends AppCompatActivity {
         actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
         actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
 
+        etEvacName.setText(evacuationHolder.getEvacuationName());
+        etEvacLoc.setText(evacuationHolder.getEvacuationAddress());
+        etLong.setText(evacuationHolder.getEvacuationLongitude());
+        etLat.setText(evacuationHolder.getEvacuationLatitude());
+        actCity.setText(evacuationHolder.getEvacuationCity());
+        actBrgy.setText(evacuationHolder.getEvacuationBrgy());
+
         btnSave = (Button) findViewById (R.id.btnSave);
+        btnDelete = (Button) findViewById(R.id.btnDelete);
 
         String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
 
@@ -164,15 +185,71 @@ public class Admin_EditEvac extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // maglagay ng toast for save changes
-                Toast.makeText(Admin_EditEvac.this, "Saved!", Toast.LENGTH_SHORT).show();
+                evacuationName = etEvacName.getText().toString();
+                evacuationAddress = etEvacLoc.getText().toString();
+                evacuationLongitude = etLong.getText().toString();
+                evacuationLatitude = etLat.getText().toString();
+                evacuationCity = actCity.getText().toString();
+                evacuationBrgy = actBrgy.getText().toString();
 
-                finish();
-                finishActivity(107);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
+                editEvacuation(evacuationHolder, evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy);
             }
         });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteEvac(evacuationHolder);
+            }
+        });
+    }
+
+    private void deleteEvac(EvacuationHolder evacuationHolder) {
+        fStore.collection("Evacuation")
+                .document(evacuationHolder.getId())
+                .delete()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(Admin_EditEvac.this, "Hotline Deleted", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Admin_EditEvac.this, Admin_Evacuation.class);
+                            startActivity(intent);
+                            finish();
+                            overridePendingTransition(R.anim.slide_in_left,
+                                    R.anim.slide_out_right);
+                        } else {
+                            Toast.makeText(Admin_EditEvac.this, "Hotline Not Deleted!", Toast.LENGTH_SHORT).show();
+                            Log.e(TAG, "onFailure: FAILED TO DELETE HOTLINE");
+                        }
+                    }
+                });
+
+    }
+
+    private void editEvacuation(@NonNull EvacuationHolder evacuationHolder, String evacuationName, String evacuationAddress, String evacuationLongitude, String evacuationLatitude, String evacuationCity, String evacuationBrgy) {
+
+        EvacuationHolder editEvac = new EvacuationHolder(evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy);
+
+        fStore.collection("Evacuation")
+                .document(evacuationHolder.getId())
+                .set(editEvac)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(Admin_EditEvac.this, "Evacuation has been EDITED!", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(Admin_EditEvac.this, Admin_Evacuation.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e("TAG", "onFailure: " + e.getMessage());
+                    }
+                });
     }
 
     @Override

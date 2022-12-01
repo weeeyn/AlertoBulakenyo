@@ -41,7 +41,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
                         android:gravity="center"
-                        android:text="MMDA"
+                        android:text="SJDM CDRRMO"
                         android:textColor="@color/orange"
                         android:textSize="40dp"
                         android:textStyle="bold" />
@@ -51,7 +51,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Metropolitan Manila Development Authority"
+                        android:text="San Jose del Monte City Disaster Risk Reduction Management Office"
                         android:textColor="@color/black"
                         android:textSize="20dp" />
 
@@ -95,7 +95,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="8dp"
                             android:gravity="center"
-                            android:text="136"
+                            android:text="0932-600-0119"
                             android:textColor="@color/black"
                             android:textSize="20dp" />
 
@@ -120,7 +120,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="8dp"
                             android:gravity="center"
-                            android:text="(02) 8882-4151 to 77 local 337 (Rescue)"
+                            android:text="0955-206-7200"
                             android:textColor="@color/black"
                             android:textSize="20dp" />
 
@@ -130,7 +130,8 @@
                         android:id="@+id/layHot03"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <View
                             android:layout_width="fill_parent"
@@ -155,7 +156,8 @@
                         android:id="@+id/layHot04"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <View
                             android:layout_width="fill_parent"
@@ -180,7 +182,8 @@
                         android:id="@+id/layHot05"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <View
                             android:layout_width="fill_parent"
@@ -205,7 +208,8 @@
                         android:id="@+id/layHot06"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <View
                             android:layout_width="fill_parent"
@@ -230,7 +234,8 @@
                         android:id="@+id/layHot07"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <View
                             android:layout_width="fill_parent"
@@ -255,7 +260,8 @@
                         android:id="@+id/layHot08"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <View
                             android:layout_width="fill_parent"

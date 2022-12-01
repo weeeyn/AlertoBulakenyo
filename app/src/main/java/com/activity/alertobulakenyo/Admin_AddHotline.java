@@ -1,23 +1,39 @@
 package com.activity.alertobulakenyo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Admin_AddHotline extends AppCompatActivity {
 
-    TextInputLayout tilHotName, tilHotAbAc, tilHot01, tilHot02, tilHot03, tilHot04, tilHot05, tilHot06, tilHot07, tilHot08, tilHot09, tilHot10;
     EditText etHotName, etHotAbAc, etHot01, etHot02, etHot03, etHot04, etHot05, etHot06, etHot07, etHot08, etHot09, etHot10;
     Button btnSaveHot;
+    TextInputLayout tilCity;
+    AutoCompleteTextView actCity;
+
+    //firebase firestore
+    FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,18 +46,7 @@ public class Admin_AddHotline extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_add_hotline);
 
-        tilHotName = (TextInputLayout) findViewById (R.id.tilHotName);
-        tilHotAbAc = (TextInputLayout) findViewById (R.id.tilHotAbAc);
-        tilHot01 = (TextInputLayout) findViewById (R.id.tilHot01);
-        tilHot02 = (TextInputLayout) findViewById (R.id.tilHot02);
-        tilHot03 = (TextInputLayout) findViewById (R.id.tilHot03);
-        tilHot04 = (TextInputLayout) findViewById (R.id.tilHot04);
-        tilHot05 = (TextInputLayout) findViewById (R.id.tilHot05);
-        tilHot06 = (TextInputLayout) findViewById (R.id.tilHot06);
-        tilHot07 = (TextInputLayout) findViewById (R.id.tilHot07);
-        tilHot08 = (TextInputLayout) findViewById (R.id.tilHot08);
-        tilHot09 = (TextInputLayout) findViewById (R.id.tilHot09);
-        tilHot10 = (TextInputLayout) findViewById (R.id.tilHot10);
+        fStore = FirebaseFirestore.getInstance();
 
         etHotName = (EditText) findViewById (R.id.etHotName);
         etHotAbAc = (EditText) findViewById (R.id.etHotAbAc);
@@ -56,20 +61,65 @@ public class Admin_AddHotline extends AppCompatActivity {
         etHot09 = (EditText) findViewById (R.id.etHot09);
         etHot10 = (EditText) findViewById (R.id.etHot10);
 
+        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
+
+        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
+
+        String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
+
+        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_AddHotline.this, R.layout.dropdown_items, city);
+        actCity.setDropDownBackgroundResource(R.color.white);
+        actCity.setAdapter(cityAdapter);
+
         btnSaveHot = (Button) findViewById (R.id.btnSaveHot);
 
         btnSaveHot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(Admin_AddHotline.this, "Saved!", Toast.LENGTH_SHORT).show();
-
-                finish();
-                finishActivity(107);
-                overridePendingTransition(R.anim.slide_in_left,
-                        R.anim.slide_out_right);
+                //progressbar visible
+                addHotlines();
             }
         });
+    }
+
+    private void addHotlines() {
+
+        DocumentReference df = fStore.collection("Hotlines").document();
+        Map<String, Object> hotlines = new HashMap<>();
+        hotlines.put("hotlineCity", actCity.getText().toString());
+        hotlines.put("hotlineName", etHotName.getText().toString());
+        hotlines.put("hotlineNameAbv", etHotAbAc.getText().toString());
+        hotlines.put("hotlineOne", etHot01.getText().toString());
+        hotlines.put("hotlineTwo", etHot02.getText().toString());
+        hotlines.put("hotlineThree", etHot03.getText().toString());
+        hotlines.put("hotlineFour", etHot04.getText().toString());
+        hotlines.put("hotlineFive", etHot05.getText().toString());
+        hotlines.put("hotlineSix", etHot06.getText().toString());
+        hotlines.put("hotlineSeven", etHot07.getText().toString());
+        hotlines.put("hotlineEight", etHot08.getText().toString());
+        hotlines.put("hotlineNine", etHot09.getText().toString());
+        hotlines.put("hotlineTen", etHot10.getText().toString());
+
+        df.set(hotlines)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        //pb
+                        Toast.makeText(Admin_AddHotline.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        //progress
+                        Toast.makeText(Admin_AddHotline.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
+                        Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+                    }
+                });
     }
 
     @Override

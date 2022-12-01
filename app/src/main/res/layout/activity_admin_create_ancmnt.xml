@@ -103,7 +103,7 @@
                 app:hintTextColor="#003366">
 
                 <EditText
-                    android:id="@+id/etAncmntTitle"
+                    android:id="@+id/etDeptName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autoSizeTextType="uniform"
@@ -135,7 +135,7 @@
                 app:hintTextColor="#003366">
 
                 <EditText
-                    android:id="@+id/etDeptName"
+                    android:id="@+id/etAncmntTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autoSizeTextType="uniform"
@@ -151,7 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:hint="Announcement"
+                android:hint="Announcement Body"
                 android:textColorHint="#003366"
                 app:boxBackgroundColor="#FFFFFF"
                 app:boxBackgroundMode="outline"
@@ -169,7 +169,7 @@
                 <EditText
                     android:id="@+id/etAncmnt"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="200dp"
                     android:autoSizeTextType="uniform"
                     android:inputType="textMultiLine"
                     android:textColor="#003366"
