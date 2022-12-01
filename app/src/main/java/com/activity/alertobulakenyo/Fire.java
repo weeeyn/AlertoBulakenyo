@@ -1,20 +1,37 @@
 package com.activity.alertobulakenyo;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Fire extends AppCompatActivity {
 
-    CardView cardFire;
-    RecyclerView rvDisFire;
+    private RecyclerView rvDisFire;
+    private ArrayList<WarningHolder> warningHolderArrayList;
+    private FireAdapter fireAdapter;
+    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,19 +44,39 @@ public class Fire extends AppCompatActivity {
 
         setContentView(R.layout.activity_fire);
 
-        cardFire = (CardView) findViewById (R.id.cardFire);
-
         rvDisFire = (RecyclerView) findViewById (R.id.rvDisFire);
 
-        cardFire.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Fire.this, Fire_info.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
+        warningHolderArrayList = new ArrayList<>();
+        rvDisFire.setHasFixedSize(true);
+        rvDisFire.setLayoutManager(new LinearLayoutManager(this));
+        fireAdapter = new FireAdapter(warningHolderArrayList, this);
+        rvDisFire.setAdapter(fireAdapter);
+
+        fStore.collection("Warning")
+                .whereEqualTo("disasterType", "FIRE")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                            for (DocumentSnapshot d : list) {
+                                WarningHolder p = d.toObject(WarningHolder.class);
+                                p.setId(d.getId());
+                                warningHolderArrayList.add(p);
+                            }
+                            fireAdapter.notifyDataSetChanged();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "No Warnings Posted", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
+                    }
+                });
     }
 
     @Override

@@ -10,9 +10,11 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class ancmntBody extends AppCompatActivity {
 
-    TextView tvOffice, tvDateTime, tvTitle, tvBody;
+    TextView tvOffice, tvDate, tvTitle, tvBody, tvCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +30,14 @@ public class ancmntBody extends AppCompatActivity {
         Announcements announcements = (Announcements) getIntent().getSerializableExtra("announcements");
 
         tvOffice = (TextView) findViewById (R.id.tvOffice);
-        tvDateTime = (TextView) findViewById (R.id.tvDateTime);
+        tvCity = (TextView) findViewById(R.id.tvCity);
+        tvDate = (TextView) findViewById (R.id.tvDate);
         tvTitle = (TextView) findViewById (R.id.tvTitle);
         tvBody = (TextView) findViewById (R.id.tvBody);
 
+        tvCity.setText(announcements.getAnncmntCity());
         tvOffice.setText(announcements.getAnncmntDept());
-        tvDateTime.setText(announcements.getAnncmntDateTime());
+        tvDate.setText(announcements.getAnncmntDate());
         tvTitle.setText(announcements.getAnncmntTitle());
         tvBody.setText(announcements.getAnncmntBody());
     }

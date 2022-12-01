@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 public class ViewHotlines extends AppCompatActivity {
 
-    LinearLayout layHot01, layHot02, layHot03, layHot04, layHot05, layHot06, layHot07 , layHot08, layHot09, layHot10;
     TextView tvAbAc, tvHotName, tvHot01, tvHot02, tvHot03, tvHot04, tvHot05, tvHot06, tvHot07, tvHot08, tvHot09, tvHot10;
 
     @Override
@@ -24,16 +23,7 @@ public class ViewHotlines extends AppCompatActivity {
 
         setContentView(R.layout.activity_view_hotlines);
 
-        layHot01 = (LinearLayout) findViewById (R.id.layHot01);
-        layHot02 = (LinearLayout) findViewById (R.id.layHot02);
-        layHot03 = (LinearLayout) findViewById (R.id.layHot03);
-        layHot04 = (LinearLayout) findViewById (R.id.layHot04);
-        layHot05 = (LinearLayout) findViewById (R.id.layHot05);
-        layHot06 = (LinearLayout) findViewById (R.id.layHot06);
-        layHot07 = (LinearLayout) findViewById (R.id.layHot07);
-        layHot08 = (LinearLayout) findViewById (R.id.layHot08);
-        layHot09 = (LinearLayout) findViewById (R.id.layHot09);
-        layHot10 = (LinearLayout) findViewById (R.id.layHot10);
+        HotlinesHolder hotlinesHolder = (HotlinesHolder) getIntent().getSerializableExtra("hotlineview");
 
         tvAbAc = (TextView) findViewById (R.id.tvAbAc);
         tvHotName = (TextView) findViewById (R.id.tvHotName);
@@ -47,6 +37,20 @@ public class ViewHotlines extends AppCompatActivity {
         tvHot08 = (TextView) findViewById (R.id.tvHot08);
         tvHot09 = (TextView) findViewById (R.id.tvHot09);
         tvHot10 = (TextView) findViewById (R.id.tvHot10);
+
+        tvAbAc.setText(hotlinesHolder.getHotlineName());
+        tvAbAc.setText(hotlinesHolder.getHotlineNameAbv());
+        tvHot01.setText(hotlinesHolder.getHotlineOne());
+        tvHot02.setText(hotlinesHolder.getHotlineTwo());
+        tvHot03.setText(hotlinesHolder.getHotlineThree());
+        tvHot04.setText(hotlinesHolder.getHotlineFour());
+        tvHot05.setText(hotlinesHolder.getHotlineFive());
+        tvHot06.setText(hotlinesHolder.getHotlineSix());
+        tvHot07.setText(hotlinesHolder.getHotlineSeven());
+        tvHot08.setText(hotlinesHolder.getHotlineEight());
+        tvHot09.setText(hotlinesHolder.getHotlineNine());
+        tvHot10.setText(hotlinesHolder.getHotlineTen());
+
     }
 
     @Override

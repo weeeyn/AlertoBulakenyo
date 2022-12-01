@@ -86,8 +86,9 @@ public class Admin_DisasterEQ extends AppCompatActivity {
                         Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
                     }
                 });
-
     }
+
+
 
     @Override
     public void onBackPressed()

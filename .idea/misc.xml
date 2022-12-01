@@ -368,6 +368,14 @@
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_disaster.xml" value="0.15" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_disaster_eq.xml" value="0.1076388888888889" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_disaster_eqinfo.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_disaster_fire.xml" value="0.25" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_disaster_fire_info.xml" value="0.15" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_disaster_flood.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_disaster_flood_info.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_disaster_ls.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_disaster_lsinfo.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_disaster_ty.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_disaster_ty_info.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_edit_ancmnt.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_edit_evac.xml" value="0.16" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_edit_hotline.xml" value="0.2" />
@@ -393,11 +401,17 @@
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_disaster.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_earthquake.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_eq_info.xml" value="0.25" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_evac_bocaue.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_evac_info.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_evac_marilao.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_evac_meycauayan.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_evac_sjdm.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_evac_sta_maria.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_evacuation.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_fire.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_fire_info.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_flood.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_flood_info.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_hot_bocaue.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_hot_bulacan_prov.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_hot_marilao.xml" value="0.13243243243243244" />
@@ -408,23 +422,31 @@
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_landslide.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_login_choose.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_ls_info.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_pinaka_admin_account_info.xml" value="0.2" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_pinaka_admin_create_acc.xml" value="0.33" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_pinaka_admin_edit_info.xml" value="0.2" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_pinaka_admin_view_acc.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_prep_ls.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_ty_info.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_typhoon.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_view_hotlines.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/btn_hotlines.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_adminaccounts.xml" value="0.33" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_ancmt.xml" value="0.33" />
-        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_eq.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_eq.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_evac.xml" value="0.25" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_fire.xml" value="0.33" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_flood.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_ls.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_request.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_ty.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_warn_eq.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_warn_fire.xml" value="0.25" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_warn_flood.xml" value="0.5" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_warn_ls.xml" value="0.2" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_warn_ty.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/dropdown_items.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/menu/menu_main.xml" value="0.33" />
       </map>

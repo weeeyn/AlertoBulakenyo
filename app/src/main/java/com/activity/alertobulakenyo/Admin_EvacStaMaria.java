@@ -47,7 +47,7 @@ public class Admin_EvacStaMaria extends AppCompatActivity {
         rvEvac.setAdapter(admin_evacRVAdapter);
 
         fStore.collection("Evacuation")
-                .whereEqualTo("evacuationCity", "Bocaue")
+                .whereEqualTo("evacuationCity", "Santa Maria")
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override

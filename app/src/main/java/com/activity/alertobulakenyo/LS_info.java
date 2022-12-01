@@ -11,10 +11,14 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class LS_info extends AppCompatActivity {
 
-    TextView tvDate, tvTime, tvLoc, tvIns, tvHot01, tvHot02, tvHot03, tvHot04, tvHot05,tvHot06, tvHot07, tvHot08, tvHot09, tvHot10;
+    TextView tvDate, tvTime, tvLoc, tvIns;
     Button btnEvac;
+
+    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,20 +31,17 @@ public class LS_info extends AppCompatActivity {
 
         setContentView(R.layout.activity_ls_info);
 
+        WarningHolder warningHolder = (WarningHolder) getIntent().getSerializableExtra("lsinfo");
+
         tvDate = (TextView) findViewById (R.id.tvDate);
         tvTime = (TextView) findViewById (R.id.tvTime);
         tvLoc = (TextView) findViewById (R.id.tvLoc);
         tvIns = (TextView) findViewById (R.id.tvIns);
-        tvHot01 = (TextView) findViewById (R.id.tvHot01);
-        tvHot02 = (TextView) findViewById (R.id.tvHot02);
-        tvHot03 = (TextView) findViewById (R.id.tvHot03);
-        tvHot04 = (TextView) findViewById (R.id.tvHot04);
-        tvHot05 = (TextView) findViewById (R.id.tvHot05);
-        tvHot06 = (TextView) findViewById (R.id.tvHot06);
-        tvHot07 = (TextView) findViewById (R.id.tvHot07);
-        tvHot08 = (TextView) findViewById (R.id.tvHot08);
-        tvHot09 = (TextView) findViewById (R.id.tvHot09);
-        tvHot10 = (TextView) findViewById (R.id.tvHot10);
+
+        tvDate.setText(warningHolder.getDisasterDate());
+        tvTime.setText(warningHolder.getDisasterTime());
+        tvLoc.setText(warningHolder.getDisasterCity() + ", Bulacan");
+        tvIns.setText(warningHolder.getDisasterInfo());
 
         btnEvac = (Button) findViewById (R.id.btnEvac);
 

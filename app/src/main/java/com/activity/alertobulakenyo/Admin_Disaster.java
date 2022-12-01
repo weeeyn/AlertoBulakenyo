@@ -78,7 +78,7 @@ public class Admin_Disaster extends AppCompatActivity {
         imgFire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin_Disaster.this, Fire.class);
+                Intent intent = new Intent(Admin_Disaster.this, Admin_DisasterFire.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -88,7 +88,7 @@ public class Admin_Disaster extends AppCompatActivity {
         imgFlood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin_Disaster.this, Flood.class);
+                Intent intent = new Intent(Admin_Disaster.this, Admin_DisasterFlood.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -98,7 +98,7 @@ public class Admin_Disaster extends AppCompatActivity {
         imgLandslide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin_Disaster.this, Landslide.class);
+                Intent intent = new Intent(Admin_Disaster.this, Admin_DisasterLS.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -108,19 +108,20 @@ public class Admin_Disaster extends AppCompatActivity {
         imgTyphoon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin_Disaster.this, Typhoon.class);
+                Intent intent = new Intent(Admin_Disaster.this, Admin_DisasterTy.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
             }
         });
-
     }
 
     @Override
     public void onBackPressed()
     {
         super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), Admin_Home.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

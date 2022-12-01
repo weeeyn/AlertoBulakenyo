@@ -25,7 +25,7 @@ public class Admin_FireAdapter extends RecyclerView.Adapter<Admin_FireAdapter.Vi
     @NonNull
     @Override
     public Admin_FireAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new Admin_FireAdapter.ViewHolder(LayoutInflater.from(context).inflate(R.layout.card_fire, parent, false));
+        return new Admin_FireAdapter.ViewHolder(LayoutInflater.from(context).inflate(R.layout.card_warn_fire, parent, false));
     }
 
     @Override

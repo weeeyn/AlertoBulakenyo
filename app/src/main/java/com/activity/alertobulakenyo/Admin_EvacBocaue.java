@@ -27,7 +27,6 @@ public class Admin_EvacBocaue extends AppCompatActivity {
     private Admin_EvacRVAdapter admin_evacRVAdapter;
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

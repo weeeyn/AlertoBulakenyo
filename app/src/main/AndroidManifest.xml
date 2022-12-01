@@ -22,6 +22,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
         <activity
+            android:name=".EvacStaMaria"
+            android:exported="false" />
+        <activity
+            android:name=".EvacSJDM"
+            android:exported="false" />
+        <activity
+            android:name=".EvacMeycauayan"
+            android:exported="false" />
+        <activity
+            android:name=".EvacMarilao"
+            android:exported="false" />
+        <activity
+            android:name=".EvacBocaue"
+            android:exported="false" />
+        <activity
             android:name=".Admin_EvacStaMaria"
             android:exported="false" />
         <activity

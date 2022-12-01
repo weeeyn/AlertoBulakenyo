@@ -1,14 +1,19 @@
 package com.activity.alertobulakenyo;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,17 +21,25 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class Admin_DisasterFlood extends AppCompatActivity {
 
-    Button btnPick;
-    EditText etDate;
-    TextView tvWarnTitle;
-    DatePickerDialog datePicker;
-    CardView cardWarn;
-    RecyclerView rvDisFlood;
+    private RecyclerView rvDisFlood;
+    private ArrayList<WarningHolder> warningHolderArrayList;
+    private Admin_FloodAdapter admin_floodAdapter;
+
+    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,109 +52,40 @@ public class Admin_DisasterFlood extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_disaster_flood);
 
-        btnPick = (Button) findViewById (R.id.btnPick);
-
-        etDate = (EditText) findViewById (R.id.etDate);
-
-        tvWarnTitle = (TextView) findViewById (R.id.tvWarnTitle);
-
-        cardWarn = (CardView) findViewById (R.id.cardWarn);
-
         rvDisFlood = (RecyclerView) findViewById (R.id.rvDisFlood);
 
-        cardWarn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Admin_DisasterFlood.this, Admin_DisasterFloodInfo.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
+        warningHolderArrayList = new ArrayList<>();
+        rvDisFlood.setHasFixedSize(true);
+        rvDisFlood.setLayoutManager(new LinearLayoutManager(this));
+        admin_floodAdapter = new Admin_FloodAdapter(warningHolderArrayList, this);
+        rvDisFlood.setAdapter(admin_floodAdapter);
 
-        btnPick.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void onClick(View v) {
-
-                final Calendar calendar = Calendar.getInstance();
-
-                int Year = calendar.get(Calendar.YEAR);
-                int Month = calendar.get(Calendar.MONTH);
-                int Day = calendar.get(Calendar.DAY_OF_MONTH);
-
-                datePicker = new DatePickerDialog(Admin_DisasterFlood.this, R.style.DatePickerTheme, new DatePickerDialog.OnDateSetListener() {
+        fStore.collection("Warning")
+                .whereEqualTo("disasterType", "FLOOD")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
-                    public void onDateSet(DatePicker view, int year, int month, int day) {
-
-                        month = month + 1;
-
-                        if (month == 1)
-                        {
-                            etDate.setText("JANUARY " + day + ", " + year);
-                            tvWarnTitle.setText("JANUARY " + day + ", " + year);
-                        }
-                        else if (month == 2)
-                        {
-                            etDate.setText("FEBRUARY " + day + ", " + year);
-                            tvWarnTitle.setText("FEBRUARY " + day + ", " + year);
-                        }
-                        else if (month == 3)
-                        {
-                            etDate.setText("MARCH " + day + ", " + year);
-                            tvWarnTitle.setText("MARCH " + day + ", " + year);
-                        }
-                        else if (month == 4)
-                        {
-                            etDate.setText("APRIL " + day + ", " + year);
-                            tvWarnTitle.setText("APRIL " + day + ", " + year);
-                        }
-                        else if (month == 5)
-                        {
-                            etDate.setText("MAY " + day + ", " + year);
-                            tvWarnTitle.setText("MAY " + day + ", " + year);
-                        }
-                        else if (month == 6)
-                        {
-                            etDate.setText("JUNE " + day + ", " + year);
-                            tvWarnTitle.setText("JUNE " + day + ", " + year);
-                        }
-                        else if (month == 7)
-                        {
-                            etDate.setText("JULY " + day + ", " + year);
-                            tvWarnTitle.setText("JULY " + day + ", " + year);
-                        }
-                        else if (month == 8)
-                        {
-                            etDate.setText("AUGUST " + day + ", " + year);
-                            tvWarnTitle.setText("AUGUST " + day + ", " + year);
-                        }
-                        else if (month == 9)
-                        {
-                            etDate.setText("SEPTEMBER " + day + ", " + year);
-                            tvWarnTitle.setText("SEPTEMBER " + day + ", " + year);
-                        }
-                        else if (month == 10)
-                        {
-                            etDate.setText("OCTOBER " + day + ", " + year);
-                            tvWarnTitle.setText("OCTOBER " + day + ", " + year);
-                        }
-                        else if (month == 11)
-                        {
-                            etDate.setText("NOVEMBER " + day + ", " + year);
-                            tvWarnTitle.setText("NOVEMBER " + day + ", " + year);
-                        }
-                        else if (month == 12)
-                        {
-                            etDate.setText("DECEMBER " + day + ", " + year);
-                            tvWarnTitle.setText("DECEMBER " + day + ", " + year);
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                            for (DocumentSnapshot d : list) {
+                                WarningHolder p = d.toObject(WarningHolder.class);
+                                p.setId(d.getId());
+                                warningHolderArrayList.add(p);
+                            }
+                            admin_floodAdapter.notifyDataSetChanged();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "No Warnings Posted", Toast.LENGTH_SHORT).show();
                         }
                     }
-                }, Year, Month, Day);
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
+                    }
+                });
 
-                datePicker.show();
-            }
-        });
     }
 
     @Override
