@@ -119,6 +119,8 @@ public class PinakaAdmin_AccountInfo extends AppCompatActivity {
                         Toast.makeText(PinakaAdmin_AccountInfo.this, "Admin Account Deleted Successfully.", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), PinakaAdmin_ViewAcc.class);
                         startActivity(intent);
+                        overridePendingTransition(R.anim.slide_in_left,
+                                R.anim.slide_out_right);
                         finish();
                     }
                 })
