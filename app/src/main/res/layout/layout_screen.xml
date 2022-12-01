@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/imgWT"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="300dp"
             android:layout_marginHorizontal="35dp"
             android:adjustViewBounds="true"
             android:src="@drawable/feature1" />

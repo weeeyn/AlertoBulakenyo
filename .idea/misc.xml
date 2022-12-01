@@ -108,9 +108,9 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_admin_edit_evac.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_admin_edit_hotline.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_admin_evac.xml" value="0.2287162162162162" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_admin_evac_bocaue.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_admin_evac_bocaue.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_admin_evac_info.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_admin_evac_marilao.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_admin_evac_marilao.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_admin_evac_meycauayan.xml" value="0.358695652173913" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_admin_evac_sjdm.xml" value="0.358695652173913" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_admin_evac_sta_maria.xml" value="0.358695652173913" />
@@ -149,7 +149,12 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_edit_info.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_eq_info.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_evac.xml" value="0.2287162162162162" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_evac_bocaue.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_evac_info.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_evac_marilao.xml" value="0.23783783783783785" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_evac_meycauayan.xml" value="0.23783783783783785" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_evac_sjdm.xml" value="0.17383879781420766" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_evac_sta_maria.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_evacuation.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_feature1.xml" value="0.23157894736842105" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_feature2.xml" value="0.23157894736842105" />
@@ -226,7 +231,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_trusted_contacts.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_tsu_info.xml" value="0.32592592592592595" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_tsunami.xml" value="0.23783783783783785" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_ty_info.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_ty_info.xml" value="0.16" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_typhoon.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_verification.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/AlertoBulakenyo/app/src/main/res/layout/activity_view_hotlines.xml" value="0.23783783783783785" />

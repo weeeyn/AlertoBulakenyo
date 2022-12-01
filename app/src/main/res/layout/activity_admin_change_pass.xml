@@ -36,7 +36,7 @@
 
     </LinearLayout>
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_marginTop="100dp">
@@ -147,20 +147,22 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnChangePass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="45dp"
-                android:background="@drawable/rounded_button"
-                android:stateListAnimator="@null"
-                android:text="CHANGE PASSWORD"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
         </LinearLayout>
 
-    </ScrollView>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnChangePass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/rounded_button"
+            android:stateListAnimator="@null"
+            android:text="CHANGE PASSWORD"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

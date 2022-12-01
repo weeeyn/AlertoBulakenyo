@@ -267,7 +267,7 @@
             android:stateListAnimator="@null"
             android:text="SAVE CHANGES"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -281,7 +281,7 @@
             android:stateListAnimator="@null"
             android:text="DELETE EVACUATION"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
     </RelativeLayout>

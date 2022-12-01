@@ -37,8 +37,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="100dp">
+        android:layout_height="match_parent"
+        android:layout_marginVertical="100dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -376,6 +376,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autoSizeTextType="uniform"
+                    android:inputType="textMultiLine"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
                     android:textCursorDrawable="@drawable/cursor_blue" />
@@ -383,21 +384,22 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnPost"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:layout_marginBottom="45dp"
-                android:background="@drawable/rounded_button2"
-                android:stateListAnimator="@null"
-                android:text="POST"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
         </LinearLayout>
 
     </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/rounded_button2"
+        android:stateListAnimator="@null"
+        android:text="POST"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

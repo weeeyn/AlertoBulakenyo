@@ -170,7 +170,7 @@
                 <EditText
                     android:id="@+id/etAncmnt"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="wrap_content"
                     android:autoSizeTextType="uniform"
                     android:inputType="textMultiLine"
                     android:textColor="#003366"
@@ -194,7 +194,7 @@
         android:stateListAnimator="@null"
         android:text="SAVE CHANGES"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -208,7 +208,7 @@
         android:stateListAnimator="@null"
         android:text="DELETE ANNOUNCEMENT"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold" />
 
 </RelativeLayout>

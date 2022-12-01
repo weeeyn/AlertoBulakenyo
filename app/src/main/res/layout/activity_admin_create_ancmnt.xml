@@ -169,7 +169,7 @@
                 <EditText
                     android:id="@+id/etAncmnt"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="wrap_content"
                     android:autoSizeTextType="uniform"
                     android:inputType="textMultiLine"
                     android:textColor="#003366"
@@ -186,14 +186,14 @@
         android:id="@+id/btnPost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="15dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/rounded_button"
         android:stateListAnimator="@null"
         android:text="POST"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold" />
 
 </RelativeLayout>

@@ -57,7 +57,7 @@ public class Admin_HotStaMaria extends AppCompatActivity {
         rvHotSM.setAdapter(admin_hotlinesRVAdapter);
 
         fStore.collection("Hotlines")
-                .whereEqualTo("hotlineCity", "Bocaue")
+                .whereEqualTo("hotlineCity", "Santa Maria")
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
