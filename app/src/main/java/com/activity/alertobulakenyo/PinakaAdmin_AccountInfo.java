@@ -89,7 +89,6 @@ public class PinakaAdmin_AccountInfo extends AppCompatActivity {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(PinakaAdmin_AccountInfo.this, PinakaAdmin_EditInfo.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,

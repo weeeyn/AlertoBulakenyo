@@ -40,7 +40,7 @@ public class Admin_EditAncmnt extends AppCompatActivity {
     EditText etDeptName, etAncmntTitle, etAncmnt;
     Button btnSave, btnDelete;
 
-    private String anncmntCity, anncmntDept, anncmntTitle, anncmntBody, anncmntDate, anncmntDateTime;
+    private String anncmntCity, anncmntDept, anncmntTitle, anncmntBody, anncmntDate, anncmntDateTime, anncmntStatus;
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     private DocumentReference df;
 
@@ -88,7 +88,7 @@ public class Admin_EditAncmnt extends AppCompatActivity {
                 anncmntTitle = etAncmntTitle.getText().toString();
                 anncmntBody = etAncmnt.getText().toString();
 
-                editAnnouncement(announcements, anncmntCity, anncmntDept, anncmntTitle, anncmntBody, anncmntDate, anncmntDateTime);
+                editAnnouncement(announcements, anncmntCity, anncmntDept, anncmntTitle, anncmntBody, anncmntDate, anncmntDateTime, anncmntStatus);
             }
         });
 
@@ -102,7 +102,7 @@ public class Admin_EditAncmnt extends AppCompatActivity {
     }
 
 
-    private void editAnnouncement(@NonNull Announcements announcements, String anncmntCity, String anncmntDept, String anncmntTitle, String anncmntBody, String anncmntDate, String anncmntDateTime) {
+    private void editAnnouncement(@NonNull Announcements announcements, String anncmntCity, String anncmntDept, String anncmntTitle, String anncmntBody, String anncmntDate, String anncmntDateTime, String anncmntStatus) {
 
 
         SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyy - HH:mm aa", Locale.getDefault());
@@ -110,7 +110,7 @@ public class Admin_EditAncmnt extends AppCompatActivity {
         anncmntDate = sdf2.format(new Date());
         anncmntDateTime = sdf.format(new Date());
 
-        Announcements editAnnouncement = new Announcements(anncmntCity, anncmntDept, anncmntTitle, anncmntBody, anncmntDate, anncmntDateTime);
+        Announcements editAnnouncement = new Announcements(anncmntCity, anncmntDept, anncmntTitle, anncmntBody, anncmntDate, anncmntDateTime, anncmntStatus);
 
         fStore.collection("Announcements")
                 .document(announcements.getId())
@@ -137,21 +137,40 @@ public class Admin_EditAncmnt extends AppCompatActivity {
 
         fStore.collection("Announcements")
                 .document(announcements.getId())
-                .delete()
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                .update("anncmntStatus", "archived")
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(Admin_EditAncmnt.this, "Announcement Deleted!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Admin_EditAncmnt.this, Admin_Announcement.class);
-                            startActivity(intent);
-                            finish();
-                        } else {
-                            Toast.makeText(Admin_EditAncmnt.this, "Announcement Not Deleted!", Toast.LENGTH_SHORT).show();
-                            Log.e(TAG, "onFailure: FAILED TO DELETE ANNOUNCEMENT");
-                        }
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(Admin_EditAncmnt.this, "Announcement Archived Successfully!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Admin_EditAncmnt.this, Admin_Announcement.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e(TAG, "onFailure:e " + e.getMessage() );
                     }
                 });
+
+//        fStore.collection("Announcements")
+//                .document(announcements.getId())
+//                .delete()
+//                .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        if (task.isSuccessful()) {
+//                            Toast.makeText(Admin_EditAncmnt.this, "Announcement Deleted!", Toast.LENGTH_SHORT).show();
+//                            Intent intent = new Intent(Admin_EditAncmnt.this, Admin_Announcement.class);
+//                            startActivity(intent);
+//                            finish();
+//                        } else {
+//                            Toast.makeText(Admin_EditAncmnt.this, "Announcement Not Deleted!", Toast.LENGTH_SHORT).show();
+//                            Log.e(TAG, "onFailure: FAILED TO DELETE ANNOUNCEMENT");
+//                        }
+//                    }
+//                });
     }
 
     @Override

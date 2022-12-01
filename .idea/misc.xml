@@ -395,6 +395,7 @@
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_hotlines.xml" value="0.2" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_login.xml" value="0.2" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_profile.xml" value="0.25" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_report_users.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_admin_settings.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_ancmnt_body.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_announcement.xml" value="0.1" />
@@ -426,6 +427,9 @@
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_pinaka_admin_account_info.xml" value="0.2" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_pinaka_admin_create_acc.xml" value="0.33" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_pinaka_admin_edit_info.xml" value="0.2" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_pinaka_admin_report_announcements.xml" value="0.2" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_pinaka_admin_report_users.xml" value="0.25" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_pinaka_admin_report_warning.xml" value="0.2" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_pinaka_admin_view_acc.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_prep_ls.xml" value="0.13243243243243244" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/activity_register.xml" value="0.25" />
@@ -448,6 +452,7 @@
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_warn_ls.xml" value="0.2" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/card_warn_ty.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/dropdown_items.xml" value="0.13243243243243244" />
+        <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/layout/main_admin_user_num.xml" value="0.25" />
         <entry key="..\:/Users/piajo/AndroidStudioProjects/New folder (2)/AlertoBulakenyo/app/src/main/res/menu/menu_main.xml" value="0.33" />
       </map>
     </option>

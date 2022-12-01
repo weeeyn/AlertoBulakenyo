@@ -35,13 +35,7 @@ public class PinakaAdmin_CreateAcc extends AppCompatActivity {
     EditText etDeptName, etDeptAbbv, etEmail, etPass, etAdminName;
     Button btnSave;
 
-
-    boolean valid = true;
-
-    //firebase authentication
-    //private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
-
     private FirebaseAuth mAuth1;
     private FirebaseAuth mAuth2;
 
@@ -71,6 +65,8 @@ public class PinakaAdmin_CreateAcc extends AppCompatActivity {
         } catch (IllegalStateException e){
             mAuth2 = FirebaseAuth.getInstance(FirebaseApp.getInstance("Alerto Bulakenyo"));
         }
+
+        FirebaseUser user = mAuth2.getCurrentUser();
 
         tilCity = (TextInputLayout) findViewById (R.id.tilCity);
 

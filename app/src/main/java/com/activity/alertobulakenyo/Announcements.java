@@ -25,18 +25,20 @@ public class Announcements implements Serializable {
     private String anncmntBody;
     private String anncmntDate;
     private String anncmntDateTime;
+    private String anncmntStatus;
 
     public Announcements () {
 
     }
 
-    public Announcements(String anncmntCity, String anncmntDept, String anncmntTitle, String anncmntBody, String anncmntDate, String anncmntDateTime) {
+    public Announcements(String anncmntCity, String anncmntDept, String anncmntTitle, String anncmntBody, String anncmntDate, String anncmntDateTime, String anncmntStatus) {
         this.anncmntCity = anncmntCity;
         this.anncmntDept = anncmntDept;
         this.anncmntTitle = anncmntTitle;
         this.anncmntBody = anncmntBody;
         this.anncmntDate = anncmntDate;
         this.anncmntDateTime = anncmntDateTime;
+        this.anncmntStatus = anncmntStatus;
     }
 
     public String getAnncmntCity() {
@@ -85,5 +87,13 @@ public class Announcements implements Serializable {
 
     public void setAnncmntDateTime(String anncmntDateTime) {
         this.anncmntDateTime = anncmntDateTime;
+    }
+
+    public String getAnncmntStatus() {
+        return anncmntStatus;
+    }
+
+    public void setAnncmntStatus(String anncmntStatus) {
+        this.anncmntStatus = anncmntStatus;
     }
 }
