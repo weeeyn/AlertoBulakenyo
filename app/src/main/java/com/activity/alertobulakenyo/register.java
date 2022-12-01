@@ -264,9 +264,9 @@ public class register extends AppCompatActivity {
                         etContact.setError("Contact Number can't be empty!");
                         etContact.requestFocus();
                         return;
-                    } else if ((etContact.length() != 11) || (etContact.length() != 13)) {
+                    } else if (etContact.length() != 11) {
                         Toast.makeText(register.this, "Please enter a Valid Contact Number .", Toast.LENGTH_SHORT).show();
-                        lastName.setError("Invalid Contact Number!");
+                        etContact.setError("Invalid Contact Number!");
                         etContact.requestFocus();
                         return;
                     } else if (etHouse.getText().toString().isEmpty()) {
@@ -388,15 +388,14 @@ public class register extends AppCompatActivity {
         });
     }
 
-
-    private boolean checkField(EditText textField) {
-        if(textField.getText().toString().isEmpty()) {
-            textField.setError("Field Cannot be Empty.")    ;
-            valid = false;
-        } else {
-            valid = true;
-        }
-        return valid;
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), login.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_left,
+                R.anim.slide_out_right);
     }
 
 

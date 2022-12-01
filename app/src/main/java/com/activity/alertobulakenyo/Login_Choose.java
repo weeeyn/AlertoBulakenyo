@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class Login_Choose extends AppCompatActivity {
 
     ImageButton imgAdmin, imgUser;
+    int k = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +54,17 @@ public class Login_Choose extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        super.onBackPressed();
-        overridePendingTransition(R.anim.slide_in_left,
-                R.anim.slide_out_right);
+        Log.e("My Tags", "onBackPressed");
+        k++;
+        if (k == 1)
+        {
+            Toast.makeText(Login_Choose.this, "Please press again to exit.", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            finishAffinity();
+            finish();
+        }
+
     }
 }

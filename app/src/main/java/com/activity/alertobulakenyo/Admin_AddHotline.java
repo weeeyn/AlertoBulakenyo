@@ -27,7 +27,7 @@ import java.util.Map;
 
 public class Admin_AddHotline extends AppCompatActivity {
 
-    EditText etHotName, etHotAbAc, etHot01, etHot02, etHot03, etHot04, etHot05, etHot06, etHot07, etHot08, etHot09, etHot10;
+    EditText etHotName, etHotAbAc, etHot01, etHot02, etHot03, etHot04, etHot05;
     Button btnSaveHot;
     TextInputLayout tilCity;
     AutoCompleteTextView actCity;
@@ -48,22 +48,15 @@ public class Admin_AddHotline extends AppCompatActivity {
 
         fStore = FirebaseFirestore.getInstance();
 
+        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
         etHotName = (EditText) findViewById (R.id.etHotName);
-        etHotAbAc = (EditText) findViewById (R.id.etHotAbAc);
         etHot01 = (EditText) findViewById (R.id.etHot01);
         etHot02 = (EditText) findViewById (R.id.etHot02);
         etHot03 = (EditText) findViewById (R.id.etHot03);
         etHot04 = (EditText) findViewById (R.id.etHot04);
         etHot05 = (EditText) findViewById (R.id.etHot05);
-        etHot06 = (EditText) findViewById (R.id.etHot06);
-        etHot07 = (EditText) findViewById (R.id.etHot07);
-        etHot08 = (EditText) findViewById (R.id.etHot08);
-        etHot09 = (EditText) findViewById (R.id.etHot09);
-        etHot10 = (EditText) findViewById (R.id.etHot10);
 
         tilCity = (TextInputLayout) findViewById (R.id.tilCity);
-
-        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
 
         String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
 
@@ -89,17 +82,11 @@ public class Admin_AddHotline extends AppCompatActivity {
         Map<String, Object> hotlines = new HashMap<>();
         hotlines.put("hotlineCity", actCity.getText().toString());
         hotlines.put("hotlineName", etHotName.getText().toString());
-        hotlines.put("hotlineNameAbv", etHotAbAc.getText().toString());
         hotlines.put("hotlineOne", etHot01.getText().toString());
         hotlines.put("hotlineTwo", etHot02.getText().toString());
         hotlines.put("hotlineThree", etHot03.getText().toString());
         hotlines.put("hotlineFour", etHot04.getText().toString());
         hotlines.put("hotlineFive", etHot05.getText().toString());
-        hotlines.put("hotlineSix", etHot06.getText().toString());
-        hotlines.put("hotlineSeven", etHot07.getText().toString());
-        hotlines.put("hotlineEight", etHot08.getText().toString());
-        hotlines.put("hotlineNine", etHot09.getText().toString());
-        hotlines.put("hotlineTen", etHot10.getText().toString());
 
         df.set(hotlines)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -126,6 +113,8 @@ public class Admin_AddHotline extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

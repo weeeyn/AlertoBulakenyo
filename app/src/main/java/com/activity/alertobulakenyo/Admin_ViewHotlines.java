@@ -17,6 +17,8 @@ import org.w3c.dom.Text;
 
 public class Admin_ViewHotlines extends AppCompatActivity {
 
+    //TODO DELETE
+
     Button btnEditHot, btnDelHot;
     TextView tvAbAc, tvHotName, tvHot01, tvHot02, tvHot03, tvHot04, tvHot05, tvHot06, tvHot07, tvHot08, tvHot09, tvHot10;
     LinearLayout layHot01, layHot02, layHot03, layHot04, layHot05, layHot06, layHot07, layHot08, layHot09, layHot10;

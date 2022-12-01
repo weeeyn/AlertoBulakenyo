@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 public class Admin_EvacInfo extends AppCompatActivity {
 
+    //TODO DELETE THIS
+
     TextView tvCity, tvBrgy, tvEvacName, tvEvacAdd, tvLong, tvLat;
     Button btnEditEvac, btnDeleteEvac, btnNavi;
     Dialog dialog;

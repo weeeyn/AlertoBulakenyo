@@ -36,7 +36,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/tvAbAc"
+                        android:id="@+id/tvCity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
@@ -204,135 +204,6 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/layHot06"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        >
-
-                        <View
-                            android:layout_width="fill_parent"
-                            android:layout_height="2dp"
-                            android:layout_marginHorizontal="8dp"
-                            android:layout_marginVertical="5dp"
-                            android:background="#D9D9D9" />
-
-                        <TextView
-                            android:id="@+id/tvHot06"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="8dp"
-                            android:gravity="center"
-                            android:text="(02) 8882-4151 to 77 local 1169 (Road Emergency)"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layHot07"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        >
-
-                        <View
-                            android:layout_width="fill_parent"
-                            android:layout_height="2dp"
-                            android:layout_marginHorizontal="8dp"
-                            android:layout_marginVertical="5dp"
-                            android:background="#D9D9D9" />
-
-                        <TextView
-                            android:id="@+id/tvHot07"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="8dp"
-                            android:gravity="center"
-                            android:text="(02) 8882-4151 to 77 local 1162 / 1163 (Flood Control)"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layHot08"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        >
-
-                        <View
-                            android:layout_width="fill_parent"
-                            android:layout_height="2dp"
-                            android:layout_marginHorizontal="8dp"
-                            android:layout_marginVertical="5dp"
-                            android:background="#D9D9D9" />
-
-                        <TextView
-                            android:id="@+id/tvHot08"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="8dp"
-                            android:gravity="center"
-                            android:text="(02) 8882-4151 to 77 local 1070 (Anti-Jaywalking)"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layHot09"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        >
-
-                        <View
-                            android:layout_width="fill_parent"
-                            android:layout_height="2dp"
-                            android:layout_marginHorizontal="8dp"
-                            android:layout_marginVertical="5dp"
-                            android:background="#D9D9D9" />
-
-                        <TextView
-                            android:id="@+id/tvHot09"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="8dp"
-                            android:gravity="center"
-                            android:text=""
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layHot10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        >
-
-                        <View
-                            android:layout_width="fill_parent"
-                            android:layout_height="2dp"
-                            android:layout_marginHorizontal="8dp"
-                            android:layout_marginVertical="5dp"
-                            android:background="#D9D9D9" />
-
-                        <TextView
-                            android:id="@+id/tvHot10"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="8dp"
-                            android:gravity="center"
-                            android:text=""
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-
-                    </LinearLayout>
 
                 </LinearLayout>
 

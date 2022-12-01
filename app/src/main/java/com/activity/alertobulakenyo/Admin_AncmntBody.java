@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 public class Admin_AncmntBody extends AppCompatActivity {
 
+    //TODO DELETE THIS
+
     Button btnEditAncmnt, btnDeleteAncmnt;
     Dialog dialog;
     TextView tvCity, tvOffice, tvDateTime, tvTitle, tvBody;

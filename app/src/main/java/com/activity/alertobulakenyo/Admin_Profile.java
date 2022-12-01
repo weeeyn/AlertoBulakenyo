@@ -134,7 +134,10 @@ public class Admin_Profile extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        startActivity(new Intent(getApplicationContext(), Admin_Home.class));
-        overridePendingTransition(0,0);
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), Admin_Home.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_left,
+                R.anim.slide_out_right);
     }
 }

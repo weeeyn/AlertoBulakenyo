@@ -3,6 +3,7 @@ package com.activity.alertobulakenyo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -38,6 +39,8 @@ public class Admin_ReportAnnouncements extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), Admin_Report.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }
