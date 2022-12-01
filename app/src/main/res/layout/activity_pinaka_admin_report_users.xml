@@ -58,7 +58,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:gravity="center"
                     android:paddingHorizontal="2dp"
                     android:text="City/Municipality"
@@ -73,18 +73,6 @@
                     android:layout_weight="2"
                     android:gravity="center"
                     android:paddingHorizontal="2dp"
-                    android:text="Barangay"
-                    android:textColor="@color/dark_blue"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:paddingHorizontal="2dp"
                     android:text="Users"
                     android:textColor="@color/dark_blue"
                     android:textSize="15dp"
@@ -95,51 +83,40 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="5dp"
-                android:layout_marginBottom="3dp">
+                android:layout_marginBottom="3dp"
+                android:paddingVertical="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
                     android:orientation="horizontal"
                     android:weightSum="5"
-                    android:layout_marginHorizontal="5dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/tvCity"
+                        android:id="@+id/tvCityBoc"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:paddingHorizontal="2.5dp"
                         android:layout_gravity="center"
+                        android:layout_weight="3"
                         android:gravity="center"
-                        android:text="San Jose del Monte"
+                        android:paddingHorizontal="2.5dp"
+                        android:text="Bocaue"
                         android:textColor="@color/black"
                         android:textSize="13dp" />
 
-                    <TextView
-                        android:id="@+id/tvBrgy"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:paddingHorizontal="2.5dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="Citrus"
-                        android:textColor="@color/black"
-                        android:textSize="13dp" />
 
                     <TextView
-                        android:id="@+id/tvNum"
+                        android:id="@+id/tvNumBoc"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingHorizontal="2.5dp"
                         android:layout_gravity="center"
+                        android:layout_weight="2"
                         android:gravity="center"
+                        android:paddingHorizontal="2.5dp"
                         android:text="23"
                         android:textColor="@color/black"
                         android:textSize="13dp" />
@@ -148,11 +125,187 @@
 
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvRepUsers"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="25dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:paddingVertical="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvCityMar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:paddingHorizontal="2.5dp"
+                        android:text="Marilao"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
+
+
+                    <TextView
+                        android:id="@+id/tvNumMar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:paddingHorizontal="2.5dp"
+                        android:text="23"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:paddingVertical="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvCityMey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:paddingHorizontal="2.5dp"
+                        android:text="Meycauayan"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
+
+
+                    <TextView
+                        android:id="@+id/tvNumMey"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:paddingHorizontal="2.5dp"
+                        android:text="23"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:paddingVertical="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvCitySJDM"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:paddingHorizontal="2.5dp"
+                        android:text="San Jose del Monte"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
+
+
+                    <TextView
+                        android:id="@+id/tvNumSJDM"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:paddingHorizontal="2.5dp"
+                        android:text="23"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:paddingVertical="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvCitySM"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:paddingHorizontal="2.5dp"
+                        android:text="Santa Maria"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
+
+
+                    <TextView
+                        android:id="@+id/tvNumSM"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:paddingHorizontal="2.5dp"
+                        android:text="23"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
 

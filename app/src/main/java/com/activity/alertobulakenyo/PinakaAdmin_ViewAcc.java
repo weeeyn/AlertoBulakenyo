@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -40,12 +42,10 @@ public class PinakaAdmin_ViewAcc extends AppCompatActivity {
     private PinakaAdmin_ViewAccRVAdapter pinakaAdmin_viewAccRVAdapter;
 
     //firebase authentication
-    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    private DocumentReference anncmntRef;
 
-    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private String userId = user.getUid();
+    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+    private FirebaseAuth mAuth1;
+    private FirebaseAuth mAuth2;
 
 
     @Override
@@ -58,6 +58,21 @@ public class PinakaAdmin_ViewAcc extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
         setContentView(R.layout.activity_pinaka_admin_view_acc);
+
+        mAuth1 = FirebaseAuth.getInstance();
+
+        FirebaseOptions firebaseOptions = new FirebaseOptions.Builder()
+                .setDatabaseUrl("alerto-bulakenyo-60ecf")
+                .setApiKey("AIzaSyDe3CsU_sguucQX-qXI3P7bpszuAPd1RHA")
+                .setApplicationId("alerto-bulakenyo-60ecf").build();
+
+        try { FirebaseApp myApp = FirebaseApp.initializeApp(getApplicationContext(), firebaseOptions, "Alerto Bulakenyo");
+            mAuth2 = FirebaseAuth.getInstance(myApp);
+        } catch (IllegalStateException e){
+            mAuth2 = FirebaseAuth.getInstance(FirebaseApp.getInstance("Alerto Bulakenyo"));
+        }
+
+        FirebaseUser user = mAuth2.getCurrentUser();
 
         cardAdminAcc = (CardView) findViewById(R.id.cardAdminAcc);
 
