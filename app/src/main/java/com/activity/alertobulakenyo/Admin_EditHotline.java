@@ -28,11 +28,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class Admin_EditHotline extends AppCompatActivity {
 
     TextInputLayout tilCity;
-    EditText etHotName, etHotAbAc, etHot01, etHot02, etHot03, etHot04, etHot05, etHot06, etHot07, etHot08, etHot09, etHot10;
+    EditText etHotName, etHot01, etHot02, etHot03, etHot04, etHot05;
     Button btnSaveChanges, btnDeleteHot;
     AutoCompleteTextView actCity;
 
-    private String hotlineCity, hotlineName, hotlineNameAbv, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive, hotlineSix, hotlineSeven, hotlineEight, hotlineNine, hotlineTen;
+    private String hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive;
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     private DocumentReference df;
 
@@ -49,23 +49,15 @@ public class Admin_EditHotline extends AppCompatActivity {
 
         HotlinesHolder hotlinesHolder = (HotlinesHolder) getIntent().getSerializableExtra("hotline");
 
-        
+        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
+
+        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
         etHotName = (EditText) findViewById (R.id.etHotName);
-        etHotAbAc = (EditText) findViewById (R.id.etHotAbAc);
         etHot01 = (EditText) findViewById (R.id.etHot01);
         etHot02 = (EditText) findViewById (R.id.etHot02);
         etHot03 = (EditText) findViewById (R.id.etHot03);
         etHot04 = (EditText) findViewById (R.id.etHot04);
         etHot05 = (EditText) findViewById (R.id.etHot05);
-        etHot06 = (EditText) findViewById (R.id.etHot06);
-        etHot07 = (EditText) findViewById (R.id.etHot07);
-        etHot08 = (EditText) findViewById (R.id.etHot08);
-        etHot09 = (EditText) findViewById (R.id.etHot09);
-        etHot10 = (EditText) findViewById (R.id.etHot10);
-
-        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
-
-        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
 
         String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
 
@@ -75,17 +67,11 @@ public class Admin_EditHotline extends AppCompatActivity {
 
         actCity.setText(hotlinesHolder.getHotlineCity());
         etHotName.setText(hotlinesHolder.getHotlineName());
-        etHotAbAc.setText(hotlinesHolder.getHotlineNameAbv());
         etHot01.setText(hotlinesHolder.getHotlineOne());
         etHot02.setText(hotlinesHolder.getHotlineTwo());
         etHot03.setText(hotlinesHolder.getHotlineThree());
         etHot04.setText(hotlinesHolder.getHotlineFour());
         etHot05.setText(hotlinesHolder.getHotlineFive());
-        etHot06.setText(hotlinesHolder.getHotlineSix());
-        etHot07.setText(hotlinesHolder.getHotlineSeven());
-        etHot08.setText(hotlinesHolder.getHotlineEight());
-        etHot09.setText(hotlinesHolder.getHotlineNine());
-        etHot10.setText(hotlinesHolder.getHotlineTen());
 
         btnSaveChanges = (Button) findViewById (R.id.btnSaveChanges);
         btnDeleteHot = (Button) findViewById (R.id.btnDeleteHot);
@@ -96,19 +82,13 @@ public class Admin_EditHotline extends AppCompatActivity {
 
                 hotlineCity = actCity.getText().toString();
                 hotlineName = etHotName.getText().toString();
-                hotlineNameAbv = etHotAbAc.getText().toString();
                 hotlineOne = etHot01.getText().toString();
                 hotlineTwo = etHot02.getText().toString();
                 hotlineThree = etHot03.getText().toString();
                 hotlineFour = etHot04.getText().toString();
                 hotlineFive = etHot05.getText().toString();
-                hotlineSix = etHot06.getText().toString();
-                hotlineSeven = etHot07.getText().toString();
-                hotlineEight = etHot08.getText().toString();
-                hotlineNine = etHot09.getText().toString();
-                hotlineTen = etHot10.getText().toString();
 
-                editHotline(hotlinesHolder, hotlineCity, hotlineName, hotlineNameAbv, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive, hotlineSix, hotlineSeven, hotlineEight, hotlineNine, hotlineTen);
+                editHotline(hotlinesHolder, hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
 
             }
         });
@@ -143,9 +123,9 @@ public class Admin_EditHotline extends AppCompatActivity {
                 });
     }
 
-    private void editHotline(HotlinesHolder hotlinesHolder, String hotlineCity, String hotlineName, String hotlineNameAbv, String hotlineOne, String hotlineTwo, String hotlineThree, String hotlineFour, String hotlineFive, String hotlineSix, String hotlineSeven, String hotlineEight, String hotlineNine, String hotlineTen) {
+    private void editHotline(@NonNull HotlinesHolder hotlinesHolder, String hotlineCity, String hotlineName, String hotlineOne, String hotlineTwo, String hotlineThree, String hotlineFour, String hotlineFive) {
 
-        HotlinesHolder editHotlines = new HotlinesHolder(hotlineCity, hotlineName, hotlineNameAbv, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive, hotlineSix, hotlineSeven, hotlineEight, hotlineNine, hotlineTen);
+        HotlinesHolder editHotlines = new HotlinesHolder(hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
 
         fStore.collection("Hotlines")
                 .document(hotlinesHolder.getId())
@@ -174,6 +154,8 @@ public class Admin_EditHotline extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

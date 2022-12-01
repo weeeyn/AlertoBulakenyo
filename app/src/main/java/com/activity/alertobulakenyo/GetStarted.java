@@ -4,16 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GetStarted extends AppCompatActivity {
 
     Button btnGetStarted;
+    int k = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,5 +41,22 @@ public class GetStarted extends AppCompatActivity {
                         R.anim.slide_out_left);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Log.e("My Tags", "onBackPressed");
+        k++;
+        if (k == 1)
+        {
+            Toast.makeText(GetStarted.this, "Please press again to exit.", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            finishAffinity();
+            finish();
+        }
+
     }
 }

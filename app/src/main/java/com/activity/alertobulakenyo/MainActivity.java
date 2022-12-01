@@ -37,10 +37,43 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent intent = new Intent(getApplicationContext(), Login_Choose.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.slide_in_right,
-                            R.anim.slide_out_left);
+                Intent intent = new Intent(getApplicationContext(), GetStarted.class);
+                startActivity(intent);
+
+//                if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+//                    DocumentReference df = FirebaseFirestore.getInstance().collection("UserData")
+//                            .document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+//                    df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+//                        @Override
+//                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+//
+//                            if (documentSnapshot.getString("User") != null) {
+//                                Log.d("TAG", "onSuccess: USER LOGGED IN");
+//                                Intent intent = new Intent(getApplicationContext(), Home.class);
+//                                startActivity(intent);
+//                                finish();
+//                                overridePendingTransition(R.anim.slide_in_left,
+//                                        R.anim.slide_out_right);
+//                            }
+//                            else {
+//                                Intent intent = new Intent(getApplicationContext(), Login_Choose.class);
+//                                startActivity(intent);
+//                                finish();
+//                                overridePendingTransition(R.anim.slide_in_left,
+//                                        R.anim.slide_out_right);
+//                                Log.d("TAG", "onSuccess: NO ONE LOGGED IN");
+//                            }
+//                        }
+//                    });
+//                }
+//                else {
+//                    Log.d("TAG", " NO ONE LOGGED IN");
+//                    Intent intent = new Intent(getApplicationContext(), Login_Choose.class);
+//                    startActivity(intent);
+//                    finish();
+//                    overridePendingTransition(R.anim.slide_in_left,
+//                            R.anim.slide_out_right);
+//                }
             }
         }, 3000);
     }

@@ -11,7 +11,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 public class HotBulacanProv extends AppCompatActivity {
-
+//TODO DELETE
     CardView card_hotline;
 
     @Override

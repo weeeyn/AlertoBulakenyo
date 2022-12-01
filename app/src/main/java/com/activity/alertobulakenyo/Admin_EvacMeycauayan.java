@@ -74,7 +74,6 @@ public class Admin_EvacMeycauayan extends AppCompatActivity {
                     }
                 });
     }
-
     @Override
     public void onBackPressed()
     {

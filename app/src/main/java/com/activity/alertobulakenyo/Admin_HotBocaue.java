@@ -46,6 +46,7 @@ public class Admin_HotBocaue extends AppCompatActivity {
         setContentView(R.layout.activity_admin_hot_bocaue);
 
         btnAddHotline = (Button) findViewById (R.id.btnAddHotline);
+
         rvHotBoc = (RecyclerView) findViewById (R.id.rvHotBoc);
 
         hotlinesHolderArrayList = new ArrayList<>();
