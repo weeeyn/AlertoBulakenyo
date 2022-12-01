@@ -326,7 +326,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="25dp"
                 android:hint="Province"
                 android:textColorHint="#003366"
                 app:boxBackgroundColor="#FFFFFF"

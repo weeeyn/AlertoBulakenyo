@@ -92,6 +92,8 @@ public class Admin_DisasterFlood extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), Admin_Disaster.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }
