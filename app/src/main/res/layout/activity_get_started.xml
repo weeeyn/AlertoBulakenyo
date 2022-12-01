@@ -38,7 +38,7 @@
                 android:text="Alerto Bulakenyo is a mobile application for disaster warning and risk communication in the selected cities and municipalities of Bulacan province. This app informs users about disaster occurrences, locates the nearest evacuation facilities in their area, and provides preparedness tips and emergency hotlines."
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="18dp" />
 
         </LinearLayout>
 

@@ -133,7 +133,7 @@
                 android:maxLines="8"
                 android:text="Drop, Cover and Hold\nStay calm.\nStay away from glass windows and doors, and heavy furniture.\nWatch out for falling debris."
                 android:textColor="@color/dark_blue"
-                android:textSize="20dp"/>
+                android:textSize="20dp" />
 
 
             <androidx.appcompat.widget.AppCompatButton

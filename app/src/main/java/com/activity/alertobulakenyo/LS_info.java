@@ -56,6 +56,8 @@ public class LS_info extends AppCompatActivity {
         });
     }
 
+
+
     @Override
     public void onBackPressed()
     {

@@ -93,7 +93,7 @@ public class Admin_AddHotline extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void unused) {
                         //pb
-                        Toast.makeText(Admin_AddHotline.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
                         startActivity(intent);
                         finish();
@@ -103,7 +103,7 @@ public class Admin_AddHotline extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         //progress
-                        Toast.makeText(Admin_AddHotline.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
                         Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
                     }
                 });

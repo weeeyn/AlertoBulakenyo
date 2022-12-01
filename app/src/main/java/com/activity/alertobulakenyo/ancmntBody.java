@@ -46,7 +46,7 @@ public class ancmntBody extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
-        Intent intent = new Intent(getApplicationContext(), Announcements.class);
+        Intent intent = new Intent(getApplicationContext(), Announcement.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);

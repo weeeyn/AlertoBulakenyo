@@ -76,7 +76,7 @@ public class DeleteAcc extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
-        Intent intent = new Intent(getApplicationContext(), Settings.class);
+        Intent intent = new Intent(getApplicationContext(), SettingsAccount.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);

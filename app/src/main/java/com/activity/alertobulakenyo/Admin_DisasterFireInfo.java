@@ -102,7 +102,6 @@ public class Admin_DisasterFireInfo extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
-
         Intent intent = new Intent(getApplicationContext(), Admin_DisasterFire.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,

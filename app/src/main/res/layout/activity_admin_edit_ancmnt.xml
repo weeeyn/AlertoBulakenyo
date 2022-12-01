@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_marginTop="100dp"
-        android:layout_marginBottom="100dp">
+        android:layout_marginBottom="175dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -171,8 +171,8 @@
                     android:id="@+id/etAncmnt"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:inputType="textMultiLine"
                     android:autoSizeTextType="uniform"
+                    android:inputType="textMultiLine"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
                     android:textCursorDrawable="@drawable/cursor_blue" />
