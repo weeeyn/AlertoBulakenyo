@@ -30,7 +30,7 @@ public class Admin_Profile extends AppCompatActivity {
     BottomNavigationView bottomNav;
     int k = 0;
     TextView tvDeptAbbre, tvDeptName;
-    CardView card_account, card_report;
+    CardView card_account;
 
     //firebase authentication
 //    FirebaseAuth fAuth = FirebaseAuth.getInstance();
@@ -59,7 +59,6 @@ public class Admin_Profile extends AppCompatActivity {
         tvDeptName = (TextView) findViewById (R.id.tvDeptName);
 
         card_account = (CardView) findViewById (R.id.card_account);
-        card_report = (CardView) findViewById (R.id.card_report);
 
         // Set Home selected
         bottomNav.setSelectedItemId(R.id.profile);
@@ -99,15 +98,6 @@ public class Admin_Profile extends AppCompatActivity {
             }
         });
 
-        card_report.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Admin_Profile.this, Admin_Report.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
 
 //        DocumentReference docRef = fStore.collection("AdminData").document(userId);
 //        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {

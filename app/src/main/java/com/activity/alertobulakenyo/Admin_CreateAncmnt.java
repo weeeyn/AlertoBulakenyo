@@ -39,9 +39,7 @@ import java.util.Map;
 
 public class Admin_CreateAncmnt extends AppCompatActivity {
 
-    TextInputLayout tilCity;
-    AutoCompleteTextView actCity;
-    EditText etDeptName, etAncmntTitle, etAncmnt;
+    EditText etAncmntTitle, etAncmnt;
     Button btnPost;
 
     //firebase authentication
@@ -63,20 +61,11 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
 //        fAuth = FirebaseAuth.getInstance();
 //        fStore = FirebaseFirestore.getInstance();
 
-        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
-
-        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
-        etDeptName = (EditText) findViewById (R.id.etDeptName);
         etAncmntTitle = (EditText) findViewById (R.id.etAncmntTitle);
         etAncmnt = (EditText) findViewById (R.id.etAncmnt);
 
         btnPost = (Button) findViewById (R.id.btnPost);
 
-        String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
-
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_CreateAncmnt.this, R.layout.dropdown_items, city);
-        actCity.setDropDownBackgroundResource(R.color.white);
-        actCity.setAdapter(cityAdapter);
 
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override

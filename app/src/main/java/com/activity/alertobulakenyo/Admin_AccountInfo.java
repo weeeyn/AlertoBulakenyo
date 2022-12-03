@@ -25,7 +25,7 @@ import android.widget.TextView;
 
 public class Admin_AccountInfo extends AppCompatActivity {
 
-    TextView tvDeptAbbre, tvDeptName, tvCity, tvEmail, tvAdminName;
+    TextView tvDeptAbbre, tvDeptName, tvCity, tvEmail;
 
 //
 //    //firebase authentication
@@ -52,7 +52,6 @@ public class Admin_AccountInfo extends AppCompatActivity {
         tvDeptName = (TextView) findViewById (R.id.tvDeptName);
         tvCity = (TextView) findViewById (R.id.tvCity);
         tvEmail = (TextView) findViewById (R.id.tvEmail);
-        tvAdminName = (TextView) findViewById (R.id.tvAdminName);
 
 //        df = fStore.collection("AdminData").document(userId);
 //        df.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {

@@ -134,7 +134,7 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(Settings.this, Login_Choose.class);
+                Intent intent = new Intent(Settings.this, login.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

@@ -35,9 +35,7 @@ import java.util.Locale;
 
 public class Admin_EditAncmnt extends AppCompatActivity {
 
-    TextInputLayout tilCity, tilDeptName, tilAncmntTitle, tilAncmnt;
-    AutoCompleteTextView actCity;
-    EditText etDeptName, etAncmntTitle, etAncmnt;
+    EditText etAncmntTitle, etAncmnt;
     Button btnSave, btnDelete;
 
     private String anncmntCity, anncmntDept, anncmntTitle, anncmntBody, anncmntDate, anncmntDateTime, anncmntStatus;
@@ -58,26 +56,16 @@ public class Admin_EditAncmnt extends AppCompatActivity {
 
         Announcements announcements = (Announcements) getIntent().getSerializableExtra("announcements");
 
-        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
 
-        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
-        etDeptName = (EditText) findViewById (R.id.etDeptName);
         etAncmntTitle = (EditText) findViewById (R.id.etAncmntTitle);
         etAncmnt = (EditText) findViewById (R.id.etAncmnt);
 
-        actCity.setText(announcements.getAnncmntCity());
-        etDeptName.setText(announcements.getAnncmntDept());
         etAncmntTitle.setText(announcements.getAnncmntTitle());
         etAncmnt.setText(announcements.getAnncmntBody());
 
         btnSave = (Button) findViewById (R.id.btnSave);
         btnDelete = (Button) findViewById (R.id.btnDelete);
 
-        String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
-
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_EditAncmnt.this, R.layout.dropdown_items, city);
-        actCity.setDropDownBackgroundResource(R.color.white);
-        actCity.setAdapter(cityAdapter);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override

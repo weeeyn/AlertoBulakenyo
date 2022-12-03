@@ -169,50 +169,85 @@ public class Admin_CreateWarning extends AppCompatActivity {
 
                             if (selFire == "First Alarm")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
 
                             }
                             else if (selFire == "Second Alarm")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selFire == "Third Alarm")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selFire == "Fourth Alarm")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selFire == "Fifth Alarm")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selFire == "Task Force Alpha")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selFire == "Task Force Bravo")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selFire == "Task Force Charlie")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selFire == "Task Force Delta")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selFire == "General Alarm")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selFire == "Under Control")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selFire == "Fireout")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                         }
@@ -238,14 +273,23 @@ public class Admin_CreateWarning extends AppCompatActivity {
 
                             if (selRain == "Yellow Warning")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selRain == "Orange Warning")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selRain == "Red Warning")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                         }
@@ -262,14 +306,23 @@ public class Admin_CreateWarning extends AppCompatActivity {
 
                             if (selFlood == "Yellow Warning")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selFlood == "Orange Warning")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selFlood == "Red Warning")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                         }
@@ -283,6 +336,10 @@ public class Admin_CreateWarning extends AppCompatActivity {
                     tilFlood.setVisibility(View.GONE);
                     tilTy.setVisibility(View.GONE);
                     tilSig.setVisibility(View.GONE);
+
+                    // palitawin yung instructions pag nakapili na nung level - magset text lang
+                    tilIns.setVisibility(View.VISIBLE);
+
 
 
                 }
@@ -306,22 +363,37 @@ public class Admin_CreateWarning extends AppCompatActivity {
 
                             if (selSig == "Signal No. 1")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selSig == "Signal No. 2")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selSig == "Signal No. 3")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selSig == "Signal No. 4")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                             else if (selSig == "Signal No. 5")
                             {
+                                // palitawin yung instructions pag nakapili na nung level - magset text lang
+                                tilIns.setVisibility(View.VISIBLE);
+
 
                             }
                         }

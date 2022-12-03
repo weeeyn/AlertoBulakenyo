@@ -100,6 +100,7 @@ public class Admin_AddEvac extends AppCompatActivity {
         actCity.setDropDownBackgroundResource(R.color.white);
         actCity.setAdapter(cityAdapter);
 
+
         ((AutoCompleteTextView)tilCity.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -27,10 +27,8 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class Admin_EditHotline extends AppCompatActivity {
 
-    TextInputLayout tilCity;
     EditText etHotName, etHot01, etHot02, etHot03, etHot04, etHot05;
     Button btnSaveChanges, btnDeleteHot;
-    AutoCompleteTextView actCity;
 
     private String hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive;
 //    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
@@ -49,9 +47,6 @@ public class Admin_EditHotline extends AppCompatActivity {
 
         HotlinesHolder hotlinesHolder = (HotlinesHolder) getIntent().getSerializableExtra("hotline");
 
-        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
-
-        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
         etHotName = (EditText) findViewById (R.id.etHotName);
         etHot01 = (EditText) findViewById (R.id.etHot01);
         etHot02 = (EditText) findViewById (R.id.etHot02);
@@ -59,12 +54,7 @@ public class Admin_EditHotline extends AppCompatActivity {
         etHot04 = (EditText) findViewById (R.id.etHot04);
         etHot05 = (EditText) findViewById (R.id.etHot05);
 
-        String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
-
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_EditHotline.this, R.layout.dropdown_items, city);
-        actCity.setDropDownBackgroundResource(R.color.white);
-        actCity.setAdapter(cityAdapter);
-
+/**
         actCity.setText(hotlinesHolder.getHotlineCity());
         etHotName.setText(hotlinesHolder.getHotlineName());
         etHot01.setText(hotlinesHolder.getHotlineOne());
@@ -72,6 +62,7 @@ public class Admin_EditHotline extends AppCompatActivity {
         etHot03.setText(hotlinesHolder.getHotlineThree());
         etHot04.setText(hotlinesHolder.getHotlineFour());
         etHot05.setText(hotlinesHolder.getHotlineFive());
+*/
 
         btnSaveChanges = (Button) findViewById (R.id.btnSaveChanges);
         btnDeleteHot = (Button) findViewById (R.id.btnDeleteHot);

@@ -49,8 +49,9 @@ import java.net.Inet4Address;
 
 public class login extends AppCompatActivity {
 
+    int k = 0;
     EditText email, password;
-    Button btnLogin, btnAdmin;
+    Button btnLogin;
     TextView tvForgotPass, tvSignup;
    // ProgressBar progressBar;
 
@@ -81,10 +82,10 @@ public class login extends AppCompatActivity {
         password = (EditText) findViewById (R.id.etLoginPass);
 
         btnLogin = (Button) findViewById (R.id.btnLogin);
-        btnAdmin = (Button) findViewById (R.id.btnAdmin);
 
         tvForgotPass = (TextView) findViewById (R.id.tvForgotPass);
         tvSignup = (TextView) findViewById (R.id.tvSignup);
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,6 +110,12 @@ public class login extends AppCompatActivity {
 //                    });
 
 //                }
+
+                // puntang admin UI
+                Intent intent = new Intent(login.this, Admin_Home.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,
+                        R.anim.slide_out_left);
             }
         });
 
@@ -183,10 +190,17 @@ public class login extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        super.onBackPressed();
-        Intent intent = new Intent(getApplicationContext(), Login_Choose.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.slide_in_left,
-                R.anim.slide_out_right);
+        Log.e("My Tags", "onBackPressed");
+        k++;
+        if (k == 1)
+        {
+            Toast.makeText(login.this, "Please press again to exit.", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            finishAffinity();
+            finish();
+        }
+
     }
 }

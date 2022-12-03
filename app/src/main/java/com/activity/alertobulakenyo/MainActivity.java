@@ -33,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
         logo = (ImageView)findViewById (R.id.imgLogo);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//
                 Intent intent = new Intent(getApplicationContext(), GetStarted.class);
                 startActivity(intent);
-
+//
 //                if (FirebaseAuth.getInstance().getCurrentUser() != null) {
 //                    DocumentReference df = FirebaseFirestore.getInstance().collection("UserData")
 //                            .document(FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
 //                    overridePendingTransition(R.anim.slide_in_left,
 //                            R.anim.slide_out_right);
 //                }
-            }
-        }, 3000);
+//            }
+//        }, 3000);
     }
 
 }

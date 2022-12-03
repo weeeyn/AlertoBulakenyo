@@ -68,7 +68,8 @@
                 app:endIconTint="#003366"
                 app:hintTextColor="#003366"
                 app:startIconDrawable="@drawable/place"
-                app:startIconTint="#003366">
+                app:startIconTint="#003366"
+                android:visibility="gone">
 
                 <AutoCompleteTextView
                     android:id="@+id/actCity"

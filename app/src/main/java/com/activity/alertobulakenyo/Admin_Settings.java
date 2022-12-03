@@ -137,7 +137,7 @@ public class Admin_Settings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(Admin_Settings.this, MainActivity.class);
+                Intent intent = new Intent(Admin_Settings.this, login.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
