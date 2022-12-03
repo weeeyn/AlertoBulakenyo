@@ -15,12 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.firestore.DocumentReference;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +33,7 @@ public class Admin_AddHotline extends AppCompatActivity {
     AutoCompleteTextView actCity;
 
     //firebase firestore
-    FirebaseFirestore fStore;
+//    FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class Admin_AddHotline extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_add_hotline);
 
-        fStore = FirebaseFirestore.getInstance();
+//        fStore = FirebaseFirestore.getInstance();
 
         actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
         etHotName = (EditText) findViewById (R.id.etHotName);
@@ -71,43 +71,43 @@ public class Admin_AddHotline extends AppCompatActivity {
             public void onClick(View v) {
 
                 //progressbar visible
-                addHotlines();
+//                addHotlines();
             }
         });
     }
 
-    private void addHotlines() {
-
-        DocumentReference df = fStore.collection("Hotlines").document();
-        Map<String, Object> hotlines = new HashMap<>();
-        hotlines.put("hotlineCity", actCity.getText().toString());
-        hotlines.put("hotlineName", etHotName.getText().toString());
-        hotlines.put("hotlineOne", etHot01.getText().toString());
-        hotlines.put("hotlineTwo", etHot02.getText().toString());
-        hotlines.put("hotlineThree", etHot03.getText().toString());
-        hotlines.put("hotlineFour", etHot04.getText().toString());
-        hotlines.put("hotlineFive", etHot05.getText().toString());
-
-        df.set(hotlines)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        //pb
-                        Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        //progress
-                        Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
-                        Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
-                    }
-                });
-    }
+//    private void addHotlines() {
+//
+//        DocumentReference df = fStore.collection("Hotlines").document();
+//        Map<String, Object> hotlines = new HashMap<>();
+//        hotlines.put("hotlineCity", actCity.getText().toString());
+//        hotlines.put("hotlineName", etHotName.getText().toString());
+//        hotlines.put("hotlineOne", etHot01.getText().toString());
+//        hotlines.put("hotlineTwo", etHot02.getText().toString());
+//        hotlines.put("hotlineThree", etHot03.getText().toString());
+//        hotlines.put("hotlineFour", etHot04.getText().toString());
+//        hotlines.put("hotlineFive", etHot05.getText().toString());
+//
+//        df.set(hotlines)
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void unused) {
+//                        //pb
+//                        Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
+//                        startActivity(intent);
+//                        finish();
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        //progress
+//                        Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
+//                        Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+//                    }
+//                });
+//    }
 
     @Override
     public void onBackPressed()

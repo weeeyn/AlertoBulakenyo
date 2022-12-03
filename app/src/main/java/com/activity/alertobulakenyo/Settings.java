@@ -13,7 +13,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseAuth;
 
 public class Settings extends AppCompatActivity {
 
@@ -133,7 +133,7 @@ public class Settings extends AppCompatActivity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
+//                FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(Settings.this, Login_Choose.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,

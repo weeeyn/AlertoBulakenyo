@@ -18,14 +18,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.firebase.FirebaseApp;
+//import com.google.firebase.FirebaseOptions;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.firestore.DocumentReference;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PinakaAdmin_AccountInfo extends AppCompatActivity {
 
@@ -34,11 +34,11 @@ public class PinakaAdmin_AccountInfo extends AppCompatActivity {
     Dialog dialog;
 
     //firebase authentication
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    private DocumentReference df;
-
-    private FirebaseAuth mAuth1;
-    private FirebaseAuth mAuth2;
+//    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+//    private DocumentReference df;
+//
+//    private FirebaseAuth mAuth1;
+//    private FirebaseAuth mAuth2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,23 +53,23 @@ public class PinakaAdmin_AccountInfo extends AppCompatActivity {
 
         AdminHolder adminHolder = (AdminHolder) getIntent().getSerializableExtra("admin");
 
-        mAuth1 = FirebaseAuth.getInstance();
-
-        FirebaseOptions firebaseOptions = new FirebaseOptions.Builder()
-                .setDatabaseUrl("alerto-bulakenyo-60ecf")
-                .setApiKey("AIzaSyDe3CsU_sguucQX-qXI3P7bpszuAPd1RHA")
-                .setApplicationId("alerto-bulakenyo-60ecf").build();
-
-        try { FirebaseApp myApp = FirebaseApp.initializeApp(getApplicationContext(), firebaseOptions, "Alerto Bulakenyo");
-            mAuth2 = FirebaseAuth.getInstance(myApp);
-        } catch (IllegalStateException e){
-            mAuth2 = FirebaseAuth.getInstance(FirebaseApp.getInstance("Alerto Bulakenyo"));
-        }
-
-        FirebaseUser user = mAuth2.getCurrentUser();
-        String userId = user.getUid();
-
-        df = fStore.collection("AdminData").document(userId);
+//        mAuth1 = FirebaseAuth.getInstance();
+//
+//        FirebaseOptions firebaseOptions = new FirebaseOptions.Builder()
+//                .setDatabaseUrl("alerto-bulakenyo-60ecf")
+//                .setApiKey("AIzaSyDe3CsU_sguucQX-qXI3P7bpszuAPd1RHA")
+//                .setApplicationId("alerto-bulakenyo-60ecf").build();
+//
+//        try { FirebaseApp myApp = FirebaseApp.initializeApp(getApplicationContext(), firebaseOptions, "Alerto Bulakenyo");
+//            mAuth2 = FirebaseAuth.getInstance(myApp);
+//        } catch (IllegalStateException e){
+//            mAuth2 = FirebaseAuth.getInstance(FirebaseApp.getInstance("Alerto Bulakenyo"));
+//        }
+//
+//        FirebaseUser user = mAuth2.getCurrentUser();
+//        String userId = user.getUid();
+//
+//        df = fStore.collection("AdminData").document(userId);
 
         btnEdit = (Button) findViewById (R.id.btnEdit);
         btnDelete = (Button) findViewById (R.id.btnDelete);
@@ -99,38 +99,38 @@ public class PinakaAdmin_AccountInfo extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deleteAccount(adminHolder);
+//                deleteAccount(adminHolder);
             }
         });
 
     }
 
-    private void deleteAccount(AdminHolder adminHolder) {
-
-        FirebaseUser user = mAuth2.getCurrentUser();
-        String userId = user.getUid();
-
-        fStore.collection("AdminData").document(userId)
-                .delete()
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Log.d(TAG, "onSuccess: ADMIN ACCOUNT DELETED");
-                        Toast.makeText(PinakaAdmin_AccountInfo.this, "Admin Account Deleted Successfully.", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), PinakaAdmin_ViewAcc.class);
-                        startActivity(intent);
-                        overridePendingTransition(R.anim.slide_in_left,
-                                R.anim.slide_out_right);
-                        finish();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.e(TAG, "onFailure: ADMIN ACCOUNT DELETION FAILED" + e.getMessage());
-                    }
-                });
-    }
+//    private void deleteAccount(AdminHolder adminHolder) {
+//
+//        FirebaseUser user = mAuth2.getCurrentUser();
+//        String userId = user.getUid();
+//
+//        fStore.collection("AdminData").document(userId)
+//                .delete()
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void unused) {
+//                        Log.d(TAG, "onSuccess: ADMIN ACCOUNT DELETED");
+//                        Toast.makeText(PinakaAdmin_AccountInfo.this, "Admin Account Deleted Successfully.", Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(getApplicationContext(), PinakaAdmin_ViewAcc.class);
+//                        startActivity(intent);
+//                        overridePendingTransition(R.anim.slide_in_left,
+//                                R.anim.slide_out_right);
+//                        finish();
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.e(TAG, "onFailure: ADMIN ACCOUNT DELETION FAILED" + e.getMessage());
+//                    }
+//                });
+//    }
 
     @Override
     public void onBackPressed()

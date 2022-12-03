@@ -17,17 +17,17 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.firebase.FirebaseApp;
+//import com.google.firebase.FirebaseOptions;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.firestore.DocumentReference;
+//import com.google.firebase.firestore.DocumentSnapshot;
+//import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.QueryDocumentSnapshot;
+//import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,9 +43,9 @@ public class PinakaAdmin_ViewAcc extends AppCompatActivity {
 
     //firebase authentication
 
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    private FirebaseAuth mAuth1;
-    private FirebaseAuth mAuth2;
+//    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+//    private FirebaseAuth mAuth1;
+//    private FirebaseAuth mAuth2;
 
 
     @Override
@@ -59,20 +59,20 @@ public class PinakaAdmin_ViewAcc extends AppCompatActivity {
 
         setContentView(R.layout.activity_pinaka_admin_view_acc);
 
-        mAuth1 = FirebaseAuth.getInstance();
-
-        FirebaseOptions firebaseOptions = new FirebaseOptions.Builder()
-                .setDatabaseUrl("alerto-bulakenyo-60ecf")
-                .setApiKey("AIzaSyDe3CsU_sguucQX-qXI3P7bpszuAPd1RHA")
-                .setApplicationId("alerto-bulakenyo-60ecf").build();
-
-        try { FirebaseApp myApp = FirebaseApp.initializeApp(getApplicationContext(), firebaseOptions, "Alerto Bulakenyo");
-            mAuth2 = FirebaseAuth.getInstance(myApp);
-        } catch (IllegalStateException e){
-            mAuth2 = FirebaseAuth.getInstance(FirebaseApp.getInstance("Alerto Bulakenyo"));
-        }
-
-        FirebaseUser user = mAuth2.getCurrentUser();
+//        mAuth1 = FirebaseAuth.getInstance();
+//
+//        FirebaseOptions firebaseOptions = new FirebaseOptions.Builder()
+//                .setDatabaseUrl("alerto-bulakenyo-60ecf")
+//                .setApiKey("AIzaSyDe3CsU_sguucQX-qXI3P7bpszuAPd1RHA")
+//                .setApplicationId("alerto-bulakenyo-60ecf").build();
+//
+//        try { FirebaseApp myApp = FirebaseApp.initializeApp(getApplicationContext(), firebaseOptions, "Alerto Bulakenyo");
+//            mAuth2 = FirebaseAuth.getInstance(myApp);
+//        } catch (IllegalStateException e){
+//            mAuth2 = FirebaseAuth.getInstance(FirebaseApp.getInstance("Alerto Bulakenyo"));
+//        }
+//
+//        FirebaseUser user = mAuth2.getCurrentUser();
 
         cardAdminAcc = (CardView) findViewById(R.id.cardAdminAcc);
 
@@ -89,30 +89,30 @@ public class PinakaAdmin_ViewAcc extends AppCompatActivity {
         rvAdminAcc.setAdapter(pinakaAdmin_viewAccRVAdapter);
 
 
-        fStore.collection("AdminData")
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        if (!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                                for(DocumentSnapshot d : list) {
-                                    AdminHolder p = d.toObject(AdminHolder.class);
-                                    p.setId(d.getId());
-                                    adminHolderArrayList.add(p);
-                                }
-                                pinakaAdmin_viewAccRVAdapter.notifyDataSetChanged();
-                        } else {
-                            Toast.makeText(PinakaAdmin_ViewAcc.this, "No data found.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.e(TAG, "ADMIN ACCOUNTS FAIL: " + e.getMessage());
-                    }
-                });
+//        fStore.collection("AdminData")
+//                .get()
+//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//                        if (!queryDocumentSnapshots.isEmpty()) {
+//                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+//                                for(DocumentSnapshot d : list) {
+//                                    AdminHolder p = d.toObject(AdminHolder.class);
+//                                    p.setId(d.getId());
+//                                    adminHolderArrayList.add(p);
+//                                }
+//                                pinakaAdmin_viewAccRVAdapter.notifyDataSetChanged();
+//                        } else {
+//                            Toast.makeText(PinakaAdmin_ViewAcc.this, "No data found.", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.e(TAG, "ADMIN ACCOUNTS FAIL: " + e.getMessage());
+//                    }
+//                });
 
     }
 

@@ -16,14 +16,14 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
+//
+//import com.google.android.gms.tasks.OnCompleteListener;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.DocumentReference;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Admin_EditHotline extends AppCompatActivity {
 
@@ -33,8 +33,8 @@ public class Admin_EditHotline extends AppCompatActivity {
     AutoCompleteTextView actCity;
 
     private String hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive;
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    private DocumentReference df;
+//    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+//    private DocumentReference df;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,15 +80,15 @@ public class Admin_EditHotline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                hotlineCity = actCity.getText().toString();
-                hotlineName = etHotName.getText().toString();
-                hotlineOne = etHot01.getText().toString();
-                hotlineTwo = etHot02.getText().toString();
-                hotlineThree = etHot03.getText().toString();
-                hotlineFour = etHot04.getText().toString();
-                hotlineFive = etHot05.getText().toString();
-
-                editHotline(hotlinesHolder, hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
+//                hotlineCity = actCity.getText().toString();
+//                hotlineName = etHotName.getText().toString();
+//                hotlineOne = etHot01.getText().toString();
+//                hotlineTwo = etHot02.getText().toString();
+//                hotlineThree = etHot03.getText().toString();
+//                hotlineFour = etHot04.getText().toString();
+//                hotlineFive = etHot05.getText().toString();
+//
+//                editHotline(hotlinesHolder, hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
 
             }
         });
@@ -96,59 +96,59 @@ public class Admin_EditHotline extends AppCompatActivity {
         btnDeleteHot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deleteHotline(hotlinesHolder);
+//                deleteHotline(hotlinesHolder);
             }
         });
     }
 
-    private void deleteHotline(HotlinesHolder hotlinesHolder) {
-        fStore.collection("Hotlines")
-                .document(hotlinesHolder.getId())
-                .delete()
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(Admin_EditHotline.this, "Hotline Deleted", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
-                            startActivity(intent);
-                            finish();
-                            overridePendingTransition(R.anim.slide_in_left,
-                                    R.anim.slide_out_right);
-                        } else {
-                            Toast.makeText(Admin_EditHotline.this, "Hotline Not Deleted!", Toast.LENGTH_SHORT).show();
-                            Log.e(TAG, "onFailure: FAILED TO DELETE HOTLINE");
-                        }
-                    }
-                });
-    }
-
-    private void editHotline(@NonNull HotlinesHolder hotlinesHolder, String hotlineCity, String hotlineName, String hotlineOne, String hotlineTwo, String hotlineThree, String hotlineFour, String hotlineFive) {
-
-        HotlinesHolder editHotlines = new HotlinesHolder(hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
-
-        fStore.collection("Hotlines")
-                .document(hotlinesHolder.getId())
-                .set(editHotlines)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
-                        startActivity(intent);
-                        finish();
-                        overridePendingTransition(R.anim.slide_in_left,
-                                R.anim.slide_out_right);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Admin_EditHotline.this, "Hotlines Failed to Update", Toast.LENGTH_SHORT).show();
-                        Log.e("TAG", "onFailure: HOTLINE UPDATE FAIL" + e.getMessage());
-                    }
-                });
-    }
+//    private void deleteHotline(HotlinesHolder hotlinesHolder) {
+//        fStore.collection("Hotlines")
+//                .document(hotlinesHolder.getId())
+//                .delete()
+//                .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        if (task.isSuccessful()) {
+//                            Toast.makeText(Admin_EditHotline.this, "Hotline Deleted", Toast.LENGTH_SHORT).show();
+//                            Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
+//                            startActivity(intent);
+//                            finish();
+//                            overridePendingTransition(R.anim.slide_in_left,
+//                                    R.anim.slide_out_right);
+//                        } else {
+//                            Toast.makeText(Admin_EditHotline.this, "Hotline Not Deleted!", Toast.LENGTH_SHORT).show();
+//                            Log.e(TAG, "onFailure: FAILED TO DELETE HOTLINE");
+//                        }
+//                    }
+//                });
+//    }
+//
+//    private void editHotline(@NonNull HotlinesHolder hotlinesHolder, String hotlineCity, String hotlineName, String hotlineOne, String hotlineTwo, String hotlineThree, String hotlineFour, String hotlineFive) {
+//
+//        HotlinesHolder editHotlines = new HotlinesHolder(hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
+//
+//        fStore.collection("Hotlines")
+//                .document(hotlinesHolder.getId())
+//                .set(editHotlines)
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void unused) {
+//                        Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
+//                        startActivity(intent);
+//                        finish();
+//                        overridePendingTransition(R.anim.slide_in_left,
+//                                R.anim.slide_out_right);
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(Admin_EditHotline.this, "Hotlines Failed to Update", Toast.LENGTH_SHORT).show();
+//                        Log.e("TAG", "onFailure: HOTLINE UPDATE FAIL" + e.getMessage());
+//                    }
+//                });
+//    }
 
     @Override
     public void onBackPressed()

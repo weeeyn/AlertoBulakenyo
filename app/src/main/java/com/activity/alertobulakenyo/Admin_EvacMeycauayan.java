@@ -12,11 +12,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.firebase.firestore.DocumentSnapshot;
+//import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ public class Admin_EvacMeycauayan extends AppCompatActivity {
     private RecyclerView rvEvac;
     private ArrayList<EvacuationHolder> evacuationHolderArrayList;
     private Admin_EvacRVAdapter admin_evacRVAdapter;
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+//    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,32 +47,32 @@ public class Admin_EvacMeycauayan extends AppCompatActivity {
         admin_evacRVAdapter = new Admin_EvacRVAdapter(evacuationHolderArrayList, this);
         rvEvac.setAdapter(admin_evacRVAdapter);
 
-        fStore.collection("Evacuation")
-                .whereEqualTo("evacuationCity", "Meycauayan")
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-
-                        if (!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                            for (DocumentSnapshot d : list) {
-                                EvacuationHolder p = d.toObject(EvacuationHolder.class);
-                                p.setId(d.getId());
-                                evacuationHolderArrayList.add(p);
-                            }
-                            admin_evacRVAdapter.notifyDataSetChanged();
-                        } else {
-                            Toast.makeText(Admin_EvacMeycauayan.this, "No Evacuation Centers Listed.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.e("TAG", "onFailure: " + e.getMessage());
-                    }
-                });
+//        fStore.collection("Evacuation")
+//                .whereEqualTo("evacuationCity", "Meycauayan")
+//                .get()
+//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//
+//                        if (!queryDocumentSnapshots.isEmpty()) {
+//                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+//                            for (DocumentSnapshot d : list) {
+//                                EvacuationHolder p = d.toObject(EvacuationHolder.class);
+//                                p.setId(d.getId());
+//                                evacuationHolderArrayList.add(p);
+//                            }
+//                            admin_evacRVAdapter.notifyDataSetChanged();
+//                        } else {
+//                            Toast.makeText(Admin_EvacMeycauayan.this, "No Evacuation Centers Listed.", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.e("TAG", "onFailure: " + e.getMessage());
+//                    }
+//                });
     }
     @Override
     public void onBackPressed()

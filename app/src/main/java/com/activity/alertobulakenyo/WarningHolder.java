@@ -1,23 +1,23 @@
 package com.activity.alertobulakenyo;
 
-import com.google.firebase.firestore.Exclude;
+//import com.google.firebase.firestore.Exclude;
 
 import java.io.Serializable;
 
 public class WarningHolder implements Serializable {
 
-    @Exclude
-    public String getId() {
-        return id;
-    }
-
-    @Exclude
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    @Exclude
-    private String id;
+//    @Exclude
+//    public String getId() {
+//        return id;
+//    }
+//
+//    @Exclude
+//    public void setId(String id) {
+//        this.id = id;
+//    }
+//
+//    @Exclude
+//    private String id;
 
     private String disasterType;
     private String disasterCity;

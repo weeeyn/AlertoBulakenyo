@@ -18,13 +18,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
+//import com.google.android.gms.tasks.OnCompleteListener;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.DocumentReference;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Admin_EditEvac extends AppCompatActivity {
 
@@ -34,8 +34,8 @@ public class Admin_EditEvac extends AppCompatActivity {
     Button btnSave, btnDelete;
 
     private String evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy;
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    private DocumentReference df;
+//    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+//    private DocumentReference df;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,72 +185,72 @@ public class Admin_EditEvac extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                evacuationName = etEvacName.getText().toString();
-                evacuationAddress = etEvacLoc.getText().toString();
-                evacuationLongitude = etLong.getText().toString();
-                evacuationLatitude = etLat.getText().toString();
-                evacuationCity = actCity.getText().toString();
-                evacuationBrgy = actBrgy.getText().toString();
-
-                editEvacuation(evacuationHolder, evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy);
+//                evacuationName = etEvacName.getText().toString();
+//                evacuationAddress = etEvacLoc.getText().toString();
+//                evacuationLongitude = etLong.getText().toString();
+//                evacuationLatitude = etLat.getText().toString();
+//                evacuationCity = actCity.getText().toString();
+//                evacuationBrgy = actBrgy.getText().toString();
+//
+//                editEvacuation(evacuationHolder, evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy);
             }
         });
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                deleteEvac(evacuationHolder);
+//                deleteEvac(evacuationHolder);
             }
         });
     }
 
-    private void deleteEvac(EvacuationHolder evacuationHolder) {
-        fStore.collection("Evacuation")
-                .document(evacuationHolder.getId())
-                .delete()
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(Admin_EditEvac.this, "Hotline Deleted", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Admin_EditEvac.this, Admin_Evacuation.class);
-                            startActivity(intent);
-                            finish();
-                            overridePendingTransition(R.anim.slide_in_left,
-                                    R.anim.slide_out_right);
-                        } else {
-                            Toast.makeText(Admin_EditEvac.this, "Hotline Not Deleted!", Toast.LENGTH_SHORT).show();
-                            Log.e(TAG, "onFailure: FAILED TO DELETE HOTLINE");
-                        }
-                    }
-                });
-
-    }
-
-    private void editEvacuation(@NonNull EvacuationHolder evacuationHolder, String evacuationName, String evacuationAddress, String evacuationLongitude, String evacuationLatitude, String evacuationCity, String evacuationBrgy) {
-
-        EvacuationHolder editEvac = new EvacuationHolder(evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy);
-
-        fStore.collection("Evacuation")
-                .document(evacuationHolder.getId())
-                .set(editEvac)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(Admin_EditEvac.this, "Evacuation has been EDITED!", Toast.LENGTH_SHORT).show();
-
-                        Intent intent = new Intent(Admin_EditEvac.this, Admin_Evacuation.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.e("TAG", "onFailure: " + e.getMessage());
-                    }
-                });
-    }
+//    private void deleteEvac(EvacuationHolder evacuationHolder) {
+//        fStore.collection("Evacuation")
+//                .document(evacuationHolder.getId())
+//                .delete()
+//                .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        if (task.isSuccessful()) {
+//                            Toast.makeText(Admin_EditEvac.this, "Hotline Deleted", Toast.LENGTH_SHORT).show();
+//                            Intent intent = new Intent(Admin_EditEvac.this, Admin_Evacuation.class);
+//                            startActivity(intent);
+//                            finish();
+//                            overridePendingTransition(R.anim.slide_in_left,
+//                                    R.anim.slide_out_right);
+//                        } else {
+//                            Toast.makeText(Admin_EditEvac.this, "Hotline Not Deleted!", Toast.LENGTH_SHORT).show();
+//                            Log.e(TAG, "onFailure: FAILED TO DELETE HOTLINE");
+//                        }
+//                    }
+//                });
+//
+//    }
+//
+//    private void editEvacuation(@NonNull EvacuationHolder evacuationHolder, String evacuationName, String evacuationAddress, String evacuationLongitude, String evacuationLatitude, String evacuationCity, String evacuationBrgy) {
+//
+//        EvacuationHolder editEvac = new EvacuationHolder(evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy);
+//
+//        fStore.collection("Evacuation")
+//                .document(evacuationHolder.getId())
+//                .set(editEvac)
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void unused) {
+//                        Toast.makeText(Admin_EditEvac.this, "Evacuation has been EDITED!", Toast.LENGTH_SHORT).show();
+//
+//                        Intent intent = new Intent(Admin_EditEvac.this, Admin_Evacuation.class);
+//                        startActivity(intent);
+//                        finish();
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.e("TAG", "onFailure: " + e.getMessage());
+//                    }
+//                });
+//    }
 
     @Override
     public void onBackPressed()

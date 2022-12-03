@@ -12,10 +12,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.FirebaseApp;
+//import com.google.firebase.FirebaseOptions;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseUser;
 
 public class PinakaAdmin_Home extends AppCompatActivity {
 
@@ -23,8 +23,8 @@ public class PinakaAdmin_Home extends AppCompatActivity {
     ImageButton imgAdmin, imgReport;
     Button btnLogout;
 
-    private FirebaseAuth mAuth1;
-    private FirebaseAuth mAuth2;
+//    private FirebaseAuth mAuth1;
+//    private FirebaseAuth mAuth2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +37,18 @@ public class PinakaAdmin_Home extends AppCompatActivity {
 
         setContentView(R.layout.activity_pinaka_admin_home);
 
-        mAuth1 = FirebaseAuth.getInstance();
-
-        FirebaseOptions firebaseOptions = new FirebaseOptions.Builder()
-                .setDatabaseUrl("alerto-bulakenyo-60ecf")
-                .setApiKey("AIzaSyDe3CsU_sguucQX-qXI3P7bpszuAPd1RHA")
-                .setApplicationId("alerto-bulakenyo-60ecf").build();
-
-        try { FirebaseApp myApp = FirebaseApp.initializeApp(getApplicationContext(), firebaseOptions, "Alerto Bulakenyo");
-            mAuth2 = FirebaseAuth.getInstance(myApp);
-        } catch (IllegalStateException e){
-            mAuth2 = FirebaseAuth.getInstance(FirebaseApp.getInstance("Alerto Bulakenyo"));
-        }
+//        mAuth1 = FirebaseAuth.getInstance();
+//
+//        FirebaseOptions firebaseOptions = new FirebaseOptions.Builder()
+//                .setDatabaseUrl("alerto-bulakenyo-60ecf")
+//                .setApiKey("AIzaSyDe3CsU_sguucQX-qXI3P7bpszuAPd1RHA")
+//                .setApplicationId("alerto-bulakenyo-60ecf").build();
+//
+//        try { FirebaseApp myApp = FirebaseApp.initializeApp(getApplicationContext(), firebaseOptions, "Alerto Bulakenyo");
+//            mAuth2 = FirebaseAuth.getInstance(myApp);
+//        } catch (IllegalStateException e){
+//            mAuth2 = FirebaseAuth.getInstance(FirebaseApp.getInstance("Alerto Bulakenyo"));
+//        }
 
         imgAdmin = (ImageButton) findViewById (R.id.imgAdmin);
         imgReport = (ImageButton) findViewById (R.id.imgReport);
@@ -78,7 +78,7 @@ public class PinakaAdmin_Home extends AppCompatActivity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
+//                FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(PinakaAdmin_Home.this, MainActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,

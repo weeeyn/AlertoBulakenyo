@@ -16,11 +16,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.firebase.firestore.DocumentSnapshot;
+//import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class Admin_HotBocaue extends AppCompatActivity {
     private ArrayList<HotlinesHolder> hotlinesHolderArrayList;
     private Admin_HotlinesRVAdapter admin_hotlinesRVAdapter;
 
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+//    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,31 +55,31 @@ public class Admin_HotBocaue extends AppCompatActivity {
         admin_hotlinesRVAdapter = new Admin_HotlinesRVAdapter(hotlinesHolderArrayList, this);
         rvHotBoc.setAdapter(admin_hotlinesRVAdapter);
 
-        fStore.collection("Hotlines")
-                .whereEqualTo("hotlineCity", "Bocaue")
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        if (!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                            for (DocumentSnapshot d : list) {
-                                HotlinesHolder p = d.toObject(HotlinesHolder.class);
-                                p.setId(d.getId());
-                                hotlinesHolderArrayList.add(p);
-                            }
-                            admin_hotlinesRVAdapter.notifyDataSetChanged();
-                        } else {
-                            Toast.makeText(Admin_HotBocaue.this, "No Hotlines Posted", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.e(TAG, "onFailure: BOCAUE HOTLINE FAILED" + e.getMessage());
-                    }
-                });
+//        fStore.collection("Hotlines")
+//                .whereEqualTo("hotlineCity", "Bocaue")
+//                .get()
+//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//                        if (!queryDocumentSnapshots.isEmpty()) {
+//                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+//                            for (DocumentSnapshot d : list) {
+//                                HotlinesHolder p = d.toObject(HotlinesHolder.class);
+//                                p.setId(d.getId());
+//                                hotlinesHolderArrayList.add(p);
+//                            }
+//                            admin_hotlinesRVAdapter.notifyDataSetChanged();
+//                        } else {
+//                            Toast.makeText(Admin_HotBocaue.this, "No Hotlines Posted", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.e(TAG, "onFailure: BOCAUE HOTLINE FAILED" + e.getMessage());
+//                    }
+//                });
 
         btnAddHotline.setOnClickListener(new View.OnClickListener() {
             @Override

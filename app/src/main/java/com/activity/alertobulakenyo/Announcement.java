@@ -16,12 +16,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.firebase.firestore.DocumentSnapshot;
+//import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.Query;
+//import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ public class Announcement extends AppCompatActivity {
     private RecyclerView rvAncmt;
     private ArrayList<Announcements> announcementArrayList;
     private AnnouncementRVAdapter announcementRVAdapter;
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+//    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,31 +57,31 @@ public class Announcement extends AppCompatActivity {
 
         tvCity = (TextView) findViewById (R.id.tvCity);
 
-        fStore.collection("Announcements")
-                .orderBy("anncmntDateTime", Query.Direction.DESCENDING)
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        if(!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                            for (DocumentSnapshot d : list) {
-                                Announcements p = d.toObject(Announcements.class);
-                                p.setId(d.getId());
-                                announcementArrayList.add(p);
-                            }
-                            announcementRVAdapter.notifyDataSetChanged();
-                        } else {
-                            Toast.makeText(Announcement.this, "No Announcements Posted", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.e("TAG", "onFailure: " + e.getMessage());
-                    }
-                });
+//        fStore.collection("Announcements")
+//                .orderBy("anncmntDateTime", Query.Direction.DESCENDING)
+//                .get()
+//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//                        if(!queryDocumentSnapshots.isEmpty()) {
+//                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+//                            for (DocumentSnapshot d : list) {
+//                                Announcements p = d.toObject(Announcements.class);
+//                                p.setId(d.getId());
+//                                announcementArrayList.add(p);
+//                            }
+//                            announcementRVAdapter.notifyDataSetChanged();
+//                        } else {
+//                            Toast.makeText(Announcement.this, "No Announcements Posted", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.e("TAG", "onFailure: " + e.getMessage());
+//                    }
+//                });
     }
 
     @Override

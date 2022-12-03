@@ -11,15 +11,15 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+//import com.google.android.gms.tasks.OnCompleteListener;
+//import com.google.android.gms.tasks.Task;
+//import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.QuerySnapshot;
 
 public class PinakaAdmin_ReportAnnouncements extends AppCompatActivity {
 
     TextView tvNumBoc, tvNumMar, tvNumMey, tvNumSJDM, tvNumSM;
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+//    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
 
     @Override
@@ -39,90 +39,90 @@ public class PinakaAdmin_ReportAnnouncements extends AppCompatActivity {
         tvNumSJDM = (TextView) findViewById(R.id.tvNumSJDM);
         tvNumSM = (TextView) findViewById(R.id.tvNumSM);
 
-        fStore.collection("Announcements")
-                .whereEqualTo("anncmntCity", "Bocaue")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            String numBo = String.valueOf(task.getResult().size());
-                            tvNumBoc.setText(numBo);
-                            Log.d("TAG", task.getResult().size() + "");
-                        } else {
-                            Log.d("TAG", "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
-
-        fStore.collection("Announcements")
-                .whereEqualTo("anncmntCity", "Marilao")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            String numMar = String.valueOf(task.getResult().size());
-                            tvNumMar.setText(numMar);
-                            Log.d("TAG", task.getResult().size() + "");
-                        } else {
-                            tvNumMar.setText("NO USERS");
-                            Log.d("TAG", "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
-
-        fStore.collection("Announcements")
-                .whereEqualTo("anncmntCity", "Meycauayan")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            String numMey = String.valueOf(task.getResult().size());
-                            tvNumMey.setText(numMey);
-                            Log.d("TAG", task.getResult().size() + "");
-                        } else {
-                            tvNumMey.setText("NO USERS");
-                            Log.d("TAG", "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
-
-        fStore.collection("Announcements")
-                .whereEqualTo("anncmntCity", "San Jose del Monte")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            String numSJDM = String.valueOf(task.getResult().size());
-                            tvNumSJDM.setText(numSJDM);
-                            Log.d("TAG", task.getResult().size() + "");
-                        } else {
-                            tvNumSJDM.setText("NO USERS");
-                            Log.d("TAG", "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
-
-        fStore.collection("Announcements")
-                .whereEqualTo("anncmntCity", "Santa Maria")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            String numSM = String.valueOf(task.getResult().size());
-                            tvNumSM.setText(numSM);
-                            Log.d("TAG", task.getResult().size() + "");
-                        } else {
-                            tvNumSM.setText("NO USERS");
-                            Log.d("TAG", "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
-
+//        fStore.collection("Announcements")
+//                .whereEqualTo("anncmntCity", "Bocaue")
+//                .get()
+//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            String numBo = String.valueOf(task.getResult().size());
+//                            tvNumBoc.setText(numBo);
+//                            Log.d("TAG", task.getResult().size() + "");
+//                        } else {
+//                            Log.d("TAG", "Error getting documents: ", task.getException());
+//                        }
+//                    }
+//                });
+//
+//        fStore.collection("Announcements")
+//                .whereEqualTo("anncmntCity", "Marilao")
+//                .get()
+//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            String numMar = String.valueOf(task.getResult().size());
+//                            tvNumMar.setText(numMar);
+//                            Log.d("TAG", task.getResult().size() + "");
+//                        } else {
+//                            tvNumMar.setText("NO USERS");
+//                            Log.d("TAG", "Error getting documents: ", task.getException());
+//                        }
+//                    }
+//                });
+//
+//        fStore.collection("Announcements")
+//                .whereEqualTo("anncmntCity", "Meycauayan")
+//                .get()
+//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            String numMey = String.valueOf(task.getResult().size());
+//                            tvNumMey.setText(numMey);
+//                            Log.d("TAG", task.getResult().size() + "");
+//                        } else {
+//                            tvNumMey.setText("NO USERS");
+//                            Log.d("TAG", "Error getting documents: ", task.getException());
+//                        }
+//                    }
+//                });
+//
+//        fStore.collection("Announcements")
+//                .whereEqualTo("anncmntCity", "San Jose del Monte")
+//                .get()
+//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            String numSJDM = String.valueOf(task.getResult().size());
+//                            tvNumSJDM.setText(numSJDM);
+//                            Log.d("TAG", task.getResult().size() + "");
+//                        } else {
+//                            tvNumSJDM.setText("NO USERS");
+//                            Log.d("TAG", "Error getting documents: ", task.getException());
+//                        }
+//                    }
+//                });
+//
+//        fStore.collection("Announcements")
+//                .whereEqualTo("anncmntCity", "Santa Maria")
+//                .get()
+//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            String numSM = String.valueOf(task.getResult().size());
+//                            tvNumSM.setText(numSM);
+//                            Log.d("TAG", task.getResult().size() + "");
+//                        } else {
+//                            tvNumSM.setText("NO USERS");
+//                            Log.d("TAG", "Error getting documents: ", task.getException());
+//                        }
+//                    }
+//                });
+//
     }
 
     @Override

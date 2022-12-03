@@ -11,14 +11,14 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 public class EQ_info extends AppCompatActivity {
 
     TextView tvDate, tvTime, tvMag, tvLoc, tvIns;
     Button btnEvac;
 
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+//    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

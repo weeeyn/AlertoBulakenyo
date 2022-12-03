@@ -23,12 +23,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.firestore.DocumentReference;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
@@ -45,8 +45,8 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
     Button btnPost;
 
     //firebase authentication
-    FirebaseAuth fAuth;
-    FirebaseFirestore fStore;
+//    FirebaseAuth fAuth;
+//    FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,14 +59,9 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_create_ancmnt);
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("New Announcement", "Posted Announcement", NotificationManager.IMPORTANCE_DEFAULT);
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(channel);
-        }
 
-        fAuth = FirebaseAuth.getInstance();
-        fStore = FirebaseFirestore.getInstance();
+//        fAuth = FirebaseAuth.getInstance();
+//        fStore = FirebaseFirestore.getInstance();
 
         tilCity = (TextInputLayout) findViewById (R.id.tilCity);
 
@@ -88,7 +83,7 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
             public void onClick(View v) {
 
                 //progress bar visible
-                createAnnouncement();
+//                createAnnouncement();
 
             }
         });
@@ -96,54 +91,54 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
 
     }
 
-    private void createAnnouncement() {
-        String anncmntTitle = etAncmntTitle.getText().toString();
-        String anncmntDept = etDeptName.getText().toString();
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyy - HH:mm aa", Locale.getDefault());
-        SimpleDateFormat sdf2 = new SimpleDateFormat("MM-dd-yy", Locale.getDefault());
-        String anncmntDate = sdf2.format(new Date());
-        String anncmntDateTime = sdf.format(new Date());
-
-        DocumentReference df = fStore.collection("Announcements").document();
-        Map<String, Object> anncmnt = new HashMap<>();
-        anncmnt.put("anncmntTitle", anncmntTitle);
-        anncmnt.put("anncmntBody", etAncmnt.getText().toString());
-        anncmnt.put("anncmntDept", anncmntDept);
-        anncmnt.put("anncmntCity", actCity.getText().toString());
-        anncmnt.put("anncmntDate", anncmntDate);
-        anncmnt.put("anncmntDateTime", anncmntDateTime);
-        anncmnt.put("anncmntStatus", "active");
-
-        df.set(anncmnt)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        //progress
-
-                        NotificationCompat.Builder builder = new NotificationCompat.Builder(Admin_CreateAncmnt.this, "New Announcement");
-                        builder.setContentTitle(anncmntTitle);
-                        builder.setContentText(anncmntDept);
-                        builder.setSmallIcon(R.drawable.logo2);
-                        builder.setAutoCancel(true);
-
-                        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(Admin_CreateAncmnt.this);
-                        managerCompat.notify(1,builder.build());
-
-                        Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        //progress
-                        Toast.makeText(Admin_CreateAncmnt.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
-                        Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
-                    }
-                });
-    }
+//    private void createAnnouncement() {
+//        String anncmntTitle = etAncmntTitle.getText().toString();
+//        String anncmntDept = etDeptName.getText().toString();
+//        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyy - HH:mm aa", Locale.getDefault());
+//        SimpleDateFormat sdf2 = new SimpleDateFormat("MM-dd-yy", Locale.getDefault());
+//        String anncmntDate = sdf2.format(new Date());
+//        String anncmntDateTime = sdf.format(new Date());
+//
+//        DocumentReference df = fStore.collection("Announcements").document();
+//        Map<String, Object> anncmnt = new HashMap<>();
+//        anncmnt.put("anncmntTitle", anncmntTitle);
+//        anncmnt.put("anncmntBody", etAncmnt.getText().toString());
+//        anncmnt.put("anncmntDept", anncmntDept);
+//        anncmnt.put("anncmntCity", actCity.getText().toString());
+//        anncmnt.put("anncmntDate", anncmntDate);
+//        anncmnt.put("anncmntDateTime", anncmntDateTime);
+//        anncmnt.put("anncmntStatus", "active");
+//
+//        df.set(anncmnt)
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void unused) {
+//                        //progress
+//
+//                        NotificationCompat.Builder builder = new NotificationCompat.Builder(Admin_CreateAncmnt.this, "New Announcement");
+//                        builder.setContentTitle(anncmntTitle);
+//                        builder.setContentText(anncmntDept);
+//                        builder.setSmallIcon(R.drawable.logo2);
+//                        builder.setAutoCancel(true);
+//
+//                        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(Admin_CreateAncmnt.this);
+//                        managerCompat.notify(1,builder.build());
+//
+//                        Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
+//                        startActivity(intent);
+//                        finish();
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        //progress
+//                        Toast.makeText(Admin_CreateAncmnt.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
+//                        Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+//                    }
+//                });
+//    }
 
     @Override
     public void onBackPressed()

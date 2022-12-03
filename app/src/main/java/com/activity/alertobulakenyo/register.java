@@ -23,14 +23,14 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.auth.AuthResult;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.firestore.DocumentReference;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.w3c.dom.Text;
 
@@ -51,8 +51,8 @@ public class register extends AppCompatActivity {
     boolean valid = true;
 
     //firebase authentication
-    FirebaseAuth fAuth;
-    FirebaseFirestore fStore;
+//    FirebaseAuth fAuth;
+//    FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +65,8 @@ public class register extends AppCompatActivity {
 
         setContentView(R.layout.activity_register);
 
-        fAuth = FirebaseAuth.getInstance();
-        fStore = FirebaseFirestore.getInstance();
+//        fAuth = FirebaseAuth.getInstance();
+//        fStore = FirebaseFirestore.getInstance();
 
         firstName = (EditText) findViewById (R.id.etRegFname);
         lastName = (EditText) findViewById (R.id.etRegLname);
@@ -242,117 +242,117 @@ public class register extends AppCompatActivity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ( (cb1 == 1) && (cb2 == 1) ) {
-
-                    if (firstName.getText().toString().isEmpty()) {
-                        Toast.makeText(register.this, "Please enter your First Name.", Toast.LENGTH_SHORT).show();
-                        firstName.setError("First Name can't be empty!");
-                        firstName.requestFocus();
-                        return;
-                    } else if (lastName.getText().toString().isEmpty()) {
-                        Toast.makeText(register.this, "Please enter your Last Name.", Toast.LENGTH_SHORT).show();
-                        lastName.setError("Last Name can't be empty!");
-                        lastName.requestFocus();
-                        return;
-                    } else if (username.getText().toString().isEmpty()) {
-                        Toast.makeText(register.this, "Please enter your Username.", Toast.LENGTH_SHORT).show();
-                        username.setError("Username can't be empty!");
-                        username.requestFocus();
-                        return;
-                    } else if (etContact.getText().toString().isEmpty()) {
-                        Toast.makeText(register.this, "Please enter your Contact Number.", Toast.LENGTH_SHORT).show();
-                        etContact.setError("Contact Number can't be empty!");
-                        etContact.requestFocus();
-                        return;
-                    } else if (etContact.length() != 11) {
-                        Toast.makeText(register.this, "Please enter a Valid Contact Number .", Toast.LENGTH_SHORT).show();
-                        etContact.setError("Invalid Contact Number!");
-                        etContact.requestFocus();
-                        return;
-                    } else if (etHouse.getText().toString().isEmpty()) {
-                        Toast.makeText(register.this, "Please enter your House No. and Street Name.", Toast.LENGTH_SHORT).show();
-                        etHouse.setError("House Address can't be empty!");
-                        etHouse.requestFocus();
-                        return;
-                    } else if (actCity.getText().toString().isEmpty()) {
-                        Toast.makeText(register.this, "Please select your City.", Toast.LENGTH_SHORT).show();
-                        actCity.setError("City Address can't be empty!");
-                        actCity.requestFocus();
-                        return;
-                    } else if (actBrgy.getText().toString().isEmpty()) {
-                        Toast.makeText(register.this, "Please select your Barangay.", Toast.LENGTH_SHORT).show();
-                        actCity.setError("Barangay Address can't be empty!");
-                        actCity.requestFocus();
-                        return;
-                    } else if (actProvince.getText().toString().isEmpty()) {
-                        Toast.makeText(register.this, "Please select Bulacan.", Toast.LENGTH_SHORT).show();
-                        actProvince.setError("Bulacan Address can't be empty!");
-                        actProvince.requestFocus();
-                        return;
-                    } else if (email.getText().toString().isEmpty()) {
-                        Toast.makeText(register.this, "Please enter your Email.", Toast.LENGTH_SHORT).show();
-                        email.setError("Email can't be empty!");
-                        email.requestFocus();
-                        return;
-                    } else if (!Patterns.EMAIL_ADDRESS.matcher((CharSequence) email).matches()) {
-                        Toast.makeText(register.this, "Please enter a valid Email Address.", Toast.LENGTH_SHORT).show();
-                        email.setError("Invalid Email!");
-                        email.requestFocus();
-                        return;
-                    } else if (password.getText().toString().isEmpty()) {
-                        Toast.makeText(register.this, "Please enter your Password.", Toast.LENGTH_SHORT).show();
-                        password.requestFocus();
-                        return;
-                    } else if (!confirmPassword.equals(password)) {
-                        Toast.makeText(register.this, "Password do not match!.", Toast.LENGTH_SHORT).show();
-                        confirmPassword.requestFocus();
-                        return;
-                    } else {
-
-                        //registration process starts
-                        fAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
-                                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                                    @Override
-                                    public void onSuccess(AuthResult authResult) {
-                                        FirebaseUser user = fAuth.getCurrentUser();
-
-                                        DocumentReference df = fStore.collection("UserData").document(user.getUid());
-                                        Map<String, Object> userInfo = new HashMap<>();
-                                        userInfo.put("FirstName", firstName.getText().toString());
-                                        userInfo.put("LastName", lastName.getText().toString());
-                                        userInfo.put("Username", username.getText().toString());
-                                        userInfo.put("Email", email.getText().toString());
-                                        userInfo.put("Password", password.getText().toString());
-                                        userInfo.put("ConfirmPassword", confirmPassword.getText().toString());
-                                        userInfo.put("Contact", etContact.getText().toString());
-                                        userInfo.put("HouseAddress", etHouse.getText().toString());
-                                        userInfo.put("Barangay", actBrgy.getText().toString());
-                                        userInfo.put("City", actCity.getText().toString());
-                                        userInfo.put("Province", actProvince.getText().toString());
-
-                                        //specify user access (if user or admin)
-                                        userInfo.put("User", "2");
-
-                                        df.set(userInfo);
-
-                                        Toast.makeText(register.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(getApplicationContext(), login.class);
-                                        startActivity(intent);
-                                        finish();
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(register.this, "Registration Failed", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
-
-                }
-                else {
-                    Toast.makeText(register.this, "Please read and agree to the Terms of Service and Privacy Policy.",
-                            Toast.LENGTH_LONG).show();
-                }
+//                if ( (cb1 == 1) && (cb2 == 1) ) {
+//
+//                    if (firstName.getText().toString().isEmpty()) {
+//                        Toast.makeText(register.this, "Please enter your First Name.", Toast.LENGTH_SHORT).show();
+//                        firstName.setError("First Name can't be empty!");
+//                        firstName.requestFocus();
+//                        return;
+//                    } else if (lastName.getText().toString().isEmpty()) {
+//                        Toast.makeText(register.this, "Please enter your Last Name.", Toast.LENGTH_SHORT).show();
+//                        lastName.setError("Last Name can't be empty!");
+//                        lastName.requestFocus();
+//                        return;
+//                    } else if (username.getText().toString().isEmpty()) {
+//                        Toast.makeText(register.this, "Please enter your Username.", Toast.LENGTH_SHORT).show();
+//                        username.setError("Username can't be empty!");
+//                        username.requestFocus();
+//                        return;
+//                    } else if (etContact.getText().toString().isEmpty()) {
+//                        Toast.makeText(register.this, "Please enter your Contact Number.", Toast.LENGTH_SHORT).show();
+//                        etContact.setError("Contact Number can't be empty!");
+//                        etContact.requestFocus();
+//                        return;
+//                    } else if (etContact.length() != 11) {
+//                        Toast.makeText(register.this, "Please enter a Valid Contact Number .", Toast.LENGTH_SHORT).show();
+//                        etContact.setError("Invalid Contact Number!");
+//                        etContact.requestFocus();
+//                        return;
+//                    } else if (etHouse.getText().toString().isEmpty()) {
+//                        Toast.makeText(register.this, "Please enter your House No. and Street Name.", Toast.LENGTH_SHORT).show();
+//                        etHouse.setError("House Address can't be empty!");
+//                        etHouse.requestFocus();
+//                        return;
+//                    } else if (actCity.getText().toString().isEmpty()) {
+//                        Toast.makeText(register.this, "Please select your City.", Toast.LENGTH_SHORT).show();
+//                        actCity.setError("City Address can't be empty!");
+//                        actCity.requestFocus();
+//                        return;
+//                    } else if (actBrgy.getText().toString().isEmpty()) {
+//                        Toast.makeText(register.this, "Please select your Barangay.", Toast.LENGTH_SHORT).show();
+//                        actCity.setError("Barangay Address can't be empty!");
+//                        actCity.requestFocus();
+//                        return;
+//                    } else if (actProvince.getText().toString().isEmpty()) {
+//                        Toast.makeText(register.this, "Please select Bulacan.", Toast.LENGTH_SHORT).show();
+//                        actProvince.setError("Bulacan Address can't be empty!");
+//                        actProvince.requestFocus();
+//                        return;
+//                    } else if (email.getText().toString().isEmpty()) {
+//                        Toast.makeText(register.this, "Please enter your Email.", Toast.LENGTH_SHORT).show();
+//                        email.setError("Email can't be empty!");
+//                        email.requestFocus();
+//                        return;
+//                    } else if (!Patterns.EMAIL_ADDRESS.matcher((CharSequence) email).matches()) {
+//                        Toast.makeText(register.this, "Please enter a valid Email Address.", Toast.LENGTH_SHORT).show();
+//                        email.setError("Invalid Email!");
+//                        email.requestFocus();
+//                        return;
+//                    } else if (password.getText().toString().isEmpty()) {
+//                        Toast.makeText(register.this, "Please enter your Password.", Toast.LENGTH_SHORT).show();
+//                        password.requestFocus();
+//                        return;
+//                    } else if (!confirmPassword.equals(password)) {
+//                        Toast.makeText(register.this, "Password do not match!.", Toast.LENGTH_SHORT).show();
+//                        confirmPassword.requestFocus();
+//                        return;
+//                    } else {
+//
+//                        //registration process starts
+//                        fAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+//                                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//                                    @Override
+//                                    public void onSuccess(AuthResult authResult) {
+//                                        FirebaseUser user = fAuth.getCurrentUser();
+//
+//                                        DocumentReference df = fStore.collection("UserData").document(user.getUid());
+//                                        Map<String, Object> userInfo = new HashMap<>();
+//                                        userInfo.put("FirstName", firstName.getText().toString());
+//                                        userInfo.put("LastName", lastName.getText().toString());
+//                                        userInfo.put("Username", username.getText().toString());
+//                                        userInfo.put("Email", email.getText().toString());
+//                                        userInfo.put("Password", password.getText().toString());
+//                                        userInfo.put("ConfirmPassword", confirmPassword.getText().toString());
+//                                        userInfo.put("Contact", etContact.getText().toString());
+//                                        userInfo.put("HouseAddress", etHouse.getText().toString());
+//                                        userInfo.put("Barangay", actBrgy.getText().toString());
+//                                        userInfo.put("City", actCity.getText().toString());
+//                                        userInfo.put("Province", actProvince.getText().toString());
+//
+//                                        //specify user access (if user or admin)
+//                                        userInfo.put("User", "2");
+//
+//                                        df.set(userInfo);
+//
+//                                        Toast.makeText(register.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+//                                        Intent intent = new Intent(getApplicationContext(), login.class);
+//                                        startActivity(intent);
+//                                        finish();
+//                                    }
+//                                }).addOnFailureListener(new OnFailureListener() {
+//                            @Override
+//                            public void onFailure(@NonNull Exception e) {
+//                                Toast.makeText(register.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
+//                    }
+//
+//                }
+//                else {
+//                    Toast.makeText(register.this, "Please read and agree to the Terms of Service and Privacy Policy.",
+//                            Toast.LENGTH_LONG).show();
+//                }
 
             }
         });

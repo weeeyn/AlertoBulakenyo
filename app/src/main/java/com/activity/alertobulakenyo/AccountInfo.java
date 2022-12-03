@@ -18,23 +18,23 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
+//
+//import com.google.android.gms.tasks.OnCompleteListener;
+//import com.google.android.gms.tasks.Task;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.firestore.DocumentReference;
+//import com.google.firebase.firestore.DocumentSnapshot;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 public class AccountInfo extends AppCompatActivity {
 
     Button btnEditInfo;
     TextView tvAccFname, tvAccLname, tvAccUser, tvAccEmail, tvAccConNum, tvAccAdd;
 
-    //firebase authentication
-    FirebaseAuth fAuth;
-    FirebaseFirestore fStore;
-    String userId;
+//    //firebase authentication
+//    FirebaseAuth fAuth;
+//    FirebaseFirestore fStore;
+//    String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,36 +54,36 @@ public class AccountInfo extends AppCompatActivity {
         tvAccConNum = (TextView) findViewById (R.id.tvAccConNum);
         tvAccAdd = (TextView) findViewById (R.id.tvAccAdd);
 
-        fAuth = FirebaseAuth.getInstance();
-        fStore = FirebaseFirestore.getInstance();
-        userId = fAuth.getCurrentUser().getUid();
-
-        DocumentReference docRef = fStore.collection("UserData").document(userId);
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-
-                        tvAccFname.setText(document.getString("FirstName"));
-                        tvAccLname.setText(document.getString("LastName"));
-                        tvAccUser.setText(document.getString("Username"));
-                        tvAccEmail.setText(document.getString("Email"));
-                        tvAccConNum.setText(document.getString("Contact"));
-                        tvAccAdd.setText(document.getString("HouseAddress") + " "
-                                + document.getString("Barangay") + " "
-                                + document.getString("City") + " "
-                                + document.getString("Province"));
-                    } else {
-                        Log.d(TAG, "No such document");
-                    }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
-            }
-        });
+//        fAuth = FirebaseAuth.getInstance();
+//        fStore = FirebaseFirestore.getInstance();
+//        userId = fAuth.getCurrentUser().getUid();
+//
+//        DocumentReference docRef = fStore.collection("UserData").document(userId);
+//        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                if (task.isSuccessful()) {
+//                    DocumentSnapshot document = task.getResult();
+//                    if (document.exists()) {
+//                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+//
+//                        tvAccFname.setText(document.getString("FirstName"));
+//                        tvAccLname.setText(document.getString("LastName"));
+//                        tvAccUser.setText(document.getString("Username"));
+//                        tvAccEmail.setText(document.getString("Email"));
+//                        tvAccConNum.setText(document.getString("Contact"));
+//                        tvAccAdd.setText(document.getString("HouseAddress") + " "
+//                                + document.getString("Barangay") + " "
+//                                + document.getString("City") + " "
+//                                + document.getString("Province"));
+//                    } else {
+//                        Log.d(TAG, "No such document");
+//                    }
+//                } else {
+//                    Log.d(TAG, "get failed with ", task.getException());
+//                }
+//            }
+//        });
 
         btnEditInfo = (Button) findViewById (R.id.btnEditInfo);
 

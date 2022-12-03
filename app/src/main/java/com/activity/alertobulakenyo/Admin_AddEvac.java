@@ -15,12 +15,12 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+//
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.DocumentReference;
+//import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +33,7 @@ public class Admin_AddEvac extends AppCompatActivity {
     Button btnSaveEvac;
 
     //firebase firestore
-    FirebaseFirestore fStore;
+//    FirebaseFirestore fStore;
 
 
     @Override
@@ -47,7 +47,7 @@ public class Admin_AddEvac extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_add_evac);
 
-        fStore = FirebaseFirestore.getInstance();
+//        fStore = FirebaseFirestore.getInstance();
 
         tilCity = (TextInputLayout) findViewById (R.id.tilCity);
         tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
@@ -176,42 +176,42 @@ public class Admin_AddEvac extends AppCompatActivity {
         btnSaveEvac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addEvacuation();
+//                addEvacuation();
             }
         });
     }
 
-    private void addEvacuation() {
-
-        DocumentReference df = fStore.collection("Evacuation").document();
-        Map<String, Object> evac = new HashMap<>();
-        evac.put("evacuationName", etEvacName.getText().toString());
-        evac.put("evacuationAddress", etEvacLoc.getText().toString());
-        evac.put("evacuationLongitude", etLong.getText().toString());
-        evac.put("evacuationLatitude", etLat.getText().toString());
-        evac.put("evacuationCity", actCity.getText().toString());
-        evac.put("evacuationBrgy", actBrgy.getText().toString());
-
-        df.set(evac)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(Admin_AddEvac.this, "Evacuation Saved!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Admin_AddEvac.this, Admin_Evacuation.class);
-                        startActivity(intent);
-                        finish();
-                        overridePendingTransition(R.anim.slide_in_left,
-                                R.anim.slide_out_right);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Admin_AddEvac.this, "Evacuation not saved!", Toast.LENGTH_SHORT).show();
-                        Log.e("TAG", "onFailure: EVAC FAILED TO POST" + e.getMessage());
-                    }
-                });
-    }
+//    private void addEvacuation() {
+//
+//        DocumentReference df = fStore.collection("Evacuation").document();
+//        Map<String, Object> evac = new HashMap<>();
+//        evac.put("evacuationName", etEvacName.getText().toString());
+//        evac.put("evacuationAddress", etEvacLoc.getText().toString());
+//        evac.put("evacuationLongitude", etLong.getText().toString());
+//        evac.put("evacuationLatitude", etLat.getText().toString());
+//        evac.put("evacuationCity", actCity.getText().toString());
+//        evac.put("evacuationBrgy", actBrgy.getText().toString());
+//
+//        df.set(evac)
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void unused) {
+//                        Toast.makeText(Admin_AddEvac.this, "Evacuation Saved!", Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(Admin_AddEvac.this, Admin_Evacuation.class);
+//                        startActivity(intent);
+//                        finish();
+//                        overridePendingTransition(R.anim.slide_in_left,
+//                                R.anim.slide_out_right);
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(Admin_AddEvac.this, "Evacuation not saved!", Toast.LENGTH_SHORT).show();
+//                        Log.e("TAG", "onFailure: EVAC FAILED TO POST" + e.getMessage());
+//                    }
+//                });
+//    }
 
     @Override
     public void onBackPressed()

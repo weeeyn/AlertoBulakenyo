@@ -18,18 +18,18 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
+//import com.google.android.gms.tasks.OnCompleteListener;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.Transaction;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.firestore.DocumentReference;
+//import com.google.firebase.firestore.DocumentSnapshot;
+//import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.FirebaseFirestoreException;
+//import com.google.firebase.firestore.Transaction;
 
 public class EditInfo extends AppCompatActivity {
 
@@ -39,12 +39,12 @@ public class EditInfo extends AppCompatActivity {
     AutoCompleteTextView actBrgy, actCity, actProvince;
 
     //firebase authentication
-    FirebaseAuth fAuth = FirebaseAuth.getInstance();
-    FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    DocumentReference df;
-
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    String userId = user.getUid();
+//    FirebaseAuth fAuth = FirebaseAuth.getInstance();
+//    FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+//    DocumentReference df;
+//
+//    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//    String userId = user.getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class EditInfo extends AppCompatActivity {
 
         setContentView(R.layout.activity_edit_info);
 
-        df = fStore.collection("UserData").document(userId);
+//        df = fStore.collection("UserData").document(userId);
 
         btnSave = (Button) findViewById (R.id.btnSave);
 
@@ -194,99 +194,99 @@ public class EditInfo extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editProfile();
+//                editProfile();
             }
         });
 
     }
 
-    private void editProfile() {
-
-        String editFname = etFname.getText().toString();
-        String editLname = etLname.getText().toString();
-        String editUsername = etUsername.getText().toString();
-        String editEmail = etEmail.getText().toString();
-        String editContact = etCon.getText().toString();
-        String editHouse = etHouse.getText().toString();
-        String editBrgy = actBrgy.getText().toString();
-        String editCity = actCity.getText().toString();
-        String editProvince = actProvince.getText().toString();
-
-            final DocumentReference sDoc = fStore.collection("UserData").document(userId);
-
-        fStore.runTransaction(new Transaction.Function<Void>() {
-            @Override
-            public Void apply(Transaction transaction) throws FirebaseFirestoreException {
-                DocumentSnapshot snapshot = transaction.get(sDoc);
-
-                transaction.update(sDoc, "FirstName", editFname);
-                transaction.update(sDoc, "LastName", editLname);
-                transaction.update(sDoc, "Username", editUsername);
-                transaction.update(sDoc, "Email", editEmail);
-                transaction.update(sDoc, "Contact", editContact);
-                transaction.update(sDoc, "HouseAddress", editHouse);
-                transaction.update(sDoc, "Barangay", editBrgy);
-                transaction.update(sDoc, "City", editCity);
-                transaction.update(sDoc, "Province", editProvince);
-
-                return null;
-            }
-        })
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d("TAG", "Transaction success!");
-                        Toast.makeText(EditInfo.this, "Profile Updated!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), Profile.class);
-                        startActivity(intent);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.d("TAG", "Transaction failure.", e);
-                        Toast.makeText(EditInfo.this, "Profile DID NOT Update.", Toast.LENGTH_SHORT).show();
-                    }
-                });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        df.get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-
-                        if(task.getResult().exists()) {
-
-                            String fNameResult = task.getResult().getString("FirstName");
-                            String lNameResult = task.getResult().getString("LastName");
-                            String usernameResult = task.getResult().getString("Username");
-                            String emailResult = task.getResult().getString("Email");
-                            String contactResult = task.getResult().getString("Contact");
-                            String houseAddResult = task.getResult().getString("HouseAddress");
-                            String brgyResult = task.getResult().getString("Barangay");
-                            String provinceResult = task.getResult().getString("Province");
-
-                            etFname.setText(fNameResult);
-                            etLname.setText(lNameResult);
-                            etUsername.setText(usernameResult);
-                            etEmail.setText(emailResult);
-                            etCon.setText(contactResult);
-                            etHouse.setText(houseAddResult);
-                            actBrgy.setText(brgyResult);
-                            actProvince.setText(provinceResult);
-
-                        }
-                        else {
-                            Toast.makeText(EditInfo.this, "User do no Exist.", Toast.LENGTH_SHORT).show();
-                        }
-
-                    }
-                });
-    }
+//    private void editProfile() {
+//
+//        String editFname = etFname.getText().toString();
+//        String editLname = etLname.getText().toString();
+//        String editUsername = etUsername.getText().toString();
+//        String editEmail = etEmail.getText().toString();
+//        String editContact = etCon.getText().toString();
+//        String editHouse = etHouse.getText().toString();
+//        String editBrgy = actBrgy.getText().toString();
+//        String editCity = actCity.getText().toString();
+//        String editProvince = actProvince.getText().toString();
+//
+//            final DocumentReference sDoc = fStore.collection("UserData").document(userId);
+//
+//        fStore.runTransaction(new Transaction.Function<Void>() {
+//            @Override
+//            public Void apply(Transaction transaction) throws FirebaseFirestoreException {
+//                DocumentSnapshot snapshot = transaction.get(sDoc);
+//
+//                transaction.update(sDoc, "FirstName", editFname);
+//                transaction.update(sDoc, "LastName", editLname);
+//                transaction.update(sDoc, "Username", editUsername);
+//                transaction.update(sDoc, "Email", editEmail);
+//                transaction.update(sDoc, "Contact", editContact);
+//                transaction.update(sDoc, "HouseAddress", editHouse);
+//                transaction.update(sDoc, "Barangay", editBrgy);
+//                transaction.update(sDoc, "City", editCity);
+//                transaction.update(sDoc, "Province", editProvince);
+//
+//                return null;
+//            }
+//        })
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void aVoid) {
+//                        Log.d("TAG", "Transaction success!");
+//                        Toast.makeText(EditInfo.this, "Profile Updated!", Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(getApplicationContext(), Profile.class);
+//                        startActivity(intent);
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.d("TAG", "Transaction failure.", e);
+//                        Toast.makeText(EditInfo.this, "Profile DID NOT Update.", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//    }
+//
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        df.get()
+//                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//
+//                        if(task.getResult().exists()) {
+//
+//                            String fNameResult = task.getResult().getString("FirstName");
+//                            String lNameResult = task.getResult().getString("LastName");
+//                            String usernameResult = task.getResult().getString("Username");
+//                            String emailResult = task.getResult().getString("Email");
+//                            String contactResult = task.getResult().getString("Contact");
+//                            String houseAddResult = task.getResult().getString("HouseAddress");
+//                            String brgyResult = task.getResult().getString("Barangay");
+//                            String provinceResult = task.getResult().getString("Province");
+//
+//                            etFname.setText(fNameResult);
+//                            etLname.setText(lNameResult);
+//                            etUsername.setText(usernameResult);
+//                            etEmail.setText(emailResult);
+//                            etCon.setText(contactResult);
+//                            etHouse.setText(houseAddResult);
+//                            actBrgy.setText(brgyResult);
+//                            actProvince.setText(provinceResult);
+//
+//                        }
+//                        else {
+//                            Toast.makeText(EditInfo.this, "User do no Exist.", Toast.LENGTH_SHORT).show();
+//                        }
+//
+//                    }
+//                });
+//    }
 
     @Override
     public void onBackPressed()

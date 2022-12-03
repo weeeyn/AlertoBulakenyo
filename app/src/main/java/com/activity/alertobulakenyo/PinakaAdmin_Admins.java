@@ -9,17 +9,17 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.FirebaseApp;
+//import com.google.firebase.FirebaseOptions;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseUser;
 
 public class  PinakaAdmin_Admins extends AppCompatActivity {
 
     CardView card_createAdmin, card_adminAcc;
 
-    private FirebaseAuth mAuth1;
-    private FirebaseAuth mAuth2;
+//    private FirebaseAuth mAuth1;
+//    private FirebaseAuth mAuth2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +32,18 @@ public class  PinakaAdmin_Admins extends AppCompatActivity {
 
         setContentView(R.layout.activity_pinaka_admin_admins);
 
-        mAuth1 = FirebaseAuth.getInstance();
-
-        FirebaseOptions firebaseOptions = new FirebaseOptions.Builder()
-                .setDatabaseUrl("alerto-bulakenyo-60ecf")
-                .setApiKey("AIzaSyDe3CsU_sguucQX-qXI3P7bpszuAPd1RHA")
-                .setApplicationId("alerto-bulakenyo-60ecf").build();
-
-        try { FirebaseApp myApp = FirebaseApp.initializeApp(getApplicationContext(), firebaseOptions, "Alerto Bulakenyo");
-            mAuth2 = FirebaseAuth.getInstance(myApp);
-        } catch (IllegalStateException e){
-            mAuth2 = FirebaseAuth.getInstance(FirebaseApp.getInstance("Alerto Bulakenyo"));
-        }
+//        mAuth1 = FirebaseAuth.getInstance();
+//
+//        FirebaseOptions firebaseOptions = new FirebaseOptions.Builder()
+//                .setDatabaseUrl("alerto-bulakenyo-60ecf")
+//                .setApiKey("AIzaSyDe3CsU_sguucQX-qXI3P7bpszuAPd1RHA")
+//                .setApplicationId("alerto-bulakenyo-60ecf").build();
+//
+//        try { FirebaseApp myApp = FirebaseApp.initializeApp(getApplicationContext(), firebaseOptions, "Alerto Bulakenyo");
+//            mAuth2 = FirebaseAuth.getInstance(myApp);
+//        } catch (IllegalStateException e){
+//            mAuth2 = FirebaseAuth.getInstance(FirebaseApp.getInstance("Alerto Bulakenyo"));
+//        }
 
         card_createAdmin = (CardView) findViewById (R.id.card_createAdmin);
         card_adminAcc = (CardView) findViewById (R.id.card_adminAcc);

@@ -18,14 +18,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import org.checkerframework.checker.units.qual.A;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.firebase.firestore.DocumentSnapshot;
+//import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.Query;
+//import com.google.firebase.firestore.QuerySnapshot;
+//
+//import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +38,7 @@ public class Admin_Announcement extends AppCompatActivity {
     private ArrayList<Announcements> announcementsArrayList;
     private Admin_AnnouncementRVAdapter admin_announcementRVAdapter;
 
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+  //  private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
 
     @Override
@@ -61,32 +61,32 @@ public class Admin_Announcement extends AppCompatActivity {
         admin_announcementRVAdapter = new Admin_AnnouncementRVAdapter(announcementsArrayList, this);
         rvAncmt.setAdapter(admin_announcementRVAdapter);
 
-        fStore.collection("Announcements")
-                .orderBy("anncmntDateTime", Query.Direction.DESCENDING)
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        if(!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                            for (DocumentSnapshot d : list) {
-                                Announcements p = d.toObject(Announcements.class);
-                                p.setId(d.getId());
-                                announcementsArrayList.add(p);
-                            }
-                            admin_announcementRVAdapter.notifyDataSetChanged();
-                        } else {
-
-                            Toast.makeText(Admin_Announcement.this, "No Announcements Posted", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.e(TAG, "ANNOUNCEMENTS FAIL: " + e.getMessage());
-                    }
-                });
+//        fStore.collection("Announcements")
+//                .orderBy("anncmntDateTime", Query.Direction.DESCENDING)
+//                .get()
+//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//                        if(!queryDocumentSnapshots.isEmpty()) {
+//                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+//                            for (DocumentSnapshot d : list) {
+//                                Announcements p = d.toObject(Announcements.class);
+//                                p.setId(d.getId());
+//                                announcementsArrayList.add(p);
+//                            }
+//                            admin_announcementRVAdapter.notifyDataSetChanged();
+//                        } else {
+//
+//                            Toast.makeText(Admin_Announcement.this, "No Announcements Posted", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.e(TAG, "ANNOUNCEMENTS FAIL: " + e.getMessage());
+//                    }
+//                });
 
         // di ko pa nadeclare yung laman ng cardAncmt kasi di ko s
 

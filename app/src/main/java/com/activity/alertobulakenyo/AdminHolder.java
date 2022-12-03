@@ -1,23 +1,23 @@
 package com.activity.alertobulakenyo;
 
-import com.google.firebase.firestore.Exclude;
+//import com.google.firebase.firestore.Exclude;
 
 import java.io.Serializable;
 
 public class AdminHolder implements Serializable {
 
-    @Exclude
-    public String getId() {
-        return id;
-    }
-
-    @Exclude
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    @Exclude
-    private String id;
+//    @Exclude
+//    public String getId() {
+//        return id;
+//    }
+//
+//    @Exclude
+//    public void setId(String id) {
+//        this.id = id;
+//    }
+//
+//    @Exclude
+//    private String id;
 
     private String adminCity;
     private String adminDept;

@@ -24,11 +24,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.firebase.firestore.DocumentSnapshot;
+//import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -40,7 +40,7 @@ public class Admin_DisasterEQ extends AppCompatActivity {
     private ArrayList<WarningHolder> warningHolderArrayList;
     private Admin_EQAdapter admin_eqAdapter;
 
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+//    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,31 +61,31 @@ public class Admin_DisasterEQ extends AppCompatActivity {
         admin_eqAdapter = new Admin_EQAdapter(warningHolderArrayList, this);
         rvDisEq.setAdapter(admin_eqAdapter);
 
-        fStore.collection("Warning")
-                .whereEqualTo("disasterType", "EARTHQUAKE")
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        if (!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                            for (DocumentSnapshot d : list) {
-                                WarningHolder p = d.toObject(WarningHolder.class);
-                                p.setId(d.getId());
-                                warningHolderArrayList.add(p);
-                            }
-                            admin_eqAdapter.notifyDataSetChanged();
-                        } else {
-                            Toast.makeText(Admin_DisasterEQ.this, "No Warnings Posted", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
-                    }
-                });
+//        fStore.collection("Warning")
+//                .whereEqualTo("disasterType", "EARTHQUAKE")
+//                .get()
+//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//                        if (!queryDocumentSnapshots.isEmpty()) {
+//                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+//                            for (DocumentSnapshot d : list) {
+//                                WarningHolder p = d.toObject(WarningHolder.class);
+//                                p.setId(d.getId());
+//                                warningHolderArrayList.add(p);
+//                            }
+//                            admin_eqAdapter.notifyDataSetChanged();
+//                        } else {
+//                            Toast.makeText(Admin_DisasterEQ.this, "No Warnings Posted", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
+//                    }
+//                });
     }
 
 

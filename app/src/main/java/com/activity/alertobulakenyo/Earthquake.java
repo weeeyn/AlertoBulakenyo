@@ -18,11 +18,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+//import com.google.android.gms.tasks.OnFailureListener;
+//import com.google.android.gms.tasks.OnSuccessListener;
+//import com.google.firebase.firestore.DocumentSnapshot;
+//import com.google.firebase.firestore.FirebaseFirestore;
+//import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class Earthquake extends AppCompatActivity {
     private RecyclerView rvDisEq;
     private ArrayList<WarningHolder> warningHolderArrayList;
     private AdapterEQ adapterEQ;
-    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+//    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,31 +53,31 @@ public class Earthquake extends AppCompatActivity {
         adapterEQ = new AdapterEQ(warningHolderArrayList, this);
         rvDisEq.setAdapter(adapterEQ);
 
-        fStore.collection("Warning")
-                .whereEqualTo("disasterType", "EARTHQUAKE")
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        if (!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                            for (DocumentSnapshot d : list) {
-                                WarningHolder p = d.toObject(WarningHolder.class);
-                                p.setId(d.getId());
-                                warningHolderArrayList.add(p);
-                            }
-                            adapterEQ.notifyDataSetChanged();
-                        } else {
-                            Toast.makeText(getApplicationContext(), "No Warnings Posted", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
-                    }
-                });
+//        fStore.collection("Warning")
+//                .whereEqualTo("disasterType", "EARTHQUAKE")
+//                .get()
+//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+//                        if (!queryDocumentSnapshots.isEmpty()) {
+//                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+//                            for (DocumentSnapshot d : list) {
+//                                WarningHolder p = d.toObject(WarningHolder.class);
+//                                p.setId(d.getId());
+//                                warningHolderArrayList.add(p);
+//                            }
+//                            adapterEQ.notifyDataSetChanged();
+//                        } else {
+//                            Toast.makeText(getApplicationContext(), "No Warnings Posted", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
+//                    }
+//                });
     }
 
     @Override
