@@ -147,6 +147,10 @@ public class Admin_CreateWarning extends AppCompatActivity {
                     tilTy.setVisibility(View.GONE);
                     tilSig.setVisibility(View.GONE);
 
+                    // palitawin yung instructions pag nakapili na nung level - magset text lang
+                    tilIns.setVisibility(View.VISIBLE);
+
+
 
                 }
                 else if (selType == "FIRE")
@@ -157,6 +161,7 @@ public class Admin_CreateWarning extends AppCompatActivity {
                     tilFlood.setVisibility(View.GONE);
                     tilTy.setVisibility(View.GONE);
                     tilSig.setVisibility(View.GONE);
+                    tilIns.setVisibility(View.GONE);
 
                     ArrayAdapter<String> fireAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, fire);
                     actFire.setDropDownBackgroundResource(R.color.white);
@@ -261,6 +266,7 @@ public class Admin_CreateWarning extends AppCompatActivity {
                     tilFlood.setVisibility(View.VISIBLE);
                     tilTy.setVisibility(View.GONE);
                     tilSig.setVisibility(View.GONE);
+                    tilIns.setVisibility(View.GONE);
 
                     ArrayAdapter<String> rainAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, rain);
                     actRain.setDropDownBackgroundResource(R.color.white);
@@ -351,6 +357,7 @@ public class Admin_CreateWarning extends AppCompatActivity {
                     tilFlood.setVisibility(View.GONE);
                     tilTy.setVisibility(View.VISIBLE);
                     tilSig.setVisibility(View.VISIBLE);
+                    tilIns.setVisibility(View.GONE);
 
                     ArrayAdapter<String> sigAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, signal);
                     actSig.setDropDownBackgroundResource(R.color.white);
