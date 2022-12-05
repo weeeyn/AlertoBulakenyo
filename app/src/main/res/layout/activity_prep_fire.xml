@@ -91,14 +91,18 @@
                 app:autoSizeStepGranularity="1dp"
                 app:autoSizeTextType="uniform" />
 
-            <TextView
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tWhen there is a fire breakout, two hazards need to be dealt with: fire and smoke. In most cases, smoke is the primary cause of fatalities due to suffocation. A thick smoke makes escape difficult not only because it covers the pathway; it also irritates the eye and disrupts breathing."
-                android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:layout_height="wrap_content" >
+
+                <VideoView
+                    android:id="@+id/video"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:layout_marginBottom="15dp"
+                    />
+
+            </FrameLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -352,7 +356,7 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/sdr" />

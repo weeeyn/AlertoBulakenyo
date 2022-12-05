@@ -93,15 +93,18 @@
                 app:autoSizeStepGranularity="1dp"
                 app:autoSizeTextType="uniform" />
 
-            <TextView
-                android:id="@+id/tvCont"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tThe Philippines is not unfamiliar to natural disasters and calamities that strike our country year after year. According to the United Nations, it is the third most disaster-prone country globally. Over the last decade, several deadly typhoons including Pablo (Bopha), Frank (Fengshen), and Reming (Durian) were experienced. In 2013, Typhoon Yolanda (international name Haiyan) was one of the strongest tropical cyclones to hit the Philippines. It caused massive destruction to properties and resulted in a high death toll in many parts of the country. Here are the important ways to prepare your home and secure your family for any incidents when a typhoon strikes your area."
-                android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:layout_height="wrap_content" >
+
+                <VideoView
+                    android:id="@+id/video"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:layout_marginBottom="15dp"
+                    />
+
+            </FrameLayout>
 
             <TextView
                 android:layout_width="match_parent"

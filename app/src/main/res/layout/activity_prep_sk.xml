@@ -57,11 +57,24 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="15dp"
                 android:justificationMode="inter_word"
                 android:text="\t\t\t\t\tSurvival Kit is a compact package of emergency equipment including food and other items that vary with climatic factors in the operational area for use by aircrew members who have descended in isolated or primitive territory."
                 android:textColor="@color/black"
                 android:textSize="18dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <VideoView
+                    android:id="@+id/video"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:layout_marginBottom="15dp"
+                    />
+
+            </FrameLayout>
 
             <TextView
                 android:layout_width="match_parent"

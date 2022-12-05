@@ -93,6 +93,19 @@
                 app:autoSizeStepGranularity="1dp"
                 app:autoSizeTextType="uniform" />
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <VideoView
+                    android:id="@+id/video"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:layout_marginBottom="15dp"
+                    />
+
+            </FrameLayout>
+
             <TextView
                 android:id="@+id/tvCont"
                 android:layout_width="match_parent"

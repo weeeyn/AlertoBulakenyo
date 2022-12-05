@@ -91,6 +91,8 @@
                 app:autoSizeStepGranularity="1dp"
                 app:autoSizeTextType="uniform" />
 
+            <!-- video -->
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
@@ -189,6 +191,15 @@
 
             </LinearLayout>
 
+            <!-- ceiling -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/eq02" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -232,6 +243,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
+                    android:justificationMode="inter_word"
                     android:text="Know the emergency numbers of the police, rescue, and fire departments. Make sure all family members know these numbers. You can display or post these numbers near your telephone for easy reference."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -361,16 +373,17 @@
 
             </LinearLayout>
 
+            <!-- DCH -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:orientation="horizontal"
-                android:paddingStart="34dp">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="150dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/dch" />
 
@@ -425,6 +438,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- warning -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitCenter"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/eq03" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -486,6 +508,15 @@
 
             </LinearLayout>
 
+            <!-- inside outside -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="fitCenter"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/eq04" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -545,6 +576,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- car -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="fitCenter"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/eq05" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -609,7 +649,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -630,6 +670,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- train -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitCenter"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/eq06" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -716,6 +765,15 @@
 
             </LinearLayout>
 
+            <!-- powerlines -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitCenter"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/eq07" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -790,6 +848,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- radio -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="fitCenter"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/eq08" />
 
             <LinearLayout
                 android:layout_width="match_parent"
