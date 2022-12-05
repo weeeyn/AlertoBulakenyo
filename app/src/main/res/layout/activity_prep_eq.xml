@@ -91,14 +91,18 @@
                 app:autoSizeStepGranularity="1dp"
                 app:autoSizeTextType="uniform" />
 
-            <TextView
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tEarthquakes happen without warning. We don’t know when the next major earthquake will happen, but we can take action now to prepare to survive it and minimize impact. Preparedness starts with a plan. For cities and agencies, this means working with engineers to retrofit older structures and design new buildings, bridges, and highways to withstand an earthquake as best as possible. For individuals and families, this means putting together an earthquake preparedness plan and kit and knowing what to do before, during, and after an earthquake."
-                android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:layout_height="wrap_content" >
+
+                <VideoView
+                    android:id="@+id/video"
+                    android:layout_width="match_parent"
+                    android:layout_height="320dp"
+                    android:layout_marginBottom="15dp"
+                    />
+
+            </FrameLayout>
 
             <TextView
                 android:layout_width="match_parent"
