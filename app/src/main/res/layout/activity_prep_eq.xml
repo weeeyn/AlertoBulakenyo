@@ -93,18 +93,12 @@
 
             <!-- video -->
 
-            <FrameLayout
+            <VideoView
+                android:id="@+id/video"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-
-                <VideoView
-                    android:id="@+id/video"
-                    android:layout_width="match_parent"
-                    android:layout_height="320dp"
-                    android:layout_marginBottom="15dp"
-                    />
-
-            </FrameLayout>
+                android:layout_height="320dp"
+                android:layout_marginBottom="15dp"
+                />
 
             <TextView
                 android:layout_width="match_parent"
