@@ -74,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tA flood is an overflow of water (or rarely other fluids) that submerges land that is usually dry. In the sense of flowing water, the word may also be applied to the inflow of the tide. Floods are an area of study of the discipline hydrology and are of significant concern in agriculture, civil engineering and public health. Human changes to the environment often increase the intensity and frequency of flooding, for example land use changes such as deforestation and removal of wetlands, changes in waterway course or flood controls such as with levees, and larger environmental issues such as climate change and sea level rise. In particular climate change's increased rainfall and extreme weather events increases the severity of other causes for flooding, resulting in more intense floods and increased flood risk."
+                android:text="\t\t\t\t\tA flood is an overflow of water that submerges land that is usually dry. Human changes to the environment often increase the intensity and frequency of flooding, for example land use changes such as deforestation and removal of wetlands, changes in waterway course or flood controls such as with levees, and larger environmental issues such as climate change and sea level rise. In particular climate change's increased rainfall and extreme weather events increases the severity of other causes for flooding, resulting in more intense floods and increased flood risk."
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -94,14 +94,13 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <VideoView
                     android:id="@+id/video"
                     android:layout_width="match_parent"
                     android:layout_height="320dp"
-                    android:layout_marginBottom="15dp"
-                    />
+                    android:layout_marginBottom="15dp" />
 
             </FrameLayout>
 
@@ -153,32 +152,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="●"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:justificationMode="inter_word"
-                    android:text="If you do live in a floodplain, consider buying flood insurance to help with losses if, and when, a flood occurs."
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -199,6 +172,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- sandbag -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/flood01" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -228,7 +210,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -249,6 +230,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- weather forecast -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/flood02" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -300,10 +290,10 @@
 
             </LinearLayout>
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -324,6 +314,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- emergency plan -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/flood03" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -463,7 +462,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -484,6 +482,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- do not walk -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/flood04" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -513,7 +520,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -534,6 +540,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- do not drive -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/flood05" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -598,7 +613,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -619,6 +633,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- news -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/flood06" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -698,7 +721,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -719,6 +741,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- powerlines -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitCenter"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/eq07" />
 
             <LinearLayout
                 android:layout_width="match_parent"

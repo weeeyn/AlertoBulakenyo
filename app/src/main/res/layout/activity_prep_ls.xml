@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:justificationMode="inter_word"
-                android:text="\t\t\t\t\tA landslide is the movement of rock, earth, or debris down a sloped section of land. Landslides are caused by rain, earthquakes, volcanoes, or other factors that make the slope unstable. Geologists, scientists who study the physical formations of the Earth, sometimes describe landslides as one type of mass wasting. A mass wasting is any downward movement in which the Earth's surface is worn away. Other types of mass wasting include rockfalls and the flow of shore deposits called alluvium. Near populated areas, landslides present major hazards to people and property."
+                android:text="\t\t\t\t\tA landslide is the movement of rock, earth, or debris down a sloped section of land. Landslides are caused by rain, earthquakes, volcanoes, or other factors that make the slope unstable. Near populated areas, landslides present major hazards to people and property."
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -129,7 +129,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -150,6 +149,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- trees -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:scaleType="fitCenter"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/ls01" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -264,7 +272,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -285,6 +292,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- news -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitCenter"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/ls02" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -349,7 +365,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -370,6 +385,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- debris -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:scaleType="fitCenter"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/ls03" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -459,7 +483,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -480,6 +503,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- listen -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitCenter"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/ls04" />
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -18,7 +18,7 @@ import android.widget.VideoView;
 
 public class Prep_EQ extends AppCompatActivity {
 
-    //MediaController media;
+    MediaController media;
     VideoView video;
 
     @Override
@@ -34,9 +34,9 @@ public class Prep_EQ extends AppCompatActivity {
 
         video = (VideoView) findViewById (R.id.video);
 
-        //media = new MediaController(this);
+        media = new MediaController(this);
 
-        //video.setMediaController(media);
+        video.setMediaController(media);
         video.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.earthquake));
         video.start();
 
@@ -46,8 +46,8 @@ public class Prep_EQ extends AppCompatActivity {
                 mediaPlayer.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
                     @Override
                     public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
-                        //video.setMediaController(media);
-                        //media.setAnchorView(video);
+                        video.setMediaController(media);
+                        media.setAnchorView(video);
 
                     }
                 });

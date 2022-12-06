@@ -95,14 +95,13 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <VideoView
                     android:id="@+id/video"
                     android:layout_width="match_parent"
                     android:layout_height="320dp"
-                    android:layout_marginBottom="15dp"
-                    />
+                    android:layout_marginBottom="15dp" />
 
             </FrameLayout>
 
@@ -112,9 +111,9 @@
                 android:layout_marginBottom="10dp"
                 android:justificationMode="inter_word"
                 android:text="Before a Typhoon Hits:"
-                android:textStyle="bold"
                 android:textColor="@color/dark_blue"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -122,14 +121,13 @@
                 android:layout_marginBottom="5dp"
                 android:justificationMode="inter_word"
                 android:text="To prepare for a Typhoon, you should take the following measures:"
-                android:textStyle="italic"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:textStyle="italic" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -150,6 +148,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- evac plan -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ty04" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -295,7 +302,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:justificationMode="inter_word"
-                    android:text="Cover all of your home’s windows. Permanent storm shutters offer the best protection for windows. A second option is to board up windows with 5/8” marine plywood, cut to fit and ready to install. Tape does not prevent windows from breaking."
+                    android:text="Cover all of your home’s windows. Permanent storm shutters offer the best protection for windows. "
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -304,7 +311,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -325,6 +331,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- fasten roofs -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ty03" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -395,31 +410,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:justificationMode="inter_word"
-                    android:text="Reinforce your garage doors; if wind enters a garage it can cause dangerous and expensive structural damage."
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="●"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:justificationMode="inter_word"
                     android:text="Plan to bring in all outdoor furniture, decorations, garbage cans and anything else that is not tied down."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -446,31 +436,6 @@
                     android:layout_weight="10"
                     android:justificationMode="inter_word"
                     android:text="In a strong typhoon, A LOOSE OBJECT IS A MISSILE!"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="●"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:justificationMode="inter_word"
-                    android:text="Determine how and where to secure your boat."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -507,9 +472,9 @@
                 android:layout_marginBottom="10dp"
                 android:justificationMode="inter_word"
                 android:text="During a Typhoon:"
-                android:textStyle="bold"
                 android:textColor="@color/dark_blue"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -517,9 +482,9 @@
                 android:layout_marginBottom="5dp"
                 android:justificationMode="inter_word"
                 android:text="If a Typhoon is likely in your area, you should:"
-                android:textStyle="italic"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:textStyle="italic" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -599,7 +564,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -620,6 +584,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- electricity -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ty05" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -674,32 +647,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="●"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:justificationMode="inter_word"
-                    android:text="Moor your boat if time permits."
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -721,15 +668,24 @@
 
             </LinearLayout>
 
+            <!-- water -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ty06" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:justificationMode="inter_word"
                 android:text="You should evacuate under the following conditions:"
-                android:textStyle="italic"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:textStyle="italic" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -759,7 +715,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -780,6 +735,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- evacuate -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ty07" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -837,14 +801,13 @@
                 android:layout_marginBottom="5dp"
                 android:justificationMode="inter_word"
                 android:text="If you are unable to evacuate, go to your wind-safe room. If you do not have one, follow these guidelines:"
-                android:textStyle="italic"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:textStyle="italic" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -865,6 +828,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- stay at home -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ty08" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -966,6 +938,15 @@
 
             </LinearLayout>
 
+            <!-- lie under the table -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ty09" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -997,9 +978,9 @@
                 android:layout_marginBottom="10dp"
                 android:justificationMode="inter_word"
                 android:text="After a Typhoon Passes:"
-                android:textStyle="bold"
                 android:textColor="@color/dark_blue"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1120,31 +1101,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:justificationMode="inter_word"
-                    android:text="Drive only if necessary and avoid flooded roads and washed-out bridges."
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="●"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:justificationMode="inter_word"
                     android:text="Stay off the streets. If you must go out, watch for fallen objects; downed electrical wires; and weakened walls, bridges, roads, and sidewalks."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -1204,32 +1160,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="●"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:justificationMode="inter_word"
-                    android:text="Stay out of any building if you smell gas, floodwaters remain around the building or your home was damaged by fire and the authorities have not declared it safe."
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -1250,6 +1180,15 @@
                     android:textSize="15dp" />
 
             </LinearLayout>
+
+            <!-- inspect -->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginVertical="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ty10" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1345,57 +1284,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:justificationMode="inter_word"
-                    android:text="Check refrigerated food for spoilage. If in doubt, throw it out."
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="●"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:justificationMode="inter_word"
                     android:text="Wear protective clothing and be cautious when cleaning up to avoid injury."
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="●"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:justificationMode="inter_word"
-                    android:text="Use the telephone only for emergency calls."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -1420,7 +1309,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
                     android:justificationMode="inter_word"
-                    android:text="NEVER use a generator inside homes, garages, crawlspaces, sheds, or similar areas, even when using fans or opening doors and windows for ventilation. Deadly levels of carbon monoxide can quickly build up in these areas and can linger for hours, even after the generator has shut off."
+                    android:text="Use the telephone only for emergency calls."
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
