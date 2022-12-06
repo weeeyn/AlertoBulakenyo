@@ -35,7 +35,8 @@
 
     </LinearLayout>
 
-    <ScrollView
+    <!-- change back to scroll view if needed -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_marginTop="100dp"
@@ -60,7 +61,7 @@
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold" />
-
+            <!-- remove comment if needed ...
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -244,11 +245,19 @@
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>
+            -->
 
-
+            <!-- fragment for maps  -->
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/maps"
+                android:layout_width="match_parent"
+                android:layout_height="550dp"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                tools:layout="@layout/map"
+                />
         </LinearLayout>
 
-    </ScrollView>
+    </LinearLayout>
 
 </RelativeLayout>
 
