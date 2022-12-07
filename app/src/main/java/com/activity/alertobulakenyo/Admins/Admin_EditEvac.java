@@ -54,7 +54,7 @@ import java.text.Format;
 import java.util.List;
 import java.util.Locale;
 
-public class Admin_EditEvac extends AppCompatActivity implements OnMapReadyCallback {
+public class Admin_EditEvac extends AppCompatActivity {
 
     TextInputLayout tilCity, tilBrgy;
     EditText etEvacName, etEvacLoc, etLong, etLat;
@@ -67,16 +67,7 @@ public class Admin_EditEvac extends AppCompatActivity implements OnMapReadyCallb
     private FirebaseUser user = fAuth.getCurrentUser();
     private String userId = user.getUid();
 
-    //var's for google map
-    GoogleMap map;
-    Location lastKnownLocation;
-    private boolean locationPermissionGranted;
-    FusedLocationProviderClient fusedLocationProviderClient;
-    private static final int DEFAULT_ZOOM = 15;
-    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
-    //default location @ Manila, Philippines
-    private final LatLng defaultLocation = new LatLng(14.599512, 120.984222);
-    Marker marker=null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -295,12 +286,6 @@ public class Admin_EditEvac extends AppCompatActivity implements OnMapReadyCallb
             }
         });
 
-        //call fragment and inflate map
-        SupportMapFragment supportMapFragment=(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.maps1);
-        supportMapFragment.getMapAsync(Admin_EditEvac.this);
-
-        //initialize fusedlocation
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
     }
 
@@ -385,124 +370,4 @@ public class Admin_EditEvac extends AppCompatActivity implements OnMapReadyCallb
                 R.anim.slide_out_right);
     }
 
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        map=googleMap;
-
-        getLocationPermission();
-        updateLocationUI();
-        getDeviceLocation();
-
-        map.setOnMapClickListener(latLng -> {
-
-
-            if(marker==null){
-                String txt;
-                DecimalFormat format=new DecimalFormat("0.000000");
-                marker=map.addMarker(new MarkerOptions().position(latLng).title("This"));
-                etLong.setText(format.format(latLng.longitude) );
-                etLat.setText(format.format(latLng.latitude));
-
-                txt=getAddressFromMap(latLng.latitude,latLng.longitude);
-                etEvacLoc.setText(txt);
-            }
-            else{
-                marker.remove();
-                marker=null;
-            }
-        });
-    }
-
-    private String getAddressFromMap(double latitude, double longitude) {
-        Geocoder geocoder=new Geocoder(Admin_EditEvac.this, Locale.getDefault());
-        String txt=null;
-        try {
-            List<Address> addressList=geocoder.getFromLocation(latitude,longitude,1);
-            txt=addressList.get(0).getAddressLine(0);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return txt;
-
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
-        locationPermissionGranted = false;
-        if (requestCode
-                == PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION) {// If request is cancelled, the result arrays are empty.
-            if (grantResults.length > 0
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                locationPermissionGranted = true;
-            }
-        } else {
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-        updateLocationUI();
-
-    }
-    private void getDeviceLocation() {
-        try {
-            if (locationPermissionGranted) {
-                Task<Location> locationResult = fusedLocationProviderClient.getLastLocation();
-                locationResult.addOnCompleteListener(this, new OnCompleteListener<Location>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Location> task) {
-                        if (task.isSuccessful()) {
-                            // Set the map's camera position to the current location of the device.
-                            lastKnownLocation = task.getResult();
-                            if (lastKnownLocation != null) {
-                                map.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                                        new LatLng(lastKnownLocation.getLatitude(),
-                                                lastKnownLocation.getLongitude()), DEFAULT_ZOOM));
-                                // String text= String.valueOf(lastKnownLocation.distanceTo(deltalocation));
-                                // Toast.makeText(maps.this, text, Toast.LENGTH_SHORT).show();
-                            }
-                        } else {
-                            Log.d(TAG, "Current location is null. Using defaults.");
-                            Log.e(TAG, "Exception: %s", task.getException());
-                            map.moveCamera(CameraUpdateFactory
-                                    .newLatLngZoom(defaultLocation, DEFAULT_ZOOM));
-                            map.getUiSettings().setMyLocationButtonEnabled(false);
-                        }
-                    }
-                });
-            }
-        } catch (SecurityException e)  {
-            Log.e("Exception: %s", e.getMessage(), e);
-        }
-    }
-
-    private void updateLocationUI() {
-        if (map == null) {
-            return;
-        }
-        try {
-            if (locationPermissionGranted) {
-                map.setMyLocationEnabled(true);
-                map.getUiSettings().setMyLocationButtonEnabled(true);
-            } else {
-                map.setMyLocationEnabled(false);
-                map.getUiSettings().setMyLocationButtonEnabled(false);
-                lastKnownLocation = null;
-                getLocationPermission();
-            }
-        } catch (SecurityException e)  {
-            Log.e("Exception: %s", e.getMessage());
-        }
-    }
-
-
-
-    private void getLocationPermission() {
-        if (ContextCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED){
-            locationPermissionGranted=true;
-        }
-        else{
-            ActivityCompat.requestPermissions(this,
-                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
-                    PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
-
-        }
-    }
 }
