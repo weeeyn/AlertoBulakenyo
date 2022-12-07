@@ -56,30 +56,19 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class Admin_AddEvac extends AppCompatActivity implements OnMapReadyCallback {
+public class Admin_AddEvac extends AppCompatActivity {
 
     TextInputLayout tilCity, tilBrgy;
     EditText etEvacName, etEvacLoc, etLong, etLat;
     AutoCompleteTextView actCity, actBrgy;
-    Button btnSaveEvac,setCoordinate,clearCoordinate;
+    Button btnSaveEvac;
 
     private FirebaseAuth fAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     private FirebaseUser user = fAuth.getCurrentUser();
     private String userId = user.getUid();
     
-    //var's for google map
-    GoogleMap map;
-    Location lastKnownLocation;
-    private boolean locationPermissionGranted;
-    FusedLocationProviderClient fusedLocationProviderClient;
-    private static final int DEFAULT_ZOOM = 15;
-    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
-    //default location @ Manila, Philippines
-    private final LatLng defaultLocation = new LatLng(14.599512, 120.984222);
-    private ArrayList<EvacuationHolder> evacuationHolderArrayList;
-    Marker marker=null;
-    Double lat,llong;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,8 +93,7 @@ public class Admin_AddEvac extends AppCompatActivity implements OnMapReadyCallba
         actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
 
         btnSaveEvac = (Button) findViewById (R.id.btnSaveEvac);
-        setCoordinate=findViewById(R.id.saveMaptoCoordsButton);
-        clearCoordinate=findViewById(R.id.clearCoordsButton);
+
         String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
 
         String [] brgyBoc = {"Antipona", "Bagumbayan", "Bambang", "Batia", "Biñang 1st", "Biñang 2nd",
@@ -224,13 +212,7 @@ public class Admin_AddEvac extends AppCompatActivity implements OnMapReadyCallba
             }
         });
 
-        //call fragment and inflate map
-        SupportMapFragment supportMapFragment=(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.maps);
-        supportMapFragment.getMapAsync(Admin_AddEvac.this);
 
-        //initialize fusedlocation and deltaLocation
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-        setCoordinate.setVisibility(View.INVISIBLE);
     }
 
     private void addEvacuation() {
@@ -348,151 +330,6 @@ public class Admin_AddEvac extends AppCompatActivity implements OnMapReadyCallba
                 R.anim.slide_out_right);
     }
 
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        map=googleMap;
 
-
-        getLocationPermission();
-        updateLocationUI();
-        getDeviceLocation();
-
-        map.setOnMapClickListener(latLng -> {
-           
-            
-            if(marker==null){
-                marker=map.addMarker(new MarkerOptions().position(latLng).title("This"));
-               lat= latLng.latitude;
-               llong=latLng.longitude;
-                setCoordinate.setVisibility(View.VISIBLE);
-            }
-            else{
-                marker.remove();
-                marker=null;
-                setCoordinate.setVisibility(View.INVISIBLE);
-            }
-
-        });
-
-        setCoordinate.setOnClickListener(view -> {
-            String txt;
-            //call function
-            txt= getAddressFromMap(lat,llong);
-            DecimalFormat format=new DecimalFormat("0.000000");
-
-            etEvacLoc.setText(txt);
-            etLat.setText(format.format(lat));
-            etLong.setText(format.format(llong));
-
-        });
-
-        clearCoordinate.setOnClickListener(view -> {
-            if (marker!=null){
-                marker.remove();
-                etLong.setText(null);
-                etLat.setText(null);
-                etEvacLoc.setText(null);
-                etEvacName.setText(null);
-                actBrgy.clearListSelection();
-                setCoordinate.setVisibility(View.INVISIBLE);
-            }
-
-        });
-    }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
-        locationPermissionGranted = false;
-        if (requestCode
-                == PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION) {// If request is cancelled, the result arrays are empty.
-            if (grantResults.length > 0
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                locationPermissionGranted = true;
-            }
-        } else {
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-        updateLocationUI();
-
-    }
-    private void getDeviceLocation() {
-        try {
-            if (locationPermissionGranted) {
-                Task<Location> locationResult = fusedLocationProviderClient.getLastLocation();
-                locationResult.addOnCompleteListener(this, new OnCompleteListener<Location>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Location> task) {
-                        if (task.isSuccessful()) {
-                            // Set the map's camera position to the current location of the device.
-                            lastKnownLocation = task.getResult();
-                            if (lastKnownLocation != null) {
-                                map.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                                        new LatLng(lastKnownLocation.getLatitude(),
-                                                lastKnownLocation.getLongitude()), DEFAULT_ZOOM));
-                                // add marker on location
-                                LatLng latLng=new LatLng(lastKnownLocation.getLatitude(),lastKnownLocation.getLongitude());
-
-
-                            }
-                        } else {
-                            Log.d(TAG, "Current location is null. Using defaults.");
-                            Log.e(TAG, "Exception: %s", task.getException());
-                            map.moveCamera(CameraUpdateFactory
-                                    .newLatLngZoom(defaultLocation, DEFAULT_ZOOM));
-                            map.getUiSettings().setMyLocationButtonEnabled(false);
-                        }
-                    }
-                });
-            }
-        } catch (SecurityException e)  {
-            Log.e("Exception: %s", e.getMessage(), e);
-        }
-    }
-
-    private void updateLocationUI() {
-        if (map == null) {
-            return;
-        }
-        try {
-            if (locationPermissionGranted) {
-                map.setMyLocationEnabled(true);
-                map.getUiSettings().setMyLocationButtonEnabled(true);
-                map.getUiSettings().setMapToolbarEnabled(true);
-            } else {
-                map.setMyLocationEnabled(false);
-                map.getUiSettings().setMyLocationButtonEnabled(false);
-                lastKnownLocation = null;
-                getLocationPermission();
-            }
-        } catch (SecurityException e)  {
-            Log.e("Exception: %s", e.getMessage());
-        }
-    }
-
-    private void getLocationPermission() {
-        if (ContextCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED){
-            locationPermissionGranted=true;
-        }
-        else{
-            ActivityCompat.requestPermissions(this,
-                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
-                    PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
-
-        }
-    }
-
-    private String getAddressFromMap(double latitude,double longitude){
-        //crashes on first try in emulator
-        String txt = null;
-        Geocoder geocoder=new Geocoder(this);
-        try {
-
-            List<Address> addressFromMap=geocoder.getFromLocation(latitude,longitude,1);
-            txt=addressFromMap.get(0).getAddressLine(0);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-      return txt;
-
-    }
 
 }
