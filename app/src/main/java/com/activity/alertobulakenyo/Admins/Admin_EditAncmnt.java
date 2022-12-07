@@ -52,8 +52,6 @@ public class Admin_EditAncmnt extends AppCompatActivity {
     private FirebaseUser user = fAuth.getCurrentUser();
     private String userId = user.getUid();
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,9 +78,6 @@ public class Admin_EditAncmnt extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                title = etAncmntTitle.getText().toString();
-                body = etAncmnt.getText().toString();
 
                 editAnnouncement(announcements, anncmntCity, title, body, anncmntDate, anncmntDateTime);
             }

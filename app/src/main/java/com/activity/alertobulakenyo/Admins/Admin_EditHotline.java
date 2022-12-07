@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.activity.alertobulakenyo.ObjectClasses.Announcements;
 import com.activity.alertobulakenyo.ObjectClasses.HotlinesHolder;
 import com.activity.alertobulakenyo.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,6 +30,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class Admin_EditHotline extends AppCompatActivity {
 
@@ -86,14 +91,6 @@ public class Admin_EditHotline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                hotlineName = etHotName.getText().toString();
-                hotlineOne = etHot01.getText().toString();
-                hotlineTwo = etHot02.getText().toString();
-                hotlineThree = etHot03.getText().toString();
-                hotlineFour = etHot04.getText().toString();
-                hotlineFive = etHot05.getText().toString();
-                hotlineCity = actCity.getText().toString();
-
                 editHotline(hotlinesHolder, hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
 
             }
@@ -108,6 +105,7 @@ public class Admin_EditHotline extends AppCompatActivity {
     }
 
     private void deleteHotline(HotlinesHolder hotlinesHolder) {
+
         fStore.collection("Hotlines")
                 .document(hotlinesHolder.getId())
                 .delete()
@@ -131,29 +129,186 @@ public class Admin_EditHotline extends AppCompatActivity {
 
     private void editHotline(@NonNull HotlinesHolder hotlinesHolder, String hotlineCity, String hotlineName, String hotlineOne, String hotlineTwo, String hotlineThree, String hotlineFour, String hotlineFive) {
 
-        HotlinesHolder editHotlines = new HotlinesHolder(hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
+        DocumentReference df1 = fStore.collection("UserData").document(userId);
+        df1.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if(documentSnapshot.getString("adminCity").equals("Bacaue")) {
 
-        fStore.collection("Hotlines")
-                .document(hotlinesHolder.getId())
-                .set(editHotlines)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
-                        startActivity(intent);
-                        finish();
-                        overridePendingTransition(R.anim.slide_in_left,
-                                R.anim.slide_out_right);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Admin_EditHotline.this, "Hotlines Failed to Update", Toast.LENGTH_SHORT).show();
-                        Log.e("TAG", "onFailure: HOTLINE UPDATE FAIL" + e.getMessage());
+                            String hotlineCity = "Bocaue";
+                            String hotlineName = etHotName.getText().toString();
+                            String hotlineOne = etHot01.getText().toString();
+                            String hotlineTwo = etHot02.getText().toString();
+                            String hotlineThree = etHot03.getText().toString();
+                            String hotlineFour = etHot04.getText().toString();
+                            String hotlineFive = etHot05.getText().toString();
+
+                            HotlinesHolder editHotlines = new HotlinesHolder(hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
+
+                            fStore.collection("Hotlines")
+                                    .document(hotlinesHolder.getId())
+                                    .set(editHotlines)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
+                                            startActivity(intent);
+                                            finish();
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(Admin_EditHotline.this, "Hotlines Failed to Update", Toast.LENGTH_SHORT).show();
+                                            Log.e("TAG", "onFailure: HOTLINE UPDATE FAIL" + e.getMessage());
+                                        }
+                                    });
+
+                        }
+                        else if(documentSnapshot.getString("adminCity").equals("Marilao")) {
+
+                            String hotlineCity = "Marilao";
+                            String hotlineName = etHotName.getText().toString();
+                            String hotlineOne = etHot01.getText().toString();
+                            String hotlineTwo = etHot02.getText().toString();
+                            String hotlineThree = etHot03.getText().toString();
+                            String hotlineFour = etHot04.getText().toString();
+                            String hotlineFive = etHot05.getText().toString();
+
+                            HotlinesHolder editHotlines = new HotlinesHolder(hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
+
+                            fStore.collection("Hotlines")
+                                    .document(hotlinesHolder.getId())
+                                    .set(editHotlines)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
+                                            startActivity(intent);
+                                            finish();
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(Admin_EditHotline.this, "Hotlines Failed to Update", Toast.LENGTH_SHORT).show();
+                                            Log.e("TAG", "onFailure: HOTLINE UPDATE FAIL" + e.getMessage());
+                                        }
+                                    });
+                        }
+                        else if(documentSnapshot.getString("adminCity").equals("Meycauayan")) {
+
+                            String hotlineCity = "Meycauayan";
+                            String hotlineName = etHotName.getText().toString();
+                            String hotlineOne = etHot01.getText().toString();
+                            String hotlineTwo = etHot02.getText().toString();
+                            String hotlineThree = etHot03.getText().toString();
+                            String hotlineFour = etHot04.getText().toString();
+                            String hotlineFive = etHot05.getText().toString();
+
+                            HotlinesHolder editHotlines = new HotlinesHolder(hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
+
+                            fStore.collection("Hotlines")
+                                    .document(hotlinesHolder.getId())
+                                    .set(editHotlines)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
+                                            startActivity(intent);
+                                            finish();
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(Admin_EditHotline.this, "Hotlines Failed to Update", Toast.LENGTH_SHORT).show();
+                                            Log.e("TAG", "onFailure: HOTLINE UPDATE FAIL" + e.getMessage());
+                                        }
+                                    });
+                        }
+                        else if(documentSnapshot.getString("adminCity").equals("San Jose del Monte")) {
+
+                            String hotlineCity = "San Jose del Monte";
+                            String hotlineName = etHotName.getText().toString();
+                            String hotlineOne = etHot01.getText().toString();
+                            String hotlineTwo = etHot02.getText().toString();
+                            String hotlineThree = etHot03.getText().toString();
+                            String hotlineFour = etHot04.getText().toString();
+                            String hotlineFive = etHot05.getText().toString();
+
+                            HotlinesHolder editHotlines = new HotlinesHolder(hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
+
+                            fStore.collection("Hotlines")
+                                    .document(hotlinesHolder.getId())
+                                    .set(editHotlines)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
+                                            startActivity(intent);
+                                            finish();
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(Admin_EditHotline.this, "Hotlines Failed to Update", Toast.LENGTH_SHORT).show();
+                                            Log.e("TAG", "onFailure: HOTLINE UPDATE FAIL" + e.getMessage());
+                                        }
+                                    });
+                        }
+                        else if(documentSnapshot.getString("adminCity").equals("Santa Maria")) {
+
+                            String hotlineCity = "Santa Maria";
+                            String hotlineName = etHotName.getText().toString();
+                            String hotlineOne = etHot01.getText().toString();
+                            String hotlineTwo = etHot02.getText().toString();
+                            String hotlineThree = etHot03.getText().toString();
+                            String hotlineFour = etHot04.getText().toString();
+                            String hotlineFive = etHot05.getText().toString();
+
+                            HotlinesHolder editHotlines = new HotlinesHolder(hotlineCity, hotlineName, hotlineOne, hotlineTwo, hotlineThree, hotlineFour, hotlineFive);
+
+                            fStore.collection("Hotlines")
+                                    .document(hotlinesHolder.getId())
+                                    .set(editHotlines)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
+                                            startActivity(intent);
+                                            finish();
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(Admin_EditHotline.this, "Hotlines Failed to Update", Toast.LENGTH_SHORT).show();
+                                            Log.e("TAG", "onFailure: HOTLINE UPDATE FAIL" + e.getMessage());
+                                        }
+                                    });
+                        }
                     }
                 });
+
+
     }
 
     @Override
