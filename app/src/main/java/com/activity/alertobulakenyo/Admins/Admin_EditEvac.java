@@ -10,6 +10,8 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,8 +48,11 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.Format;
+import java.util.List;
+import java.util.Locale;
 
 public class Admin_EditEvac extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -340,10 +345,14 @@ public class Admin_EditEvac extends AppCompatActivity implements OnMapReadyCallb
 
 
             if(marker==null){
-                DecimalFormat format=new DecimalFormat("0.0000");
+                String txt;
+                DecimalFormat format=new DecimalFormat("0.000000");
                 marker=map.addMarker(new MarkerOptions().position(latLng).title("This"));
                 etLong.setText(format.format(latLng.longitude) );
                 etLat.setText(format.format(latLng.latitude));
+
+                txt=getAddressFromMap(latLng.latitude,latLng.longitude);
+                etEvacLoc.setText(txt);
             }
             else{
                 marker.remove();
@@ -351,6 +360,20 @@ public class Admin_EditEvac extends AppCompatActivity implements OnMapReadyCallb
             }
         });
     }
+
+    private String getAddressFromMap(double latitude, double longitude) {
+        Geocoder geocoder=new Geocoder(Admin_EditEvac.this, Locale.getDefault());
+        String txt=null;
+        try {
+            List<Address> addressList=geocoder.getFromLocation(latitude,longitude,1);
+            txt=addressList.get(0).getAddressLine(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return txt;
+
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
         locationPermissionGranted = false;

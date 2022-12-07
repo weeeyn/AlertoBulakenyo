@@ -312,6 +312,7 @@ public class Admin_AddEvac extends AppCompatActivity implements OnMapReadyCallba
                 marker=map.addMarker(new MarkerOptions().position(latLng).title("This"));
                lat= latLng.latitude;
                llong=latLng.longitude;
+
             }
             else{
                 marker.remove();
@@ -321,11 +322,14 @@ public class Admin_AddEvac extends AppCompatActivity implements OnMapReadyCallba
         });
 
         setCoordinate.setOnClickListener(view -> {
-           // String txt= getAddressFromMap(lat, llong);
-            //Toast.makeText(this, txt, Toast.LENGTH_SHORT).show();
-            etEvacLoc.setText("TODO: Geocoder getfromlocation");
+            String txt;
+            //call function
+           txt= getAddressFromMap(lat,llong);
+
+            etEvacLoc.setText(txt);
             etLat.setText(lat.toString());
             etLong.setText(llong.toString());
+
         });
 
         clearCoordinate.setOnClickListener(view -> {
@@ -423,22 +427,18 @@ public class Admin_AddEvac extends AppCompatActivity implements OnMapReadyCallba
     }
 
     private String getAddressFromMap(double latitude,double longitude){
-        StringBuilder res=new StringBuilder();
-
+        //crashes on first try in emulator
+        String txt = null;
+        Geocoder geocoder=new Geocoder(this);
         try {
-            Geocoder geocoder=new Geocoder(this, Locale.getDefault());
+
             List<Address> addressFromMap=geocoder.getFromLocation(latitude,longitude,1);
-            if (addressFromMap.size()>0){
-                Address address=addressFromMap.get(0);
-                res.append(address.getAddressLine(0));
-            }
-            //  String add=addressFromMap.get(0).getAddressLine(0);
-            //  Toast.makeText(this, add, Toast.LENGTH_SHORT).show();
+            txt=addressFromMap.get(0).getAddressLine(0);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return res.toString();
+      return txt;
 
     }
+
 }
