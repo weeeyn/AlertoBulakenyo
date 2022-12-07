@@ -48,6 +48,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -324,11 +325,12 @@ public class Admin_AddEvac extends AppCompatActivity implements OnMapReadyCallba
         setCoordinate.setOnClickListener(view -> {
             String txt;
             //call function
-           txt= getAddressFromMap(lat,llong);
+            txt= getAddressFromMap(lat,llong);
+            DecimalFormat format=new DecimalFormat("0.000000");
 
             etEvacLoc.setText(txt);
-            etLat.setText(lat.toString());
-            etLong.setText(llong.toString());
+            etLat.setText(format.format(lat));
+            etLong.setText(format.format(llong));
 
         });
 
