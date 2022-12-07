@@ -230,11 +230,62 @@ public class Admin_AddEvac extends AppCompatActivity implements OnMapReadyCallba
 
         //initialize fusedlocation and deltaLocation
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-        
+        setCoordinate.setVisibility(View.INVISIBLE);
     }
 
     private void addEvacuation() {
-
+        //Check for blanks
+        if(etEvacName.getText().length()<1){
+            etEvacName.setError("Field is required");
+            etEvacName.requestFocus();
+            return;
+        }
+        if(etEvacName.getText().toString().isEmpty()){
+            etEvacName.setError("Field is required");
+            etEvacName.requestFocus();
+            return;
+        }
+        if (etEvacLoc.getText().length()<1){
+            etEvacLoc.setError("Field is required");
+            etEvacLoc.requestFocus();
+            return;
+        }
+        if (etEvacLoc.getText().toString().isEmpty()){
+            etEvacLoc.setError("Field is required");
+            etEvacLoc.requestFocus();
+            return;
+        }
+        if (etLong.getText().length()<1){
+            etLong.setError("Field is required");
+            etLong.requestFocus();
+            return;
+        }
+        if (etLong.getText().toString().isEmpty()){
+            etLong.setError("Field is required");
+            etLong.requestFocus();
+            return;
+        }
+        if (etLat.getText().length()<1){
+            etLat.setError("Field is required");
+            etLat.requestFocus();
+            return;
+        }
+        if (etLat.getText().toString().isEmpty()){
+            etLat.setError("Field is required");
+            etLat.requestFocus();
+            return;
+        }
+        if (actBrgy.getText().toString().isEmpty()){
+            actBrgy.setError("Field is required");
+            actBrgy.requestFocus();
+            return;
+        }
+        if (actBrgy.getText().length()<1){
+            actBrgy.setError("Field is required");
+            actBrgy.requestFocus();
+            return;
+        }
+        //end of validation
         DocumentReference df = fStore.collection("Evacuation").document();
         Map<String, Object> evac = new HashMap<>();
         evac.put("evacuationName", etEvacName.getText().toString());
@@ -313,11 +364,12 @@ public class Admin_AddEvac extends AppCompatActivity implements OnMapReadyCallba
                 marker=map.addMarker(new MarkerOptions().position(latLng).title("This"));
                lat= latLng.latitude;
                llong=latLng.longitude;
-
+                setCoordinate.setVisibility(View.VISIBLE);
             }
             else{
                 marker.remove();
                 marker=null;
+                setCoordinate.setVisibility(View.INVISIBLE);
             }
 
         });
@@ -342,7 +394,7 @@ public class Admin_AddEvac extends AppCompatActivity implements OnMapReadyCallba
                 etEvacLoc.setText(null);
                 etEvacName.setText(null);
                 actBrgy.clearListSelection();
-                Toast.makeText(this, "clear button", Toast.LENGTH_SHORT).show();
+                setCoordinate.setVisibility(View.INVISIBLE);
             }
 
         });

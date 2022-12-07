@@ -225,6 +225,58 @@ public class Admin_EditEvac extends AppCompatActivity implements OnMapReadyCallb
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Check for blanks
+                if(etEvacName.getText().length()<1){
+                    etEvacName.setError("Field is required");
+                    etEvacName.requestFocus();
+                    return;
+                }
+                if(etEvacName.getText().toString().isEmpty()){
+                    etEvacName.setError("Field is required");
+                    etEvacName.requestFocus();
+                    return;
+                }
+                if (etEvacLoc.getText().length()<1){
+                    etEvacLoc.setError("Field is required");
+                    etEvacLoc.requestFocus();
+                    return;
+                }
+                if (etEvacLoc.getText().toString().isEmpty()){
+                    etEvacLoc.setError("Field is required");
+                    etEvacLoc.requestFocus();
+                    return;
+                }
+                if (etLong.getText().length()<1){
+                    etLong.setError("Field is required");
+                    etLong.requestFocus();
+                    return;
+                }
+                if (etLong.getText().toString().isEmpty()){
+                    etLong.setError("Field is required");
+                    etLong.requestFocus();
+                    return;
+                }
+                if (etLat.getText().length()<1){
+                    etLat.setError("Field is required");
+                    etLat.requestFocus();
+                    return;
+                }
+                if (etLat.getText().toString().isEmpty()){
+                    etLat.setError("Field is required");
+                    etLat.requestFocus();
+                    return;
+                }
+                if (actBrgy.getText().toString().isEmpty()){
+                    actBrgy.setError("Field is required");
+                    actBrgy.requestFocus();
+                    return;
+                }
+                if (actBrgy.getText().length()<1){
+                    actBrgy.setError("Field is required");
+                    actBrgy.requestFocus();
+                    return;
+                }
+                //end of validation
                 evacuationName = etEvacName.getText().toString();
                 evacuationAddress = etEvacLoc.getText().toString();
                 evacuationLongitude = etLong.getText().toString();
