@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Admins.Admin_PrepareFA">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#003366" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="5dp"
+        android:orientation="horizontal"
+        android:paddingTop="40dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="9"
+            android:fontFamily="@font/archivo_black"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="FIRST AID KIT"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="35dp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/fa" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:justificationMode="inter_word"
+                android:text="\t\t\t\t\tFirst aid supplies or first aid kits are collections of life saving equipment that are used by paramedic staff in cases of emergency to increase the life of a victim until a time when the injured can be transferred to a permanent hospital facility."
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:justificationMode="inter_word"
+                android:text="\t\t\t\t\tFirst aid supplies or first aid kits are a combination of medical equipment, medicines and personal protective equipment. The first aid supplies or first aid kits can be designed as per the need, or based on the type of emergency the organization is dealing with. In terms of PPE one can add, but is not limited to, goggles, gloves, surgical masks etc. In terms of instruments, one can add scissors, tweezers, lights, thermometers, torches, cotton swabs, etc. In terms of medicines one can add oral rehydration salts, absorption, e.g. charcoal."
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/archivo_black"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="CONTENTS"
+                android:textColor="#ff5003"
+                app:autoSizeMaxTextSize="40dp"
+                app:autoSizeMinTextSize="20dp"
+                app:autoSizeStepGranularity="1dp"
+                app:autoSizeTextType="uniform" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp">
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA01"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa01" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Adhesive bandages"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA02"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa02" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Antihistamine / Allergy medications"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA03"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa03" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Antibacterial wipes"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA04"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa04" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Antiseptic wipes"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA05"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa05" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Aspirin and/or Ibuprofen"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA06"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa06" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Band-Aid"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA07"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa07" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Blood Stopper Dressing"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA08"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa08" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Burn gel"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA09"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa09" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Cold pack"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA10"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa10" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Cotton balls"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA11"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa11" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="CPR Face Mask"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA12"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa12" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="First aid tape"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA13"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa13" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Gauze pads"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA14"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa14" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Hydrogen peroxide"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA15"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa15" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Personal medication"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA16"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa16" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Rubbing alcohol"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA17"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa17" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Scissors"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA18"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa18" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Sterile water"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA19"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa19" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Triangular bandages"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA20"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa20" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Tweezers"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA21"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa21" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Vinyl gloves"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+                <TableRow android:background="@color/black">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/imgFA22"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="0.8dp"
+                        android:padding="5dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/fa22" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:text="Water Purification Tablets"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
