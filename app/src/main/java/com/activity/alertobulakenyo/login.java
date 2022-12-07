@@ -112,7 +112,7 @@ public class login extends AppCompatActivity {
 //                }
 
                 // puntang admin UI
-                Intent intent = new Intent(login.this, Admin_Home.class);
+                Intent intent = new Intent(login.this, Home.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
