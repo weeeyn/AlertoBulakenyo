@@ -57,7 +57,7 @@ public class Walkthrough extends AppCompatActivity {
         tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Walkthrough.this, login.class);
+                Intent intent = new Intent(Walkthrough.this, register.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -78,7 +78,7 @@ public class Walkthrough extends AppCompatActivity {
 
                 if (position == list.size())
                 {
-                    Intent intent = new Intent(Walkthrough.this, login.class);
+                    Intent intent = new Intent(Walkthrough.this, register.class);
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_right,
                             R.anim.slide_out_left);

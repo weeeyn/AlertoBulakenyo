@@ -39,224 +39,212 @@
             android:value="AIzaSyAS1Gw7OYkodkrCcYw_HqqEL3JaF-Kzw8k" />
 
         <activity
-            android:name=".EvacStaMaria"
+            android:name=".ResidentUsers.EvacStaMaria"
             android:exported="false" />
         <activity
-            android:name=".EvacSJDM"
+            android:name=".ResidentUsers.EvacSJDM"
             android:exported="false" />
         <activity
-            android:name=".EvacMeycauayan"
+            android:name=".ResidentUsers.EvacMeycauayan"
             android:exported="false" />
         <activity
-            android:name=".EvacMarilao"
+            android:name=".ResidentUsers.EvacMarilao"
             android:exported="false" />
         <activity
-            android:name=".EvacBocaue"
+            android:name=".ResidentUsers.EvacBocaue"
             android:exported="false" />
         <activity
-            android:name=".Admin_EvacStaMaria"
+            android:name=".Admins.Admin_EvacStaMaria"
             android:exported="false" />
         <activity
-            android:name=".Admin_EvacSJDM"
+            android:name=".Admins.Admin_EvacSJDM"
             android:exported="false" />
         <activity
-            android:name=".Admin_EvacMeycauayan"
+            android:name=".Admins.Admin_EvacMeycauayan"
             android:exported="false" />
         <activity
-            android:name=".Admin_EvacMarilao"
+            android:name=".Admins.Admin_EvacMarilao"
             android:exported="false" />
         <activity
-            android:name=".Admin_EvacBocaue"
+            android:name=".Admins.Admin_EvacBocaue"
             android:exported="false" />
         <activity
-            android:name=".Admin_DisasterTy"
+            android:name=".Admins.Admin_DisasterTy"
             android:exported="false" />
         <activity
-            android:name=".Admin_DisasterLS"
+            android:name=".Admins.Admin_DisasterLS"
             android:exported="false" />
         <activity
-            android:name=".Admin_DisasterFlood"
+            android:name=".Admins.Admin_DisasterFlood"
             android:exported="false" />
         <activity
-            android:name=".Admin_DisasterFire"
+            android:name=".Admins.Admin_DisasterFire"
             android:exported="false" />
         <activity
-            android:name=".Admin_DisasterEQ"
+            android:name=".Admins.Admin_DisasterEQ"
             android:exported="false" />
         <activity
-            android:name=".Admin_DisasterTyInfo"
+            android:name=".Admins.Admin_DisasterTyInfo"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_DisasterLSinfo"
+            android:name=".Admins.Admin_DisasterLSinfo"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_DisasterFloodInfo"
+            android:name=".Admins.Admin_DisasterFloodInfo"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_DisasterFireInfo"
+            android:name=".Admins.Admin_DisasterFireInfo"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_DisasterEQInfo"
+            android:name=".Admins.Admin_DisasterEQInfo"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_EditEvac"
+            android:name=".Admins.Admin_EditEvac"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_EvacInfo"
+            android:name=".ResidentUsers.EvacInfo"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".EvacInfo"
+            android:name=".ResidentUsers.Evacuation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Evacuation"
+            android:name=".Admins.Admin_Evacuation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_Evacuation"
+            android:name=".ResidentUsers.Settings"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Settings"
+            android:name=".ResidentUsers.Profile"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Profile"
+            android:name=".ResidentUsers.Announcement"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Announcement"
+            android:name=".ResidentUsers.Home"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Home"
+            android:name=".Admins.Admin_Settings"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_Settings"
+            android:name=".Admins.Admin_Profile"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_Profile"
+            android:name=".Admins.Admin_Announcement"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_Announcement"
+            android:name=".Admins.Admin_Home"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_Home"
+            android:name=".ResidentUsers.ViewHotlines"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ViewHotlines"
+            android:name=".Admins.Admin_EditHotline"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_EditHotline"
+            android:name=".Admins.Admin_AddHotline"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_AddHotline"
+            android:name=".Admins.Admin_HotStaMaria"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_HotStaMaria"
+            android:name=".Admins.Admin_HotSJDM"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_HotSJDM"
+            android:name=".Admins.Admin_HotMeycauayan"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_HotMeycauayan"
+            android:name=".Admins.Admin_HotMarilao"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_HotMarilao"
+            android:name=".Admins.Admin_HotBocaue"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_HotBocaue"
+            android:name=".Admins.Admin_Hotlines"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_HotBulacanProv"
+            android:name=".Admins.Admin_CreateWarning"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_Hotlines"
+            android:name=".Admins.Admin_Disaster"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_CreateWarning"
+            android:name=".Admins.Admin_AccountInfo"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_Disaster"
+            android:name=".Admins.Admin_EditAncmnt"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_AccountInfo"
+            android:name=".Admins.Admin_CreateAncmnt"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_EditAncmnt"
+            android:name=".Admins.Admin_ChangePass"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_CreateAncmnt"
+            android:name=".Admins.Admin_SettingsAccount"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_ChangePass"
+            android:name=".Admins.Admin_AddEvac"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_SettingsAccount"
+            android:name=".ResidentUsers.HotStaMaria"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admin_AddEvac"
+            android:name=".ResidentUsers.HotSJDM"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HotStaMaria"
+            android:name=".ResidentUsers.HotMeycauayan"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HotSJDM"
+            android:name=".ResidentUsers.HotMarilao"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HotMeycauayan"
+            android:name=".ResidentUsers.HotBocaue"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HotMarilao"
+            android:name=".ResidentUsers.DeleteAcc"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HotBocaue"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".HotBulacanProv"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".DeleteAcc"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ChangePass"
+            android:name=".ResidentUsers.ChangePass"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -268,15 +256,15 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SettingsAccount"
+            android:name=".ResidentUsers.SettingsAccount"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SettingsNotif"
+            android:name=".ResidentUsers.SettingsNotif"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".EditInfo"
+            android:name=".ResidentUsers.EditInfo"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -288,7 +276,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AccountInfo"
+            android:name=".ResidentUsers.AccountInfo"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -320,43 +308,43 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Ty_info"
+            android:name=".ResidentUsers.Ty_info"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".LS_info"
+            android:name=".ResidentUsers.LS_info"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Flood_info"
+            android:name=".ResidentUsers.Flood_info"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Fire_info"
+            android:name=".ResidentUsers.Fire_info"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".EQ_info"
+            android:name=".ResidentUsers.EQ_info"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Flood"
+            android:name=".ResidentUsers.Flood"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Typhoon"
+            android:name=".ResidentUsers.Typhoon"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Landslide"
+            android:name=".ResidentUsers.Landslide"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Fire"
+            android:name=".ResidentUsers.Fire"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Earthquake"
+            android:name=".ResidentUsers.Earthquake"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -364,15 +352,15 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Verification"
+            android:name=".ResidentUsers.Verification"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ForgotPass"
+            android:name=".ResidentUsers.ForgotPass"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Hotlines"
+            android:name=".ResidentUsers.Hotlines"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -380,15 +368,11 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Disaster"
+            android:name=".ResidentUsers.Disaster"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ancmntBody"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".register"
+            android:name=".ResidentUsers.ancmntBody"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -409,6 +393,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".PushNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
         <meta-data
             android:name="preloaded_fonts"

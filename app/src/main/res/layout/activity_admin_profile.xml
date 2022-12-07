@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#d9d9d9"
-    tools:context=".Admin_Profile">
+    tools:context=".Admins.Admin_Profile">
 
     <RelativeLayout
         android:layout_width="match_parent"

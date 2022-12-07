@@ -10,6 +10,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.activity.alertobulakenyo.ResidentUsers.Home;
+
 public class Prepare extends AppCompatActivity {
 
     ImageButton imgFirstAid, imgSurvival;

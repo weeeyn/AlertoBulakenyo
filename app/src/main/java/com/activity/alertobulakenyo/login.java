@@ -1,51 +1,35 @@
 package com.activity.alertobulakenyo;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.google.android.gms.tasks.OnCompleteListener;
-//import com.google.android.gms.tasks.OnFailureListener;
-//import com.google.android.gms.tasks.OnSuccessListener;
-//import com.google.android.gms.tasks.Task;
-//import com.google.android.material.textfield.TextInputEditText;
-//import com.google.android.material.textfield.TextInputLayout;
-//import com.google.firebase.auth.AuthResult;
-//import com.google.firebase.auth.FirebaseAuth;
-//import com.google.firebase.auth.FirebaseUser;
-//import com.google.firebase.database.DataSnapshot;
-//import com.google.firebase.database.DatabaseError;
-//import com.google.firebase.database.DatabaseReference;
-//import com.google.firebase.database.FirebaseDatabase;
-//import com.google.firebase.database.Query;
-//import com.google.firebase.database.ValueEventListener;
-//import com.google.firebase.firestore.CollectionReference;
-//import com.google.firebase.firestore.DocumentReference;
-//import com.google.firebase.firestore.DocumentSnapshot;
-//import com.google.firebase.firestore.FirebaseFirestore;
 
-
-import org.w3c.dom.Text;
-
-import java.net.Inet4Address;
+import com.activity.alertobulakenyo.Admins.Admin_Home;
+import com.activity.alertobulakenyo.GetStarted;
+import com.activity.alertobulakenyo.R;
+import com.activity.alertobulakenyo.ResidentUsers.ForgotPass;
+import com.activity.alertobulakenyo.ResidentUsers.Home;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class login extends AppCompatActivity {
 
@@ -53,14 +37,11 @@ public class login extends AppCompatActivity {
     EditText email, password;
     Button btnLogin;
     TextView tvForgotPass, tvSignup;
-   // ProgressBar progressBar;
+    ProgressBar progressBar;
 
-    boolean valid = true;
 
-    //firebase authentication
-//    FirebaseAuth fAuth;
-//    FirebaseFirestore fStore;
-//    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,10 +54,8 @@ public class login extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
-       // progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-//        fAuth = FirebaseAuth.getInstance();
-//        fStore = FirebaseFirestore.getInstance();
 
         email = (EditText) findViewById (R.id.etLoginEmail);
         password = (EditText) findViewById (R.id.etLoginPass);
@@ -89,33 +68,79 @@ public class login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // progressBar.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
 
-//                checkField(email);
-//                checkField(password);
-//
-//                if (valid) {
-//
-//                    fAuth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString())
-//                            .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-//                                @Override
-//                                public void onSuccess(AuthResult authResult) {
-//                                    checkUserAccessLevel(authResult.getUser().getUid());
-//                                }
-//                            }).addOnFailureListener(new OnFailureListener() {
-//                        @Override
-//                        public void onFailure(@NonNull Exception e) {
-//                            Toast.makeText(login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
+                String loginEmail = email.getText().toString();
+                String loginPass = password.getText().toString();
 
-//                }
+                if (loginEmail.isEmpty()) {
+                    progressBar.setVisibility(View.GONE);
+                    Toast.makeText(login.this, "Please enter your verified Email.", Toast.LENGTH_SHORT).show();
+                    email.setError("Email can't be empty!");
+                    email.requestFocus();
+                    return;
+                } else if (loginPass.isEmpty()) {
+                    progressBar.setVisibility(View.GONE);
+                    Toast.makeText(login.this, "Please enter your password.", Toast.LENGTH_SHORT).show();
+                    password.setError("Password can't be empty!");
+                    password.requestFocus();
+                    return;
+                }
 
-                // puntang admin UI
-                Intent intent = new Intent(login.this, Home.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
+                fAuth.signInWithEmailAndPassword(loginEmail, loginPass)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task)
+                            {
+                                if (task.isSuccessful()) {
+                                    FirebaseUser user = fAuth.getCurrentUser();
+                                    if(user.isEmailVerified()) {
+                                        DocumentReference dRef = fStore.collection("UserData").document(user.getUid());
+                                        dRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                            @Override
+                                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                                if(documentSnapshot.getString("userType").equals("resident")) {
+                                                    progressBar.setVisibility(View.GONE);
+                                                    Toast.makeText(login.this, "User Resident Logged In.", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(getApplicationContext(), Home.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                } else if (documentSnapshot.getString("userType").equals("admin")) {
+                                                    progressBar.setVisibility(View.GONE);
+                                                    Toast.makeText(login.this, "Admin Logged In.", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(getApplicationContext(), Admin_Home.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                } else {
+                                                    progressBar.setVisibility(View.GONE);
+                                                    Toast.makeText(login.this, "User not registered or don't have the access. Please sign up to continue logging in.", Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        });
+                                    } else {
+                                        progressBar.setVisibility(View.GONE);
+                                        fAuth.getCurrentUser().sendEmailVerification()
+                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if(task.isSuccessful()) {
+                                                            progressBar.setVisibility(View.GONE);
+                                                            Toast.makeText(login.this, "Please verify your email to continue.", Toast.LENGTH_SHORT).show();
+                                                        } else {
+                                                            progressBar.setVisibility(View.GONE);
+                                                            Toast.makeText(login.this, "Email: " + task.getException(), Toast.LENGTH_SHORT).show();
+                                                        }
+                                                    }
+                                                });
+                                    }
+                                }
+                                else
+                                {
+                                    progressBar.setVisibility(View.GONE);
+                                    Toast.makeText(login.this, "Trouble logging you in. Please check your credentials and/or sign up to continue logging in.", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
             }
         });
 
@@ -137,7 +162,7 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(login.this, register.class);
+                Intent intent = new Intent(login.this, GetStarted.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);
@@ -146,45 +171,6 @@ public class login extends AppCompatActivity {
 
 
     }
-
-
-//    private void checkUserAccessLevel(String uid) {
-//        DocumentReference df = fStore.collection("UserData").document(uid);
-//        // extract the data from document
-//        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//            @Override
-//            public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                Log.d("TAG","onSuccess: " + documentSnapshot.getData());
-//
-//                if (documentSnapshot.getString("User") != null) {
-//                   // progressBar.setVisibility(View.GONE);
-//                    Log.d("TAG", "onSuccess: USER LOGGED IN");
-//                    Toast.makeText(login.this, "USER LOGGED IN", Toast.LENGTH_SHORT).show();
-//                    Intent intent = new Intent(getApplicationContext(), Home.class);
-//                    startActivity(intent);
-//                    finish();
-//                }
-//                else {
-//                   // progressBar.setVisibility(View.GONE);
-//                    Toast.makeText(login.this, "Not a User. Please register to Login.", Toast.LENGTH_SHORT).show();
-//                    Log.d("TAG", "onSuccess: NO USER LOGGED IN");
-//                }
-//            }
-//        });
-//    }
-//
-//    private boolean checkField(EditText textField) {
-//        if(textField.getText().toString().isEmpty()) {
-//            textField.setError("Field Cannot be Empty.");
-//            Toast.makeText(this, "Fields cannot be Empty!", Toast.LENGTH_SHORT).show();
-//         //   progressBar.setVisibility(View.GONE);
-//            valid = false;
-//        } else {
-//            valid = true;
-//        }
-//        return valid;
-//    }
-
 
 
     @Override

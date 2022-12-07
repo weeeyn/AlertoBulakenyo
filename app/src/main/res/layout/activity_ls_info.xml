@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Admin_DisasterLSinfo">
+    tools:context=".Admins.Admin_DisasterLSinfo">
 
     <ImageView
         android:layout_width="match_parent"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Admin_CreateAncmnt">
+    tools:context=".Admins.Admin_CreateAncmnt">
 
     <ImageView
         android:layout_width="match_parent"
@@ -76,7 +76,8 @@
                     android:autoSizeTextType="uniform"
                     android:textColor="#003366"
                     android:textColorLink="#003366"
-                    android:textCursorDrawable="@drawable/cursor_blue" />
+                    android:textCursorDrawable="@drawable/cursor_blue"
+                    />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,7 +105,7 @@
                 <EditText
                     android:id="@+id/etAncmnt"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="300dp"
                     android:autoSizeTextType="uniform"
                     android:inputType="textMultiLine"
                     android:textColor="#003366"
@@ -116,6 +117,15 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:visibility="invisible" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnPost"

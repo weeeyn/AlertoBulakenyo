@@ -1,5 +1,8 @@
 package com.activity.alertobulakenyo;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,11 +13,16 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
-//import com.google.android.gms.tasks.OnSuccessListener;
-//import com.google.firebase.auth.FirebaseAuth;
-//import com.google.firebase.firestore.DocumentReference;
-//import com.google.firebase.firestore.DocumentSnapshot;
-//import com.google.firebase.firestore.FirebaseFirestore;
+import com.activity.alertobulakenyo.Admins.Admin_Home;
+import com.activity.alertobulakenyo.ResidentUsers.Home;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,51 +39,77 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        FirebaseMessaging.getInstance().subscribeToTopic("announcements")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "Subscribed to Announcements";
+                        if (!task.isSuccessful()) {
+                            msg = "Subscription failed";
+                        }
+//                    System.out.println(msg);
+//                    Toast.makeText(GetStarted.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        FirebaseMessaging.getInstance().subscribeToTopic("warnings")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "Subscribed to Warnings";
+                        if (!task.isSuccessful()) {
+                            msg = "Subscription failed";
+                        }
+//                    System.out.println(msg);
+//                    Toast.makeText(GetStarted.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
         logo = (ImageView)findViewById (R.id.imgLogo);
 
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//
-                Intent intent = new Intent(getApplicationContext(), GetStarted.class);
-                startActivity(intent);
-//
-//                if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-//                    DocumentReference df = FirebaseFirestore.getInstance().collection("UserData")
-//                            .document(FirebaseAuth.getInstance().getCurrentUser().getUid());
-//                    df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//                        @Override
-//                        public void onSuccess(DocumentSnapshot documentSnapshot) {
-//
-//                            if (documentSnapshot.getString("User") != null) {
-//                                Log.d("TAG", "onSuccess: USER LOGGED IN");
-//                                Intent intent = new Intent(getApplicationContext(), Home.class);
-//                                startActivity(intent);
-//                                finish();
-//                                overridePendingTransition(R.anim.slide_in_left,
-//                                        R.anim.slide_out_right);
-//                            }
-//                            else {
-//                                Intent intent = new Intent(getApplicationContext(), Login_Choose.class);
-//                                startActivity(intent);
-//                                finish();
-//                                overridePendingTransition(R.anim.slide_in_left,
-//                                        R.anim.slide_out_right);
-//                                Log.d("TAG", "onSuccess: NO ONE LOGGED IN");
-//                            }
-//                        }
-//                    });
-//                }
-//                else {
-//                    Log.d("TAG", " NO ONE LOGGED IN");
-//                    Intent intent = new Intent(getApplicationContext(), Login_Choose.class);
-//                    startActivity(intent);
-//                    finish();
-//                    overridePendingTransition(R.anim.slide_in_left,
-//                            R.anim.slide_out_right);
-//                }
-//            }
-//        }, 3000);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+                    DocumentReference df = FirebaseFirestore.getInstance().collection("UserData")
+                            .document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                            if(documentSnapshot.getString("userType").equals("resident")) {
+                               Intent intent = new Intent(getApplicationContext(), Home.class);
+                                startActivity(intent);
+                                finish();
+                                overridePendingTransition(R.anim.slide_in_left,
+                                        R.anim.slide_out_right);
+                            } else if (documentSnapshot.getString("userType").equals("admin")) {
+                                Intent intent = new Intent(getApplicationContext(), Admin_Home.class);
+                                startActivity(intent);
+                                finish();
+                                overridePendingTransition(R.anim.slide_in_left,
+                                        R.anim.slide_out_right);
+                            } else {
+                                Log.d(TAG, "onSuccess: MAIN ACTIVIY CHECKER FAILED");
+                                Intent intent = new Intent(getApplicationContext(), login.class);
+                                startActivity(intent);
+                                finish();
+                                overridePendingTransition(R.anim.slide_in_left,
+                                        R.anim.slide_out_right);
+                            }
+                        }
+                    });
+                }
+                else {
+                    Log.d("TAG", " NO ONE LOGGED IN");
+                    Intent intent = new Intent(getApplicationContext(), login.class);
+                    startActivity(intent);
+                    finish();
+                    overridePendingTransition(R.anim.slide_in_left,
+                            R.anim.slide_out_right);
+                }
+            }
+        }, 3000);
     }
 
 }

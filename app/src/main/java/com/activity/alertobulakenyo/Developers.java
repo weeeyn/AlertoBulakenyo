@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.activity.alertobulakenyo.ResidentUsers.Settings;
+
 public class Developers extends AppCompatActivity {
 
     @Override

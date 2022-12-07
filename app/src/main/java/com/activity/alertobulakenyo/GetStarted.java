@@ -4,14 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class GetStarted extends AppCompatActivity {
 
@@ -46,17 +42,10 @@ public class GetStarted extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        Log.e("My Tags", "onBackPressed");
-        k++;
-        if (k == 1)
-        {
-            Toast.makeText(GetStarted.this, "Please press again to exit.", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-            finishAffinity();
-            finish();
-        }
-
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), login.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_left,
+                R.anim.slide_out_right);
     }
 }

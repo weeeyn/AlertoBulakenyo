@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Admin_AddEvac">
+    tools:context=".Admins.Admin_AddEvac">
 
     <ImageView
         android:layout_width="match_parent"
@@ -68,8 +68,7 @@
                 app:endIconTint="#003366"
                 app:hintTextColor="#003366"
                 app:startIconDrawable="@drawable/place"
-                app:startIconTint="#003366"
-                android:visibility="gone">
+                app:startIconTint="#003366" >
 
                 <AutoCompleteTextView
                     android:id="@+id/actCity"
