@@ -255,8 +255,19 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
+            <!-- fragment for maps  -->
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/maps1"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_alignBottom="@id/btnSave"
+                android:paddingBottom="10dp"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                tools:layout="@layout/map"
+                android:layout_marginBottom="10dp"
+                />
         </LinearLayout>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSave"
@@ -285,6 +296,7 @@
             android:textColor="@color/white"
             android:textSize="18dp"
             android:textStyle="bold" />
+
 
     </RelativeLayout>
 

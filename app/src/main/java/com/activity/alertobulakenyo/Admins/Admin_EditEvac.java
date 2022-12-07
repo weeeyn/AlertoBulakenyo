@@ -4,8 +4,13 @@ import static android.content.ContentValues.TAG;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +25,16 @@ import android.widget.Toast;
 
 import com.activity.alertobulakenyo.ObjectClasses.EvacuationHolder;
 import com.activity.alertobulakenyo.R;
+import com.activity.alertobulakenyo.ResidentUsers.Evacuation;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -31,7 +46,10 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class Admin_EditEvac extends AppCompatActivity {
+import java.text.DecimalFormat;
+import java.text.Format;
+
+public class Admin_EditEvac extends AppCompatActivity implements OnMapReadyCallback {
 
     TextInputLayout tilCity, tilBrgy;
     EditText etEvacName, etEvacLoc, etLong, etLat;
@@ -44,7 +62,16 @@ public class Admin_EditEvac extends AppCompatActivity {
     private FirebaseUser user = fAuth.getCurrentUser();
     private String userId = user.getUid();
 
-
+    //var's for google map
+    GoogleMap map;
+    Location lastKnownLocation;
+    private boolean locationPermissionGranted;
+    FusedLocationProviderClient fusedLocationProviderClient;
+    private static final int DEFAULT_ZOOM = 15;
+    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+    //default location @ Manila, Philippines
+    private final LatLng defaultLocation = new LatLng(14.599512, 120.984222);
+    Marker marker=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -210,6 +237,14 @@ public class Admin_EditEvac extends AppCompatActivity {
                 deleteEvac(evacuationHolder);
             }
         });
+
+        //call fragment and inflate map
+        SupportMapFragment supportMapFragment=(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.maps1);
+        supportMapFragment.getMapAsync(Admin_EditEvac.this);
+
+        //initialize fusedlocation
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+
     }
 
     private void deleteEvac(EvacuationHolder evacuationHolder) {
@@ -291,5 +326,108 @@ public class Admin_EditEvac extends AppCompatActivity {
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        map=googleMap;
+
+        getLocationPermission();
+        updateLocationUI();
+        getDeviceLocation();
+
+        map.setOnMapClickListener(latLng -> {
+
+
+            if(marker==null){
+                DecimalFormat format=new DecimalFormat("0.0000");
+                marker=map.addMarker(new MarkerOptions().position(latLng).title("This"));
+                etLong.setText(format.format(latLng.longitude) );
+                etLat.setText(format.format(latLng.latitude));
+            }
+            else{
+                marker.remove();
+                marker=null;
+            }
+        });
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
+        locationPermissionGranted = false;
+        if (requestCode
+                == PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION) {// If request is cancelled, the result arrays are empty.
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                locationPermissionGranted = true;
+            }
+        } else {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+        updateLocationUI();
+
+    }
+    private void getDeviceLocation() {
+        try {
+            if (locationPermissionGranted) {
+                Task<Location> locationResult = fusedLocationProviderClient.getLastLocation();
+                locationResult.addOnCompleteListener(this, new OnCompleteListener<Location>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Location> task) {
+                        if (task.isSuccessful()) {
+                            // Set the map's camera position to the current location of the device.
+                            lastKnownLocation = task.getResult();
+                            if (lastKnownLocation != null) {
+                                map.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                                        new LatLng(lastKnownLocation.getLatitude(),
+                                                lastKnownLocation.getLongitude()), DEFAULT_ZOOM));
+                                // String text= String.valueOf(lastKnownLocation.distanceTo(deltalocation));
+                                // Toast.makeText(maps.this, text, Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Log.d(TAG, "Current location is null. Using defaults.");
+                            Log.e(TAG, "Exception: %s", task.getException());
+                            map.moveCamera(CameraUpdateFactory
+                                    .newLatLngZoom(defaultLocation, DEFAULT_ZOOM));
+                            map.getUiSettings().setMyLocationButtonEnabled(false);
+                        }
+                    }
+                });
+            }
+        } catch (SecurityException e)  {
+            Log.e("Exception: %s", e.getMessage(), e);
+        }
+    }
+
+    private void updateLocationUI() {
+        if (map == null) {
+            return;
+        }
+        try {
+            if (locationPermissionGranted) {
+                map.setMyLocationEnabled(true);
+                map.getUiSettings().setMyLocationButtonEnabled(true);
+            } else {
+                map.setMyLocationEnabled(false);
+                map.getUiSettings().setMyLocationButtonEnabled(false);
+                lastKnownLocation = null;
+                getLocationPermission();
+            }
+        } catch (SecurityException e)  {
+            Log.e("Exception: %s", e.getMessage());
+        }
+    }
+
+
+
+    private void getLocationPermission() {
+        if (ContextCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED){
+            locationPermissionGranted=true;
+        }
+        else{
+            ActivityCompat.requestPermissions(this,
+                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                    PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+
+        }
     }
 }

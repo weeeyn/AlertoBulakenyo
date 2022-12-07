@@ -68,7 +68,7 @@
                 app:endIconTint="#003366"
                 app:hintTextColor="#003366"
                 app:startIconDrawable="@drawable/place"
-                app:startIconTint="#003366" >
+                app:startIconTint="#003366">
 
                 <AutoCompleteTextView
                     android:id="@+id/actCity"
@@ -254,7 +254,45 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/maps"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                tools:layout="@layout/map"
+                android:layout_marginBottom="10dp"
+                />
+
         </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/saveMaptoCoordsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="55dp"
+            android:layout_alignBottom="@id/clearCoordsButton"
+            android:background="@drawable/rounded_button"
+            android:stateListAnimator="@null"
+            android:text="Set Coordinates"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/clearCoordsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="55dp"
+            android:layout_alignBottom="@id/btnSaveEvac"
+            android:background="@drawable/rounded_button"
+            android:stateListAnimator="@null"
+            android:text="Clear Marker"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSaveEvac"
@@ -269,6 +307,7 @@
             android:textColor="@color/white"
             android:textSize="18dp"
             android:textStyle="bold" />
+
     </RelativeLayout>
 
 </RelativeLayout>
