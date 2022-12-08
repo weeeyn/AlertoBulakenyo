@@ -64,18 +64,15 @@
                     <TextView
                         android:id="@+id/tvDeptAbbre"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginHorizontal="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
                         android:layout_marginBottom="5dp"
                         android:gravity="center"
                         android:maxLines="1"
                         android:text="SJDM CDRRMMO"
                         android:textColor="@color/dark_blue"
                         android:textStyle="bold"
-                        app:autoSizeMaxTextSize="50dp"
-                        app:autoSizeMinTextSize="20dp"
-                        app:autoSizeStepGranularity="1dp"
-                        app:autoSizeTextType="uniform" />
+                        android:textSize="35dp"/>
 
                     <TextView
                         android:id="@+id/tvDeptName"

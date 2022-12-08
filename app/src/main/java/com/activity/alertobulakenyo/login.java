@@ -104,12 +104,16 @@ public class login extends AppCompatActivity {
                                                     Toast.makeText(login.this, "User Resident Logged In.", Toast.LENGTH_SHORT).show();
                                                     Intent intent = new Intent(getApplicationContext(), Home.class);
                                                     startActivity(intent);
+                                                    overridePendingTransition(R.anim.slide_in_right,
+                                                            R.anim.slide_out_left);
                                                     finish();
                                                 } else if (documentSnapshot.getString("userType").equals("admin")) {
                                                     progressBar.setVisibility(View.GONE);
                                                     Toast.makeText(login.this, "Admin Logged In.", Toast.LENGTH_SHORT).show();
                                                     Intent intent = new Intent(getApplicationContext(), Admin_Home.class);
                                                     startActivity(intent);
+                                                    overridePendingTransition(R.anim.slide_in_right,
+                                                            R.anim.slide_out_left);
                                                     finish();
                                                 } else {
                                                     progressBar.setVisibility(View.GONE);
@@ -168,7 +172,6 @@ public class login extends AppCompatActivity {
                         R.anim.slide_out_left);
             }
         });
-
 
     }
 

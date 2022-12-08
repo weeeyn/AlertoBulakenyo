@@ -75,7 +75,7 @@ public class Admin_AddHotline extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.getString("adminCity").equals("Bacaue")) {
+                        if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
                             DocumentReference df2 = fStore.collection("Hotlines").document();
                             Map<String, Object> hotlines = new HashMap<>();
                             hotlines.put("hotlineCity", "Bocaue");
@@ -94,6 +94,8 @@ public class Admin_AddHotline extends AppCompatActivity {
                                             Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -102,7 +104,7 @@ public class Admin_AddHotline extends AppCompatActivity {
                                         public void onFailure(@NonNull Exception e) {
                                             //progress
                                             Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+                                            Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
                                         }
                                     });
                         }
@@ -126,6 +128,8 @@ public class Admin_AddHotline extends AppCompatActivity {
                                             Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -134,7 +138,7 @@ public class Admin_AddHotline extends AppCompatActivity {
                                         public void onFailure(@NonNull Exception e) {
                                             //progress
                                             Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+                                            Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
                                         }
                                     });
                         }
@@ -158,6 +162,8 @@ public class Admin_AddHotline extends AppCompatActivity {
                                             Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -166,7 +172,7 @@ public class Admin_AddHotline extends AppCompatActivity {
                                         public void onFailure(@NonNull Exception e) {
                                             //progress
                                             Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+                                            Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
                                         }
                                     });
                         }
@@ -190,6 +196,8 @@ public class Admin_AddHotline extends AppCompatActivity {
                                             Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -198,7 +206,7 @@ public class Admin_AddHotline extends AppCompatActivity {
                                         public void onFailure(@NonNull Exception e) {
                                             //progress
                                             Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+                                            Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
                                         }
                                     });
                         }
@@ -222,6 +230,8 @@ public class Admin_AddHotline extends AppCompatActivity {
                                             Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -230,7 +240,7 @@ public class Admin_AddHotline extends AppCompatActivity {
                                         public void onFailure(@NonNull Exception e) {
                                             //progress
                                             Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+                                            Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
                                         }
                                     });
                         }

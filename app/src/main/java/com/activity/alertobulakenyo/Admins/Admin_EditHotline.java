@@ -116,9 +116,9 @@ public class Admin_EditHotline extends AppCompatActivity {
                             Toast.makeText(Admin_EditHotline.this, "Hotline Deleted", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
                             startActivity(intent);
-                            finish();
                             overridePendingTransition(R.anim.slide_in_left,
                                     R.anim.slide_out_right);
+                            finish();
                         } else {
                             Toast.makeText(Admin_EditHotline.this, "Hotline Not Deleted!", Toast.LENGTH_SHORT).show();
                             Log.e(TAG, "onFailure: FAILED TO DELETE HOTLINE");
@@ -134,7 +134,7 @@ public class Admin_EditHotline extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.getString("adminCity").equals("Bacaue")) {
+                        if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
 
                             String hotlineCity = "Bocaue";
                             String hotlineName = etHotName.getText().toString();
@@ -155,9 +155,9 @@ public class Admin_EditHotline extends AppCompatActivity {
                                             Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
                                             startActivity(intent);
-                                            finish();
                                             overridePendingTransition(R.anim.slide_in_left,
                                                     R.anim.slide_out_right);
+                                            finish();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
@@ -190,9 +190,9 @@ public class Admin_EditHotline extends AppCompatActivity {
                                             Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
                                             startActivity(intent);
-                                            finish();
                                             overridePendingTransition(R.anim.slide_in_left,
                                                     R.anim.slide_out_right);
+                                            finish();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
@@ -224,9 +224,9 @@ public class Admin_EditHotline extends AppCompatActivity {
                                             Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
                                             startActivity(intent);
-                                            finish();
                                             overridePendingTransition(R.anim.slide_in_left,
                                                     R.anim.slide_out_right);
+                                            finish();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
@@ -258,9 +258,9 @@ public class Admin_EditHotline extends AppCompatActivity {
                                             Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
                                             startActivity(intent);
-                                            finish();
                                             overridePendingTransition(R.anim.slide_in_left,
                                                     R.anim.slide_out_right);
+                                            finish();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
@@ -292,9 +292,9 @@ public class Admin_EditHotline extends AppCompatActivity {
                                             Toast.makeText(Admin_EditHotline.this, "Hotline Updated", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(Admin_EditHotline.this, Admin_Hotlines.class);
                                             startActivity(intent);
-                                            finish();
                                             overridePendingTransition(R.anim.slide_in_left,
                                                     R.anim.slide_out_right);
+                                            finish();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {

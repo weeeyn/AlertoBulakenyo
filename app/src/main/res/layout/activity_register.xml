@@ -449,7 +449,7 @@
                 android:stateListAnimator="@null"
                 android:text="Sign up"
                 android:textColor="@color/white"
-                android:textSize="15dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <TextView

@@ -105,7 +105,7 @@ public class Admin_Home extends AppCompatActivity {
         imgPrepare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Admin_Home.this, Prepare.class);
+                Intent intent = new Intent(Admin_Home.this, Admin_Prepare.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,
                         R.anim.slide_out_left);

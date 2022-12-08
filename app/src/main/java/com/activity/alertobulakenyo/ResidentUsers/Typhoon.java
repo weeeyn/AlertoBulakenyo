@@ -74,7 +74,7 @@ public class Typhoon extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
+                        Log.e(TAG, "onFailure: TYPHOON WARNING FAILED" + e.getMessage());
                     }
                 });
     }

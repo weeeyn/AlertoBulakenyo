@@ -74,7 +74,7 @@ public class Fire extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
+                        Log.e(TAG, "onFailure: FIRE WARNING FAILED" + e.getMessage());
                     }
                 });
     }

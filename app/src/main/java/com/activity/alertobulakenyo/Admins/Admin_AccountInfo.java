@@ -41,7 +41,6 @@ public class Admin_AccountInfo extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_account_info);
 
-
         tvDeptAbbre = (TextView) findViewById (R.id.tvDeptAbbre);
         tvDeptName = (TextView) findViewById (R.id.tvDeptName);
         tvCity = (TextView) findViewById (R.id.tvCity);

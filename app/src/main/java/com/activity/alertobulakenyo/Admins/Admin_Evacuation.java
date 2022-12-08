@@ -67,7 +67,6 @@ public class Admin_Evacuation extends AppCompatActivity {
     Button btnAddNewEvac;
     CardView card_Boc, card_Mar, card_Mey, card_SJDM, card_SM;
 
-    
     private ArrayList<EvacuationHolder> evacuationHolderArrayList;
 
     private FirebaseAuth fAuth = FirebaseAuth.getInstance();
@@ -109,7 +108,7 @@ public class Admin_Evacuation extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.getString("adminCity").equals("Bacaue")) {
+                        if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
                             card_Boc.setVisibility(View.VISIBLE);
                             card_Mar.setVisibility(View.GONE);
                             card_Mey.setVisibility(View.GONE);
@@ -206,7 +205,6 @@ public class Admin_Evacuation extends AppCompatActivity {
                 });
 
 
-        //call fragment and inflate map
         
     }
 

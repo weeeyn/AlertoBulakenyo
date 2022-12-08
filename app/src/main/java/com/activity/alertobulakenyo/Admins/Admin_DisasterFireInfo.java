@@ -1,19 +1,26 @@
 package com.activity.alertobulakenyo.Admins;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.activity.alertobulakenyo.R;
 import com.activity.alertobulakenyo.ObjectClasses.WarningHolder;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Admin_DisasterFireInfo extends AppCompatActivity {
@@ -62,25 +69,25 @@ public class Admin_DisasterFireInfo extends AppCompatActivity {
 
                 builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
                     // When the user click yes button then app will close
-//                    fStore.collection("Warning")
-//                            .document(warningHolder.getId())
-//                            .delete()
-//                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                @Override
-//                                public void onComplete(@NonNull Task<Void> task) {
-//                                    if (task.isSuccessful()) {
-//                                        Toast.makeText(getApplicationContext(), "Warning Deleted", Toast.LENGTH_SHORT).show();
-//                                        Intent intent = new Intent(getApplicationContext(), Admin_DisasterEQ.class);
-//                                        startActivity(intent);
-//                                        finish();
-//                                        overridePendingTransition(R.anim.slide_in_left,
-//                                                R.anim.slide_out_right);
-//                                    } else {
-//                                        Toast.makeText(getApplicationContext(), "Warning Not Deleted!", Toast.LENGTH_SHORT).show();
-//                                        Log.e(TAG, "onFailure: FAILED TO DELETE HOTLINE");
-//                                    }
-//                                }
-//                            });
+                    fStore.collection("Warning")
+                            .document(warningHolder.getId())
+                            .delete()
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(getApplicationContext(), "Warning Deleted", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(getApplicationContext(), Admin_DisasterEQ.class);
+                                        startActivity(intent);
+                                        overridePendingTransition(R.anim.slide_in_left,
+                                                R.anim.slide_out_right);
+                                        finish();
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Warning Not Deleted!", Toast.LENGTH_SHORT).show();
+                                        Log.e(TAG, "onFailure: FAILED TO DELETE WARNING");
+                                    }
+                                }
+                            });
                 });
 
                 builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {

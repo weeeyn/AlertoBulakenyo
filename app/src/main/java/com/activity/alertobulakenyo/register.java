@@ -344,6 +344,8 @@ public class register extends AppCompatActivity {
                                                             Toast.makeText(register.this, "Registered Successfully. Please confirm your email to continue logging in.", Toast.LENGTH_SHORT).show();
                                                             Intent intent = new Intent(register.this, login.class);
                                                             startActivity(intent);
+                                                            overridePendingTransition(R.anim.slide_in_left,
+                                                                    R.anim.slide_out_right);
                                                             finish();
                                                         }
                                                     });

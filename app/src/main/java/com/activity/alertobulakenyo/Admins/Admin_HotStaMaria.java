@@ -80,7 +80,7 @@ public class Admin_HotStaMaria extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e("TAG", "onFailure: BOCAUE HOTLINE FAILED" + e.getMessage());
+                        Log.e("TAG", "onFailure: STA. MARIA HOTLINE FAILED" + e.getMessage());
                     }
                 });
 

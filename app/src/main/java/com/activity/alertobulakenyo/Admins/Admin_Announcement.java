@@ -100,7 +100,6 @@ public class Admin_Announcement extends AppCompatActivity {
         });
 
 
-
     }
 
     @Override

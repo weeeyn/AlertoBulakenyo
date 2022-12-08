@@ -48,7 +48,6 @@
             android:layout_marginVertical="15dp"
             android:orientation="vertical">
 
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilCity"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"

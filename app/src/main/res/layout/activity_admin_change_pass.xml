@@ -160,7 +160,7 @@
             android:stateListAnimator="@null"
             android:text="CHANGE PASSWORD"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
     </RelativeLayout>

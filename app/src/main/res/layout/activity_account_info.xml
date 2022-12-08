@@ -235,7 +235,7 @@
             android:stateListAnimator="@null"
             android:text="EDIT INFORMATION"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
     </RelativeLayout>

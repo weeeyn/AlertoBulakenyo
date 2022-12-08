@@ -75,12 +75,12 @@ public class Admin_DisasterLSinfo extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), "Warning Deleted", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(getApplicationContext(), Admin_DisasterLS.class);
                                         startActivity(intent);
-                                        finish();
                                         overridePendingTransition(R.anim.slide_in_left,
                                                 R.anim.slide_out_right);
+                                        finish();
                                     } else {
                                         Toast.makeText(getApplicationContext(), "Warning Not Deleted!", Toast.LENGTH_SHORT).show();
-                                        Log.e(TAG, "onFailure: FAILED TO DELETE HOTLINE");
+                                        Log.e(TAG, "onFailure: FAILED TO DELETE WARNING");
                                     }
                                 }
                             });

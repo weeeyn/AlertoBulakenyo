@@ -100,7 +100,7 @@ public class Admin_EditAncmnt extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.getString("adminCity").equals("Bacaue")) {
+                        if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
 
                             String title = etAncmntTitle.getText().toString();
                             String body = etAncmnt.getText().toString();
@@ -122,6 +122,8 @@ public class Admin_EditAncmnt extends AppCompatActivity {
 
                                             Intent intent = new Intent(Admin_EditAncmnt.this, Admin_Announcement.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -154,6 +156,8 @@ public class Admin_EditAncmnt extends AppCompatActivity {
 
                                             Intent intent = new Intent(Admin_EditAncmnt.this, Admin_Announcement.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -186,6 +190,8 @@ public class Admin_EditAncmnt extends AppCompatActivity {
 
                                             Intent intent = new Intent(Admin_EditAncmnt.this, Admin_Announcement.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -218,6 +224,8 @@ public class Admin_EditAncmnt extends AppCompatActivity {
 
                                             Intent intent = new Intent(Admin_EditAncmnt.this, Admin_Announcement.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -250,6 +258,8 @@ public class Admin_EditAncmnt extends AppCompatActivity {
 
                                             Intent intent = new Intent(Admin_EditAncmnt.this, Admin_Announcement.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })

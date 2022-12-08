@@ -284,16 +284,16 @@ public class Admin_AddEvac extends AppCompatActivity {
                         Toast.makeText(Admin_AddEvac.this, "Evacuation Saved!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(Admin_AddEvac.this, Admin_Evacuation.class);
                         startActivity(intent);
-                        finish();
                         overridePendingTransition(R.anim.slide_in_left,
                                 R.anim.slide_out_right);
+                        finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(Admin_AddEvac.this, "Evacuation not saved!", Toast.LENGTH_SHORT).show();
-                        Log.e("TAG", "onFailure: EVAC FAILED TO POST" + e.getMessage());
+                        Log.e("TAG", "onFailure: EVAC FAILED TO SAVE" + e.getMessage());
                     }
                 });
     }
@@ -329,7 +329,5 @@ public class Admin_AddEvac extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }
-
-
 
 }

@@ -80,22 +80,22 @@ public class MainActivity extends AppCompatActivity {
                             if(documentSnapshot.getString("userType").equals("resident")) {
                                Intent intent = new Intent(getApplicationContext(), Home.class);
                                 startActivity(intent);
+                                overridePendingTransition(R.anim.slide_in_right,
+                                        R.anim.slide_out_left);
                                 finish();
-                                overridePendingTransition(R.anim.slide_in_left,
-                                        R.anim.slide_out_right);
                             } else if (documentSnapshot.getString("userType").equals("admin")) {
                                 Intent intent = new Intent(getApplicationContext(), Admin_Home.class);
                                 startActivity(intent);
+                                overridePendingTransition(R.anim.slide_in_right,
+                                        R.anim.slide_out_left);
                                 finish();
-                                overridePendingTransition(R.anim.slide_in_left,
-                                        R.anim.slide_out_right);
                             } else {
                                 Log.d(TAG, "onSuccess: MAIN ACTIVIY CHECKER FAILED");
                                 Intent intent = new Intent(getApplicationContext(), login.class);
                                 startActivity(intent);
+                                overridePendingTransition(R.anim.slide_in_right,
+                                        R.anim.slide_out_left);
                                 finish();
-                                overridePendingTransition(R.anim.slide_in_left,
-                                        R.anim.slide_out_right);
                             }
                         }
                     });
@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), login.class);
                     startActivity(intent);
                     finish();
-                    overridePendingTransition(R.anim.slide_in_left,
-                            R.anim.slide_out_right);
+                    overridePendingTransition(R.anim.slide_in_right,
+                            R.anim.slide_out_left);
                 }
             }
         }, 3000);

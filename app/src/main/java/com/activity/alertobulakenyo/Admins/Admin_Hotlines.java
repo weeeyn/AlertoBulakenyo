@@ -63,7 +63,7 @@ public class Admin_Hotlines extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.getString("adminCity").equals("Bacaue")) {
+                        if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
                             card_Boc.setVisibility(View.VISIBLE);
                             card_Mar.setVisibility(View.GONE);
                             card_Mey.setVisibility(View.GONE);

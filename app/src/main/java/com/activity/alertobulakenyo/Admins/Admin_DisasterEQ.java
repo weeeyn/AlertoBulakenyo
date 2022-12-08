@@ -63,7 +63,7 @@ public class Admin_DisasterEQ extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.getString("adminCity").equals("Bacaue")) {
+                        if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
 
                             fStore.collection("Warning")
                                     .whereEqualTo("body", "Bocaue")

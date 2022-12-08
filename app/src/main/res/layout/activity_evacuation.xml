@@ -10,225 +10,26 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="40dp"
         android:background="#ff5003" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginHorizontal="5dp"
-        android:orientation="horizontal"
-        android:paddingTop="40dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:fontFamily="@font/archivo_black"
-            android:gravity="center"
-            android:maxLines="1"
-            android:text="EVACUATION"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30dp" />
-
-    </LinearLayout>
     <!-- Change back to scrollview if needed ... -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="100dp"
-        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_above="@id/evacNav"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginVertical="15dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
-
-<!--                       <androidx.cardview.widget.CardView-->
-<!--                           android:id="@+id/card_Boc"-->
-<!--                           android:layout_width="match_parent"-->
-<!--                           android:layout_height="wrap_content"-->
-<!--                           android:layout_marginBottom="20dp"-->
-<!--                           android:backgroundTint="@color/white"-->
-<!--                           app:cardCornerRadius="10dp"-->
-<!--                           app:cardElevation="0dp">-->
-
-<!--                          <LinearLayout-->
-<!--                              android:layout_width="match_parent"-->
-<!--                              android:layout_height="wrap_content"-->
-<!--                              android:layout_marginVertical="10dp"-->
-<!--                              android:orientation="horizontal">-->
-
-<!--                              <TextView-->
-<!--                                  android:layout_width="0dp"-->
-<!--                                  android:layout_height="wrap_content"-->
-<!--                                  android:layout_gravity="center"-->
-<!--                                  android:layout_weight="9"-->
-<!--                                  android:paddingStart="20dp"-->
-<!--                                  android:text="Bocaue"-->
-<!--                                  android:textColor="@color/dark_blue"-->
-<!--                                  android:textSize="20dp"-->
-<!--                                  android:textStyle="bold" />-->
-
-<!--                              <ImageView-->
-<!--                                  android:layout_width="40dp"-->
-<!--                                  android:layout_height="40dp"-->
-<!--                                  android:src="@drawable/go" />-->
-
-<!--                          </LinearLayout>-->
-
-<!--                      </androidx.cardview.widget.CardView>-->
-
-<!--                      <androidx.cardview.widget.CardView-->
-<!--                          android:id="@+id/card_Mar"-->
-<!--                          android:layout_width="match_parent"-->
-<!--                          android:layout_height="wrap_content"-->
-<!--                          android:layout_marginBottom="20dp"-->
-<!--                          android:backgroundTint="@color/white"-->
-<!--                          app:cardCornerRadius="10dp"-->
-<!--                          app:cardElevation="0dp">-->
-
-<!--                          <LinearLayout-->
-<!--                              android:layout_width="match_parent"-->
-<!--                              android:layout_height="wrap_content"-->
-<!--                              android:layout_marginVertical="10dp"-->
-<!--                              android:orientation="horizontal">-->
-
-<!--                              <TextView-->
-<!--                                  android:layout_width="0dp"-->
-<!--                                  android:layout_height="wrap_content"-->
-<!--                                  android:layout_gravity="center"-->
-<!--                                  android:layout_weight="9"-->
-<!--                                  android:paddingStart="20dp"-->
-<!--                                  android:text="Marilao"-->
-<!--                                  android:textColor="@color/dark_blue"-->
-<!--                                  android:textSize="20dp"-->
-<!--                                  android:textStyle="bold" />-->
-
-<!--                              <ImageView-->
-<!--                                  android:layout_width="40dp"-->
-<!--                                  android:layout_height="40dp"-->
-<!--                                  android:src="@drawable/go" />-->
-
-<!--                          </LinearLayout>-->
-
-<!--                      </androidx.cardview.widget.CardView>-->
-
-<!--                      <androidx.cardview.widget.CardView-->
-<!--                          android:id="@+id/card_Mey"-->
-<!--                          android:layout_width="match_parent"-->
-<!--                          android:layout_height="wrap_content"-->
-<!--                          android:layout_marginBottom="20dp"-->
-<!--                          android:backgroundTint="@color/white"-->
-<!--                          app:cardCornerRadius="10dp"-->
-<!--                          app:cardElevation="0dp">-->
-
-<!--                          <LinearLayout-->
-<!--                              android:layout_width="match_parent"-->
-<!--                              android:layout_height="wrap_content"-->
-<!--                              android:layout_marginVertical="10dp"-->
-<!--                              android:orientation="horizontal">-->
-
-<!--                              <TextView-->
-<!--                                  android:layout_width="0dp"-->
-<!--                                  android:layout_height="wrap_content"-->
-<!--                                  android:layout_gravity="center"-->
-<!--                                  android:layout_weight="9"-->
-<!--                                  android:paddingStart="20dp"-->
-<!--                                  android:text="Meycauayan"-->
-<!--                                  android:textColor="@color/dark_blue"-->
-<!--                                  android:textSize="20dp"-->
-<!--                                  android:textStyle="bold" />-->
-
-<!--                              <ImageView-->
-<!--                                  android:layout_width="40dp"-->
-<!--                                  android:layout_height="40dp"-->
-<!--                                  android:src="@drawable/go" />-->
-
-<!--                          </LinearLayout>-->
-
-<!--                      </androidx.cardview.widget.CardView>-->
-
-<!--                      <androidx.cardview.widget.CardView-->
-<!--                          android:id="@+id/card_SJDM"-->
-<!--                          android:layout_width="match_parent"-->
-<!--                          android:layout_height="wrap_content"-->
-<!--                          android:layout_marginBottom="20dp"-->
-<!--                          android:backgroundTint="@color/white"-->
-<!--                          app:cardCornerRadius="10dp"-->
-<!--                          app:cardElevation="0dp">-->
-
-<!--                          <LinearLayout-->
-<!--                              android:layout_width="match_parent"-->
-<!--                              android:layout_height="wrap_content"-->
-<!--                              android:layout_marginVertical="10dp"-->
-<!--                              android:orientation="horizontal">-->
-
-<!--                              <TextView-->
-<!--                                  android:layout_width="0dp"-->
-<!--                                  android:layout_height="wrap_content"-->
-<!--                                  android:layout_gravity="center"-->
-<!--                                  android:layout_weight="9"-->
-<!--                                  android:paddingStart="20dp"-->
-<!--                                  android:text="San Jose del Monte"-->
-<!--                                  android:textColor="@color/dark_blue"-->
-<!--                                  android:textSize="20dp"-->
-<!--                                  android:textStyle="bold" />-->
-
-<!--                              <ImageView-->
-<!--                                  android:layout_width="40dp"-->
-<!--                                  android:layout_height="40dp"-->
-<!--                                  android:src="@drawable/go" />-->
-
-<!--                          </LinearLayout>-->
-
-<!--                      </androidx.cardview.widget.CardView>-->
-
-<!--                      <androidx.cardview.widget.CardView-->
-<!--                          android:id="@+id/card_SM"-->
-<!--                          android:layout_width="match_parent"-->
-<!--                          android:layout_height="wrap_content"-->
-<!--                          android:layout_marginBottom="20dp"-->
-<!--                          android:backgroundTint="@color/white"-->
-<!--                          app:cardCornerRadius="10dp"-->
-<!--                          app:cardElevation="0dp">-->
-
-<!--                          <LinearLayout-->
-<!--                              android:layout_width="match_parent"-->
-<!--                              android:layout_height="wrap_content"-->
-<!--                              android:layout_marginVertical="10dp"-->
-<!--                              android:orientation="horizontal">-->
-
-<!--                              <TextView-->
-<!--                                  android:layout_width="0dp"-->
-<!--                                  android:layout_height="wrap_content"-->
-<!--                                  android:layout_gravity="center"-->
-<!--                                  android:layout_weight="9"-->
-<!--                                  android:paddingStart="20dp"-->
-<!--                                  android:text="Santa Maria"-->
-<!--                                  android:textColor="@color/dark_blue"-->
-<!--                                  android:textSize="20dp"-->
-<!--                                  android:textStyle="bold" />-->
-
-<!--                              <ImageView-->
-<!--                                  android:layout_width="40dp"-->
-<!--                                  android:layout_height="40dp"-->
-<!--                                  android:src="@drawable/go" />-->
-
-<!--                          </LinearLayout>-->
-
-<!--                      </androidx.cardview.widget.CardView>-->
-
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/maps0"
                 android:layout_width="match_parent"
-                android:layout_height="550dp"
+                android:layout_height="match_parent"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 tools:layout="@layout/map"
                 />
@@ -245,6 +46,19 @@
        </LinearLayout>
 
    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/evacNav"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/tab_bg"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/tab_selector"
+        app:itemRippleColor="@null"
+        app:itemTextColor="@drawable/tab_selector"
+        app:labelVisibilityMode="labeled"
+        app:menu="@layout/evac_menu" />
 
 </RelativeLayout>
 

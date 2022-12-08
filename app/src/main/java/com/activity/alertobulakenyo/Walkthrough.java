@@ -91,6 +91,8 @@ public class Walkthrough extends AppCompatActivity {
     public void onBackPressed()
     {
         super.onBackPressed();
+        Intent intent = new Intent(Walkthrough.this, GetStarted.class);
+        startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }

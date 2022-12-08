@@ -74,7 +74,7 @@ public class HotMarilao extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e(TAG, "onFailure: BOCAUE HOTLINE FAILED" + e.getMessage());
+                        Log.e(TAG, "onFailure: MARILAO HOTLINE FAILED" + e.getMessage());
                     }
                 });
 

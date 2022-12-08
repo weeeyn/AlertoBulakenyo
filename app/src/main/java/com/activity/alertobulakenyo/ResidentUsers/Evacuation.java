@@ -10,11 +10,13 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -37,6 +39,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -47,7 +50,7 @@ import java.util.List;
 
 public class Evacuation extends AppCompatActivity implements OnMapReadyCallback {
 
-    CardView card_Boc, card_Mar, card_Mey, card_SJDM, card_SM;
+    BottomNavigationView evacNav;
 
     //var's for google map
     GoogleMap map;
@@ -65,6 +68,7 @@ public class Evacuation extends AppCompatActivity implements OnMapReadyCallback 
     Button getClosest;
     float min;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,70 +80,29 @@ public class Evacuation extends AppCompatActivity implements OnMapReadyCallback 
 
         setContentView(R.layout.activity_evacuation);
 
+        evacNav = (BottomNavigationView) findViewById (R.id.evacNav);
 
-        /*  hidden temporarily ... remove comment if needed ...
-        card_Boc = (CardView) findViewById (R.id.card_Boc);
-        card_Mar = (CardView) findViewById (R.id.card_Mar);
-        card_Mey = (CardView) findViewById (R.id.card_Mey);
-        card_SJDM = (CardView) findViewById (R.id.card_SJDM);
-        card_SM = (CardView) findViewById (R.id.card_SM);
+        // Set Home selected
+        evacNav.setSelectedItemId(R.id.map);
 
-        card_Boc.setOnClickListener(new View.OnClickListener() {
+        // Perform item selected listener
+        evacNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                Intent intent = new Intent(getApplicationContext(), EvacBocaue.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
+                switch(item.getItemId())
+                {
+                    case R.id.map:
+                        return true;
+
+                    case R.id.evac:
+                        startActivity(new Intent (getApplicationContext(), EvacList.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
             }
         });
-
-        card_Mar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getApplicationContext(), EvacMarilao.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        card_Mey.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getApplicationContext(), EvacMeycauayan.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        card_SJDM.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getApplicationContext(), EvacSJDM.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        card_SM.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getApplicationContext(), EvacStaMaria.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        */
 
         //call fragment and inflate map
         SupportMapFragment supportMapFragment=(SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.maps0);

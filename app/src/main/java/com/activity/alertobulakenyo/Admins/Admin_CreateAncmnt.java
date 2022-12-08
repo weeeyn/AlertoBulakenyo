@@ -75,7 +75,7 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.getString("adminCity").equals("Bacaue")) {
+                        if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
 
                             String title = etAncmntTitle.getText().toString();
                             String body = etAncmnt.getText().toString();
@@ -88,7 +88,7 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
                             Map<String, Object> anncmnt = new HashMap<>();
                             anncmnt.put("title", title);
                             anncmnt.put("body", body);
-                            anncmnt.put("anncmntCity", "Bacaue");
+                            anncmnt.put("anncmntCity", "Bocaue");
                             anncmnt.put("anncmntDate", anncmntDate);
                             anncmnt.put("anncmntDateTime", anncmntDateTime);
 
@@ -100,6 +100,8 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
                                             Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -137,6 +139,8 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
                                             Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -174,6 +178,8 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
                                             Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -211,6 +217,8 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
                                             Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
@@ -248,6 +256,8 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
                                             Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })

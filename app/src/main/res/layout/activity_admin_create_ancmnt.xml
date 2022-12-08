@@ -105,7 +105,7 @@
                 <EditText
                     android:id="@+id/etAncmnt"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="wrap_content"
                     android:autoSizeTextType="uniform"
                     android:inputType="textMultiLine"
                     android:textColor="#003366"

@@ -72,7 +72,7 @@ public class HotSJDM extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e("TAG", "onFailure: BOCAUE HOTLINE FAILED" + e.getMessage());
+                        Log.e("TAG", "onFailure: SJDM HOTLINE FAILED" + e.getMessage());
                     }
                 });
     }

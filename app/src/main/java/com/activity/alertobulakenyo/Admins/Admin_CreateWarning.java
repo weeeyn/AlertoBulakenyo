@@ -505,7 +505,7 @@ public class Admin_CreateWarning extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.getString("adminCity").equals("Bacaue")) {
+                        if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
 
                             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm aa - MMM dd, yyy", Locale.getDefault());
                             SimpleDateFormat sdf2 = new SimpleDateFormat("MM-dd-yy", Locale.getDefault());
@@ -533,16 +533,18 @@ public class Admin_CreateWarning extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void unused) {
-                                            Toast.makeText(Admin_CreateWarning.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Admin_CreateWarning.this, "Warning Posted!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Disaster.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(Admin_CreateWarning.this, "Warning Posted", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Admin_CreateWarning.this, "Warning Failed to Post.", Toast.LENGTH_SHORT).show();
                                             Log.e("TAG", "onFailure: WARNING POST FAIL" + e.getMessage() );
                                         }
                                     });
@@ -575,16 +577,18 @@ public class Admin_CreateWarning extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void unused) {
-                                            Toast.makeText(Admin_CreateWarning.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Admin_CreateWarning.this, "Warning Posted!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Disaster.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(Admin_CreateWarning.this, "Warning Posted", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Admin_CreateWarning.this, "Warning Failed to Post.", Toast.LENGTH_SHORT).show();
                                             Log.e("TAG", "onFailure: WARNING POST FAIL" + e.getMessage() );
                                         }
                                     });
@@ -617,16 +621,18 @@ public class Admin_CreateWarning extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void unused) {
-                                            Toast.makeText(Admin_CreateWarning.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Admin_CreateWarning.this, "Warning Posted!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Disaster.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(Admin_CreateWarning.this, "Warning Posted", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Admin_CreateWarning.this, "Warning Failed to Post", Toast.LENGTH_SHORT).show();
                                             Log.e("TAG", "onFailure: WARNING POST FAIL" + e.getMessage() );
                                         }
                                     });
@@ -659,16 +665,18 @@ public class Admin_CreateWarning extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void unused) {
-                                            Toast.makeText(Admin_CreateWarning.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Admin_CreateWarning.this, "Warning Posted!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Disaster.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(Admin_CreateWarning.this, "Warning Posted", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Admin_CreateWarning.this, "Warning Failed to Post.", Toast.LENGTH_SHORT).show();
                                             Log.e("TAG", "onFailure: WARNING POST FAIL" + e.getMessage() );
                                         }
                                     });
@@ -701,16 +709,18 @@ public class Admin_CreateWarning extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void unused) {
-                                            Toast.makeText(Admin_CreateWarning.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Admin_CreateWarning.this, "Warning Posted!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getApplicationContext(), Admin_Disaster.class);
                                             startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,
+                                                    R.anim.slide_out_right);
                                             finish();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(Admin_CreateWarning.this, "Warning Posted", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Admin_CreateWarning.this, "Warning Failed to Post.", Toast.LENGTH_SHORT).show();
                                             Log.e("TAG", "onFailure: WARNING POST FAIL" + e.getMessage() );
                                         }
                                     });

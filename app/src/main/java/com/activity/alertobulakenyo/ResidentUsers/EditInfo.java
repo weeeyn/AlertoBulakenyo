@@ -296,6 +296,8 @@ public class EditInfo extends AppCompatActivity {
                             Toast.makeText(EditInfo.this, "Profile Updated!", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), AccountInfo.class);
                             startActivity(intent);
+                            overridePendingTransition(R.anim.slide_in_left,
+                                    R.anim.slide_out_right);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

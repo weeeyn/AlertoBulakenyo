@@ -30,8 +30,6 @@ import java.util.List;
 
 public class Announcement extends AppCompatActivity {
 
-    CardView cardAncmt;
-    TextView tvCity;
     private RecyclerView rvAncmt;
     private ArrayList<Announcements> announcementArrayList;
     private AnnouncementRVAdapter announcementRVAdapter;
@@ -49,7 +47,6 @@ public class Announcement extends AppCompatActivity {
 
         setContentView(R.layout.activity_announcement);
 
-        cardAncmt = (CardView) findViewById (R.id.cardAncmt);
         rvAncmt = (RecyclerView) findViewById (R.id.rvAncmt);
 
         announcementArrayList = new ArrayList<>();
@@ -57,8 +54,6 @@ public class Announcement extends AppCompatActivity {
         rvAncmt.setLayoutManager(new LinearLayoutManager(this));
         announcementRVAdapter = new AnnouncementRVAdapter(announcementArrayList, this);
         rvAncmt.setAdapter(announcementRVAdapter);
-
-        tvCity = (TextView) findViewById (R.id.tvCity);
 
         fStore.collection("Announcements")
                 .orderBy("anncmntDateTime", Query.Direction.DESCENDING)

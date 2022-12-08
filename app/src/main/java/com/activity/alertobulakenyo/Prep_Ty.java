@@ -29,9 +29,9 @@ public class Prep_Ty extends AppCompatActivity {
 
         video = (VideoView) findViewById (R.id.video);
 
-        media = new MediaController(this);
+        //media = new MediaController(this);
 
-        video.setMediaController(media);
+        //video.setMediaController(media);
         video.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.typhoon_flood));
         video.start();
 
@@ -41,8 +41,8 @@ public class Prep_Ty extends AppCompatActivity {
                 mediaPlayer.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
                     @Override
                     public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
-                        video.setMediaController(media);
-                        media.setAnchorView(video);
+                        //video.setMediaController(media);
+                        //media.setAnchorView(video);
 
                     }
                 });

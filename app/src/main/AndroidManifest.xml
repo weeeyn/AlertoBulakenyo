@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
     <supports-screens
         android:anyDensity="true"
@@ -24,10 +24,7 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AlertoBulakenyo">
-
         <!--
-            
-
              To get one, follow the directions here:
 
                 https://developers.google.com/maps/documentation/android-sdk/get-api-key
@@ -41,50 +38,97 @@
             android:value="AIzaSyAS1Gw7OYkodkrCcYw_HqqEL3JaF-Kzw8k" />
 
         <activity
+            android:name=".Admins.Admin_Prepare"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Admins.Admin_PrepareFA"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Admins.Admin_PrepareFlood"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Admins.Admin_PrepareFire"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Admins.Admin_PrepareSK"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Admins.Admin_PrepareEQ"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Admins.Admin_PrepareLS"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Admins.Admin_PrepareTy"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ResidentUsers.EvacStaMaria"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ResidentUsers.EvacSJDM"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ResidentUsers.EvacMeycauayan"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ResidentUsers.EvacMarilao"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ResidentUsers.EvacBocaue"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admins.Admin_EvacStaMaria"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admins.Admin_EvacSJDM"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admins.Admin_EvacMeycauayan"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admins.Admin_EvacMarilao"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admins.Admin_EvacBocaue"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admins.Admin_DisasterTy"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admins.Admin_DisasterLS"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admins.Admin_DisasterFlood"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admins.Admin_DisasterFire"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admins.Admin_DisasterEQ"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Admins.Admin_DisasterTyInfo"
             android:exported="false"

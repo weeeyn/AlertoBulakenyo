@@ -63,7 +63,7 @@ public class Admin_DisasterLS extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.getString("adminCity").equals("Bacaue")) {
+                        if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
 
                             fStore.collection("Warning")
                                     .whereEqualTo("body", "Bocaue")
@@ -88,7 +88,7 @@ public class Admin_DisasterLS extends AppCompatActivity {
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
+                                            Log.e(TAG, "onFailure: LANDSLIDE WARNING FAILED" + e.getMessage());
                                         }
                                     });
                         }
@@ -117,7 +117,7 @@ public class Admin_DisasterLS extends AppCompatActivity {
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
+                                            Log.e(TAG, "onFailure: LANDSLIDE WARNING FAILED" + e.getMessage());
                                         }
                                     });
                         }
@@ -146,7 +146,7 @@ public class Admin_DisasterLS extends AppCompatActivity {
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
+                                            Log.e(TAG, "onFailure: LANDSLIDE WARNING FAILED" + e.getMessage());
                                         }
                                     });
                         }
@@ -175,7 +175,7 @@ public class Admin_DisasterLS extends AppCompatActivity {
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
+                                            Log.e(TAG, "onFailure: LANDSLIDE WARNING FAILED" + e.getMessage());
                                         }
                                     });
                         }
@@ -204,7 +204,7 @@ public class Admin_DisasterLS extends AppCompatActivity {
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-                                            Log.e(TAG, "onFailure: EQ WARNING FAILED" + e.getMessage());
+                                            Log.e(TAG, "onFailure: LANDSLIDE WARNING FAILED" + e.getMessage());
                                         }
                                     });
                         }
