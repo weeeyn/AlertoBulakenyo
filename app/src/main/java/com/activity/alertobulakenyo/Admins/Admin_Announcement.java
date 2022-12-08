@@ -19,9 +19,13 @@ import android.widget.Toast;
 
 import com.activity.alertobulakenyo.Adapters.Admin_AnnouncementRVAdapter;
 import com.activity.alertobulakenyo.ObjectClasses.Announcements;
+import com.activity.alertobulakenyo.ObjectClasses.WarningHolder;
 import com.activity.alertobulakenyo.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -38,8 +42,10 @@ public class Admin_Announcement extends AppCompatActivity {
     private ArrayList<Announcements> announcementsArrayList;
     private Admin_AnnouncementRVAdapter admin_announcementRVAdapter;
 
+    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-
+    private FirebaseUser user = fAuth.getCurrentUser();
+    private String userId = user.getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,30 +67,151 @@ public class Admin_Announcement extends AppCompatActivity {
         admin_announcementRVAdapter = new Admin_AnnouncementRVAdapter(announcementsArrayList, this);
         rvAncmt.setAdapter(admin_announcementRVAdapter);
 
-        fStore.collection("Announcements")
-                .orderBy("anncmntDateTime", Query.Direction.DESCENDING)
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        DocumentReference df = fStore.collection("UserData").document(userId);
+        df.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        if(!queryDocumentSnapshots.isEmpty()) {
-                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
-                            for (DocumentSnapshot d : list) {
-                                Announcements p = d.toObject(Announcements.class);
-                                p.setId(d.getId());
-                                announcementsArrayList.add(p);
-                            }
-                            admin_announcementRVAdapter.notifyDataSetChanged();
-                        } else {
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
 
-                            Toast.makeText(Admin_Announcement.this, "No Announcements Posted", Toast.LENGTH_SHORT).show();
+                            fStore.collection("Announcements")
+                                    .whereEqualTo("anncmntCity", "Bocaue")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                            if(!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    Announcements p = d.toObject(Announcements.class);
+                                                    p.setId(d.getId());
+                                                    announcementsArrayList.add(p);
+                                                }
+                                                admin_announcementRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Announcement.this, "No Announcements Posted", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e(TAG, "ANNOUNCEMENTS FAIL: " + e.getMessage());
+                                        }
+                                    });
+
+                        } else if(documentSnapshot.getString("adminCity").equals("Marilao")) {
+
+                            fStore.collection("Announcements")
+                                    .whereEqualTo("anncmntCity", "Marilao")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                            if(!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    Announcements p = d.toObject(Announcements.class);
+                                                    p.setId(d.getId());
+                                                    announcementsArrayList.add(p);
+                                                }
+                                                admin_announcementRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Announcement.this, "No Announcements Posted", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e(TAG, "ANNOUNCEMENTS FAIL: " + e.getMessage());
+                                        }
+                                    });
+
+                        } else if(documentSnapshot.getString("adminCity").equals("Meycauayan")) {
+
+                            fStore.collection("Announcements")
+                                    .whereEqualTo("anncmntCity", "Meycauayan")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                            if(!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    Announcements p = d.toObject(Announcements.class);
+                                                    p.setId(d.getId());
+                                                    announcementsArrayList.add(p);
+                                                }
+                                                admin_announcementRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Announcement.this, "No Announcements Posted", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e(TAG, "ANNOUNCEMENTS FAIL: " + e.getMessage());
+                                        }
+                                    });
                         }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.e(TAG, "ANNOUNCEMENTS FAIL: " + e.getMessage());
+                        else if(documentSnapshot.getString("adminCity").equals("San Jose del Monte")) {
+
+                            fStore.collection("Announcements")
+                                    .whereEqualTo("anncmntCity", "San Jose del Monte")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                            if(!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    Announcements p = d.toObject(Announcements.class);
+                                                    p.setId(d.getId());
+                                                    announcementsArrayList.add(p);
+                                                }
+                                                admin_announcementRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Announcement.this, "No Announcements Posted", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e(TAG, "ANNOUNCEMENTS FAIL: " + e.getMessage());
+                                        }
+                                    });
+                        }
+                        else if(documentSnapshot.getString("adminCity").equals("Santa Maria")) {
+
+                            fStore.collection("Announcements")
+                                    .whereEqualTo("anncmntCity", "Santa Maria")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                            if(!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    Announcements p = d.toObject(Announcements.class);
+                                                    p.setId(d.getId());
+                                                    announcementsArrayList.add(p);
+                                                }
+                                                admin_announcementRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Announcement.this, "No Announcements Posted", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e(TAG, "ANNOUNCEMENTS FAIL: " + e.getMessage());
+                                        }
+                                    });
+                        }
                     }
                 });
 
@@ -98,7 +225,6 @@ public class Admin_Announcement extends AppCompatActivity {
                         R.anim.slide_out_left);
             }
         });
-
 
     }
 

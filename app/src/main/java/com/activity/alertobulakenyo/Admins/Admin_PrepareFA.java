@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.activity.alertobulakenyo.Prepare;
 import com.activity.alertobulakenyo.R;
 
 public class Admin_PrepareFA extends AppCompatActivity {

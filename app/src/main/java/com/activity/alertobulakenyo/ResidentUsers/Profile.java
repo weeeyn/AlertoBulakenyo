@@ -103,7 +103,7 @@ public class Profile extends AppCompatActivity {
                     if (document.exists()) {
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                         tvFullname.setText(document.getString("resFname") + " " + document.getString("resLname"));
-                        tvAddress.setText(document.getString("resBrgy") + ", " + document.getString("resCity"));
+                        tvAddress.setText("Brgy. " + document.getString("resBrgy") + ", " + document.getString("resCity"));
                     }
                     else {
                         Log.d(TAG, "No such document");

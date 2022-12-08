@@ -36,7 +36,7 @@ public class EditInfo extends AppCompatActivity {
 
     Button btnSave;
     TextInputLayout tilCity, tilBrgy;
-    EditText etFname, etLname, etUsername, etEmail, etCon, etHouse;
+    EditText etFname, etLname, etUsername, etCon, etHouse;
     AutoCompleteTextView actBrgy, actCity;
     ProgressBar progressBar;
 
@@ -66,7 +66,6 @@ public class EditInfo extends AppCompatActivity {
         etFname = (EditText) findViewById (R.id.etFname);
         etLname = (EditText) findViewById (R.id.etLname);
         etUsername = (EditText) findViewById (R.id.etUsername);
-        etEmail= (EditText) findViewById (R.id.etEmail);
         etCon = (EditText) findViewById (R.id.etCon);
         etHouse = (EditText) findViewById (R.id.etHouse);
 
@@ -201,7 +200,6 @@ public class EditInfo extends AppCompatActivity {
         String editFname = etFname.getText().toString();
         String editLname = etLname.getText().toString();
         String editUsername = etUsername.getText().toString();
-        String editEmail = etEmail.getText().toString();
         String editContact = etCon.getText().toString();
         String editHouse = etHouse.getText().toString();
         String editBrgy = actBrgy.getText().toString();
@@ -255,19 +253,7 @@ public class EditInfo extends AppCompatActivity {
             actBrgy.setError("Barangay Address can't be empty!");
             actBrgy.requestFocus();
             return;
-        } else if (editEmail.isEmpty()) {
-            progressBar.setVisibility(View.GONE);
-            Toast.makeText(getApplicationContext(), "Please enter your Email.", Toast.LENGTH_SHORT).show();
-            etEmail.setError("Email can't be empty!");
-            etEmail.requestFocus();
-            return;
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(editEmail).matches()) {
-            progressBar.setVisibility(View.GONE);
-            Toast.makeText(getApplicationContext(), "Please enter a valid Email Address.", Toast.LENGTH_SHORT).show();
-            etEmail.setError("Invalid Email!");
-            etEmail.requestFocus();
-            return;
-        } else {
+        }  else {
 
             final DocumentReference sDoc = fStore.collection("UserData").document(userId);
 
@@ -279,7 +265,6 @@ public class EditInfo extends AppCompatActivity {
                     transaction.update(sDoc, "resFname", editFname);
                     transaction.update(sDoc, "resLname", editLname);
                     transaction.update(sDoc, "resUsername", editUsername);
-                    transaction.update(sDoc, "resEmail", editEmail);
                     transaction.update(sDoc, "resContact", editContact);
                     transaction.update(sDoc, "resHouse", editHouse);
                     transaction.update(sDoc, "resBrgy", editBrgy);
@@ -326,7 +311,6 @@ public class EditInfo extends AppCompatActivity {
                             String fNameResult = task.getResult().getString("resFname");
                             String lNameResult = task.getResult().getString("resLname");
                             String usernameResult = task.getResult().getString("resUsername");
-                            String emailResult = task.getResult().getString("resEmail");
                             String contactResult = task.getResult().getString("resContact");
                             String houseAddResult = task.getResult().getString("resHouse");
                             String brgyResult = task.getResult().getString("resBrgy");
@@ -334,7 +318,6 @@ public class EditInfo extends AppCompatActivity {
                             etFname.setText(fNameResult);
                             etLname.setText(lNameResult);
                             etUsername.setText(usernameResult);
-                            etEmail.setText(emailResult);
                             etCon.setText(contactResult);
                             etHouse.setText(houseAddResult);
                             actBrgy.setText(brgyResult);

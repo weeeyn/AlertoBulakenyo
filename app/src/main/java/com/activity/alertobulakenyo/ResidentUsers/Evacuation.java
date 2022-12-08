@@ -154,7 +154,7 @@ public class Evacuation extends AppCompatActivity implements OnMapReadyCallback 
                     longC= Double.valueOf(String.valueOf(evacParams.getEvacuationLongitude()));
 
                     LatLng latLng=new LatLng(latC,longC);
-                    map.addMarker(new MarkerOptions().position(latLng).title(evacParams.getEvacuationName()));
+                    map.addMarker(new MarkerOptions().position(latLng).title(evacParams.getEvacuationAddress()));
 
                     DeltaLocation.setLatitude(latLng.latitude);
                     DeltaLocation.setLongitude(latLng.longitude);

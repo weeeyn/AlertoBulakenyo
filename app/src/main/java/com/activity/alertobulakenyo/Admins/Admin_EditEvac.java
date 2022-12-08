@@ -51,14 +51,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.Format;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import java.util.Objects;
 
 public class Admin_EditEvac extends AppCompatActivity {
 
-    TextInputLayout tilCity, tilBrgy;
+    TextInputLayout tilBrgy;
     EditText etEvacName, etEvacLoc, etLong, etLat;
-    AutoCompleteTextView actCity, actBrgy;
+    AutoCompleteTextView actBrgy;
     Button btnSave, btnDelete;
 
     private String evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy;
@@ -81,7 +84,6 @@ public class Admin_EditEvac extends AppCompatActivity {
 
         EvacuationHolder evacuationHolder = (EvacuationHolder) getIntent().getSerializableExtra("evac");
 
-        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
         tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
 
         etEvacName = (EditText) findViewById (R.id.etEvacName);
@@ -89,20 +91,16 @@ public class Admin_EditEvac extends AppCompatActivity {
         etLong = (EditText) findViewById (R.id.etLong);
         etLat = (EditText) findViewById (R.id.etLat);
 
-        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
         actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
 
         etEvacName.setText(evacuationHolder.getEvacuationName());
         etEvacLoc.setText(evacuationHolder.getEvacuationAddress());
         etLong.setText(evacuationHolder.getEvacuationLongitude());
         etLat.setText(evacuationHolder.getEvacuationLatitude());
-        actCity.setText(evacuationHolder.getEvacuationCity());
         actBrgy.setText(evacuationHolder.getEvacuationBrgy());
 
         btnSave = (Button) findViewById (R.id.btnSave);
         btnDelete = (Button) findViewById(R.id.btnDelete);
-
-        String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
 
         String [] brgyBoc = {"Antipona", "Bagumbayan", "Bambang", "Batia", "Biñang 1st", "Biñang 2nd",
                 "Bolacan", "Bundukan", "Bunlo", "Caingin", "Duhat", "Igulot", "Lolomboy", "Poblacion",
@@ -135,149 +133,155 @@ public class Admin_EditEvac extends AppCompatActivity {
                 "Manggahan", "Parada", "Poblacion", "Pulong Buhangin", "San Gabriel", "San Jose Patag",
                 "San Vicente", "Santa Clara", "Santa Cruz", "Silangan", "Tabing Bakod", "Tumana"};
 
+        DocumentReference df = fStore.collection("UserData").document(userId);
+        df.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
 
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, city);
-        actCity.setDropDownBackgroundResource(R.color.white);
-        actCity.setAdapter(cityAdapter);
+                            ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgyBoc);
+                            actBrgy.setDropDownBackgroundResource(R.color.white);
+                            actBrgy.setAdapter(brgyAdapter);
 
-        ((AutoCompleteTextView)tilCity.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedCity = cityAdapter.getItem(position);
+                            ((AutoCompleteTextView) Objects.requireNonNull(tilBrgy.getEditText())).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    String selectedBrgy = brgyAdapter.getItem(position);
+                                }
+                            });
 
-                if (selectedCity == "Bocaue")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgyBoc);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
+                            btnSave.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
 
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
+                                    evacuationName = etEvacName.getText().toString();
+                                    evacuationAddress = etEvacLoc.getText().toString();
+                                    evacuationLongitude = etLong.getText().toString();
+                                    evacuationLatitude = etLat.getText().toString();
+                                    evacuationCity = "Bocaue";
+                                    evacuationBrgy = actBrgy.getText().toString();
+
+                                    editEvacuation(evacuationHolder, evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy);
+                                }
+                            });
+
                         }
-                    });
-                }
-                else if (selectedCity == "Marilao")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgyMar);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
+                        else if(documentSnapshot.getString("adminCity").equals("Marilao")) {
 
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
+                            ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgyMar);
+                            actBrgy.setDropDownBackgroundResource(R.color.white);
+                            actBrgy.setAdapter(brgyAdapter);
+
+                            ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    String selectedBrgy = brgyAdapter.getItem(position);
+                                }
+                            });
+
+                            btnSave.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                    evacuationName = etEvacName.getText().toString();
+                                    evacuationAddress = etEvacLoc.getText().toString();
+                                    evacuationLongitude = etLong.getText().toString();
+                                    evacuationLatitude = etLat.getText().toString();
+                                    evacuationCity = "Marilao";
+                                    evacuationBrgy = actBrgy.getText().toString();
+
+                                    editEvacuation(evacuationHolder, evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy);
+                                }
+                            });
                         }
-                    });
-                }
-                else if (selectedCity == "Meycauayan")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgyMey);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
+                        else if(documentSnapshot.getString("adminCity").equals("Meycauayan")) {
 
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
+
+                            ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgyMey);
+                            actBrgy.setDropDownBackgroundResource(R.color.white);
+                            actBrgy.setAdapter(brgyAdapter);
+
+                            ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    String selectedBrgy = brgyAdapter.getItem(position);
+                                }
+                            });
+
+                            btnSave.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                    evacuationName = etEvacName.getText().toString();
+                                    evacuationAddress = etEvacLoc.getText().toString();
+                                    evacuationLongitude = etLong.getText().toString();
+                                    evacuationLatitude = etLat.getText().toString();
+                                    evacuationCity = "Meycauayan";
+                                    evacuationBrgy = actBrgy.getText().toString();
+
+                                    editEvacuation(evacuationHolder, evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy);
+                                }
+                            });
                         }
-                    });
-                }
-                else if (selectedCity == "San Jose del Monte")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgySJDM);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
+                        else if(documentSnapshot.getString("adminCity").equals("San Jose del Monte")) {
 
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
+                            ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgySJDM);
+                            actBrgy.setDropDownBackgroundResource(R.color.white);
+                            actBrgy.setAdapter(brgyAdapter);
+
+                            ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    String selectedBrgy = brgyAdapter.getItem(position);
+                                }
+                            });
+
+                            btnSave.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                    evacuationName = etEvacName.getText().toString();
+                                    evacuationAddress = etEvacLoc.getText().toString();
+                                    evacuationLongitude = etLong.getText().toString();
+                                    evacuationLatitude = etLat.getText().toString();
+                                    evacuationCity = "San Jose del Monte";
+                                    evacuationBrgy = actBrgy.getText().toString();
+
+                                    editEvacuation(evacuationHolder, evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy);
+                                }
+                            });
                         }
-                    });
-                }
-                else if (selectedCity == "Santa Maria")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgySanMa);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
+                        else if(documentSnapshot.getString("adminCity").equals("Santa Maria")) {
 
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
+                            ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_EditEvac.this, R.layout.dropdown_items, brgySanMa);
+                            actBrgy.setDropDownBackgroundResource(R.color.white);
+                            actBrgy.setAdapter(brgyAdapter);
+
+                            ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    String selectedBrgy = brgyAdapter.getItem(position);
+                                }
+                            });
+
+                            btnSave.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+
+                                    evacuationName = etEvacName.getText().toString();
+                                    evacuationAddress = etEvacLoc.getText().toString();
+                                    evacuationLongitude = etLong.getText().toString();
+                                    evacuationLatitude = etLat.getText().toString();
+                                    evacuationCity = "Santa Maria";
+                                    evacuationBrgy = actBrgy.getText().toString();
+
+                                    editEvacuation(evacuationHolder, evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy);
+                                }
+                            });
                         }
-                    });
-                }
-            }
-        });
-
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Check for blanks
-                if(etEvacName.getText().length()<1){
-                    etEvacName.setError("Field is required");
-                    etEvacName.requestFocus();
-                    return;
-                }
-                if(etEvacName.getText().toString().isEmpty()){
-                    etEvacName.setError("Field is required");
-                    etEvacName.requestFocus();
-                    return;
-                }
-                if (etEvacLoc.getText().length()<1){
-                    etEvacLoc.setError("Field is required");
-                    etEvacLoc.requestFocus();
-                    return;
-                }
-                if (etEvacLoc.getText().toString().isEmpty()){
-                    etEvacLoc.setError("Field is required");
-                    etEvacLoc.requestFocus();
-                    return;
-                }
-                if (etLong.getText().length()<1){
-                    etLong.setError("Field is required");
-                    etLong.requestFocus();
-                    return;
-                }
-                if (etLong.getText().toString().isEmpty()){
-                    etLong.setError("Field is required");
-                    etLong.requestFocus();
-                    return;
-                }
-                if (etLat.getText().length()<1){
-                    etLat.setError("Field is required");
-                    etLat.requestFocus();
-                    return;
-                }
-                if (etLat.getText().toString().isEmpty()){
-                    etLat.setError("Field is required");
-                    etLat.requestFocus();
-                    return;
-                }
-                if (actBrgy.getText().toString().isEmpty()){
-                    actBrgy.setError("Field is required");
-                    actBrgy.requestFocus();
-                    return;
-                }
-                if (actBrgy.getText().length()<1){
-                    actBrgy.setError("Field is required");
-                    actBrgy.requestFocus();
-                    return;
-                }
-                //end of validation
-                evacuationName = etEvacName.getText().toString();
-                evacuationAddress = etEvacLoc.getText().toString();
-                evacuationLongitude = etLong.getText().toString();
-                evacuationLatitude = etLat.getText().toString();
-                evacuationCity = actCity.getText().toString();
-                evacuationBrgy = actBrgy.getText().toString();
-
-                editEvacuation(evacuationHolder, evacuationName, evacuationAddress, evacuationLongitude, evacuationLatitude, evacuationCity, evacuationBrgy);
-            }
-        });
+                    }
+                });
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -333,28 +337,6 @@ public class Admin_EditEvac extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.e("TAG", "onFailure: " + e.getMessage());
-                    }
-                });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        DocumentReference df = fStore.collection("UserData").document(userId);
-        df.get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-
-                        if(task.getResult().exists()) {
-                            String cityRes = task.getResult().getString("adminCity");
-
-                            actCity.setText(cityRes);
-                        }
-                        else {
-                            Toast.makeText(Admin_EditEvac.this, "User do no Exist.", Toast.LENGTH_SHORT).show();
-                        }
                     }
                 });
     }

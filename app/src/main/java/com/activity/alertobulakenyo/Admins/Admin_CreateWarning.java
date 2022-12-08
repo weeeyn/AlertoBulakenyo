@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,8 +37,8 @@ import java.util.Map;
 
 public class Admin_CreateWarning extends AppCompatActivity {
 
-    TextInputLayout tilType, tilCity, tilBrgy, tilMag, tilFire, tilRain, tilFlood, tilTy, tilSig, tilIns;
-    AutoCompleteTextView actType, actCity, actBrgy, actFire, actRain, actFlood, actSig;
+    TextInputLayout tilType, tilMag, tilFire, tilRain, tilFlood, tilTy, tilSig, tilIns;
+    AutoCompleteTextView actType, actFire, actRain, actFlood, actSig;
     EditText etMag, etTy, etIns;
     Dialog dialog;
     Button btnPost;
@@ -60,8 +61,6 @@ public class Admin_CreateWarning extends AppCompatActivity {
         setContentView(R.layout.activity_admin_create_warning);
 
         tilType = (TextInputLayout) findViewById (R.id.tilType);
-        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
-        tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
         tilMag = (TextInputLayout) findViewById (R.id.tilMag);
         tilFire = (TextInputLayout) findViewById (R.id.tilFire);
         tilRain = (TextInputLayout) findViewById (R.id.tilRain);
@@ -71,8 +70,6 @@ public class Admin_CreateWarning extends AppCompatActivity {
         tilIns = (TextInputLayout) findViewById (R.id.tilIns);
 
         actType = (AutoCompleteTextView) findViewById (R.id.actType);
-        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
-        actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
         actFire = (AutoCompleteTextView) findViewById (R.id.actFire);
         actRain = (AutoCompleteTextView) findViewById (R.id.actRain);
         actFlood = (AutoCompleteTextView) findViewById (R.id.actFlood);
@@ -89,45 +86,9 @@ public class Admin_CreateWarning extends AppCompatActivity {
 
         String [] type = {"EARTHQUAKE", "FIRE", "FLOOD", "LANDSLIDE", "TYPHOON"};
 
-        String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
+        String [] fire = {"First Alarm", "Second Alarm", "Third Alarm", "Fourth Alarm", "Fifth Alarm"};
 
-        String [] brgyBoc = {"ALL", "Antipona", "Bagumbayan", "Bambang", "Batia", "Biñang 1st",
-                "Biñang 2nd", "Bolacan", "Bundukan", "Bunlo", "Caingin", "Duhat", "Igulot",
-                "Lolomboy", "Poblacion", "Sulucan", "Taal", "Tambobong", "Turo", "Wakas"};
-
-        String [] brgyMar = {"ALL", "Abangan Norte", "Abangan Sur", "Ibayo", "Lambakin", "Lias",
-                "Loma de Gato", "Nagbalon", "Patubig", "Poblacion I", "Poblacion II", "Prenza I",
-                "Prenza II", "Santa Rosa I", "Santa Rosa II", "Saog", "Tabing Ilog"};
-
-        String [] brgyMey = {"ALL", "Bagbaguin", "Bahay Pare", "Bancal", "Banga", "Bayugo", "Caingin",
-                "Calvario", "Camalig", "Hulo", "Iba", "Langka", "Lawa", "Libtong", "Liputan", "Longos",
-                "Malhacan", "Pajo", "Pandayan", "Pantoc", "Perez", "Poblacion", "Saluysoy",
-                "Saint Francis (Gasak)", "Tugatog", "Ubihan", "Zamora"};
-
-        String [] brgySJDM = {"ALL", "Assumption", "Bagong Buhay I", "Bagong Buhay II", "Bagong Buhay III",
-                "Citrus", "Ciudad Real", "Dulong Bayan", "Fatima I", "Fatima II", "Fatima III",
-                "Fatima IV", "Fatima V", "Francisco Homes - Guijo", "Francisco Homes - Mulawin",
-                "Francisco Homes - Narra", "Francisco Homes - Yakal", "Gaya-Gaya", "Graceville",
-                "Gumaoc - Central", "Gumaoc - East", "Gumaoc - West", "Kaybanban", "Kaypian",
-                "Lawang Pari", "Maharlika", "Minuyan I", "Minuyan II", "Minuyan III", "Minuyan IV",
-                "Minuyan Proper", "Minuyan V", "Muzon", "Paradise III", "Poblacion", "Poblacion I",
-                "San Isidro", "San Manuel", "San Martin I", "San Martin II", "San Martin III",
-                "San Martin IV", "San Pedro", "San Rafael I", "San Rafael II", "San Rafael III",
-                "San Rafael IV", "San Rafael V", "San Roque", "Santa Cruz I", "Santa Cruz II",
-                "Santa Cruz III", "Santa Cruz IV", "Santa Cruz V", "Santo Cristo", "Santo Niño I",
-                "Santo Niño II", "Sapang Palay Proper", "St. Martin de Porres", "Tungkong Mangga"};
-
-        String [] brgySanMa = {"ALL", "Bagbaguin", "Balasing", "Buenavista", "Bulac", "Camangyanan",
-                "Catmon", "Cay Pombo", "Caysio", "Guyong", "Lalakhan", "Mag-asawang Sapa",
-                "Mahabang Parang", "Manggahan", "Parada", "Poblacion", "Pulong Buhangin", "San Gabriel",
-                "San Jose Patag", "San Vicente", "Santa Clara", "Santa Cruz", "Silangan",
-                "Tabing Bakod", "Tumana"};
-
-        String [] fire = {"First Alarm", "Second Alarm", "Third Alarm", "Fourth Alarm", "Fifth Alarm",
-                "Task Force Alpha", "Task Force Bravo", "Task Force Charlie", "Task Force Delta",
-                "General Alarm", "Under Control", "Fireout"};
-
-        String [] rain = {"Yellow Warning", "Orange Warning", "Red Warning"};
+        String [] rain = {"Yellow Rainfall Warning", "Orange Rainfaill Warning", "Red Raindfall Warning"};
 
         String [] flood = {"Yellow Warning", "Orange Warning", "Red Warning"};
 
@@ -151,9 +112,8 @@ public class Admin_CreateWarning extends AppCompatActivity {
                     tilTy.setVisibility(View.GONE);
                     tilSig.setVisibility(View.GONE);
 
-                    // palitawin yung instructions pag nakapili na nung level - magset text lang
-                    tilIns.setVisibility(View.VISIBLE);
-
+                        tilIns.setVisibility(View.VISIBLE);
+                        etIns.setText("Isang Magnitude *5.7* na lindol ang naganap sa *San Jose del Monte, Bulacan* kaning *1:15 PM.* Aftershocks ay inaasahan. Pinaaalalahan ang lahat na mag-ingat.");
                 }
                 else if (selType == "FIRE")
                 {
@@ -178,84 +138,31 @@ public class Admin_CreateWarning extends AppCompatActivity {
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
+                                etIns.setText("Kasalukuyang nakasailalim sa FIRST ALARM ang sunog na nangyayari sa *Brgy. Tungkong Managa, Lungsod ng San Jose del Monte.* Patuloy ang mga bumbero sa pag-apula sa sunog. Ang mga tao sa kalapit-bahay ay pansamantalang pinalilikas. Manatiling alerto, at ang lahat ay pinag-iingat.");
                             }
                             else if (selFire == "Second Alarm")
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
-
+                                etIns.setText("Kasalukuyang nakasailalim sa SECOND ALARM ang sunog na nangyayari sa *Brgy. Tungkong Managa, Lungsod ng San Jose del Monte.* Patuloy ang mga bumbero sa pag-apula sa sunog. Ang mga tao sa kalapit-bahay ay pansamantalang pinalilikas. Manatiling alerto, at ang lahat ay pinag-iingat.");
                             }
                             else if (selFire == "Third Alarm")
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
-
+                                etIns.setText("Kasalukuyang nakasailalim sa THIRD ALARM ang sunog na nangyayari sa *Brgy. Tungkong Managa, Lungsod ng San Jose del Monte.* Patuloy ang mga bumbero sa pag-apula sa sunog. Ang mga tao sa kalapit-bahay ay pansamantalang pinalilikas. Manatiling alerto, at ang lahat ay pinag-iingat.");
                             }
                             else if (selFire == "Fourth Alarm")
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
-
+                                etIns.setText("Kasalukuyang nakasailalim sa FOURTH ALARM ang sunog na nangyayari sa *Brgy. Tungkong Managa, Lungsod ng San Jose del Monte.* Patuloy ang mga bumbero sa pag-apula sa sunog. Ang mga tao sa kalapit-bahay ay pansamantalang pinalilikas. Manatiling alerto, at ang lahat ay pinag-iingat.");
                             }
                             else if (selFire == "Fifth Alarm")
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
-
-                            }
-                            else if (selFire == "Task Force Alpha")
-                            {
-                                // palitawin yung instructions pag nakapili na nung level - magset text lang
-                                tilIns.setVisibility(View.VISIBLE);
-
-
-                            }
-                            else if (selFire == "Task Force Bravo")
-                            {
-                                // palitawin yung instructions pag nakapili na nung level - magset text lang
-                                tilIns.setVisibility(View.VISIBLE);
-
-
-                            }
-                            else if (selFire == "Task Force Charlie")
-                            {
-                                // palitawin yung instructions pag nakapili na nung level - magset text lang
-                                tilIns.setVisibility(View.VISIBLE);
-
-
-                            }
-                            else if (selFire == "Task Force Delta")
-                            {
-                                // palitawin yung instructions pag nakapili na nung level - magset text lang
-                                tilIns.setVisibility(View.VISIBLE);
-
-
-                            }
-                            else if (selFire == "General Alarm")
-                            {
-                                // palitawin yung instructions pag nakapili na nung level - magset text lang
-                                tilIns.setVisibility(View.VISIBLE);
-
-
-                            }
-                            else if (selFire == "Under Control")
-                            {
-                                // palitawin yung instructions pag nakapili na nung level - magset text lang
-                                tilIns.setVisibility(View.VISIBLE);
-
-
-                            }
-                            else if (selFire == "Fireout")
-                            {
-                                // palitawin yung instructions pag nakapili na nung level - magset text lang
-                                tilIns.setVisibility(View.VISIBLE);
-
-
+                                etIns.setText("Kasalukuyang nakasailalim sa FIFTH ALARM ang sunog na nangyayari sa *Brgy. Tungkong Managa, Lungsod ng San Jose del Monte.* Patuloy ang mga bumbero sa pag-apula sa sunog. Ang mga tao sa kalapit-bahay ay pansamantalang pinalilikas. Manatiling alerto, at ang lahat ay pinag-iingat.");
                             }
                         }
                     });
@@ -275,31 +182,11 @@ public class Admin_CreateWarning extends AppCompatActivity {
                     actRain.setAdapter(rainAdapter);
 
                     ((AutoCompleteTextView)tilRain.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @SuppressLint("SetTextI18n")
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             String selRain = rainAdapter.getItem(position);
 
-                            if (selRain == "Yellow Warning")
-                            {
-                                // palitawin yung instructions pag nakapili na nung level - magset text lang
-                                tilIns.setVisibility(View.VISIBLE);
-
-
-                            }
-                            else if (selRain == "Orange Warning")
-                            {
-                                // palitawin yung instructions pag nakapili na nung level - magset text lang
-                                tilIns.setVisibility(View.VISIBLE);
-
-
-                            }
-                            else if (selRain == "Red Warning")
-                            {
-                                // palitawin yung instructions pag nakapili na nung level - magset text lang
-                                tilIns.setVisibility(View.VISIBLE);
-
-
-                            }
                         }
                     });
 
@@ -316,22 +203,19 @@ public class Admin_CreateWarning extends AppCompatActivity {
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
-
+                                etIns.setText("Ang lebel ng tubig baha ay nananatiling 'Below Alarm Level' at patuloy na binabantayan. Maliit ang tyansa ngunit posible ang matinding pagbaha. Manatiling alerto, at ang lahat ay pinag-iingat.");
                             }
                             else if (selFlood == "Orange Warning")
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
-
+                                etIns.setText("Ang lebel ng tubig baha ay unti-unting tumataas at patuloy na binabantayan. Mataas ang tyansa ng matinding pagbaha, landslide at flashflood. Maging handa sa posibleng paglikas. Manatiling alerto, at ang lahat ay pinag-iingat.");
                             }
                             else if (selFlood == "Red Warning")
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
-
+                                etIns.setText("Ang tubig baha ay kasalukuyang nasa kritikal na lebel at may dulot na matinding pagbaha. Ang mga mga apektadong mamamayang ang inaabisuhan sa agarang paglikas. Manatiling alerto, at ang lahat ay pinag-iingat.");
                             }
                         }
                     });
@@ -347,9 +231,7 @@ public class Admin_CreateWarning extends AppCompatActivity {
 
                     // palitawin yung instructions pag nakapili na nung level - magset text lang
                     tilIns.setVisibility(View.VISIBLE);
-
-
-
+                    etIns.setText("Isang matinding pagguho ng lupa ang naganap sa Brgy. ***, inaasahan ang matinding pag bigat ng trapiko sa naturang lugar at pinapaalalahanan na mag-ingat ang lahat.");
                 }
                 else if (selType == "TYPHOON")
                 {
@@ -374,36 +256,31 @@ public class Admin_CreateWarning extends AppCompatActivity {
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
-
+                                etIns.setText("Bahagya o halos walang pinsala. Malakas na hangin ang inaasahan sa loob ng 36 oras. Manatiling alerto, at ang lahat ay pinag-iingat.");
                             }
                             else if (selSig == "Signal No. 2")
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
-
+                                etIns.setText("Bahagya hanggang katamtamang pinsala. Malakas na hangin ang inaasahan sa loob ng 24 oras. Manatiling alerto, at ang lahat ay pinag-iingat.");
                             }
                             else if (selSig == "Signal No. 3")
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
-
+                                etIns.setText("Katamtaman hanggang malubhang pinsala. Malakas na hangin ang inaasahan sa loob ng 18 oras. Manatiling alerto, at ang lahat ay pinag-iingat.");
                             }
                             else if (selSig == "Signal No. 4")
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
-
+                                etIns.setText("Malubhang pinsala. Malakas na hangin ang inaasahan sa loob ng 12 oras. Manatiling alerto, at ang lahat ay pinag-iingat. Pagguho ng lupa ay inaasahan ang mga nasa tabing-ilog ay pinalilikas.");
                             }
                             else if (selSig == "Signal No. 5")
                             {
                                 // palitawin yung instructions pag nakapili na nung level - magset text lang
                                 tilIns.setVisibility(View.VISIBLE);
-
-
+                                etIns.setText("Matindi at malawakang pinsala. Malakas na hangin ang inaasahan sa loob ng 12 oras. Manatiling alerto, at ang lahat ay pinag-iingat. Matinding pagguho ng lupa ay inaasahan ang mga nasa tabing-ilog ay pinalilikas.");
                             }
                         }
                     });
@@ -411,82 +288,6 @@ public class Admin_CreateWarning extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, city);
-        actCity.setDropDownBackgroundResource(R.color.white);
-        actCity.setAdapter(cityAdapter);
-
-//        ((AutoCompleteTextView)tilCity.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                String selectedCity = cityAdapter.getItem(position);
-//
-//                if (selectedCity == "Bocaue")
-//                {
-//                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, brgyBoc);
-//                    actBrgy.setDropDownBackgroundResource(R.color.white);
-//                    actBrgy.setAdapter(brgyAdapter);
-//
-//                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                        @Override
-//                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                            String selectedBrgy = brgyAdapter.getItem(position);
-//                        }
-//                    });
-//                }
-//                else if (selectedCity == "Marilao")
-//                {
-//                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, brgyMar);
-//                    actBrgy.setDropDownBackgroundResource(R.color.white);
-//                    actBrgy.setAdapter(brgyAdapter);
-//
-//                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                        @Override
-//                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                            String selectedBrgy = brgyAdapter.getItem(position);
-//                        }
-//                    });
-//                }
-//                else if (selectedCity == "Meycauayan")
-//                {
-//                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, brgyMey);
-//                    actBrgy.setDropDownBackgroundResource(R.color.white);
-//                    actBrgy.setAdapter(brgyAdapter);
-//
-//                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                        @Override
-//                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                            String selectedBrgy = brgyAdapter.getItem(position);
-//                        }
-//                    });
-//                }
-//                else if (selectedCity == "San Jose del Monte")
-//                {
-//                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, brgySJDM);
-//                    actBrgy.setDropDownBackgroundResource(R.color.white);
-//                    actBrgy.setAdapter(brgyAdapter);
-//
-//                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                        @Override
-//                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                            String selectedBrgy = brgyAdapter.getItem(position);
-//                        }
-//                    });
-//                }
-//                else if (selectedCity == "Santa Maria")
-//                {
-//                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_CreateWarning.this, R.layout.dropdown_items, brgySanMa);
-//                    actBrgy.setDropDownBackgroundResource(R.color.white);
-//                    actBrgy.setAdapter(brgyAdapter);
-//
-//                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//                        @Override
-//                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                            String selectedBrgy = brgyAdapter.getItem(position);
-//                        }
-//                    });
-//                }
-//            }
-//        });
 
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override

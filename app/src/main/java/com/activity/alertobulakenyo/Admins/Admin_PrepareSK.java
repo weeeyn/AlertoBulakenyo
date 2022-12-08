@@ -11,7 +11,6 @@ import android.view.WindowManager;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-import com.activity.alertobulakenyo.Prepare;
 import com.activity.alertobulakenyo.R;
 
 public class Admin_PrepareSK extends AppCompatActivity {

@@ -1,27 +1,44 @@
 package com.activity.alertobulakenyo.Admins;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.activity.alertobulakenyo.Adapters.Admin_HotlinesRVAdapter;
+import com.activity.alertobulakenyo.ObjectClasses.HotlinesHolder;
 import com.activity.alertobulakenyo.R;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Admin_Hotlines extends AppCompatActivity {
 
     Button addNewHot;
-    CardView card_Boc, card_Mar, card_Mey, card_SJDM, card_SM;
+    private RecyclerView rvHotline;
+    private ArrayList<HotlinesHolder> hotlinesHolderArrayList;
+    private Admin_HotlinesRVAdapter admin_hotlinesRVAdapter;
 
     private FirebaseAuth fAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
@@ -29,6 +46,7 @@ public class Admin_Hotlines extends AppCompatActivity {
     private String userId = user.getUid();
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,11 +70,13 @@ public class Admin_Hotlines extends AppCompatActivity {
             }
         });
 
-        card_Boc = (CardView) findViewById (R.id.card_Boc);
-        card_Mar = (CardView) findViewById (R.id.card_Mar);
-        card_Mey = (CardView) findViewById (R.id.card_Mey);
-        card_SJDM = (CardView) findViewById (R.id.card_SJDM);
-        card_SM = (CardView) findViewById (R.id.card_SM);
+        rvHotline = (RecyclerView) findViewById (R.id.rvHotline);
+
+        hotlinesHolderArrayList = new ArrayList<>();
+        rvHotline.setHasFixedSize(true);
+        rvHotline.setLayoutManager(new LinearLayoutManager(this));
+        admin_hotlinesRVAdapter = new Admin_HotlinesRVAdapter(hotlinesHolderArrayList, this);
+        rvHotline.setAdapter(admin_hotlinesRVAdapter);
 
         DocumentReference df = fStore.collection("UserData").document(userId);
         df.get()
@@ -64,98 +84,142 @@ public class Admin_Hotlines extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
-                            card_Boc.setVisibility(View.VISIBLE);
-                            card_Mar.setVisibility(View.GONE);
-                            card_Mey.setVisibility(View.GONE);
-                            card_SJDM.setVisibility(View.GONE);
-                            card_SM.setVisibility(View.GONE);
-
-                            card_Boc.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-
-                                    Intent intent = new Intent(Admin_Hotlines.this, Admin_HotBocaue.class);
-                                    startActivity(intent);
-                                    overridePendingTransition(R.anim.slide_in_right,
-                                            R.anim.slide_out_left);
-                                }
-                            });
+                            fStore.collection("Hotlines")
+                                    .whereEqualTo("hotlineCity", "Bocaue")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                            if (!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    HotlinesHolder p = d.toObject(HotlinesHolder.class);
+                                                    p.setId(d.getId());
+                                                    hotlinesHolderArrayList.add(p);
+                                                }
+                                                admin_hotlinesRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Hotlines.this, "No Hotlines Posted", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e(TAG, "onFailure: MARILAO HOTLINE FAILED" + e.getMessage());
+                                        }
+                                    });
                         }
                         else if(documentSnapshot.getString("adminCity").equals("Marilao")) {
-                            card_Boc.setVisibility(View.GONE);
-                            card_Mar.setVisibility(View.VISIBLE);
-                            card_Mey.setVisibility(View.GONE);
-                            card_SJDM.setVisibility(View.GONE);
-                            card_SM.setVisibility(View.GONE);
-
-                            card_Mar.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-
-                                    Intent intent = new Intent(Admin_Hotlines.this, Admin_HotMarilao.class);
-                                    startActivity(intent);
-                                    overridePendingTransition(R.anim.slide_in_right,
-                                            R.anim.slide_out_left);
-                                }
-                            });
+                            fStore.collection("Hotlines")
+                                    .whereEqualTo("hotlineCity", "Marilao")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                            if (!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    HotlinesHolder p = d.toObject(HotlinesHolder.class);
+                                                    p.setId(d.getId());
+                                                    hotlinesHolderArrayList.add(p);
+                                                }
+                                                admin_hotlinesRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Hotlines.this, "No Hotlines Posted", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e(TAG, "onFailure: MARILAO HOTLINE FAILED" + e.getMessage());
+                                        }
+                                    });
                         }
                         else if(documentSnapshot.getString("adminCity").equals("Meycauayan")) {
-                            card_Boc.setVisibility(View.GONE);
-                            card_Mar.setVisibility(View.GONE);
-                            card_Mey.setVisibility(View.VISIBLE);
-                            card_SJDM.setVisibility(View.GONE);
-                            card_SM.setVisibility(View.GONE);
-
-                            card_Mey.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-
-                                    Intent intent = new Intent(Admin_Hotlines.this, Admin_HotMeycauayan.class);
-                                    startActivity(intent);
-                                    overridePendingTransition(R.anim.slide_in_right,
-                                            R.anim.slide_out_left);
-                                }
-                            });
+                            fStore.collection("Hotlines")
+                                    .whereEqualTo("hotlineCity", "Meycauayan")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                            if (!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    HotlinesHolder p = d.toObject(HotlinesHolder.class);
+                                                    p.setId(d.getId());
+                                                    hotlinesHolderArrayList.add(p);
+                                                }
+                                                admin_hotlinesRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Hotlines.this, "No Hotlines Posted", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e(TAG, "onFailure: MARILAO HOTLINE FAILED" + e.getMessage());
+                                        }
+                                    });
                         }
                         else if(documentSnapshot.getString("adminCity").equals("San Jose del Monte")) {
-                            card_Boc.setVisibility(View.GONE);
-                            card_Mar.setVisibility(View.GONE);
-                            card_Mey.setVisibility(View.GONE);
-                            card_SJDM.setVisibility(View.VISIBLE);
-                            card_SM.setVisibility(View.GONE);
-
-                            card_SJDM.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-
-                                    Intent intent = new Intent(Admin_Hotlines.this, Admin_HotSJDM.class);
-                                    startActivity(intent);
-                                    overridePendingTransition(R.anim.slide_in_right,
-                                            R.anim.slide_out_left);
-                                }
-                            });
+                            fStore.collection("Hotlines")
+                                    .whereEqualTo("hotlineCity", "San Jose del Monte")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                            if (!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    HotlinesHolder p = d.toObject(HotlinesHolder.class);
+                                                    p.setId(d.getId());
+                                                    hotlinesHolderArrayList.add(p);
+                                                }
+                                                admin_hotlinesRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Hotlines.this, "No Hotlines Posted", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e(TAG, "onFailure: MARILAO HOTLINE FAILED" + e.getMessage());
+                                        }
+                                    });
                         }
                         else if(documentSnapshot.getString("adminCity").equals("Santa Maria")) {
-                            card_Boc.setVisibility(View.GONE);
-                            card_Mar.setVisibility(View.GONE);
-                            card_Mey.setVisibility(View.GONE);
-                            card_SJDM.setVisibility(View.GONE);
-                            card_SM.setVisibility(View.VISIBLE);
-
-                            card_SM.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-
-                                    Intent intent = new Intent(Admin_Hotlines.this, Admin_HotStaMaria.class);
-                                    startActivity(intent);
-                                    overridePendingTransition(R.anim.slide_in_right,
-                                            R.anim.slide_out_left);
-                                }
-                            });
+                            fStore.collection("Hotlines")
+                                    .whereEqualTo("hotlineCity", "Santa Maria")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                            if (!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    HotlinesHolder p = d.toObject(HotlinesHolder.class);
+                                                    p.setId(d.getId());
+                                                    hotlinesHolderArrayList.add(p);
+                                                }
+                                                admin_hotlinesRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Hotlines.this, "No Hotlines Posted", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e(TAG, "onFailure: MARILAO HOTLINE FAILED" + e.getMessage());
+                                        }
+                                    });
                         }
                     }
                 });
-
     }
 
     @Override

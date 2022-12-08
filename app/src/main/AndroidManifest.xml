@@ -90,26 +90,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admins.Admin_EvacStaMaria"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admins.Admin_EvacSJDM"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admins.Admin_EvacMeycauayan"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admins.Admin_EvacMarilao"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admins.Admin_EvacBocaue"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Admins.Admin_DisasterTy"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -210,26 +190,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Admins.Admin_HotStaMaria"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admins.Admin_HotSJDM"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admins.Admin_HotMeycauayan"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admins.Admin_HotMarilao"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admins.Admin_HotBocaue"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Admins.Admin_Hotlines"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -239,10 +199,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Admins.Admin_Disaster"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Admins.Admin_AccountInfo"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -326,31 +282,31 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Prep_Ty"
+            android:name=".ResidentUsers.Prep_Ty"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Prep_LS"
+            android:name=".ResidentUsers.Prep_LS"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Prep_Flood"
+            android:name=".ResidentUsers.Prep_Flood"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Prep_Fire"
+            android:name=".ResidentUsers.Prep_Fire"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Prep_EQ"
+            android:name=".ResidentUsers.Prep_EQ"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Prep_SK"
+            android:name=".ResidentUsers.Prep_SK"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Prep_FA"
+            android:name=".ResidentUsers.Prep_FA"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -398,10 +354,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ResidentUsers.Verification"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ResidentUsers.ForgotPass"
             android:exported="false"
             android:screenOrientation="portrait" />
@@ -410,7 +362,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Prepare"
+            android:name=".ResidentUsers.Prepare"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -431,6 +383,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".register"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ResidentUsers.EvacList"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

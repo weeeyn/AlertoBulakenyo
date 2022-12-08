@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -76,177 +77,227 @@ public class Admin_AddHotline extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
-                            DocumentReference df2 = fStore.collection("Hotlines").document();
-                            Map<String, Object> hotlines = new HashMap<>();
-                            hotlines.put("hotlineCity", "Bocaue");
-                            hotlines.put("hotlineName", etHotName.getText().toString());
-                            hotlines.put("hotlineOne", etHot01.getText().toString());
-                            hotlines.put("hotlineTwo", etHot02.getText().toString());
-                            hotlines.put("hotlineThree", etHot03.getText().toString());
-                            hotlines.put("hotlineFour", etHot04.getText().toString());
-                            hotlines.put("hotlineFive", etHot05.getText().toString());
-
-                            df2.set(hotlines)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-                                            //pb
-                                            Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
-                                            startActivity(intent);
-                                            overridePendingTransition(R.anim.slide_in_left,
-                                                    R.anim.slide_out_right);
-                                            finish();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            //progress
-                                            Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
-                                        }
-                                    });
+                            String hotlineName  = etHotName.getText().toString();
+                            String hotlineOne = etHot01.getText().toString() ;
+                            String hotlineTwo = etHot02.getText().toString();
+                            String hotlineThree = etHot03.getText().toString();
+                            String hotlineFour = etHot04.getText().toString();
+                            String hotlineFive = etHot05.getText().toString();
+                            if(TextUtils.isEmpty(hotlineName)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_AddHotline.this, "Please enter a Hotline Name.", Toast.LENGTH_SHORT).show();
+                                etHotName.setError("Hotline Name can't be empty");
+                            } else {
+                                DocumentReference df2 = fStore.collection("Hotlines").document();
+                                Map<String, Object> hotlines = new HashMap<>();
+                                hotlines.put("hotlineCity", "Bocaue");
+                                hotlines.put("hotlineName", hotlineName);
+                                hotlines.put("hotlineOne",hotlineOne);
+                                hotlines.put("hotlineTwo", hotlineTwo);
+                                hotlines.put("hotlineThree", hotlineThree);
+                                hotlines.put("hotlineFour", hotlineFour);
+                                hotlines.put("hotlineFive", hotlineFive);
+                                df2.set(hotlines)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
+                                                startActivity(intent);
+                                                overridePendingTransition(R.anim.slide_in_left,
+                                                        R.anim.slide_out_right);
+                                                finish();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
+                                                Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
+                                            }
+                                        });
+                            }
                         }
                         else if(documentSnapshot.getString("adminCity").equals("Marilao")) {
-
-                            DocumentReference df2 = fStore.collection("Hotlines").document();
-                            Map<String, Object> hotlines = new HashMap<>();
-                            hotlines.put("hotlineCity", "Marilao");
-                            hotlines.put("hotlineName", etHotName.getText().toString());
-                            hotlines.put("hotlineOne", etHot01.getText().toString());
-                            hotlines.put("hotlineTwo", etHot02.getText().toString());
-                            hotlines.put("hotlineThree", etHot03.getText().toString());
-                            hotlines.put("hotlineFour", etHot04.getText().toString());
-                            hotlines.put("hotlineFive", etHot05.getText().toString());
-
-                            df2.set(hotlines)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-                                            //pb
-                                            Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
-                                            startActivity(intent);
-                                            overridePendingTransition(R.anim.slide_in_left,
-                                                    R.anim.slide_out_right);
-                                            finish();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            //progress
-                                            Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
-                                        }
-                                    });
+                            String hotlineName  = etHotName.getText().toString();
+                            String hotlineOne = etHot01.getText().toString() ;
+                            String hotlineTwo = etHot02.getText().toString();
+                            String hotlineThree = etHot03.getText().toString();
+                            String hotlineFour = etHot04.getText().toString();
+                            String hotlineFive = etHot05.getText().toString();
+                            if(TextUtils.isEmpty(hotlineName)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_AddHotline.this, "Please enter a Hotline Name.", Toast.LENGTH_SHORT).show();
+                                etHotName.setError("Hotline Name can't be empty");
+                            } else {
+                                DocumentReference df2 = fStore.collection("Hotlines").document();
+                                Map<String, Object> hotlines = new HashMap<>();
+                                hotlines.put("hotlineCity", "Marilao");
+                                hotlines.put("hotlineName", hotlineName);
+                                hotlines.put("hotlineOne",hotlineOne);
+                                hotlines.put("hotlineTwo", hotlineTwo);
+                                hotlines.put("hotlineThree", hotlineThree);
+                                hotlines.put("hotlineFour", hotlineFour);
+                                hotlines.put("hotlineFive", hotlineFive);
+                                df2.set(hotlines)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
+                                                startActivity(intent);
+                                                overridePendingTransition(R.anim.slide_in_left,
+                                                        R.anim.slide_out_right);
+                                                finish();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
+                                                Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
+                                            }
+                                        });
+                            }
                         }
                         else if(documentSnapshot.getString("adminCity").equals("Meycauayan")) {
-
-                            DocumentReference df2 = fStore.collection("Hotlines").document();
-                            Map<String, Object> hotlines = new HashMap<>();
-                            hotlines.put("hotlineCity", "Meycauayan");
-                            hotlines.put("hotlineName", etHotName.getText().toString());
-                            hotlines.put("hotlineOne", etHot01.getText().toString());
-                            hotlines.put("hotlineTwo", etHot02.getText().toString());
-                            hotlines.put("hotlineThree", etHot03.getText().toString());
-                            hotlines.put("hotlineFour", etHot04.getText().toString());
-                            hotlines.put("hotlineFive", etHot05.getText().toString());
-
-                            df2.set(hotlines)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-                                            //pb
-                                            Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
-                                            startActivity(intent);
-                                            overridePendingTransition(R.anim.slide_in_left,
-                                                    R.anim.slide_out_right);
-                                            finish();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            //progress
-                                            Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
-                                        }
-                                    });
+                            String hotlineName  = etHotName.getText().toString();
+                            String hotlineOne = etHot01.getText().toString() ;
+                            String hotlineTwo = etHot02.getText().toString();
+                            String hotlineThree = etHot03.getText().toString();
+                            String hotlineFour = etHot04.getText().toString();
+                            String hotlineFive = etHot05.getText().toString();
+                            if(TextUtils.isEmpty(hotlineName)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_AddHotline.this, "Please enter a Hotline Name.", Toast.LENGTH_SHORT).show();
+                                etHotName.setError("Hotline Name can't be empty");
+                            } else {
+                                DocumentReference df2 = fStore.collection("Hotlines").document();
+                                Map<String, Object> hotlines = new HashMap<>();
+                                hotlines.put("hotlineCity", "Meycauayan");
+                                hotlines.put("hotlineName", hotlineName);
+                                hotlines.put("hotlineOne",hotlineOne);
+                                hotlines.put("hotlineTwo", hotlineTwo);
+                                hotlines.put("hotlineThree", hotlineThree);
+                                hotlines.put("hotlineFour", hotlineFour);
+                                hotlines.put("hotlineFive", hotlineFive);
+                                df2.set(hotlines)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
+                                                startActivity(intent);
+                                                overridePendingTransition(R.anim.slide_in_left,
+                                                        R.anim.slide_out_right);
+                                                finish();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
+                                                Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
+                                            }
+                                        });
+                            }
                         }
                         else if(documentSnapshot.getString("adminCity").equals("San Jose del Monte")) {
-
-                            DocumentReference df2 = fStore.collection("Hotlines").document();
-                            Map<String, Object> hotlines = new HashMap<>();
-                            hotlines.put("hotlineCity", "San Jose del Monte");
-                            hotlines.put("hotlineName", etHotName.getText().toString());
-                            hotlines.put("hotlineOne", etHot01.getText().toString());
-                            hotlines.put("hotlineTwo", etHot02.getText().toString());
-                            hotlines.put("hotlineThree", etHot03.getText().toString());
-                            hotlines.put("hotlineFour", etHot04.getText().toString());
-                            hotlines.put("hotlineFive", etHot05.getText().toString());
-
-                            df2.set(hotlines)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-                                            //pb
-                                            Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
-                                            startActivity(intent);
-                                            overridePendingTransition(R.anim.slide_in_left,
-                                                    R.anim.slide_out_right);
-                                            finish();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            //progress
-                                            Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
-                                        }
-                                    });
+                            String hotlineName  = etHotName.getText().toString();
+                            String hotlineOne = etHot01.getText().toString() ;
+                            String hotlineTwo = etHot02.getText().toString();
+                            String hotlineThree = etHot03.getText().toString();
+                            String hotlineFour = etHot04.getText().toString();
+                            String hotlineFive = etHot05.getText().toString();
+                            if(TextUtils.isEmpty(hotlineName)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_AddHotline.this, "Please enter a Hotline Name.", Toast.LENGTH_SHORT).show();
+                                etHotName.setError("Hotline Name can't be empty");
+                            } else {
+                                DocumentReference df2 = fStore.collection("Hotlines").document();
+                                Map<String, Object> hotlines = new HashMap<>();
+                                hotlines.put("hotlineCity", "San Jose del Monte");
+                                hotlines.put("hotlineName", hotlineName);
+                                hotlines.put("hotlineOne",hotlineOne);
+                                hotlines.put("hotlineTwo", hotlineTwo);
+                                hotlines.put("hotlineThree", hotlineThree);
+                                hotlines.put("hotlineFour", hotlineFour);
+                                hotlines.put("hotlineFive", hotlineFive);
+                                df2.set(hotlines)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
+                                                startActivity(intent);
+                                                overridePendingTransition(R.anim.slide_in_left,
+                                                        R.anim.slide_out_right);
+                                                finish();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
+                                                Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
+                                            }
+                                        });
+                            }
                         }
                         else if(documentSnapshot.getString("adminCity").equals("Santa Maria")) {
-
-                            DocumentReference df2 = fStore.collection("Hotlines").document();
-                            Map<String, Object> hotlines = new HashMap<>();
-                            hotlines.put("hotlineCity", "Santa Maria");
-                            hotlines.put("hotlineName", etHotName.getText().toString());
-                            hotlines.put("hotlineOne", etHot01.getText().toString());
-                            hotlines.put("hotlineTwo", etHot02.getText().toString());
-                            hotlines.put("hotlineThree", etHot03.getText().toString());
-                            hotlines.put("hotlineFour", etHot04.getText().toString());
-                            hotlines.put("hotlineFive", etHot05.getText().toString());
-
-                            df2.set(hotlines)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-                                            //pb
-                                            Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
-                                            startActivity(intent);
-                                            overridePendingTransition(R.anim.slide_in_left,
-                                                    R.anim.slide_out_right);
-                                            finish();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            //progress
-                                            Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
-                                        }
-                                    });
+                            String hotlineName  = etHotName.getText().toString();
+                            String hotlineOne = etHot01.getText().toString() ;
+                            String hotlineTwo = etHot02.getText().toString();
+                            String hotlineThree = etHot03.getText().toString();
+                            String hotlineFour = etHot04.getText().toString();
+                            String hotlineFive = etHot05.getText().toString();
+                            if(TextUtils.isEmpty(hotlineName)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_AddHotline.this, "Please enter a Hotline Name.", Toast.LENGTH_SHORT).show();
+                                etHotName.setError("Hotline Name can't be empty");
+                            } else {
+                                DocumentReference df2 = fStore.collection("Hotlines").document();
+                                Map<String, Object> hotlines = new HashMap<>();
+                                hotlines.put("hotlineCity", "Santa Maria");
+                                hotlines.put("hotlineName", hotlineName);
+                                hotlines.put("hotlineOne",hotlineOne);
+                                hotlines.put("hotlineTwo", hotlineTwo);
+                                hotlines.put("hotlineThree", hotlineThree);
+                                hotlines.put("hotlineFour", hotlineFour);
+                                hotlines.put("hotlineFive", hotlineFive);
+                                df2.set(hotlines)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_AddHotline.this, "Hotline Saved!", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(getApplicationContext(), Admin_Hotlines.class);
+                                                startActivity(intent);
+                                                overridePendingTransition(R.anim.slide_in_left,
+                                                        R.anim.slide_out_right);
+                                                finish();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_AddHotline.this, "Failed to save hotline.", Toast.LENGTH_SHORT).show();
+                                                Log.e("TAG", "HOTLINE SAVING FAIL"  + e.getMessage() );
+                                            }
+                                        });
+                            }
                         }
                     }
                 });
-
     }
 
     @Override

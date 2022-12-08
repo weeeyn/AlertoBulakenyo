@@ -4,6 +4,8 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,8 +29,7 @@ public class Admin_Profile extends AppCompatActivity {
 
     BottomNavigationView bottomNav;
     int k = 0;
-    TextView tvDeptAbbre, tvDeptName;
-    CardView card_account;
+    TextView tvDeptName, tvCity, tvEmail;
 
     private FirebaseAuth fAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
@@ -36,6 +37,7 @@ public class Admin_Profile extends AppCompatActivity {
     private String userId = user.getUid();
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,10 +51,32 @@ public class Admin_Profile extends AppCompatActivity {
 
         bottomNav = (BottomNavigationView) findViewById (R.id.bottomNav);
 
-        tvDeptAbbre = (TextView) findViewById (R.id.tvDeptAbbre);
         tvDeptName = (TextView) findViewById (R.id.tvDeptName);
+        tvCity = (TextView) findViewById (R.id.tvCity);
+        tvEmail = (TextView) findViewById (R.id.tvEmail);
 
-        card_account = (CardView) findViewById (R.id.card_account);
+        DocumentReference df = fStore.collection("UserData").document(userId);
+        df.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+
+                    if (document.exists()) {
+                        Log.d(TAG, "DocumentSnapshot data: PROFILE " + document.getData());
+
+                        tvDeptName.setText(document.getString("adminDeptName"));
+                        tvCity.setText(document.getString("adminCity"));
+                        tvEmail.setText(document.getString("adminEmail"));
+                    }
+                    else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "Failed getting your data!", task.getException());
+                }
+            }
+        });
 
         // Set Home selected
         bottomNav.setSelectedItemId(R.id.profile);
@@ -78,38 +102,6 @@ public class Admin_Profile extends AppCompatActivity {
                         return true;
                 }
                 return false;
-            }
-        });
-
-
-        card_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Admin_Profile.this, Admin_AccountInfo.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
-            }
-        });
-
-        DocumentReference docRef = fStore.collection("UserData").document(userId);
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-
-                    if (document.exists()) {
-                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-                        tvDeptAbbre.setText(document.getString("adminCity") + " " + document.getString("adminDeptAbv"));
-                        tvDeptName.setText(document.getString("adminDeptName"));
-                    }
-                    else {
-                        Log.d(TAG, "No such document");
-                    }
-                } else {
-                    Log.d(TAG, "get failed with ", task.getException());
-                }
             }
         });
     }

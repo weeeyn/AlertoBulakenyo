@@ -1,19 +1,11 @@
 package com.activity.alertobulakenyo.Admins;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -23,23 +15,12 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.activity.alertobulakenyo.ObjectClasses.EvacuationHolder;
 import com.activity.alertobulakenyo.R;
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -47,27 +28,22 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.io.IOException;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 public class Admin_AddEvac extends AppCompatActivity {
 
-    TextInputLayout tilCity, tilBrgy;
-    EditText etEvacName, etEvacLoc, etLong, etLat;
-    AutoCompleteTextView actCity, actBrgy;
-    Button btnSaveEvac;
+    private TextInputLayout tilBrgy;
+    private EditText etEvacName, etEvacLoc, etLong, etLat;
+    private AutoCompleteTextView actBrgy;
+    private Button btnSaveEvac;
+    private ProgressBar progressBar;
 
     private FirebaseAuth fAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     private FirebaseUser user = fAuth.getCurrentUser();
     private String userId = user.getUid();
-    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +56,8 @@ public class Admin_AddEvac extends AppCompatActivity {
 
         setContentView(R.layout.activity_admin_add_evac);
 
-        tilCity = (TextInputLayout) findViewById (R.id.tilCity);
+        progressBar = (ProgressBar) findViewById (R.id.progressBar);
+
         tilBrgy = (TextInputLayout) findViewById (R.id.tilBrgy);
 
         etEvacName = (EditText) findViewById (R.id.etEvacName);
@@ -89,12 +66,9 @@ public class Admin_AddEvac extends AppCompatActivity {
         etLong=findViewById(R.id.etLong);
         etLat=findViewById(R.id.etLat);
 
-        actCity = (AutoCompleteTextView) findViewById (R.id.actCity);
         actBrgy = (AutoCompleteTextView) findViewById (R.id.actBrgy);
 
         btnSaveEvac = (Button) findViewById (R.id.btnSaveEvac);
-
-        String [] city = {"Bocaue", "Marilao", "Meycauayan", "San Jose del Monte", "Santa Maria"};
 
         String [] brgyBoc = {"Antipona", "Bagumbayan", "Bambang", "Batia", "Biñang 1st", "Biñang 2nd",
                 "Bolacan", "Bundukan", "Bunlo", "Caingin", "Duhat", "Igulot", "Lolomboy", "Poblacion",
@@ -128,193 +102,401 @@ public class Admin_AddEvac extends AppCompatActivity {
                 "San Vicente", "Santa Clara", "Santa Cruz", "Silangan", "Tabing Bakod", "Tumana"};
 
 
-        ArrayAdapter<String> cityAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, city);
-        actCity.setDropDownBackgroundResource(R.color.white);
-        actCity.setAdapter(cityAdapter);
-
-        ((AutoCompleteTextView)tilCity.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectedCity = cityAdapter.getItem(position);
-
-                if (selectedCity == "Bocaue")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgyBoc);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
-
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
-                        }
-                    });
-                }
-                else if (selectedCity == "Marilao")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgyMar);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
-
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
-                        }
-                    });
-                }
-                else if (selectedCity == "Meycauayan")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgyMey);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
-
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
-                        }
-                    });
-                }
-                else if (selectedCity == "San Jose del Monte")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgySJDM);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
-
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
-                        }
-                    });
-                }
-                else if (selectedCity == "Santa Maria")
-                {
-                    ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgySanMa);
-                    actBrgy.setDropDownBackgroundResource(R.color.white);
-                    actBrgy.setAdapter(brgyAdapter);
-
-                    ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            String selectedBrgy = brgyAdapter.getItem(position);
-                        }
-                    });
-                }
-            }
-        });
-
-        btnSaveEvac.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addEvacuation();
-            }
-        });
-
-
-    }
-
-    private void addEvacuation() {
-        //Check for blanks
-        if(etEvacName.getText().length()<1){
-            etEvacName.setError("Field is required");
-            etEvacName.requestFocus();
-            return;
-        }
-        if(etEvacName.getText().toString().isEmpty()){
-            etEvacName.setError("Field is required");
-            etEvacName.requestFocus();
-            return;
-        }
-        if (etEvacLoc.getText().length()<1){
-            etEvacLoc.setError("Field is required");
-            etEvacLoc.requestFocus();
-            return;
-        }
-        if (etEvacLoc.getText().toString().isEmpty()){
-            etEvacLoc.setError("Field is required");
-            etEvacLoc.requestFocus();
-            return;
-        }
-        if (etLong.getText().length()<1){
-            etLong.setError("Field is required");
-            etLong.requestFocus();
-            return;
-        }
-        if (etLong.getText().toString().isEmpty()){
-            etLong.setError("Field is required");
-            etLong.requestFocus();
-            return;
-        }
-        if (etLat.getText().length()<1){
-            etLat.setError("Field is required");
-            etLat.requestFocus();
-            return;
-        }
-        if (etLat.getText().toString().isEmpty()){
-            etLat.setError("Field is required");
-            etLat.requestFocus();
-            return;
-        }
-        if (actBrgy.getText().toString().isEmpty()){
-            actBrgy.setError("Field is required");
-            actBrgy.requestFocus();
-            return;
-        }
-        if (actBrgy.getText().length()<1){
-            actBrgy.setError("Field is required");
-            actBrgy.requestFocus();
-            return;
-        }
-        //end of validation
-        DocumentReference df = fStore.collection("Evacuation").document();
-        Map<String, Object> evac = new HashMap<>();
-        evac.put("evacuationName", etEvacName.getText().toString());
-        evac.put("evacuationAddress", etEvacLoc.getText().toString());
-        evac.put("evacuationLongitude", etLong.getText().toString());
-        evac.put("evacuationLatitude", etLat.getText().toString());
-        evac.put("evacuationCity", actCity.getText().toString());
-        evac.put("evacuationBrgy", actBrgy.getText().toString());
-
-        df.set(evac)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(Admin_AddEvac.this, "Evacuation Saved!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Admin_AddEvac.this, Admin_Evacuation.class);
-                        startActivity(intent);
-                        overridePendingTransition(R.anim.slide_in_left,
-                                R.anim.slide_out_right);
-                        finish();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Admin_AddEvac.this, "Evacuation not saved!", Toast.LENGTH_SHORT).show();
-                        Log.e("TAG", "onFailure: EVAC FAILED TO SAVE" + e.getMessage());
-                    }
-                });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
         DocumentReference df = fStore.collection("UserData").document(userId);
         df.get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-
-                        if(task.getResult().exists()) {
-                            String cityRes = task.getResult().getString("adminCity");
-
-                            actCity.setText(cityRes);
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
+                            ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgyBoc);
+                            actBrgy.setDropDownBackgroundResource(R.color.white);
+                            actBrgy.setAdapter(brgyAdapter);
+                            ((AutoCompleteTextView) Objects.requireNonNull(tilBrgy.getEditText())).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    String selectedBrgy = brgyAdapter.getItem(position);
+                                }
+                            });
+                            btnSaveEvac.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    progressBar.setVisibility(View.VISIBLE);
+                                    String evacuationBrgy = actBrgy.getText().toString();
+                                    String evacuationName = etEvacName.getText().toString();
+                                    String evacuationAddress = etEvacLoc.getText().toString();
+                                    String evacuationLongitude = etLong.getText().toString();
+                                    String evacuationLatitude = etLat.getText().toString();
+                                    if (TextUtils.isEmpty(evacuationBrgy)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please select Barangay Address.", Toast.LENGTH_SHORT).show();
+                                        actBrgy.setError("Barangay can't be empty!");
+                                        actBrgy.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationName)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Name.", Toast.LENGTH_SHORT).show();
+                                        etEvacName.setError("Evacuation Name can't be empty!");
+                                        etEvacName.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationAddress)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Address.", Toast.LENGTH_SHORT).show();
+                                        etEvacLoc.setError("Evacuation Address can't be empty!");
+                                        etEvacLoc.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationLongitude)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Longitude.", Toast.LENGTH_SHORT).show();
+                                        etLong.setError("Longitude can't be empty!");
+                                        etLong.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationLatitude)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Latitude.", Toast.LENGTH_SHORT).show();
+                                        etLat.setError("Longitude can't be empty!");
+                                        etLat.requestFocus();
+                                    } else {
+                                        DocumentReference df2 = fStore.collection("Evacuation").document();
+                                        Map<String, Object> evac = new HashMap<>();
+                                        evac.put("evacuationCity", "Bocaue");
+                                        evac.put("evacuationBrgy", evacuationBrgy);
+                                        evac.put("evacuationName", evacuationName);
+                                        evac.put("evacuationAddress", evacuationAddress);
+                                        evac.put("evacuationLongitude", evacuationLongitude);
+                                        evac.put("evacuationLatitude", evacuationLatitude);
+                                        df2.set(evac)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void unused) {
+                                                        progressBar.setVisibility(View.GONE);
+                                                        Toast.makeText(Admin_AddEvac.this, "Evacuation Saved!", Toast.LENGTH_SHORT).show();
+                                                        Intent intent = new Intent(Admin_AddEvac.this, Admin_Evacuation.class);
+                                                        startActivity(intent);
+                                                        finish();
+                                                        overridePendingTransition(R.anim.slide_in_left,
+                                                                R.anim.slide_out_right);
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        progressBar.setVisibility(View.GONE);
+                                                        Toast.makeText(Admin_AddEvac.this, "Evacuation not saved!", Toast.LENGTH_SHORT).show();
+                                                        Log.e("TAG", "onFailure: EVAC FAILED TO POST" + e.getMessage());
+                                                    }
+                                                });
+                                    }
+                                }
+                            });
                         }
-                        else {
-                            Toast.makeText(Admin_AddEvac.this, "User do no Exist.", Toast.LENGTH_SHORT).show();
+                        else if(documentSnapshot.getString("adminCity").equals("Marilao")) {
+                            ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgyMar);
+                            actBrgy.setDropDownBackgroundResource(R.color.white);
+                            actBrgy.setAdapter(brgyAdapter);
+                            ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    String selectedBrgy = brgyAdapter.getItem(position);
+                                }
+                            });
+                            btnSaveEvac.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    progressBar.setVisibility(View.VISIBLE);
+                                    String evacuationBrgy = actBrgy.getText().toString();
+                                    String evacuationName = etEvacName.getText().toString();
+                                    String evacuationAddress = etEvacLoc.getText().toString();
+                                    String evacuationLongitude = etLong.getText().toString();
+                                    String evacuationLatitude = etLat.getText().toString();
+                                    if (TextUtils.isEmpty(evacuationBrgy)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please select Barangay Address.", Toast.LENGTH_SHORT).show();
+                                        actBrgy.setError("Barangay can't be empty!");
+                                        actBrgy.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationName)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Name.", Toast.LENGTH_SHORT).show();
+                                        etEvacName.setError("Evacuation Name can't be empty!");
+                                        etEvacName.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationAddress)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Address.", Toast.LENGTH_SHORT).show();
+                                        etEvacLoc.setError("Evacuation Address can't be empty!");
+                                        etEvacLoc.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationLongitude)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Longitude.", Toast.LENGTH_SHORT).show();
+                                        etLong.setError("Longitude can't be empty!");
+                                        etLong.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationLatitude)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Latitude.", Toast.LENGTH_SHORT).show();
+                                        etLat.setError("Longitude can't be empty!");
+                                        etLat.requestFocus();
+                                    } else {
+                                        DocumentReference df2 = fStore.collection("Evacuation").document();
+                                        Map<String, Object> evac = new HashMap<>();
+                                        evac.put("evacuationCity", "Marilao");
+                                        evac.put("evacuationBrgy", evacuationBrgy);
+                                        evac.put("evacuationName", evacuationName);
+                                        evac.put("evacuationAddress", evacuationAddress);
+                                        evac.put("evacuationLongitude", evacuationLongitude);
+                                        evac.put("evacuationLatitude", evacuationLatitude);
+                                        df2.set(evac)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void unused) {
+                                                        progressBar.setVisibility(View.GONE);
+                                                        Toast.makeText(Admin_AddEvac.this, "Evacuation Saved!", Toast.LENGTH_SHORT).show();
+                                                        Intent intent = new Intent(Admin_AddEvac.this, Admin_Evacuation.class);
+                                                        startActivity(intent);
+                                                        finish();
+                                                        overridePendingTransition(R.anim.slide_in_left,
+                                                                R.anim.slide_out_right);
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        progressBar.setVisibility(View.GONE);
+                                                        Toast.makeText(Admin_AddEvac.this, "Evacuation not saved!", Toast.LENGTH_SHORT).show();
+                                                        Log.e("TAG", "onFailure: EVAC FAILED TO POST" + e.getMessage());
+                                                    }
+                                                });
+                                    }
+                                }
+                            });
+                        }
+                        else if(documentSnapshot.getString("adminCity").equals("Meycauayan")) {
+                            ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgyMey);
+                            actBrgy.setDropDownBackgroundResource(R.color.white);
+                            actBrgy.setAdapter(brgyAdapter);
+                            ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    String selectedBrgy = brgyAdapter.getItem(position);
+                                }
+                            });
+                            btnSaveEvac.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    progressBar.setVisibility(View.VISIBLE);
+                                    String evacuationBrgy = actBrgy.getText().toString();
+                                    String evacuationName = etEvacName.getText().toString();
+                                    String evacuationAddress = etEvacLoc.getText().toString();
+                                    String evacuationLongitude = etLong.getText().toString();
+                                    String evacuationLatitude = etLat.getText().toString();
+                                    if (TextUtils.isEmpty(evacuationBrgy)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please select Barangay Address.", Toast.LENGTH_SHORT).show();
+                                        actBrgy.setError("Barangay can't be empty!");
+                                        actBrgy.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationName)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Name.", Toast.LENGTH_SHORT).show();
+                                        etEvacName.setError("Evacuation Name can't be empty!");
+                                        etEvacName.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationAddress)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Address.", Toast.LENGTH_SHORT).show();
+                                        etEvacLoc.setError("Evacuation Address can't be empty!");
+                                        etEvacLoc.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationLongitude)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Longitude.", Toast.LENGTH_SHORT).show();
+                                        etLong.setError("Longitude can't be empty!");
+                                        etLong.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationLatitude)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Latitude.", Toast.LENGTH_SHORT).show();
+                                        etLat.setError("Longitude can't be empty!");
+                                        etLat.requestFocus();
+                                    } else {
+                                        DocumentReference df2 = fStore.collection("Evacuation").document();
+                                        Map<String, Object> evac = new HashMap<>();
+                                        evac.put("evacuationCity", "Meycauayan");
+                                        evac.put("evacuationBrgy", evacuationBrgy);
+                                        evac.put("evacuationName", evacuationName);
+                                        evac.put("evacuationAddress", evacuationAddress);
+                                        evac.put("evacuationLongitude", evacuationLongitude);
+                                        evac.put("evacuationLatitude", evacuationLatitude);
+                                        df2.set(evac)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void unused) {
+                                                        progressBar.setVisibility(View.GONE);
+                                                        Toast.makeText(Admin_AddEvac.this, "Evacuation Saved!", Toast.LENGTH_SHORT).show();
+                                                        Intent intent = new Intent(Admin_AddEvac.this, Admin_Evacuation.class);
+                                                        startActivity(intent);
+                                                        finish();
+                                                        overridePendingTransition(R.anim.slide_in_left,
+                                                                R.anim.slide_out_right);
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        progressBar.setVisibility(View.GONE);
+                                                        Toast.makeText(Admin_AddEvac.this, "Evacuation not saved!", Toast.LENGTH_SHORT).show();
+                                                        Log.e("TAG", "onFailure: EVAC FAILED TO POST" + e.getMessage());
+                                                    }
+                                                });
+                                    }
+                                }
+                            });
+                        }
+                        else if(documentSnapshot.getString("adminCity").equals("San Jose del Monte")) {
+                            ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgySJDM);
+                            actBrgy.setDropDownBackgroundResource(R.color.white);
+                            actBrgy.setAdapter(brgyAdapter);
+                            ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    String selectedBrgy = brgyAdapter.getItem(position);
+                                }
+                            });
+                            btnSaveEvac.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    progressBar.setVisibility(View.VISIBLE);
+                                    String evacuationBrgy = actBrgy.getText().toString();
+                                    String evacuationName = etEvacName.getText().toString();
+                                    String evacuationAddress = etEvacLoc.getText().toString();
+                                    String evacuationLongitude = etLong.getText().toString();
+                                    String evacuationLatitude = etLat.getText().toString();
+                                    if (TextUtils.isEmpty(evacuationBrgy)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please select Barangay Address.", Toast.LENGTH_SHORT).show();
+                                        actBrgy.setError("Barangay can't be empty!");
+                                        actBrgy.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationName)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Name.", Toast.LENGTH_SHORT).show();
+                                        etEvacName.setError("Evacuation Name can't be empty!");
+                                        etEvacName.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationAddress)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Address.", Toast.LENGTH_SHORT).show();
+                                        etEvacLoc.setError("Evacuation Address can't be empty!");
+                                        etEvacLoc.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationLongitude)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Longitude.", Toast.LENGTH_SHORT).show();
+                                        etLong.setError("Longitude can't be empty!");
+                                        etLong.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationLatitude)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Latitude.", Toast.LENGTH_SHORT).show();
+                                        etLat.setError("Longitude can't be empty!");
+                                        etLat.requestFocus();
+                                    } else {
+                                        DocumentReference df2 = fStore.collection("Evacuation").document();
+                                        Map<String, Object> evac = new HashMap<>();
+                                        evac.put("evacuationCity", "San Jose del Monte");
+                                        evac.put("evacuationBrgy", evacuationBrgy);
+                                        evac.put("evacuationName", evacuationName);
+                                        evac.put("evacuationAddress", evacuationAddress);
+                                        evac.put("evacuationLongitude", evacuationLongitude);
+                                        evac.put("evacuationLatitude", evacuationLatitude);
+                                        df2.set(evac)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void unused) {
+                                                        progressBar.setVisibility(View.GONE);
+                                                        Toast.makeText(Admin_AddEvac.this, "Evacuation Saved!", Toast.LENGTH_SHORT).show();
+                                                        Intent intent = new Intent(Admin_AddEvac.this, Admin_Evacuation.class);
+                                                        startActivity(intent);
+                                                        finish();
+                                                        overridePendingTransition(R.anim.slide_in_left,
+                                                                R.anim.slide_out_right);
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        progressBar.setVisibility(View.GONE);
+                                                        Toast.makeText(Admin_AddEvac.this, "Evacuation not saved!", Toast.LENGTH_SHORT).show();
+                                                        Log.e("TAG", "onFailure: EVAC FAILED TO POST" + e.getMessage());
+                                                    }
+                                                });
+                                    }
+                                }
+                            });
+                        }
+                        else if(documentSnapshot.getString("adminCity").equals("Santa Maria")) {
+                            ArrayAdapter<String> brgyAdapter = new ArrayAdapter<>(Admin_AddEvac.this, R.layout.dropdown_items, brgySanMa);
+                            actBrgy.setDropDownBackgroundResource(R.color.white);
+                            actBrgy.setAdapter(brgyAdapter);
+                            ((AutoCompleteTextView)tilBrgy.getEditText()).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    String selectedBrgy = brgyAdapter.getItem(position);
+                                }
+                            });
+                            btnSaveEvac.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    progressBar.setVisibility(View.VISIBLE);
+                                    String evacuationBrgy = actBrgy.getText().toString();
+                                    String evacuationName = etEvacName.getText().toString();
+                                    String evacuationAddress = etEvacLoc.getText().toString();
+                                    String evacuationLongitude = etLong.getText().toString();
+                                    String evacuationLatitude = etLat.getText().toString();
+                                    if (TextUtils.isEmpty(evacuationBrgy)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please select Barangay Address.", Toast.LENGTH_SHORT).show();
+                                        actBrgy.setError("Barangay can't be empty!");
+                                        actBrgy.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationName)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Name.", Toast.LENGTH_SHORT).show();
+                                        etEvacName.setError("Evacuation Name can't be empty!");
+                                        etEvacName.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationAddress)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Address.", Toast.LENGTH_SHORT).show();
+                                        etEvacLoc.setError("Evacuation Address can't be empty!");
+                                        etEvacLoc.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationLongitude)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Longitude.", Toast.LENGTH_SHORT).show();
+                                        etLong.setError("Longitude can't be empty!");
+                                        etLong.requestFocus();
+                                    } else if (TextUtils.isEmpty(evacuationLatitude)) {
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Admin_AddEvac.this, "Please input Evacuation Latitude.", Toast.LENGTH_SHORT).show();
+                                        etLat.setError("Longitude can't be empty!");
+                                        etLat.requestFocus();
+                                    } else {
+                                        DocumentReference df2 = fStore.collection("Evacuation").document();
+                                        Map<String, Object> evac = new HashMap<>();
+                                        evac.put("evacuationCity", "Santa Maria");
+                                        evac.put("evacuationBrgy", evacuationBrgy);
+                                        evac.put("evacuationName", evacuationName);
+                                        evac.put("evacuationAddress", evacuationAddress);
+                                        evac.put("evacuationLongitude", evacuationLongitude);
+                                        evac.put("evacuationLatitude", evacuationLatitude);
+                                        df2.set(evac)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void unused) {
+                                                        progressBar.setVisibility(View.GONE);
+                                                        Toast.makeText(Admin_AddEvac.this, "Evacuation Saved!", Toast.LENGTH_SHORT).show();
+                                                        Intent intent = new Intent(Admin_AddEvac.this, Admin_Evacuation.class);
+                                                        startActivity(intent);
+                                                        finish();
+                                                        overridePendingTransition(R.anim.slide_in_left,
+                                                                R.anim.slide_out_right);
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        progressBar.setVisibility(View.GONE);
+                                                        Toast.makeText(Admin_AddEvac.this, "Evacuation not saved!", Toast.LENGTH_SHORT).show();
+                                                        Log.e("TAG", "onFailure: EVAC FAILED TO POST" + e.getMessage());
+                                                    }
+                                                });
+                                    }
+                                }
+                            });
+
                         }
                     }
                 });

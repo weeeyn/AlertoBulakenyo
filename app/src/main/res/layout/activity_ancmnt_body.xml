@@ -37,19 +37,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingStart="5dp"
-                        android:text="San Jose del Monte"
                         android:textColor="@color/black"
                         android:textSize="15dp" />
-
-                    <TextView
-                        android:id="@+id/tvOffice"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="5dp"
-                        android:text="CDRRMO"
-                        android:textColor="@color/black"
-                        android:textSize="15dp"
-                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -59,7 +48,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="3"
-                    android:text="Date"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -71,9 +59,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:fontFamily="@font/archivo_black"
-                android:text="ANNOUNCEMENT TITLE"
                 android:textColor="@color/dark_blue"
                 android:textSize="23dp"
+                android:textAlignment="center"
                 android:id="@+id/tvTitle" />
 
             <TextView
@@ -83,7 +71,6 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="45dp"
                 android:justificationMode="inter_word"
-                android:text="Body"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 

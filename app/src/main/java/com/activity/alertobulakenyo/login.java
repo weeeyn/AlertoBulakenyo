@@ -129,7 +129,7 @@ public class login extends AppCompatActivity {
                                                     public void onComplete(@NonNull Task<Void> task) {
                                                         if(task.isSuccessful()) {
                                                             progressBar.setVisibility(View.GONE);
-                                                            Toast.makeText(login.this, "Please verify your email to continue.", Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(login.this, "Please verify your email to continue. Check your spam if not in the inbox.", Toast.LENGTH_LONG).show();
                                                         } else {
                                                             progressBar.setVisibility(View.GONE);
                                                             Toast.makeText(login.this, "Email: " + task.getException(), Toast.LENGTH_SHORT).show();

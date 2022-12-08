@@ -1,4 +1,4 @@
-package com.activity.alertobulakenyo;
+package com.activity.alertobulakenyo.ResidentUsers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,15 +6,14 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageButton;
 import android.widget.MediaController;
-import android.widget.TextView;
 import android.widget.VideoView;
 
-public class Prep_SK extends AppCompatActivity {
+import com.activity.alertobulakenyo.R;
+
+public class Prep_Ty extends AppCompatActivity {
 
     MediaController media;
     VideoView video;
@@ -28,14 +27,14 @@ public class Prep_SK extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION); //enable full screen
 
-        setContentView(R.layout.activity_prep_sk);
+        setContentView(R.layout.activity_prep_ty);
 
         video = (VideoView) findViewById (R.id.video);
 
         //media = new MediaController(this);
 
         //video.setMediaController(media);
-        video.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.survival));
+        video.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.typhoon_flood));
         video.start();
 
         video.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -66,8 +65,7 @@ public class Prep_SK extends AppCompatActivity {
                 mediaPlayer.release();
             }
         });
-
-   }
+    }
 
 
     @Override

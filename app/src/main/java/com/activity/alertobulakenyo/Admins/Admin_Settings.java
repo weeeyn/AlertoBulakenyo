@@ -26,7 +26,7 @@ public class Admin_Settings extends AppCompatActivity {
 
     BottomNavigationView bottomNav;
     int k = 0;
-    CardView card_notifSettings, card_accSettings, card_Terms, card_Privacy, card_Developers, card_About;
+    CardView card_accSettings, card_Terms, card_Privacy, card_Developers, card_About;
     Button btnLogout;
 
     @Override
@@ -42,7 +42,6 @@ public class Admin_Settings extends AppCompatActivity {
 
         bottomNav = (BottomNavigationView) findViewById (R.id.bottomNav);
 
-        card_notifSettings = (CardView) findViewById (R.id.card_notifSettings);
         card_accSettings = (CardView) findViewById (R.id.card_accSettings);
         card_Terms = (CardView) findViewById (R.id.card_Terms);
         card_Privacy = (CardView) findViewById (R.id.card_Privacy);
@@ -75,16 +74,6 @@ public class Admin_Settings extends AppCompatActivity {
                         return true;
                 }
                 return false;
-            }
-        });
-
-        card_notifSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Admin_Settings.this, SettingsNotif.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,
-                        R.anim.slide_out_left);
             }
         });
 

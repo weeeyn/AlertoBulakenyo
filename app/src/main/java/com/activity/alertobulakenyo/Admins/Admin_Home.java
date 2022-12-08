@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.activity.alertobulakenyo.Prepare;
 import com.activity.alertobulakenyo.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

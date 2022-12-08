@@ -39,32 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        FirebaseMessaging.getInstance().subscribeToTopic("announcements")
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        String msg = "Subscribed to Announcements";
-                        if (!task.isSuccessful()) {
-                            msg = "Subscription failed";
-                        }
-//                    System.out.println(msg);
-//                    Toast.makeText(GetStarted.this, msg, Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-        FirebaseMessaging.getInstance().subscribeToTopic("warnings")
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        String msg = "Subscribed to Warnings";
-                        if (!task.isSuccessful()) {
-                            msg = "Subscription failed";
-                        }
-//                    System.out.println(msg);
-//                    Toast.makeText(GetStarted.this, msg, Toast.LENGTH_SHORT).show();
-                    }
-                });
-
         logo = (ImageView)findViewById (R.id.imgLogo);
 
         new Handler().postDelayed(new Runnable() {

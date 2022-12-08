@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -76,203 +77,247 @@ public class Admin_CreateAncmnt extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
-
                             String title = etAncmntTitle.getText().toString();
                             String body = etAncmnt.getText().toString();
                             SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyy - HH:mm aa", Locale.getDefault());
                             SimpleDateFormat sdf2 = new SimpleDateFormat("MM-dd-yy", Locale.getDefault());
                             String anncmntDate = sdf2.format(new Date());
                             String anncmntDateTime = sdf.format(new Date());
-
-                            DocumentReference df2 = fStore.collection("Announcements").document();
-                            Map<String, Object> anncmnt = new HashMap<>();
-                            anncmnt.put("title", title);
-                            anncmnt.put("body", body);
-                            anncmnt.put("anncmntCity", "Bocaue");
-                            anncmnt.put("anncmntDate", anncmntDate);
-                            anncmnt.put("anncmntDateTime", anncmntDateTime);
-
-                            df2.set(anncmnt)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-
-                                            Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
-                                            startActivity(intent);
-                                            overridePendingTransition(R.anim.slide_in_left,
-                                                    R.anim.slide_out_right);
-                                            finish();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            //progress
-                                            Toast.makeText(Admin_CreateAncmnt.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
-                                        }
-                                    });
+                            if(TextUtils.isEmpty(title)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_CreateAncmnt.this, "Please input an Announcement Title.", Toast.LENGTH_SHORT).show();
+                                etAncmntTitle.setError("Announcement Title can't be empty!");
+                                etAncmntTitle.requestFocus();
+                            } else if(TextUtils.isEmpty(body)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_CreateAncmnt.this, "Please input an Announcement Body.", Toast.LENGTH_SHORT).show();
+                                etAncmnt.setError("Announcement Body can't be empty!");
+                                etAncmnt.requestFocus();
+                            } else {
+                                DocumentReference df2 = fStore.collection("Announcements").document();
+                                Map<String, Object> anncmnt = new HashMap<>();
+                                anncmnt.put("title", title);
+                                anncmnt.put("body", body);
+                                anncmnt.put("anncmntCity", "Bocaue");
+                                anncmnt.put("anncmntDate", anncmntDate);
+                                anncmnt.put("anncmntDateTime", anncmntDateTime);
+                                df2.set(anncmnt)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
+                                                startActivity(intent);
+                                                overridePendingTransition(R.anim.slide_in_left,
+                                                        R.anim.slide_out_right);
+                                                finish();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_CreateAncmnt.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
+                                                Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+                                            }
+                                        });
+                            }
                         }
                         else if(documentSnapshot.getString("adminCity").equals("Marilao")) {
-
                             String title = etAncmntTitle.getText().toString();
                             String body = etAncmnt.getText().toString();
                             SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyy - HH:mm aa", Locale.getDefault());
                             SimpleDateFormat sdf2 = new SimpleDateFormat("MM-dd-yy", Locale.getDefault());
                             String anncmntDate = sdf2.format(new Date());
                             String anncmntDateTime = sdf.format(new Date());
-
-                            DocumentReference df2 = fStore.collection("Announcements").document();
-                            Map<String, Object> anncmnt = new HashMap<>();
-                            anncmnt.put("title", title);
-                            anncmnt.put("body", body);
-                            anncmnt.put("anncmntCity", "Marilao");
-                            anncmnt.put("anncmntDate", anncmntDate);
-                            anncmnt.put("anncmntDateTime", anncmntDateTime);
-
-                            df2.set(anncmnt)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-
-                                            Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
-                                            startActivity(intent);
-                                            overridePendingTransition(R.anim.slide_in_left,
-                                                    R.anim.slide_out_right);
-                                            finish();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            //progress
-                                            Toast.makeText(Admin_CreateAncmnt.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
-                                        }
-                                    });
+                            if(TextUtils.isEmpty(title)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_CreateAncmnt.this, "Please input an Announcement Title.", Toast.LENGTH_SHORT).show();
+                                etAncmntTitle.setError("Announcement Title can't be empty!");
+                                etAncmntTitle.requestFocus();
+                            } else if(TextUtils.isEmpty(body)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_CreateAncmnt.this, "Please input an Announcement Body.", Toast.LENGTH_SHORT).show();
+                                etAncmnt.setError("Announcement Body can't be empty!");
+                                etAncmnt.requestFocus();
+                            } else {
+                                DocumentReference df2 = fStore.collection("Announcements").document();
+                                Map<String, Object> anncmnt = new HashMap<>();
+                                anncmnt.put("title", title);
+                                anncmnt.put("body", body);
+                                anncmnt.put("anncmntCity", "Marilao");
+                                anncmnt.put("anncmntDate", anncmntDate);
+                                anncmnt.put("anncmntDateTime", anncmntDateTime);
+                                df2.set(anncmnt)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
+                                                startActivity(intent);
+                                                overridePendingTransition(R.anim.slide_in_left,
+                                                        R.anim.slide_out_right);
+                                                finish();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_CreateAncmnt.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
+                                                Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+                                            }
+                                        });
+                            }
                         }
                         else if(documentSnapshot.getString("adminCity").equals("Meycauayan")) {
-
                             String title = etAncmntTitle.getText().toString();
                             String body = etAncmnt.getText().toString();
                             SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyy - HH:mm aa", Locale.getDefault());
                             SimpleDateFormat sdf2 = new SimpleDateFormat("MM-dd-yy", Locale.getDefault());
                             String anncmntDate = sdf2.format(new Date());
                             String anncmntDateTime = sdf.format(new Date());
-
-                            DocumentReference df2 = fStore.collection("Announcements").document();
-                            Map<String, Object> anncmnt = new HashMap<>();
-                            anncmnt.put("title", title);
-                            anncmnt.put("body", body);
-                            anncmnt.put("anncmntCity", "Meycauayan");
-                            anncmnt.put("anncmntDate", anncmntDate);
-                            anncmnt.put("anncmntDateTime", anncmntDateTime);
-
-                            df2.set(anncmnt)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-
-                                            Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
-                                            startActivity(intent);
-                                            overridePendingTransition(R.anim.slide_in_left,
-                                                    R.anim.slide_out_right);
-                                            finish();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            //progress
-                                            Toast.makeText(Admin_CreateAncmnt.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
-                                        }
-                                    });
+                            if(TextUtils.isEmpty(title)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_CreateAncmnt.this, "Please input an Announcement Title.", Toast.LENGTH_SHORT).show();
+                                etAncmntTitle.setError("Announcement Title can't be empty!");
+                                etAncmntTitle.requestFocus();
+                            } else if(TextUtils.isEmpty(body)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_CreateAncmnt.this, "Please input an Announcement Body.", Toast.LENGTH_SHORT).show();
+                                etAncmnt.setError("Announcement Body can't be empty!");
+                                etAncmnt.requestFocus();
+                            } else {
+                                DocumentReference df2 = fStore.collection("Announcements").document();
+                                Map<String, Object> anncmnt = new HashMap<>();
+                                anncmnt.put("title", title);
+                                anncmnt.put("body", body);
+                                anncmnt.put("anncmntCity", "Meycauayan");
+                                anncmnt.put("anncmntDate", anncmntDate);
+                                anncmnt.put("anncmntDateTime", anncmntDateTime);
+                                df2.set(anncmnt)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
+                                                startActivity(intent);
+                                                overridePendingTransition(R.anim.slide_in_left,
+                                                        R.anim.slide_out_right);
+                                                finish();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_CreateAncmnt.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
+                                                Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+                                            }
+                                        });
+                            }
                         }
                         else if(documentSnapshot.getString("adminCity").equals("San Jose del Monte")) {
-
                             String title = etAncmntTitle.getText().toString();
                             String body = etAncmnt.getText().toString();
                             SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyy - HH:mm aa", Locale.getDefault());
                             SimpleDateFormat sdf2 = new SimpleDateFormat("MM-dd-yy", Locale.getDefault());
                             String anncmntDate = sdf2.format(new Date());
                             String anncmntDateTime = sdf.format(new Date());
-
-                            DocumentReference df2 = fStore.collection("Announcements").document();
-                            Map<String, Object> anncmnt = new HashMap<>();
-                            anncmnt.put("title", title);
-                            anncmnt.put("body", body);
-                            anncmnt.put("anncmntCity", "San Jose del Monte");
-                            anncmnt.put("anncmntDate", anncmntDate);
-                            anncmnt.put("anncmntDateTime", anncmntDateTime);
-
-                            df2.set(anncmnt)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-
-                                            Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
-                                            startActivity(intent);
-                                            overridePendingTransition(R.anim.slide_in_left,
-                                                    R.anim.slide_out_right);
-                                            finish();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            //progress
-                                            Toast.makeText(Admin_CreateAncmnt.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
-                                        }
-                                    });
+                            if(TextUtils.isEmpty(title)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_CreateAncmnt.this, "Please input an Announcement Title.", Toast.LENGTH_SHORT).show();
+                                etAncmntTitle.setError("Announcement Title can't be empty!");
+                                etAncmntTitle.requestFocus();
+                            } else if(TextUtils.isEmpty(body)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_CreateAncmnt.this, "Please input an Announcement Body.", Toast.LENGTH_SHORT).show();
+                                etAncmnt.setError("Announcement Body can't be empty!");
+                                etAncmnt.requestFocus();
+                            } else {
+                                DocumentReference df2 = fStore.collection("Announcements").document();
+                                Map<String, Object> anncmnt = new HashMap<>();
+                                anncmnt.put("title", title);
+                                anncmnt.put("body", body);
+                                anncmnt.put("anncmntCity", "San Jose del Monte");
+                                anncmnt.put("anncmntDate", anncmntDate);
+                                anncmnt.put("anncmntDateTime", anncmntDateTime);
+                                df2.set(anncmnt)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
+                                                startActivity(intent);
+                                                overridePendingTransition(R.anim.slide_in_left,
+                                                        R.anim.slide_out_right);
+                                                finish();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_CreateAncmnt.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
+                                                Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+                                            }
+                                        });
+                            }
                         }
                         else if(documentSnapshot.getString("adminCity").equals("Santa Maria")) {
-
                             String title = etAncmntTitle.getText().toString();
                             String body = etAncmnt.getText().toString();
                             SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyy - HH:mm aa", Locale.getDefault());
                             SimpleDateFormat sdf2 = new SimpleDateFormat("MM-dd-yy", Locale.getDefault());
                             String anncmntDate = sdf2.format(new Date());
                             String anncmntDateTime = sdf.format(new Date());
-
-                            DocumentReference df2 = fStore.collection("Announcements").document();
-                            Map<String, Object> anncmnt = new HashMap<>();
-                            anncmnt.put("title", title);
-                            anncmnt.put("body", body);
-                            anncmnt.put("anncmntCity", "Santa Maria");
-                            anncmnt.put("anncmntDate", anncmntDate);
-                            anncmnt.put("anncmntDateTime", anncmntDateTime);
-
-                            df2.set(anncmnt)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-
-                                            Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
-                                            startActivity(intent);
-                                            overridePendingTransition(R.anim.slide_in_left,
-                                                    R.anim.slide_out_right);
-                                            finish();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            //progress
-                                            Toast.makeText(Admin_CreateAncmnt.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
-                                            Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
-                                        }
-                                    });
+                            if(TextUtils.isEmpty(title)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_CreateAncmnt.this, "Please input an Announcement Title.", Toast.LENGTH_SHORT).show();
+                                etAncmntTitle.setError("Announcement Title can't be empty!");
+                                etAncmntTitle.requestFocus();
+                            } else if(TextUtils.isEmpty(body)) {
+                                progressBar.setVisibility(View.GONE);
+                                Toast.makeText(Admin_CreateAncmnt.this, "Please input an Announcement Body.", Toast.LENGTH_SHORT).show();
+                                etAncmnt.setError("Announcement Body can't be empty!");
+                                etAncmnt.requestFocus();
+                            } else {
+                                DocumentReference df2 = fStore.collection("Announcements").document();
+                                Map<String, Object> anncmnt = new HashMap<>();
+                                anncmnt.put("title", title);
+                                anncmnt.put("body", body);
+                                anncmnt.put("anncmntCity", "Santa Maria");
+                                anncmnt.put("anncmntDate", anncmntDate);
+                                anncmnt.put("anncmntDateTime", anncmntDateTime);
+                                df2.set(anncmnt)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_CreateAncmnt.this, "Announcement Posted!", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(getApplicationContext(), Admin_Announcement.class);
+                                                startActivity(intent);
+                                                overridePendingTransition(R.anim.slide_in_left,
+                                                        R.anim.slide_out_right);
+                                                finish();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                progressBar.setVisibility(View.GONE);
+                                                Toast.makeText(Admin_CreateAncmnt.this, "Announcement Failed to Post.", Toast.LENGTH_SHORT).show();
+                                                Log.e("TAG", "ANNOUNCEMENT POSTING FAIL"  + e.getMessage() );
+                                            }
+                                        });
+                            }
                         }
                     }
                 });
-
     }
 
     @Override

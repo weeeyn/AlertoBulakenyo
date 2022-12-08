@@ -30,6 +30,7 @@ import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.activity.alertobulakenyo.Adapters.Admin_EvacRVAdapter;
 import com.activity.alertobulakenyo.ObjectClasses.EvacuationHolder;
 import com.activity.alertobulakenyo.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -65,9 +66,9 @@ import java.util.Locale;
 public class Admin_Evacuation extends AppCompatActivity {
 
     Button btnAddNewEvac;
-    CardView card_Boc, card_Mar, card_Mey, card_SJDM, card_SM;
-
+    private RecyclerView rvEvac;
     private ArrayList<EvacuationHolder> evacuationHolderArrayList;
+    private Admin_EvacRVAdapter admin_evacRVAdapter;
 
     private FirebaseAuth fAuth = FirebaseAuth.getInstance();
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
@@ -97,11 +98,13 @@ public class Admin_Evacuation extends AppCompatActivity {
             }
         });
 
-        card_Boc = (CardView) findViewById (R.id.card_Boc);
-        card_Mar = (CardView) findViewById (R.id.card_Mar);
-        card_Mey = (CardView) findViewById (R.id.card_Mey);
-        card_SJDM = (CardView) findViewById (R.id.card_SJDM);
-        card_SM = (CardView) findViewById (R.id.card_SM);
+        rvEvac = (RecyclerView) findViewById (R.id.rvEvac);
+
+        evacuationHolderArrayList = new ArrayList<>();
+        rvEvac.setHasFixedSize(true);
+        rvEvac.setLayoutManager(new LinearLayoutManager(this));
+        admin_evacRVAdapter = new Admin_EvacRVAdapter(evacuationHolderArrayList, this);
+        rvEvac.setAdapter(admin_evacRVAdapter);
 
         DocumentReference df = fStore.collection("UserData").document(userId);
         df.get()
@@ -109,103 +112,152 @@ public class Admin_Evacuation extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         if(documentSnapshot.getString("adminCity").equals("Bocaue")) {
-                            card_Boc.setVisibility(View.VISIBLE);
-                            card_Mar.setVisibility(View.GONE);
-                            card_Mey.setVisibility(View.GONE);
-                            card_SJDM.setVisibility(View.GONE);
-                            card_SM.setVisibility(View.GONE);
 
-                            card_Boc.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
+                            fStore.collection("Evacuation")
+                                    .whereEqualTo("evacuationCity", "Bocaue")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
 
-                                    Intent intent = new Intent(Admin_Evacuation.this, Admin_EvacBocaue.class);
-                                    startActivity(intent);
-                                    overridePendingTransition(R.anim.slide_in_right,
-                                            R.anim.slide_out_left);
-                                }
-                            });
+                                            if (!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    EvacuationHolder p = d.toObject(EvacuationHolder.class);
+                                                    p.setId(d.getId());
+                                                    evacuationHolderArrayList.add(p);
+                                                }
+                                                admin_evacRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Evacuation.this, "No Evacuation Centers Listed.", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e("TAG", "onFailure: " + e.getMessage());
+                                        }
+                                    });
                         }
                         else if(documentSnapshot.getString("adminCity").equals("Marilao")) {
-                            card_Boc.setVisibility(View.GONE);
-                            card_Mar.setVisibility(View.VISIBLE);
-                            card_Mey.setVisibility(View.GONE);
-                            card_SJDM.setVisibility(View.GONE);
-                            card_SM.setVisibility(View.GONE);
 
-                            card_Mar.setVisibility(View.VISIBLE);
-                            card_Mar.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
+                            fStore.collection("Evacuation")
+                                    .whereEqualTo("evacuationCity", "Marilao")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
 
-                                    Intent intent = new Intent(Admin_Evacuation.this, Admin_EvacMarilao.class);
-                                    startActivity(intent);
-                                    overridePendingTransition(R.anim.slide_in_right,
-                                            R.anim.slide_out_left);
-                                }
-                            });
-
+                                            if (!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    EvacuationHolder p = d.toObject(EvacuationHolder.class);
+                                                    p.setId(d.getId());
+                                                    evacuationHolderArrayList.add(p);
+                                                }
+                                                admin_evacRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Evacuation.this, "No Evacuation Centers Listed.", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e("TAG", "onFailure: " + e.getMessage());
+                                        }
+                                    });
                         }
                         else if(documentSnapshot.getString("adminCity").equals("Meycauayan")) {
-                            card_Boc.setVisibility(View.GONE);
-                            card_Mar.setVisibility(View.GONE);
-                            card_Mey.setVisibility(View.VISIBLE);
-                            card_SJDM.setVisibility(View.GONE);
-                            card_SM.setVisibility(View.GONE);
 
-                            card_Mey.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
+                            fStore.collection("Evacuation")
+                                    .whereEqualTo("evacuationCity", "Meycauayan")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
 
-                                    Intent intent = new Intent(Admin_Evacuation.this, Admin_EvacMeycauayan.class);
-                                    startActivity(intent);
-                                    overridePendingTransition(R.anim.slide_in_right,
-                                            R.anim.slide_out_left);
-                                }
-                            });
-
+                                            if (!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    EvacuationHolder p = d.toObject(EvacuationHolder.class);
+                                                    p.setId(d.getId());
+                                                    evacuationHolderArrayList.add(p);
+                                                }
+                                                admin_evacRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Evacuation.this, "No Evacuation Centers Listed.", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e("TAG", "onFailure: " + e.getMessage());
+                                        }
+                                    });
                         }
                         else if(documentSnapshot.getString("adminCity").equals("San Jose del Monte")) {
-                            card_Boc.setVisibility(View.GONE);
-                            card_Mar.setVisibility(View.GONE);
-                            card_Mey.setVisibility(View.GONE);
-                            card_SJDM.setVisibility(View.VISIBLE);
-                            card_SM.setVisibility(View.GONE);
 
-                            card_SJDM.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
+                            fStore.collection("Evacuation")
+                                    .whereEqualTo("evacuationCity", "San Jose del Monte")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
 
-                                    Intent intent = new Intent(Admin_Evacuation.this, Admin_EvacSJDM.class);
-                                    startActivity(intent);
-                                    overridePendingTransition(R.anim.slide_in_right,
-                                            R.anim.slide_out_left);
-                                }
-                            });
+                                            if (!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    EvacuationHolder p = d.toObject(EvacuationHolder.class);
+                                                    p.setId(d.getId());
+                                                    evacuationHolderArrayList.add(p);
+                                                }
+                                                admin_evacRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Evacuation.this, "No Evacuation Centers Listed.", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e("TAG", "onFailure: " + e.getMessage());
+                                        }
+                                    });
                         }
                         else if(documentSnapshot.getString("adminCity").equals("Santa Maria")) {
-                            card_Boc.setVisibility(View.GONE);
-                            card_Mar.setVisibility(View.GONE);
-                            card_Mey.setVisibility(View.GONE);
-                            card_SJDM.setVisibility(View.GONE);
-                            card_SM.setVisibility(View.VISIBLE);
 
-                            card_SM.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
+                            fStore.collection("Evacuation")
+                                    .whereEqualTo("evacuationCity", "Santa Maria")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
 
-                                    Intent intent = new Intent(Admin_Evacuation.this, Admin_EvacStaMaria.class);
-                                    startActivity(intent);
-                                    overridePendingTransition(R.anim.slide_in_right,
-                                            R.anim.slide_out_left);
-                                }
-                            });
+                                            if (!queryDocumentSnapshots.isEmpty()) {
+                                                List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                                                for (DocumentSnapshot d : list) {
+                                                    EvacuationHolder p = d.toObject(EvacuationHolder.class);
+                                                    p.setId(d.getId());
+                                                    evacuationHolderArrayList.add(p);
+                                                }
+                                                admin_evacRVAdapter.notifyDataSetChanged();
+                                            } else {
+                                                Toast.makeText(Admin_Evacuation.this, "No Evacuation Centers Listed.", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.e("TAG", "onFailure: " + e.getMessage());
+                                        }
+                                    });
                         }
                     }
                 });
-
-
-        
     }
 
     @Override

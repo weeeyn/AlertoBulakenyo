@@ -31,6 +31,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -298,7 +299,7 @@ public class register extends AppCompatActivity {
                         Toast.makeText(register.this, "Please enter your Password.", Toast.LENGTH_SHORT).show();
                         passwordET.requestFocus();
                         return;
-                    } else if (password.length() <= 8) {
+                    } else if (password.length() <= 7) {
                         progressBar.setVisibility(View.GONE);
                         Toast.makeText(register.this, "Please enter a password with 8 characters.", Toast.LENGTH_SHORT).show();
                         passwordET.requestFocus();
@@ -340,8 +341,34 @@ public class register extends AppCompatActivity {
 
                                                             dRef.set(resUserInfo);
 
+                                                            FirebaseMessaging.getInstance().subscribeToTopic("announcements")
+                                                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                        @Override
+                                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                                            String msg = "Subscribed to Announcements";
+                                                                            if (!task.isSuccessful()) {
+                                                                                msg = "Subscription failed";
+                                                                            }
+//                    System.out.println(msg);
+//                    Toast.makeText(GetStarted.this, msg, Toast.LENGTH_SHORT).show();
+                                                                        }
+                                                                    });
+
+                                                            FirebaseMessaging.getInstance().subscribeToTopic("warnings")
+                                                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                        @Override
+                                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                                            String msg = "Subscribed to Warnings";
+                                                                            if (!task.isSuccessful()) {
+                                                                                msg = "Subscription failed";
+                                                                            }
+//                    System.out.println(msg);
+//                    Toast.makeText(GetStarted.this, msg, Toast.LENGTH_SHORT).show();
+                                                                        }
+                                                                    });
+
                                                             progressBar.setVisibility(View.GONE);
-                                                            Toast.makeText(register.this, "Registered Successfully. Please confirm your email to continue logging in.", Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(register.this, "Registered Successfully. Please confirm your email to continue logging in. Check your spam if not in the inbox.", Toast.LENGTH_LONG).show();
                                                             Intent intent = new Intent(register.this, login.class);
                                                             startActivity(intent);
                                                             overridePendingTransition(R.anim.slide_in_left,
@@ -412,6 +439,4 @@ public class register extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_left,
                 R.anim.slide_out_right);
     }
-
-
 }

@@ -10,16 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.activity.alertobulakenyo.Prep_EQ;
-import com.activity.alertobulakenyo.Prep_FA;
-import com.activity.alertobulakenyo.Prep_Fire;
-import com.activity.alertobulakenyo.Prep_Flood;
-import com.activity.alertobulakenyo.Prep_LS;
-import com.activity.alertobulakenyo.Prep_SK;
-import com.activity.alertobulakenyo.Prep_Ty;
-import com.activity.alertobulakenyo.Prepare;
 import com.activity.alertobulakenyo.R;
-import com.activity.alertobulakenyo.ResidentUsers.Home;
 
 public class Admin_Prepare extends AppCompatActivity {
 

@@ -42,7 +42,6 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginHorizontal="15dp"
                         android:gravity="center"
-                        android:text="SJDM CDRRMO"
                         android:textColor="@color/orange"
                         android:textSize="35dp"
                         android:textStyle="bold" />
@@ -53,7 +52,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="30dp"
                         android:gravity="center"
-                        android:text="San Jose del Monte City Disaster Risk Reduction Management Office"
                         android:textColor="@color/black"
                         android:textSize="20dp" />
 
@@ -97,7 +95,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="8dp"
                             android:gravity="center"
-                            android:text="0932-600-0119"
                             android:textColor="@color/black"
                             android:textSize="20dp" />
 
@@ -122,7 +119,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="8dp"
                             android:gravity="center"
-                            android:text="0955-206-7200"
                             android:textColor="@color/black"
                             android:textSize="20dp" />
 
@@ -148,7 +144,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="8dp"
                             android:gravity="center"
-                            android:text="(02) 8882-4151 to 77 local 1096 (Metrobase)"
                             android:textColor="@color/black"
                             android:textSize="20dp" />
 
@@ -174,7 +169,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="8dp"
                             android:gravity="center"
-                            android:text="(02) 8882-4151 to 77 local 1135 (Road Safety)"
                             android:textColor="@color/black"
                             android:textSize="20dp" />
 
@@ -200,7 +194,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="8dp"
                             android:gravity="center"
-                            android:text="(02) 8882-4151 to 77 local 1168 (Public Safety)"
                             android:textColor="@color/black"
                             android:textSize="20dp" />
 

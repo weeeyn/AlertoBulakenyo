@@ -23,7 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
-            android:text="Evac Name"
             android:textColor="@color/dark_blue"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -32,7 +31,6 @@
             android:id="@+id/tvLoc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Location"
             android:textColor="@color/black"
             android:textSize="13dp" />
 

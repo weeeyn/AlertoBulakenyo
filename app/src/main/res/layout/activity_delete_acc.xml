@@ -64,7 +64,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="80dp"
+                android:layout_marginBottom="20dp"
                 android:hint="Password"
                 android:textColorHint="#003366"
                 app:boxBackgroundColor="#FFFFFF"
@@ -93,11 +93,35 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAuthenticate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="150dp"
+                android:background="@drawable/rounded_button"
+                android:stateListAnimator="@null"
+                android:text="AUTHENTICATE"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAuthenticate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="Password is not authenticated yet."
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnDelAcc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="45dp"
-                android:background="@drawable/rounded_button2"
+                android:background="@drawable/rounded_button"
                 android:stateListAnimator="@null"
                 android:text="DELETE ACCOUNT"
                 android:textColor="@color/white"
@@ -108,5 +132,15 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:visibility="invisible"
+        />
 
 </RelativeLayout>

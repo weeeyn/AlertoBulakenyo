@@ -61,7 +61,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:gravity="center"
-                android:text="San Jose del Monte"
                 android:textColor="@color/dark_blue"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -80,7 +79,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:gravity="center"
-                android:text="Barangay"
                 android:textColor="@color/dark_blue"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -99,7 +97,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:gravity="center"
-                android:text="CSJDM CENTRAL EVACUATION CENTER"
                 android:textColor="@color/dark_blue"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -118,7 +115,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:gravity="center"
-                android:text="CDRRMO Bldg. Productivity Center, Sapang Palay Proper"
                 android:textColor="@color/dark_blue"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -137,7 +133,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:gravity="center"
-                android:text="121.046097"
                 android:textColor="@color/dark_blue"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -156,7 +151,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:gravity="center"
-                android:text="14.838252"
                 android:textColor="@color/dark_blue"
                 android:textSize="20dp"
                 android:textStyle="bold" />

@@ -1,4 +1,4 @@
-package com.activity.alertobulakenyo;
+package com.activity.alertobulakenyo.ResidentUsers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.activity.alertobulakenyo.ResidentUsers.Home;
+import com.activity.alertobulakenyo.R;
 
 public class Prepare extends AppCompatActivity {
 
